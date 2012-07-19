@@ -1,9 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
-find_package(Git REQUIRED)
-message(STATUS "updating libgtulu submodules...")
-execute_process(COMMAND git submodule update --init WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} OUTPUT_QUIET)
 
-project(libgtulu CXX)
+project(registry CXX)
 
 if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/include/KHR" OR "${GTULU_FORCE_DOWNLOAD}" EQUAL 1)
   file(MAKE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/KHR")
