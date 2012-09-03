@@ -32,8 +32,20 @@ if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/include/GLES2" OR "${GTULU_FORCE_DOWN
   file(DOWNLOAD "http://www.khronos.org/registry/gles/api/2.0/gl2platform.h" "${CMAKE_CURRENT_SOURCE_DIR}/include/GLES2/gl2platform.h")
 endif()
 
-if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/include/GL3" OR "${GTULU_FORCE_DOWNLOAD}" EQUAL 1)
-  file(MAKE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/GL3")
-  message(STATUS "downloading GL3/gl3.h...")
-  file(DOWNLOAD "http://www.opengl.org/registry/api/gl3.h" "${CMAKE_CURRENT_SOURCE_DIR}/include/GL3/gl3.h")
+if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/include/GLES3" OR "${GTULU_FORCE_DOWNLOAD}" EQUAL 1)
+  file(MAKE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/GLES3")
+  message(STATUS "downloading GLES3/gl3.h...")
+  file(DOWNLOAD "http://www.khronos.org/registry/gles/api/3.0/gl3.h"         "${CMAKE_CURRENT_SOURCE_DIR}/include/GLES3/gl3.h")
+
+  message(STATUS "downloading GLES3/gl3ext.h...")
+  file(DOWNLOAD "http://www.khronos.org/registry/gles/api/3.0/gl3ext.h"      "${CMAKE_CURRENT_SOURCE_DIR}/include/GLES3/gl3ext.h")
+
+  message(STATUS "downloading GLES3/gl3platform.h...")
+  file(DOWNLOAD "http://www.khronos.org/registry/gles/api/3.0/gl3platform.h" "${CMAKE_CURRENT_SOURCE_DIR}/include/GLES3/gl3platform.h")
+endif()
+
+if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/include/GL" OR "${GTULU_FORCE_DOWNLOAD}" EQUAL 1)
+  file(MAKE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/GL")
+  message(STATUS "downloading GL/glcorearb.h...")
+  file(DOWNLOAD "http://www.opengl.org/registry/api/glcorearb.h" "${CMAKE_CURRENT_SOURCE_DIR}/include/GL/glcorearb.h")
 endif()
