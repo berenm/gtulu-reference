@@ -1,0 +1,18 @@
+gl:
+  name: glBindSampler
+  params:
+  - mapping: unit
+    name: unit
+    type: GLuint
+  - mapping: sampler
+    name: sampler
+    type: GLuint
+  return: void
+gtu:
+  name: bind_sampler
+  params:
+  - name: unit
+    type: uint32_t const
+  - name: sampler
+    type: gtu::sampler const
+  return: void

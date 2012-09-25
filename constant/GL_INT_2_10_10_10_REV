@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_vertex_type_2_10_10_10_rev
+gtu:
+  name: int_2_10_10_10_rev
+usage: []
+value: 0x8d9f

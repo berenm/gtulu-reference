@@ -1,0 +1,18 @@
+gl:
+  name: glQueryCounter
+  params:
+  - mapping: query
+    name: id
+    type: GLuint
+  - mapping: target
+    name: target
+    type: GLenum
+  return: void
+gtu:
+  name: query_counter
+  params:
+  - name: query
+    type: gtu::query const
+  - name: target
+    type: gtu::constant const
+  return: void

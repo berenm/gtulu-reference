@@ -1,0 +1,13 @@
+gl:
+  name: glIsSampler
+  params:
+  - mapping: sampler
+    name: sampler
+    type: GLuint
+  return: GLboolean
+gtu:
+  name: is_sampler
+  params:
+  - name: sampler
+    type: gtu::sampler const
+  return: bool

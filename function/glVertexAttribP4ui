@@ -1,0 +1,28 @@
+gl:
+  name: glVertexAttribP4ui
+  params:
+  - mapping: vertex_attrib
+    name: index
+    type: GLuint
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: normalized
+    name: normalized
+    type: GLboolean
+  - mapping: value
+    name: value
+    type: GLuint
+  return: void
+gtu:
+  name: vertex_attrib_4_packed
+  params:
+  - name: vertex_attrib
+    type: gtu::vertex_attrib const
+  - name: type
+    type: gtu::constant const
+  - name: normalized
+    type: bool const
+  - name: value
+    type: uint32_t const
+  return: void

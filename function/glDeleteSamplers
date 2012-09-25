@@ -1,0 +1,16 @@
+gl:
+  name: glDeleteSamplers
+  params:
+  - mapping: 1
+    name: count
+    type: GLsizei
+  - mapping: '&sampler'
+    name: samplers
+    type: GLuint const*
+  return: void
+gtu:
+  name: delete_sampler
+  params:
+  - name: sampler
+    type: gtu::sampler const
+  return: void

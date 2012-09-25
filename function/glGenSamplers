@@ -1,0 +1,18 @@
+gl:
+  name: glGenSamplers
+  params:
+  - mapping: 1
+    name: count
+    type: GLsizei
+  - mapping: '&sampler'
+    name: samplers
+    type: GLuint*
+  return: void
+gtu:
+  name: create_sampler
+  params: []
+  postcall: |
+    return sampler;
+  precall: |
+    uint32_t sampler;
+  return: gtu::sampler
