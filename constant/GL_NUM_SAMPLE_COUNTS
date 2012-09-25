@@ -1,0 +1,7 @@
+categories:
+- internal_format_property
+gtu:
+  name: num_sample_counts
+usage:
+- glGetInternalformativ.property
+value: 0x9380

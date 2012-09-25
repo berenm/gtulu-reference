@@ -14,6 +14,7 @@ usage:
 - glCompressedTexImage2D.target
 - glCopyTexSubImage2D.target
 - glGenerateMipmap.target
+- glGetInternalformativ.target
 - glGetTexImage.target
 - glGetTexLevelParameterfv.target
 - glGetTexLevelParameteriv.target
@@ -28,5 +29,6 @@ usage:
 - glTexParameterfv.target
 - glTexParameteri.target
 - glTexParameteriv.target
+- glTexStorage2D.target
 - glTexSubImage2D.target
 value: 0x8c18

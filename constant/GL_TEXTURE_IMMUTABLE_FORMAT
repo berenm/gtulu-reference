@@ -1,0 +1,10 @@
+categories:
+- texture_property
+gtu:
+  name: texture_immutable_format
+usage:
+- glGetTexParameterIiv.property
+- glGetTexParameterIuiv.property
+- glGetTexParameterfv.property
+- glGetTexParameteriv.property
+value: 0x912f

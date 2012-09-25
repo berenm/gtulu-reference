@@ -1,0 +1,31 @@
+gl:
+  name: glTexStorage2D
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: levels
+    name: levels
+    type: GLsizei
+  - mapping: internal_format
+    name: internalformat
+    type: GLenum
+  - mapping: dimension[0]
+    name: width
+    type: GLsizei
+  - mapping: dimension[1]
+    name: height
+    type: GLsizei
+  return: void
+gtu:
+  name: tex_storage
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: levels
+    type: gtu::size const
+  - name: internal_format
+    type: gtu::constant const
+  - name: dimension
+    type: gtu::vec2< gtu::size > const&
+  return: void

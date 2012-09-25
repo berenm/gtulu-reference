@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_transform_feedback2
+gtu:
+  name: transform_feedback_buffer_paused
+usage: []
+value: 0x8e23

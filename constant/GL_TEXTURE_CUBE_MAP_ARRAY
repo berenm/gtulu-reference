@@ -8,8 +8,10 @@ gtu:
   name: texture_cube_map_array
 usage:
 - glBindTexture.target
+- glGetInternalformativ.target
 - glGetTexParameterIiv.target
 - glGetTexParameterIuiv.target
 - glGetTexParameterfv.target
 - glGetTexParameteriv.target
+- glTexStorage3D.target
 value: 0x9009

@@ -2,5 +2,6 @@ categories:
 - tex_image_target
 gtu:
   name: proxy_texture_cube_map_array
-usage: []
+usage:
+- glTexStorage3D.target
 value: 0x900b

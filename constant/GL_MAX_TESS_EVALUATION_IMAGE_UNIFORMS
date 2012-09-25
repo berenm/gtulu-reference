@@ -1,0 +1,6 @@
+categories:
+- gl_NV_path_rendering
+gtu:
+  name: max_tess_evaluation_image_uniforms
+usage: []
+value: 0x90cc

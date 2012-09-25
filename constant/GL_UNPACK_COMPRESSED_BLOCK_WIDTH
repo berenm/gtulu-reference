@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_compressed_texture_pixel_storage
+gtu:
+  name: unpack_compressed_block_width
+usage: []
+value: 0x9127

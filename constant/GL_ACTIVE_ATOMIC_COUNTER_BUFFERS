@@ -1,0 +1,7 @@
+categories:
+- program_property
+gtu:
+  name: active_atomic_counter_buffers
+usage:
+- glGetProgramiv.property
+value: 0x92d9

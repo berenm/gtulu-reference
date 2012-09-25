@@ -1,0 +1,13 @@
+gl:
+  name: glMemoryBarrier
+  params:
+  - mapping: barriers.to_ulong()
+    name: barriers
+    type: GLbitfield
+  return: void
+gtu:
+  name: memory_barrier
+  params:
+  - name: barriers
+    type: gtu::bitmask const&
+  return: void

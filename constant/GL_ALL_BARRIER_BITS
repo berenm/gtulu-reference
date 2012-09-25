@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_shader_image_load_store
+gtu:
+  name: all_barrier_bits
+usage: []
+value: 0xffffffff

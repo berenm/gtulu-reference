@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_shader_image_load_store
+gtu:
+  name: unsigned_int_image_1d_array
+usage: []
+value: 0x9068

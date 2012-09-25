@@ -23,6 +23,7 @@ usage:
 - glGetInteger64v.property
 - glGetIntegeri_v.property
 - glGetIntegerv.property
+- glGetInternalformativ.target
 - glGetTexParameterIiv.target
 - glGetTexParameterIuiv.target
 - glGetTexParameterfv.target

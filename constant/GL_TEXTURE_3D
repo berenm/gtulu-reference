@@ -29,6 +29,7 @@ usage:
 - glGetInteger64v.property
 - glGetIntegeri_v.property
 - glGetIntegerv.property
+- glGetInternalformativ.target
 - glGetTexImage.target
 - glGetTexLevelParameterfv.target
 - glGetTexLevelParameteriv.target
@@ -43,5 +44,6 @@ usage:
 - glTexParameterfv.target
 - glTexParameteri.target
 - glTexParameteriv.target
+- glTexStorage3D.target
 - glTexSubImage3D.target
 value: 0x806f
