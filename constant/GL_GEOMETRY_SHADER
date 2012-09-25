@@ -2,5 +2,6 @@ categories:
 - pipeline_property
 gtu:
   name: geometry_shader
-usage: []
+usage:
+- glGetProgramPipelineiv.property
 value: 0x8dd9

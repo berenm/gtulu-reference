@@ -5,6 +5,7 @@ gtu:
 usage:
 - glGetVertexAttribIiv.property
 - glGetVertexAttribIuiv.property
+- glGetVertexAttribLdv.property
 - glGetVertexAttribdv.property
 - glGetVertexAttribiv.property
 value: 0x88fe

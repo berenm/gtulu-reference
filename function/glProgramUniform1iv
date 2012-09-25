@@ -1,0 +1,26 @@
+gl:
+  name: glProgramUniform1iv
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: uniform
+    name: location
+    type: GLint
+  - mapping: values.size()
+    name: count
+    type: GLsizei
+  - mapping: '&values[0][0]'
+    name: value
+    type: GLint const*
+  return: void
+gtu:
+  name: program_uniform
+  params:
+  - name: program
+    type: gtu::program const
+  - name: uniform
+    type: gtu::uniform const
+  - name: values
+    type: std::vector< gtu::vec1< int32_t > > const&
+  return: void

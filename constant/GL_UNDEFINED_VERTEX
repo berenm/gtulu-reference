@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_viewport_array
+gtu:
+  name: undefined_vertex
+usage: []
+value: 0x8260

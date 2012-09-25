@@ -1,0 +1,16 @@
+categories:
+- context_property
+gtu:
+  name: num_shader_binary_formats
+usage:
+- glGetBooleani_v.property
+- glGetBooleanv.property
+- glGetDoublei_v.property
+- glGetDoublev.property
+- glGetFloati_v.property
+- glGetFloatv.property
+- glGetInteger64i_v.property
+- glGetInteger64v.property
+- glGetIntegeri_v.property
+- glGetIntegerv.property
+value: 0x8df9

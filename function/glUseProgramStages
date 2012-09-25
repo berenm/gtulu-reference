@@ -1,0 +1,23 @@
+gl:
+  name: glUseProgramStages
+  params:
+  - mapping: pipeline
+    name: pipeline
+    type: GLuint
+  - mapping: stages.to_ulong()
+    name: stages
+    type: GLbitfield
+  - mapping: program
+    name: program
+    type: GLuint
+  return: void
+gtu:
+  name: use_program_stages
+  params:
+  - name: pipeline
+    type: gtu::pipeline const
+  - name: stages
+    type: gtu::bitmask const&
+  - name: program
+    type: gtu::program const
+  return: void

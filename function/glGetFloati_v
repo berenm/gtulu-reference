@@ -1,0 +1,23 @@
+gl:
+  name: glGetFloati_v
+  params:
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: index
+    name: index
+    type: GLuint
+  - mapping: data
+    name: data
+    type: GLfloat*
+  return: void
+gtu:
+  name: get
+  params:
+  - name: property
+    type: gtu::constant const
+  - name: index
+    type: uint32_t const
+  - name: data
+    type: float32*
+  return: void

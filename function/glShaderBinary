@@ -1,0 +1,29 @@
+gl:
+  name: glShaderBinary
+  params:
+  - mapping: shaders.size()
+    name: count
+    type: GLsizei
+  - mapping: '&shaders[0]'
+    name: shaders
+    type: GLuint const*
+  - mapping: binaryFormat
+    name: binaryFormat
+    type: GLenum
+  - mapping: '&binary[0]'
+    name: binary
+    type: void const*
+  - mapping: binary.size()
+    name: length
+    type: GLsizei
+  return: void
+gtu:
+  name: shader_binary
+  params:
+  - name: shaders
+    type: std::vector< gtu::shader > const&
+  - name: binaryFormat
+    type: gtu::constant const
+  - name: binary
+    type: std::string const&
+  return: void

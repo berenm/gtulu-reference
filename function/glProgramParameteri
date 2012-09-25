@@ -1,0 +1,23 @@
+gl:
+  name: glProgramParameteri
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: value
+    name: value
+    type: GLint
+  return: void
+gtu:
+  name: program_parameter
+  params:
+  - name: program
+    type: gtu::program const
+  - name: property
+    type: gtu::constant const
+  - name: value
+    type: int32_t const
+  return: void

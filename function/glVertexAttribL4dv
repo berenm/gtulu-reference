@@ -1,0 +1,18 @@
+gl:
+  name: glVertexAttribL4dv
+  params:
+  - mapping: vertex_attrib
+    name: index
+    type: GLuint
+  - mapping: '&values[0]'
+    name: v
+    type: GLdouble const*
+  return: void
+gtu:
+  name: vertex_attrib_large
+  params:
+  - name: vertex_attrib
+    type: gtu::vertex_attrib const
+  - name: values
+    type: gtu::vec4< float64 > const&
+  return: void

@@ -10,7 +10,9 @@ usage:
 - glFogiv.property
 - glGetBooleani_v.property
 - glGetBooleanv.property
+- glGetDoublei_v.property
 - glGetDoublev.property
+- glGetFloati_v.property
 - glGetFloatv.property
 - glGetInteger64i_v.property
 - glGetInteger64v.property

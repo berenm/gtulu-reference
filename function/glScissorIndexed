@@ -1,0 +1,31 @@
+gl:
+  name: glScissorIndexed
+  params:
+  - mapping: index
+    name: index
+    type: GLuint
+  - mapping: left
+    name: left
+    type: GLint
+  - mapping: bottom
+    name: bottom
+    type: GLint
+  - mapping: dimension[0]
+    name: width
+    type: GLsizei
+  - mapping: dimension[1]
+    name: height
+    type: GLsizei
+  return: void
+gtu:
+  name: scissor_indexed
+  params:
+  - name: index
+    type: uint32_t const
+  - name: left
+    type: int32_t const
+  - name: bottom
+    type: int32_t const
+  - name: dimension
+    type: gtu::vec2< gtu::size > const&
+  return: void

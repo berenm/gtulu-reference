@@ -18,7 +18,9 @@ usage:
 - glGetColorTable.target
 - glGetColorTableParameterfv.target
 - glGetColorTableParameteriv.target
+- glGetDoublei_v.property
 - glGetDoublev.property
+- glGetFloati_v.property
 - glGetFloatv.property
 - glGetInteger64i_v.property
 - glGetInteger64v.property

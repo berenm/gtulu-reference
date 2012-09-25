@@ -1,0 +1,13 @@
+gl:
+  name: glValidateProgramPipeline
+  params:
+  - mapping: pipeline
+    name: pipeline
+    type: GLuint
+  return: void
+gtu:
+  name: validate_program_pipeline
+  params:
+  - name: pipeline
+    type: gtu::pipeline const
+  return: void

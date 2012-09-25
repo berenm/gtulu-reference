@@ -5,6 +5,7 @@ categories:
 gtu:
   name: info_log_length
 usage:
+- glGetProgramPipelineiv.property
 - glGetProgramiv.property
 - glGetShaderiv.property
 value: 0x8b84

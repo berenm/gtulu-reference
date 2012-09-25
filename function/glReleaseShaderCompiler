@@ -1,0 +1,8 @@
+gl:
+  name: glReleaseShaderCompiler
+  params: []
+  return: void
+gtu:
+  name: release_shader_compiler
+  params: []
+  return: void

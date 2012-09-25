@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_separate_shader_objects
+gtu:
+  name: vertex_shader_bit
+usage: []
+value: 0x1

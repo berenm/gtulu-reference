@@ -1,0 +1,18 @@
+gl:
+  name: glViewportIndexedfv
+  params:
+  - mapping: index
+    name: index
+    type: GLuint
+  - mapping: '&values[0]'
+    name: v
+    type: GLfloat const*
+  return: void
+gtu:
+  name: viewport_indexed
+  params:
+  - name: index
+    type: uint32_t const
+  - name: values
+    type: gtu::vec4< float32 > const&
+  return: void

@@ -1,0 +1,31 @@
+gl:
+  name: glGetProgramBinary
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: binary.capacity()
+    name: bufsize
+    type: GLsizei
+  - mapping: '&length'
+    name: length
+    type: GLsizei*
+  - mapping: '&binaryFormat'
+    name: binaryFormat
+    type: GLenum*
+  - mapping: '&binary[0]'
+    name: binary
+    type: void*
+  return: void
+gtu:
+  name: get_program_binary
+  params:
+  - name: program
+    type: gtu::program const
+  - name: length
+    type: gtu::size&
+  - name: binaryFormat
+    type: gtu::constant&
+  - name: binary
+    type: std::string&
+  return: void

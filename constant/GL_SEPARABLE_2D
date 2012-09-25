@@ -15,7 +15,9 @@ usage:
 - glGetBooleanv.property
 - glGetConvolutionParameterfv.target
 - glGetConvolutionParameteriv.target
+- glGetDoublei_v.property
 - glGetDoublev.property
+- glGetFloati_v.property
 - glGetFloatv.property
 - glGetInteger64i_v.property
 - glGetInteger64v.property

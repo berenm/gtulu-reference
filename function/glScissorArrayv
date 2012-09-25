@@ -1,0 +1,21 @@
+gl:
+  name: glScissorArrayv
+  params:
+  - mapping: first
+    name: first
+    type: GLuint
+  - mapping: values.size()
+    name: count
+    type: GLsizei
+  - mapping: '&values[0][0]'
+    name: v
+    type: GLint const*
+  return: void
+gtu:
+  name: scissor_array
+  params:
+  - name: first
+    type: uint32_t const
+  - name: values
+    type: std::vector< gtu::vec4< int32_t > > const&
+  return: void

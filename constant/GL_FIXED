@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_ES2_compatibility
+gtu:
+  name: fixed
+usage: []
+value: 0x140c

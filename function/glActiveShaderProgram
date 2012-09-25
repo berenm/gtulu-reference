@@ -1,0 +1,18 @@
+gl:
+  name: glActiveShaderProgram
+  params:
+  - mapping: pipeline
+    name: pipeline
+    type: GLuint
+  - mapping: program
+    name: program
+    type: GLuint
+  return: void
+gtu:
+  name: active_shader_program
+  params:
+  - name: pipeline
+    type: gtu::pipeline const
+  - name: program
+    type: gtu::program const
+  return: void

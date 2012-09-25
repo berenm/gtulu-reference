@@ -1,0 +1,24 @@
+gl:
+  name: glCreateShaderProgramv
+  params:
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: lines.size()
+    name: count
+    type: GLsizei
+  - mapping: '&strings[0]'
+    name: strings
+    type: const char* const*
+  return: GLuint
+gtu:
+  name: create_shader_program
+  params:
+  - name: type
+    type: gtu::constant const
+  - name: lines
+    type: std::vector< std::string > const&
+  precall: |
+    std::vector< char const* >  strings;
+    std::transform(lines.begin(), lines.end(), std::back_inserter(strings), [](std::string const& e) { return e.data(); });
+  return: gtu::program

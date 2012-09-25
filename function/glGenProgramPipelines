@@ -1,0 +1,18 @@
+gl:
+  name: glGenProgramPipelines
+  params:
+  - mapping: 1
+    name: n
+    type: GLsizei
+  - mapping: '&program_pipeline'
+    name: pipelines
+    type: GLuint*
+  return: void
+gtu:
+  name: create_program_pipeline
+  params: []
+  postcall: |
+    return program_pipeline;
+  precall: |
+    uint32_t program_pipeline;
+  return: gtu::pipeline
