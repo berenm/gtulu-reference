@@ -1,0 +1,23 @@
+gl:
+  name: glFramebufferParameteri
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: param
+    name: param
+    type: GLint
+  return: void
+gtu:
+  name: framebuffer_parameter
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: property
+    type: gtu::constant const
+  - name: param
+    type: int32_t const
+  return: void

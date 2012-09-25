@@ -1,0 +1,44 @@
+gl:
+  name: glGetProgramResourceiv
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: programInterface
+    name: programInterface
+    type: GLenum
+  - mapping: index
+    name: index
+    type: GLuint
+  - mapping: properties.size()
+    name: propCount
+    type: GLsizei
+  - mapping: '&properties[0]'
+    name: props
+    type: GLenum const*
+  - mapping: values.capacity()
+    name: bufSize
+    type: GLsizei
+  - mapping: '&length'
+    name: length
+    type: GLsizei*
+  - mapping: '&values[0]'
+    name: params
+    type: GLint*
+  return: void
+gtu:
+  name: get_program_resource
+  params:
+  - name: program
+    type: gtu::program const
+  - name: programInterface
+    type: gtu::constant const
+  - name: index
+    type: uint32_t const
+  - name: properties
+    type: std::vector< gtu::constant > const&
+  - name: length
+    type: gtu::size&
+  - name: values
+    type: std::vector< int32_t >&
+  return: void

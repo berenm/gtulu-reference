@@ -1,0 +1,6 @@
+categories:
+- gl_KHR_debug
+gtu:
+  name: debug_type_performance
+usage: []
+value: 0x8250

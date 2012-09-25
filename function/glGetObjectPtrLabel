@@ -1,0 +1,26 @@
+gl:
+  name: glGetObjectPtrLabel
+  params:
+  - mapping: ptr
+    name: ptr
+    type: void*
+  - mapping: label.capacity()
+    name: bifSize
+    type: GLsizei
+  - mapping: '&length'
+    name: length
+    type: GLsizei*
+  - mapping: '&label[0]'
+    name: label
+    type: char*
+  return: void
+gtu:
+  name: get_object_ptr_label
+  params:
+  - name: ptr
+    type: void*
+  - name: length
+    type: gtu::size&
+  - name: label
+    type: std::string&
+  return: void

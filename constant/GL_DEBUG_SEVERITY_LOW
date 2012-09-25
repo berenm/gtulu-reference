@@ -1,0 +1,6 @@
+categories:
+- gl_KHR_debug
+gtu:
+  name: debug_severity_low
+usage: []
+value: 0x9148

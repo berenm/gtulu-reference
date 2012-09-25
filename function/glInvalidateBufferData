@@ -1,0 +1,13 @@
+gl:
+  name: glInvalidateBufferData
+  params:
+  - mapping: buffer
+    name: buffer
+    type: GLuint
+  return: void
+gtu:
+  name: invalidate_buffer_data
+  params:
+  - name: buffer
+    type: gtu::buffer const
+  return: void

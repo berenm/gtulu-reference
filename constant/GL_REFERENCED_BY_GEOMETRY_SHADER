@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_program_interface_query
+gtu:
+  name: referenced_by_geometry_shader
+usage: []
+value: 0x9309

@@ -1,0 +1,21 @@
+gl:
+  name: glUniformSubroutinesuiv
+  params:
+  - mapping: shadertype
+    name: shadertype
+    type: GLenum
+  - mapping: subroutines.size()
+    name: count
+    type: GLsizei
+  - mapping: '&subroutines[0]'
+    name: indices
+    type: GLuint const*
+  return: void
+gtu:
+  name: uniform_subroutines
+  params:
+  - name: shadertype
+    type: gtu::constant const
+  - name: subroutines
+    type: std::vector< gtu::subroutine > const&
+  return: void

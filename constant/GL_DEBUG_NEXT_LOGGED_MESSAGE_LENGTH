@@ -1,0 +1,6 @@
+categories:
+- gl_KHR_debug
+gtu:
+  name: debug_next_logged_message_length
+usage: []
+value: 0x8243

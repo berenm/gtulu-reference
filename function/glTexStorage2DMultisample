@@ -1,0 +1,36 @@
+gl:
+  name: glTexStorage2DMultisample
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: samples
+    name: samples
+    type: GLsizei
+  - mapping: internal_format
+    name: internalformat
+    type: GLenum
+  - mapping: dimension[0]
+    name: width
+    type: GLsizei
+  - mapping: dimension[1]
+    name: height
+    type: GLsizei
+  - mapping: fixedsamplelocations
+    name: fixedsamplelocations
+    type: GLboolean
+  return: void
+gtu:
+  name: tex_storage_multisample
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: samples
+    type: gtu::size const
+  - name: internal_format
+    type: gtu::constant const
+  - name: dimension
+    type: gtu::vec2< gtu::size > const&
+  - name: fixedsamplelocations
+    type: bool const
+  return: void

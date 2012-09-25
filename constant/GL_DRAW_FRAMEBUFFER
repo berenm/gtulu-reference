@@ -5,6 +5,7 @@ gtu:
 usage:
 - glBindFramebuffer.target
 - glCheckFramebufferStatus.target
+- glFramebufferParameteri.target
 - glFramebufferRenderbuffer.target
 - glFramebufferTexture.target
 - glFramebufferTexture1D.target
@@ -12,4 +13,7 @@ usage:
 - glFramebufferTexture3D.target
 - glFramebufferTextureLayer.target
 - glGetFramebufferAttachmentParameteriv.target
+- glGetFramebufferParameteriv.target
+- glInvalidateFramebuffer.target
+- glInvalidateSubFramebuffer.target
 value: 0x8ca9

@@ -1,0 +1,7 @@
+categories:
+- internal_format_property
+gtu:
+  name: view_compatibility_class
+usage:
+- glGetInternalformati64v.property
+value: 0x82b6

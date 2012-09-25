@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_internalformat_query2
+gtu:
+  name: image_class_2_x_8
+usage: []
+value: 0x82c0

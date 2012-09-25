@@ -1,0 +1,6 @@
+categories:
+- gl_KHR_debug
+gtu:
+  name: debug_source_window_system
+usage: []
+value: 0x8247

@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_internalformat_query2
+gtu:
+  name: view_class_bptc_unorm
+usage: []
+value: 0x82d2

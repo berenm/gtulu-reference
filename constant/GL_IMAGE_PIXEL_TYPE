@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: image_pixel_type
+usage: []
+value: 0x82aa

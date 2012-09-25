@@ -1,0 +1,21 @@
+gl:
+  name: glInvalidateFramebuffer
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: attachments.size()
+    name: numAttachments
+    type: GLsizei
+  - mapping: '&attachments[0]'
+    name: attachments
+    type: GLenum const*
+  return: void
+gtu:
+  name: invalidate_framebuffer
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: attachments
+    type: std::vector< gtu::constant > const&
+  return: void

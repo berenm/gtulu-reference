@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: read_pixels_type
+usage: []
+value: 0x828e

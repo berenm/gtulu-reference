@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: simultaneous_texture_and_stencil_write
+usage: []
+value: 0x82af

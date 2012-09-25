@@ -1,0 +1,31 @@
+gl:
+  name: glGetInternalformati64v
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: internal_format
+    name: internalformat
+    type: GLenum
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: values.size()
+    name: bufSize
+    type: GLsizei
+  - mapping: '&values[0]'
+    name: params
+    type: GLint64*
+  return: void
+gtu:
+  name: get_internalformat
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: internal_format
+    type: gtu::constant const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: std::vector< int64_t >&
+  return: void

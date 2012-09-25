@@ -1,0 +1,28 @@
+gl:
+  name: glBindVertexBuffer
+  params:
+  - mapping: bindingindex
+    name: bindingindex
+    type: GLuint
+  - mapping: buffer
+    name: buffer
+    type: GLuint
+  - mapping: offset
+    name: offset
+    type: GLintptr
+  - mapping: stride
+    name: stride
+    type: GLsizei
+  return: void
+gtu:
+  name: bind_vertex_buffer
+  params:
+  - name: bindingindex
+    type: uint32_t const
+  - name: buffer
+    type: gtu::buffer const
+  - name: offset
+    type: std::ptrdiff_t const
+  - name: stride
+    type: gtu::size const
+  return: void

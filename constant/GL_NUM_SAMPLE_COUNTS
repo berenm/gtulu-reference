@@ -3,5 +3,6 @@ categories:
 gtu:
   name: num_sample_counts
 usage:
+- glGetInternalformati64v.property
 - glGetInternalformativ.property
 value: 0x9380

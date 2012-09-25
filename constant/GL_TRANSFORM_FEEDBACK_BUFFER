@@ -9,6 +9,8 @@ usage:
 - glBindBufferRange.target
 - glBufferData.target
 - glBufferSubData.target
+- glClearBufferData.target
+- glClearBufferSubData.target
 - glFlushMappedBufferRange.target
 - glGetBufferParameteri64v.target
 - glGetBufferParameteriv.target

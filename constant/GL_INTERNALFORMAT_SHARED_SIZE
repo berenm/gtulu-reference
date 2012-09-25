@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: internalformat_shared_size
+usage: []
+value: 0x8277

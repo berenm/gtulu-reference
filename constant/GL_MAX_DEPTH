@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: max_depth
+usage: []
+value: 0x8280

@@ -1,0 +1,6 @@
+categories:
+- gl_KHR_debug
+gtu:
+  name: debug_severity_notification
+usage: []
+value: 0x826b

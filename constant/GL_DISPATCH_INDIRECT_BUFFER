@@ -1,0 +1,18 @@
+categories:
+- buffer_target
+gtu:
+  name: dispatch_indirect_buffer
+usage:
+- glBindBuffer.target
+- glBufferData.target
+- glBufferSubData.target
+- glClearBufferData.target
+- glClearBufferSubData.target
+- glGetBufferParameteri64v.target
+- glGetBufferParameteriv.target
+- glGetBufferPointerv.target
+- glGetBufferSubData.target
+- glMapBuffer.target
+- glMapBufferRange.target
+- glUnmapBuffer.target
+value: 0x90ee

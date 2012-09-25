@@ -1,0 +1,18 @@
+gl:
+  name: glVertexAttribBinding
+  params:
+  - mapping: vertex_attrib
+    name: attribindex
+    type: GLuint
+  - mapping: bindingindex
+    name: bindingindex
+    type: GLuint
+  return: void
+gtu:
+  name: vertex_attrib_binding
+  params:
+  - name: vertex_attrib
+    type: gtu::vertex_attrib const
+  - name: bindingindex
+    type: uint32_t const
+  return: void

@@ -1,0 +1,33 @@
+gl:
+  name: glVertexAttribFormat
+  params:
+  - mapping: vertex_attrib
+    name: attribindex
+    type: GLuint
+  - mapping: size
+    name: size
+    type: GLint
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: normalized
+    name: normalized
+    type: GLboolean
+  - mapping: relativeoffset
+    name: relativeoffset
+    type: GLuint
+  return: void
+gtu:
+  name: vertex_attrib_format
+  params:
+  - name: vertex_attrib
+    type: gtu::vertex_attrib const
+  - name: size
+    type: int32_t const
+  - name: type
+    type: gtu::constant const
+  - name: normalized
+    type: bool const
+  - name: relativeoffset
+    type: uint32_t const
+  return: void

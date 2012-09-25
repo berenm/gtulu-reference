@@ -1,0 +1,18 @@
+gl:
+  name: glDebugMessageCallback
+  params:
+  - mapping: '*callback.target< GLDEBUGPROC >()'
+    name: callback
+    type: GLDEBUGPROC
+  - mapping: userParam
+    name: userParam
+    type: void*
+  return: void
+gtu:
+  name: debug_message_callback
+  params:
+  - name: callback
+    type: gtu::debug_callback const
+  - name: userParam
+    type: void*
+  return: void

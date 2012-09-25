@@ -1,0 +1,6 @@
+categories:
+- gl_KHR_debug
+gtu:
+  name: max_debug_message_length
+usage: []
+value: 0x9143

@@ -5,6 +5,7 @@ categories:
 gtu:
   name: any_samples_passed
 usage:
+- glBeginQuery.target
 - glBeginQueryIndexed.target
 - glEndQuery.target
 - glEndQueryIndexed.target

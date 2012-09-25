@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: depth_renderable
+usage: []
+value: 0x8287

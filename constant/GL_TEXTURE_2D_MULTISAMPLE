@@ -8,8 +8,11 @@ gtu:
   name: texture_2d_multisample
 usage:
 - glBindTexture.target
+- glGetInternalformati64v.target
 - glGetInternalformativ.target
 - glGetTexLevelParameterfv.target
 - glGetTexLevelParameteriv.target
 - glTexImage2DMultisample.target
+- glTexStorage2DMultisample.target
+- glTextureView.target
 value: 0x9100

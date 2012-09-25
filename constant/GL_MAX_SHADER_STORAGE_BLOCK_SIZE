@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_shader_storage_buffer_object
+gtu:
+  name: max_shader_storage_block_size
+usage: []
+value: 0x90de

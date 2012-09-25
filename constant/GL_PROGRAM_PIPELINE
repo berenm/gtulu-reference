@@ -1,0 +1,6 @@
+categories:
+- gl_KHR_debug
+gtu:
+  name: program_pipeline
+usage: []
+value: 0x82e4

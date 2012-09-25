@@ -1,0 +1,8 @@
+gl:
+  name: glPopDebugGroup
+  params: []
+  return: void
+gtu:
+  name: pop_debug_group
+  params: []
+  return: void

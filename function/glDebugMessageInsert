@@ -1,0 +1,36 @@
+gl:
+  name: glDebugMessageInsert
+  params:
+  - mapping: source
+    name: source
+    type: GLenum
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: debug_message
+    name: id
+    type: GLuint
+  - mapping: severity
+    name: severity
+    type: GLenum
+  - mapping: message.size()
+    name: length
+    type: GLsizei
+  - mapping: '&message[0]'
+    name: message
+    type: char const*
+  return: void
+gtu:
+  name: debug_message_insert
+  params:
+  - name: source
+    type: gtu::constant const
+  - name: type
+    type: gtu::constant const
+  - name: debug_message
+    type: gtu::debug_message const
+  - name: severity
+    type: gtu::constant const
+  - name: message
+    type: std::string const&
+  return: void

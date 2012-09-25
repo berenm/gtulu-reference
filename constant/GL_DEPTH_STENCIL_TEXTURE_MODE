@@ -1,0 +1,17 @@
+categories:
+- texture_property
+- writable_texture_property
+gtu:
+  name: depth_stencil_texture_mode
+usage:
+- glGetTexParameterIiv.property
+- glGetTexParameterIuiv.property
+- glGetTexParameterfv.property
+- glGetTexParameteriv.property
+- glTexParameterIiv.property
+- glTexParameterIuiv.property
+- glTexParameterf.property
+- glTexParameterfv.property
+- glTexParameteri.property
+- glTexParameteriv.property
+value: 0x90ea

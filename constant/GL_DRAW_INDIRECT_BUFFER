@@ -6,6 +6,8 @@ usage:
 - glBindBuffer.target
 - glBufferData.target
 - glBufferSubData.target
+- glClearBufferData.target
+- glClearBufferSubData.target
 - glGetBufferParameteri64v.target
 - glGetBufferParameteriv.target
 - glGetBufferPointerv.target

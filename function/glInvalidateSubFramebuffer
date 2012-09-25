@@ -1,0 +1,37 @@
+gl:
+  name: glInvalidateSubFramebuffer
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: attachments.size()
+    name: numAttachments
+    type: GLsizei
+  - mapping: '&attachments[0]'
+    name: attachments
+    type: GLenum const*
+  - mapping: position[0]
+    name: x
+    type: GLint
+  - mapping: position[1]
+    name: y
+    type: GLint
+  - mapping: dimension[0]
+    name: width
+    type: GLint
+  - mapping: dimension[1]
+    name: height
+    type: GLint
+  return: void
+gtu:
+  name: invalidate_sub_framebuffer
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: attachments
+    type: std::vector< gtu::constant > const&
+  - name: position
+    type: gtu::vec2< int32_t > const&
+  - name: dimension
+    type: gtu::vec2< int32_t > const&
+  return: void

@@ -1,0 +1,8 @@
+categories:
+- internal_format_property
+gtu:
+  name: simultaneous_texture_and_depth_write
+usage:
+- glGetInternalformati64v.property
+- glGetInternalformativ.property
+value: 0x82ae

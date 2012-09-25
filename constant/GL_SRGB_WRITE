@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: srgb_write
+usage: []
+value: 0x8298

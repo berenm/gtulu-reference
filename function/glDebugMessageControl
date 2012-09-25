@@ -1,0 +1,36 @@
+gl:
+  name: glDebugMessageControl
+  params:
+  - mapping: source
+    name: source
+    type: GLenum
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: severity
+    name: severity
+    type: GLenum
+  - mapping: debug_messages.size()
+    name: count
+    type: GLsizei
+  - mapping: '&debug_messages[0]'
+    name: ids
+    type: GLuint const*
+  - mapping: enabled
+    name: enabled
+    type: GLboolean
+  return: void
+gtu:
+  name: debug_message_control
+  params:
+  - name: source
+    type: gtu::constant const
+  - name: type
+    type: gtu::constant const
+  - name: severity
+    type: gtu::constant const
+  - name: debug_messages
+    type: std::vector< gtu::debug_message > const&
+  - name: enabled
+    type: bool const
+  return: void

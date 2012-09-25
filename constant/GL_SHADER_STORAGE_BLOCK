@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_program_interface_query
+gtu:
+  name: shader_storage_block
+usage: []
+value: 0x92e6

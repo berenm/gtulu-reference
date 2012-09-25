@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_texture_buffer_range
+gtu:
+  name: texture_buffer_size
+usage: []
+value: 0x919e

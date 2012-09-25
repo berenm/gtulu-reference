@@ -1,0 +1,36 @@
+gl:
+  name: glGetProgramResourceName
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: programInterface
+    name: programInterface
+    type: GLenum
+  - mapping: index
+    name: index
+    type: GLuint
+  - mapping: name.capacity()
+    name: bufSize
+    type: GLsizei
+  - mapping: '&length'
+    name: length
+    type: GLsizei*
+  - mapping: '&name[0]'
+    name: name
+    type: char*
+  return: void
+gtu:
+  name: get_program_resource_name
+  params:
+  - name: program
+    type: gtu::program const
+  - name: programInterface
+    type: gtu::constant const
+  - name: index
+    type: uint32_t const
+  - name: length
+    type: gtu::size&
+  - name: name
+    type: std::string&
+  return: void

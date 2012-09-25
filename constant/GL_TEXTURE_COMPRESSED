@@ -4,6 +4,7 @@ categories:
 gtu:
   name: texture_compressed
 usage:
+- glGetInternalformati64v.property
 - glGetInternalformativ.property
 - glGetTexLevelParameterfv.property
 - glGetTexLevelParameteriv.property

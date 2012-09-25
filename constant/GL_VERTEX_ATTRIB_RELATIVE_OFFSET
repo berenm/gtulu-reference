@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_vertex_attrib_binding
+gtu:
+  name: vertex_attrib_relative_offset
+usage: []
+value: 0x82d5

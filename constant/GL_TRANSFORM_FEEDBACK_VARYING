@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_program_interface_query
+gtu:
+  name: transform_feedback_varying
+usage: []
+value: 0x92f4

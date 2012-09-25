@@ -14,5 +14,6 @@ usage:
 - glGetInteger64v.property
 - glGetIntegeri_v.property
 - glGetIntegerv.property
+- glGetInternalformati64v.property
 - glGetInternalformativ.property
 value: 0x80a9

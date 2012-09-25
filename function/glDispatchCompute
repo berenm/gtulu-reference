@@ -1,0 +1,23 @@
+gl:
+  name: glDispatchCompute
+  params:
+  - mapping: num_groups_x
+    name: num_groups_x
+    type: GLuint
+  - mapping: num_groups_y
+    name: num_groups_y
+    type: GLuint
+  - mapping: num_groups_z
+    name: num_groups_z
+    type: GLuint
+  return: void
+gtu:
+  name: dispatch_compute
+  params:
+  - name: num_groups_x
+    type: uint32_t const
+  - name: num_groups_y
+    type: uint32_t const
+  - name: num_groups_z
+    type: uint32_t const
+  return: void

@@ -1,0 +1,45 @@
+gl:
+  name: glGetDebugMessageLog
+  params:
+  - mapping: std::min(std::min(std::min(sources.capacity(), types.capacity()), std::min(debug_messages.capacity(),
+      severities.capacity())), lengths.capacity())
+    name: count
+    type: GLuint
+  - mapping: messageLog.capacity()
+    name: bufSize
+    type: GLsizei
+  - mapping: '&sources[0]'
+    name: sources
+    type: GLenum*
+  - mapping: '&types[0]'
+    name: types
+    type: GLenum*
+  - mapping: '&debug_messages[0]'
+    name: ids
+    type: GLuint*
+  - mapping: '&severities[0]'
+    name: severities
+    type: GLenum*
+  - mapping: '&lengths[0]'
+    name: lengths
+    type: GLsizei*
+  - mapping: '&messageLog[0]'
+    name: messageLog
+    type: GLchar*
+  return: GLuint
+gtu:
+  name: get_debug_message_log
+  params:
+  - name: sources
+    type: std::vector< gtu::constant >
+  - name: types
+    type: std::vector< gtu::constant >
+  - name: debug_messages
+    type: std::vector< gtu::debug_message >
+  - name: severities
+    type: std::vector< gtu::constant >
+  - name: lengths
+    type: std::vector< gtu::size >
+  - name: messageLog
+    type: std::string&
+  return: uint32_t

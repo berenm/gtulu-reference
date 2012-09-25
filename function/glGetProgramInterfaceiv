@@ -1,0 +1,28 @@
+gl:
+  name: glGetProgramInterfaceiv
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: programInterface
+    name: programInterface
+    type: GLenum
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: params
+    type: GLint*
+  return: void
+gtu:
+  name: get_program_interface
+  params:
+  - name: program
+    type: gtu::program const
+  - name: programInterface
+    type: gtu::constant const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: gtu::vec1< int32_t >&
+  return: void

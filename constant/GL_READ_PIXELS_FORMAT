@@ -1,0 +1,8 @@
+categories:
+- internal_format_property
+gtu:
+  name: read_pixels_format
+usage:
+- glGetInternalformati64v.property
+- glGetInternalformativ.property
+value: 0x828d
