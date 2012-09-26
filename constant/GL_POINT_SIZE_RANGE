@@ -1,7 +1,7 @@
 categories:
 - context_property
 gtu:
-  name: smooth_point_size_range
+  name: point_size_range
 usage:
 - glGetBooleani_v.property
 - glGetBooleanv.property
