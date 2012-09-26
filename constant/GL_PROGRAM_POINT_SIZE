@@ -1,7 +1,7 @@
 categories:
 - enableable_target
 gtu:
-  name: vertex_program_point_size
+  name: program_point_size
 usage:
 - glDisable.target
 - glEnable.target
