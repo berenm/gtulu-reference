@@ -1,0 +1,69 @@
+[submodule "gl/2.1"]
+	path = gl/2.1
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "gl/3.0/comp"]
+	path = gl/3.0/comp
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "gl/3.0/core"]
+	path = gl/3.0/core
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "gl/3.1/comp"]
+	path = gl/3.1/comp
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "gl/3.1/core"]
+	path = gl/3.1/core
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "gl/3.2/comp"]
+	path = gl/3.2/comp
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "gl/3.2/core"]
+	path = gl/3.2/core
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "gl/3.3/comp"]
+	path = gl/3.3/comp
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "gl/3.3/core"]
+	path = gl/3.3/core
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "gl/4.0/comp"]
+	path = gl/4.0/comp
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "gl/4.0/core"]
+	path = gl/4.0/core
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "gl/4.1/comp"]
+	path = gl/4.1/comp
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "gl/4.1/core"]
+	path = gl/4.1/core
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "gl/4.2/comp"]
+	path = gl/4.2/comp
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "gl/4.2/core"]
+	path = gl/4.2/core
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "gl/4.3/comp"]
+	path = gl/4.3/comp
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "gl/4.3/core"]
+	path = gl/4.3/core
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "man/2"]
+	path = man/2
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "man/3"]
+	path = man/3
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "man/gl/2.1"]
+	path = man/gl/2.1
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "man/gl/3"]
+	path = man/gl/3
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "man/gl/2"]
+	path = man/gl/2
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "man/gl/4"]
+	path = man/gl/4
+	url = git://github.com/berenm/gtulu-reference.git
