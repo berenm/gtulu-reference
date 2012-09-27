@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook MathML Module V1.1b1//EN"
               "http://www.oasis-open.org/docbook/xml/mathml/1.1CR1/dbmathml.dtd">
-<refentry id="glDrawElementsBaseVertex">
+<refentry id="glDrawElementsInstancedBaseVertex">
     <refmeta>
         <refmetainfo>
             <copyright>
@@ -40,7 +40,8 @@
                     Symbolic constants
                     <constant>GL_POINTS</constant>, <constant>GL_LINE_STRIP</constant>, <constant>GL_LINE_LOOP</constant>,
                     <constant>GL_LINES</constant>, <constant>GL_TRIANGLE_STRIP</constant>, <constant>GL_TRIANGLE_FAN</constant>,
-                    and <constant>GL_TRIANGLES</constant> are accepted.
+                    <constant>GL_TRIANGLES</constant>, <constant>GL_LINES_ADJACENCY</constant>, <constant>GL_LINE_STRIP_ADJACENCY</constant>,
+                    <constant>GL_TRIANGLES_ADJACENCY</constant>, <constant>GL_TRIANGLE_STRIP_ADJACENCY</constant> and <constant>GL_PATCHES</constant> are accepted.
                 </para>
             </listitem>
         </varlistentry>

@@ -41,7 +41,8 @@
                     Symbolic constants
                     <constant>GL_POINTS</constant>, <constant>GL_LINE_STRIP</constant>, <constant>GL_LINE_LOOP</constant>,
                     <constant>GL_LINES</constant>, <constant>GL_TRIANGLE_STRIP</constant>, <constant>GL_TRIANGLE_FAN</constant>,
-                    and <constant>GL_TRIANGLES</constant> are accepted.
+                    <constant>GL_TRIANGLES</constant>, <constant>GL_LINES_ADJACENCY</constant>, <constant>GL_LINE_STRIP_ADJACENCY</constant>,
+                    <constant>GL_TRIANGLES_ADJACENCY</constant>, <constant>GL_TRIANGLE_STRIP_ADJACENCY</constant> and <constant>GL_PATCHES</constant> are accepted.
                 </para>
             </listitem>
         </varlistentry>
@@ -110,10 +111,6 @@
             array. If the resulting value is larger than the maximum value representable by <parameter>type</parameter>, it is as if the calculation were upconverted to
             32-bit unsigned integers (with wrapping on overflow conditions). The operation is undefined if the sum would be negative.
         </para>
-    </refsect1>
-    <refsect1 id="notes"><title>Notes</title>
-        <function>glDrawRangeElementsBaseVertex</function> is only supported if the GL version is 3.2 or greater, or if
-            the <code>ARB_draw_elements_base_vertex</code> extension is supported.
     </refsect1>
     <refsect1 id="errors"><title>Errors</title>
         <para>

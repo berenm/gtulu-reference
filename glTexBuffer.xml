@@ -295,6 +295,36 @@
                         <entry align="center">1</entry>
                     </row>
                     <row>
+                        <entry align="left"><constant>GL_RGB32F</constant></entry>
+                        <entry align="left">float</entry>
+                        <entry align="left">3</entry>
+                        <entry align="left">NO</entry>
+                        <entry align="center">R</entry>
+                        <entry align="center">G</entry>
+                        <entry align="center">B</entry>
+                        <entry align="center">1</entry>
+                    </row>
+                    <row>
+                        <entry align="left"><constant>GL_RGB32I</constant></entry>
+                        <entry align="left">int</entry>
+                        <entry align="left">3</entry>
+                        <entry align="left">NO</entry>
+                        <entry align="center">R</entry>
+                        <entry align="center">G</entry>
+                        <entry align="center">B</entry>
+                        <entry align="center">1</entry>
+                    </row>
+                    <row>
+                        <entry align="left"><constant>GL_RGB32UI</constant></entry>
+                        <entry align="left">uint</entry>
+                        <entry align="left">3</entry>
+                        <entry align="left">NO</entry>
+                        <entry align="center">R</entry>
+                        <entry align="center">G</entry>
+                        <entry align="center">B</entry>
+                        <entry align="center">1</entry>
+                    </row>
+                    <row>
                         <entry align="left"><constant>GL_RGBA8</constant></entry>
                         <entry align="left">uint</entry>
                         <entry align="left">4</entry>

@@ -96,7 +96,7 @@
                 <funcdef>void <function>glSamplerParameterIiv</function></funcdef>
                 <paramdef>GLuint <parameter>sampler</parameter></paramdef>
                 <paramdef>GLenum <parameter>pname</parameter></paramdef>
-                <paramdef>const GLint * <parameter>params</parameter></paramdef>
+                <paramdef>const GLint *<parameter>params</parameter></paramdef>
             </funcprototype>
         </funcsynopsis>
         <funcsynopsis>
@@ -104,7 +104,7 @@
                 <funcdef>void <function>glSamplerParameterIuiv</function></funcdef>
                 <paramdef>GLuint <parameter>sampler</parameter></paramdef>
                 <paramdef>GLenum <parameter>pname</parameter></paramdef>
-                <paramdef>const GLuint * <parameter>params</parameter></paramdef>
+                <paramdef>const GLuint *<parameter>params</parameter></paramdef>
             </funcprototype>
         </funcsynopsis>
     </refsynopsisdiv>

@@ -29,6 +29,14 @@
         <paramdef>GLsizei <parameter>stride</parameter></paramdef>
         <paramdef>const GLvoid * <parameter>pointer</parameter></paramdef>
         </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glVertexAttribLPointer</function></funcdef>
+        <paramdef>GLuint <parameter>index</parameter></paramdef>
+        <paramdef>GLint <parameter>size</parameter></paramdef>
+        <paramdef>GLenum <parameter>type</parameter></paramdef>
+        <paramdef>GLsizei <parameter>stride</parameter></paramdef>
+        <paramdef>const GLvoid * <parameter>pointer</parameter></paramdef>
+        </funcprototype>
     </funcsynopsis>
     </refsynopsisdiv>
     <refsect1 id="parameters"><title>Parameters</title>
@@ -59,12 +67,15 @@
             <constant>GL_SHORT</constant>,
             <constant>GL_UNSIGNED_SHORT</constant>,
             <constant>GL_INT</constant>, and
-            <constant>GL_UNSIGNED_INT</constant> are accepted by both functions. Additionally
+            <constant>GL_UNSIGNED_INT</constant> are accepted by <function>glVertexAttribPointer</function> and <function>glVertexAttribIPointer</function>. Additionally
             <constant>GL_HALF_FLOAT</constant>,
             <constant>GL_FLOAT</constant>,
             <constant>GL_DOUBLE</constant>,
+            <constant>GL_FIXED</constant>,
             <constant>GL_INT_2_10_10_10_REV</constant>, and
             <constant>GL_UNSIGNED_INT_2_10_10_10_REV</constant> are accepted by <function>glVertexAttribPointer</function>.
+            <constant>GL_DOUBLE</constant> is also accepted by <function>glVertexAttribLPointer</function> and is
+            the only token accepted by the <parameter>type</parameter> parameter for that function.
             The initial value is <constant>GL_FLOAT</constant>.</para>
         </listitem>
         </varlistentry>
@@ -99,7 +110,8 @@
     </refsect1>
     <refsect1 id="description"><title>Description</title>
         <para>
-            <function>glVertexAttribPointer</function> and <function>glVertexAttribIPointer</function> specify the
+            <function>glVertexAttribPointer</function>, <function>glVertexAttribIPointer</function> and <function>glVertexAttribLPointer</function>
+            specify the
             location and data format of the array of generic vertex attributes at index <parameter>index</parameter>
             to use when rendering. <parameter>size</parameter> specifies the number of components per attribute and
             must be 1, 2, 3, 4, or <constant>GL_BGRA</constant>. <parameter>type</parameter> specifies the data type
@@ -116,6 +128,13 @@
             For <function>glVertexAttribIPointer</function>, only the integer types <constant>GL_BYTE</constant>,
             <constant>GL_UNSIGNED_BYTE</constant>, <constant>GL_SHORT</constant>, <constant>GL_UNSIGNED_SHORT</constant>,
             <constant>GL_INT</constant>, <constant>GL_UNSIGNED_INT</constant> are accepted. Values are always left as integer values.
+        </para>
+        <para>
+            <function>glVertexAttribLPointer</function> specifies state for a generic vertex attribute array associated
+            with a shader attribute variable declared with 64-bit double precision components. <parameter>type</parameter>
+            must be <constant>GL_DOUBLE</constant>. <parameter>index</parameter>, <parameter>size</parameter>, and
+            <parameter>stride</parameter> behave as described for <function>glVertexAttribPointer</function> and
+            <function>glVertexAttribIPointer</function>.
         </para>
         <para>
             If <parameter>pointer</parameter> is not <code>NULL</code>, a non-zero named buffer object must be bound to the
@@ -149,9 +168,6 @@
             <citerefentry><refentrytitle>glDrawElements</refentrytitle></citerefentry>, <citerefentry><refentrytitle>glDrawRangeElements</refentrytitle></citerefentry>,
             <citerefentry><refentrytitle>glDrawArrays</refentrytitle></citerefentry>, <citerefentry><refentrytitle>glMultiDrawArrays</refentrytitle></citerefentry>, or <citerefentry><refentrytitle>glMultiDrawElements</refentrytitle></citerefentry>
             is called.
-        </para>
-        <para>
-            <function>glVertexAttribIPointer</function> is available only if the GL version is 3.0 or higher.
         </para>
 
     </refsect1>

@@ -32,6 +32,12 @@
         <paramdef>GLint <parameter>location</parameter></paramdef>
         <paramdef>GLuint *<parameter>params</parameter></paramdef>
         </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glGetUniformdv</function></funcdef>
+        <paramdef>GLuint <parameter>program</parameter></paramdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLdouble *<parameter>params</parameter></paramdef>
+        </funcprototype>
     </funcsynopsis>
     </refsynopsisdiv>
     <refsect1 id="parameters"><title>Parameters</title>

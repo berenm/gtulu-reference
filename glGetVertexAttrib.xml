@@ -11,6 +11,9 @@
     <refname>glGetVertexAttribdv</refname>
     <refname>glGetVertexAttribfv</refname>
     <refname>glGetVertexAttribiv</refname>
+    <refname>glGetVertexAttribIiv</refname>
+    <refname>glGetVertexAttribIuiv</refname>
+    <refname>glGetVertexAttribLdv</refname>
     <refpurpose>Return a generic vertex attribute parameter</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
@@ -44,6 +47,12 @@
         <paramdef>GLuint <parameter>index</parameter></paramdef>
         <paramdef>GLenum <parameter>pname</parameter></paramdef>
         <paramdef>GLuint *<parameter>params</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glGetVertexAttribLdv</function></funcdef>
+        <paramdef>GLuint <parameter>index</parameter></paramdef>
+        <paramdef>GLenum <parameter>pname</parameter></paramdef>
+        <paramdef>GLdouble *<parameter>params</parameter></paramdef>
         </funcprototype>
     </funcsynopsis>
     </refsynopsisdiv>
@@ -219,6 +228,15 @@
             <parameter>index</parameter> is 0. The initial value
             for all other generic vertex attributes is
             (0,0,0,1).</para>
+            <para>
+                <function>glGetVertexAttribdv</function> and <function>glGetVertexAttribfv</function>
+                return the current attribute values as four single-precision floating-point values;
+                <function>glGetVertexAttribiv</function> reads them as floating-point values and
+                converts them to four integer values; <function>glGetVertexAttribIiv</function> and
+                <function>glGetVertexAttribIuiv</function> read and return them as signed or unsigned
+                integer values, respectively; <function>glGetVertexAttribLdv</function> reads and returns
+                them as four double-precision floating-point values.
+            </para>
         </listitem>
         </varlistentry>
     </variablelist>

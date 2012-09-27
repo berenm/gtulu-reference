@@ -37,7 +37,7 @@
                     <constant>GL_LINE_STRIP</constant>, <constant>GL_LINE_LOOP</constant>, <constant>GL_LINES</constant>,
                     <constant>GL_TRIANGLE_STRIP</constant>, <constant>GL_TRIANGLE_FAN</constant>, <constant>GL_TRIANGLES</constant>
                     <constant>GL_LINES_ADJACENCY</constant>, <constant>GL_LINE_STRIP_ADJACENCY</constant>,
-                    <constant>GL_TRIANGLES_ADJACENCY</constant> and<constant>GL_TRIANGLE_STRIP_ADJACENCY</constant>
+                    <constant>GL_TRIANGLES_ADJACENCY</constant>, <constant>GL_TRIANGLE_STRIP_ADJACENCY</constant> and <constant>GL_PATCHES</constant>
                     are accepted.
                 </para>
             </listitem>
@@ -86,18 +86,6 @@
         }
         instanceID = 0;
     }]]></programlisting>
-        </para>
-    </refsect1>
-    <refsect1 id="notes"><title>Notes</title>
-        <para>
-            <function>glDrawArraysInstanced</function> is available only if the GL version is 3.1 or greater.
-        </para>
-        <para>
-            <constant>GL_LINE_STRIP_ADJACENCY</constant>,
-            <constant>GL_LINES_ADJACENCY</constant>,
-            <constant>GL_TRIANGLE_STRIP_ADJACENCY</constant> and
-            <constant>GL_TRIANGLES_ADJACENCY</constant>
-            are available only if the GL version is 3.2 or greater.
         </para>
     </refsect1>
     <refsect1 id="errors"><title>Errors</title>

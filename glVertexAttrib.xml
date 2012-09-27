@@ -98,9 +98,9 @@
         <funcprototype>
         <funcdef>void <function>glVertexAttribI3ui</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLoint <parameter>v0</parameter></paramdef>
-        <paramdef>GLoint <parameter>v1</parameter></paramdef>
-        <paramdef>GLoint <parameter>v2</parameter></paramdef>
+        <paramdef>GLuint <parameter>v0</parameter></paramdef>
+        <paramdef>GLuint <parameter>v1</parameter></paramdef>
+        <paramdef>GLuint <parameter>v2</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttrib4f</function></funcdef>
@@ -149,6 +149,32 @@
         <paramdef>GLuint <parameter>v1</parameter></paramdef>
         <paramdef>GLuint <parameter>v2</parameter></paramdef>
         <paramdef>GLuint <parameter>v3</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glVertexAttribL1d</function></funcdef>
+        <paramdef>GLuint <parameter>index</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v0</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glVertexAttribL2d</function></funcdef>
+        <paramdef>GLuint <parameter>index</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v0</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v1</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glVertexAttribL3d</function></funcdef>
+        <paramdef>GLuint <parameter>index</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v0</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v1</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v2</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glVertexAttribL4d</function></funcdef>
+        <paramdef>GLuint <parameter>index</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v0</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v1</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v2</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v3</parameter></paramdef>
         </funcprototype>
     </funcsynopsis>
     </refsynopsisdiv>
@@ -352,6 +378,26 @@
         <paramdef>GLuint <parameter>index</parameter></paramdef>
         <paramdef>const GLuint *<parameter>v</parameter></paramdef>
         </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glVertexAttribL1dv</function></funcdef>
+        <paramdef>GLuint <parameter>index</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>v</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glVertexAttribL2dv</function></funcdef>
+        <paramdef>GLuint <parameter>index</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>v</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glVertexAttribL3dv</function></funcdef>
+        <paramdef>GLuint <parameter>index</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>v</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glVertexAttribL4dv</function></funcdef>
+        <paramdef>GLuint <parameter>index</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>v</parameter></paramdef>
+        </funcprototype>
     </funcsynopsis>
     </refsynopsisdiv>
     <refsect1 id="parameters2"><title>Parameters</title>
@@ -441,10 +487,7 @@
     </variablelist>
     </refsect1>
     <refsect1 id="description"><title>Description</title>
-    <para>OpenGL defines a number of standard vertex attributes that
-    applications can modify with standard API entry points (color,
-    normal, texture coordinates, etc.). The
-    <function>glVertexAttrib</function> family of entry points
+    <para>The <function>glVertexAttrib</function> family of entry points
     allows an application to pass generic vertex attributes in
     numbered locations.</para>
 
@@ -507,6 +550,12 @@
             natural type.
         </para>
 
+        <para>
+            The commands containing <function>L</function> indicate that
+            the arguments are full 64-bit quantities and should be passed directly
+            to shader inputs declared as 64-bit double precision types.
+        </para>
+
     <para>OpenGL Shading Language attribute variables are allowed to
     be of type mat2, mat3, or mat4. Attributes of these types may be
     loaded using the <function>glVertexAttrib</function> entry
@@ -559,14 +608,7 @@
     attributes with standard attributes.</para>
 
         <para>
-            <function>glVertexAttrib4bv</function>, <function>glVertexAttrib4sv</function>, 
-            <function>glVertexAttrib4iv</function>, <function>glVertexAttrib4ubv</function>, 
-            <function>glVertexAttrib4usv</function>, <function>glVertexAttrib4uiv</function>, and
-            <function>glVertexAttrib4N</function> versions are available only if the GL version is 3.1 or higher.
-        </para>
-
-        <para>
-            <function>glVertexAttribP</function> versions are available only if the GL version is 3.3 or higher.
+            <function>glVertexAttribL</function> versions are available only if the GL version is 4.1 or higher.
         </para>
     </refsect1>
     <refsect1 id="errors"><title>Errors</title>
@@ -579,6 +621,12 @@
         <parameter>type</parameter> other than
     <constant>GL_INT_10_10_10_2</constant> or
         <constant>GL_UNSIGNED_INT_10_10_10_2</constant>.</para>
+
+    <para><constant>GL_INVALID_ENUM</constant> is generated if
+    <function>glVertexAttribL</function> is used with a 
+        <parameter>type</parameter> other than
+    <constant>GL_DOUBLE</constant>.</para>
+
     </refsect1>
     <refsect1 id="associatedgets"><title>Associated Gets</title>
     <para><citerefentry><refentrytitle>glGet</refentrytitle></citerefentry>
@@ -603,6 +651,7 @@
     <refsect1 id="Copyright"><title>Copyright</title>
         <para>
             Copyright <trademark class="copyright"></trademark> 2003-2005 3Dlabs Inc. Ltd. 
+            Copyright <trademark class="copyright"></trademark> 2010 Khronos Group.
             This material may be distributed subject to the terms and conditions set forth in 
             the Open Publication License, v 1.0, 8 June 1999.
             <ulink url="http://opencontent.org/openpub/">http://opencontent.org/openpub/</ulink>.

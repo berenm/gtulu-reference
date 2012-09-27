@@ -45,8 +45,8 @@
                     <constant>GL_TRIANGLE_STRIP</constant>,
                     <constant>GL_TRIANGLE_FAN</constant>,
                     <constant>GL_TRIANGLES</constant>,
-                    <constant>GL_TRIANGLE_STRIP_ADJACENCY</constant> and
-                    <constant>GL_TRIANGLES_ADJACENCY</constant>
+                    <constant>GL_TRIANGLE_STRIP_ADJACENCY</constant>,
+                    <constant>GL_TRIANGLES_ADJACENCY</constant> and <constant>GL_PATCHES</constant>
                     are accepted.
                 </para>
             </listitem>

@@ -311,6 +311,27 @@
             and <constant>GL_RGBA</constant> must match exactly.)
         </para>
         <para>
+            <parameter>internalFormat</parameter> may be one of the base internal formats shown in
+            Table 1, below
+        </para>
+        <para>
+            <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="baseformattable.xml" />
+        </para>
+        <para>
+            <parameter>internalFormat</parameter> may also be one of the sized internal formats
+            shown in Table 2, below
+        </para>
+        <para>
+            <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="internalformattable.xml" />
+        </para>
+        <para>
+            Finally, <parameter>internalFormat</parameter> may also be one of the generic or compressed
+            compressed texture formats shown in Table 3 below
+        </para>
+        <para>
+            <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="compressedformattable.xml" />
+        </para>
+        <para>
             If the <parameter>internalFormat</parameter> parameter is one of the generic compressed formats,
             <constant>GL_COMPRESSED_RED</constant>, <constant>GL_COMPRESSED_RG</constant>,
             <constant>GL_COMPRESSED_RGB</constant>, or
@@ -634,8 +655,9 @@
     </refsect1>
     <refsect1 id="Copyright"><title>Copyright</title>
         <para>
-            Copyright <trademark class="copyright"></trademark> 1991-2006
-            Silicon Graphics, Inc. This document is licensed under the SGI
+            Copyright <trademark class="copyright"></trademark> 1991-2006 Silicon Graphics, Inc.
+            Copyright <trademark class="copyright"></trademark> 2011 Khronos Group.
+            This document is licensed under the SGI
             Free Software B License. For details, see
             <ulink url="http://oss.sgi.com/projects/FreeB/">http://oss.sgi.com/projects/FreeB/</ulink>.
         </para>

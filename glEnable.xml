@@ -128,7 +128,7 @@
             which can assume one of the following values:
         </para>
         <para>
-            Some of the GL's capabilities are indicated. <function>glEnablei</function> and <function>glDisablei</function> enable and disable
+            Some of the GL's capabilities are indexed. <function>glEnablei</function> and <function>glDisablei</function> enable and disable
             indexed capabilities.
         </para>
         <variablelist>
@@ -175,6 +175,33 @@
                         If enabled,
                         cull polygons based on their winding in window coordinates.
                         See <citerefentry><refentrytitle>glCullFace</refentrytitle></citerefentry>.
+                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><constant>GL_DEBUG_OUTPUT</constant></term>
+                <listitem>
+                <para>
+                </para>
+                    <para>
+                        If enabled, debug messages are produced by a debug context. When disabled,
+                        the debug message log is silenced. Note that in a non-debug context, very
+                        few, if any messages might be produced, even when <constant>GL_DEBUG_OUTPUT</constant>
+                        is enabled.
+                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><constant>GL_DEBUG_OUTPUT_SYNCHRONOUS</constant></term>
+                <listitem>
+                <para>
+                </para>
+                    <para>
+                        If enabled, debug messages are produced synchronously by a debug context. If disabled,
+                        debug messages may be produced asynchronously. In particular, they may be delayed relative
+                        to the execution of GL commands, and the debug callback function may be called from
+                        a thread other than that in which the commands are executed.
+                        See <citerefentry><refentrytitle>glDebugMessageCallback</refentrytitle></citerefentry>.
                     </para>
                 </listitem>
             </varlistentry>
@@ -329,6 +356,22 @@
                 </listitem>
             </varlistentry>
             <varlistentry>
+                <term><constant>GL_PRIMITIVE_RESTART_FIXED_INDEX</constant></term>
+                <listitem>
+                <para>
+                </para>
+                    <para>
+                        Enables primitive restarting with a fixed index. If enabled, any one of the
+                        draw commands which transfers a set of generic attribute array elements to the GL will
+                        restart the primitive when the index of the vertex is equal to the fixed primitive
+                        index for the specified index type. The fixed index is equal to
+                        <inlineequation><mml:math><mml:msup><mml:mn>2</mml:mn><mml:mi>n</mml:mi></mml:msup><mml:mo>&minus;</mml:mo><mml:mn>1</mml:mn></mml:math></inlineequation>
+                        where <emphasis>n</emphasis> is equal to 8 for <constant>GL_UNSIGNED_BYTE</constant>,
+                        16 for <constant>GL_UNSIGNED_SHORT</constant> and 32 for <constant>GL_UNSIGNED_INT</constant>.
+                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
                 <term><constant>GL_SAMPLE_ALPHA_TO_COVERAGE</constant></term>
                 <listitem>
                 <para>
@@ -367,6 +410,31 @@
                 </listitem>
             </varlistentry>
             <varlistentry>
+                <term><constant>GL_SAMPLE_SHADING</constant></term>
+                <listitem>
+                <para>
+                </para>
+                    <para>
+                        If enabled, the active fragment shader is run once for each covered sample, or at
+                        fraction of this rate as determined by the current value of <constant>GL_MIN_SAMPLE_SHADING_VALUE</constant>.
+                        See <citerefentry><refentrytitle>glMinSampleShading</refentrytitle></citerefentry>.
+                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><constant>GL_SAMPLE_MASK</constant></term>
+                <listitem>
+                <para>
+                </para>
+                    <para>
+                        If enabled, the sample coverage mask generated for a fragment during rasterization
+                        will be ANDed with the value of <constant>GL_SAMPLE_MASK_VALUE</constant> before
+                        shading occurs.
+                        See <citerefentry><refentrytitle>glSampleMaski</refentrytitle></citerefentry>.
+                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
                 <term><constant>GL_SCISSOR_TEST</constant></term>
                 <listitem>
                 <para>
@@ -396,7 +464,10 @@
                 <para>
                 </para>
                     <para>
-                        If enabled, modifies the way sampling is performed on cube map textures.  See the spec for more information.
+                        If enabled, cubemap textures are sampled such that when linearly sampling from the border
+                        between two adjacent faces, texels from both faces are used to generate the final sample
+                        value. When disabled, texels from only a single face are used to construct the final
+                        sample value.
                     </para>
                 </listitem>
             </varlistentry>
@@ -430,6 +501,12 @@
         </para>
         <para>
             <constant>GL_TEXTURE_CUBE_MAP_SEAMLESS</constant> is available only if the GL version is 3.2 or greater.
+        </para>
+        <para>
+            <constant>GL_PRIMITIVE_RESTART_FIXED_INDEX</constant> is available only if the GL version is 4.3 or greater.
+        </para>
+        <para>
+            <constant>GL_DEBUG_OUTPUT</constant> and <constant>GL_DEBUG_OUTPUT_SYNCHRONOUS</constant> are available only if the GL version is 4.3 or greater.
         </para>
         <para>
             Any token accepted by <function>glEnable</function> or <function>glDisable</function> is also accepted by
@@ -475,7 +552,7 @@
     <refsect1 id="Copyright"><title>Copyright</title>
         <para>
             Copyright <trademark class="copyright"></trademark> 1991-2006
-            Silicon Graphics, Inc. Copyright <trademark class="copyright"></trademark> 2010 Khronos Group.
+            Silicon Graphics, Inc. Copyright <trademark class="copyright"></trademark> 2010-2011 Khronos Group.
             This document is licensed under the SGI
             Free Software B License. For details, see
             <ulink url="http://oss.sgi.com/projects/FreeB/">http://oss.sgi.com/projects/FreeB/</ulink>.

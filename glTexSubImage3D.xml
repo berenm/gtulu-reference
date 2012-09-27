@@ -357,7 +357,7 @@
             <inlineequation><mml:math><mml:mi mathvariant="italic">h</mml:mi></mml:math></inlineequation>
             is the <constant>GL_TEXTURE_HEIGHT</constant>, 
             <inlineequation><mml:math><mml:mi mathvariant="italic">d</mml:mi></mml:math></inlineequation>
-            is the <constant>GL_TEXTURE_DEPTH</constant>
+            is the <constant>GL_TEXTURE_DEPTH</constant> 
             and 
             <inlineequation><mml:math><mml:mi mathvariant="italic">b</mml:mi></mml:math></inlineequation>
             is the border width of the texture image being modified.
@@ -374,7 +374,8 @@
         </para>
         <para>
             <constant>GL_INVALID_OPERATION</constant> is generated if the texture array has not
-            been defined by a previous <citerefentry><refentrytitle>glTexImage3D</refentrytitle></citerefentry> operation.
+            been defined by a previous <citerefentry><refentrytitle>glTexImage3D</refentrytitle></citerefentry> 
+            or <citerefentry><refentrytitle>glTexStorage3D</refentrytitle></citerefentry> operation.
         </para>
         <para>
             <constant>GL_INVALID_OPERATION</constant> is generated if <parameter>type</parameter> is one of

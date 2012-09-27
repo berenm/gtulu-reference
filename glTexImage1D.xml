@@ -60,39 +60,9 @@
             <listitem>
                 <para>
                     Specifies the number of color components in the texture.
-                    Must be one of the following symbolic constants:
-                    <constant>GL_COMPRESSED_RED</constant>,
-                    <constant>GL_COMPRESSED_RG</constant>,
-                    <constant>GL_COMPRESSED_RGB</constant>,
-                    <constant>GL_COMPRESSED_RGBA</constant>,
-                    <constant>GL_COMPRESSED_SRGB</constant>,
-                    <constant>GL_COMPRESSED_SRGB_ALPHA</constant>,
-                    <constant>GL_DEPTH_COMPONENT</constant>,
-                    <constant>GL_DEPTH_COMPONENT16</constant>,
-                    <constant>GL_DEPTH_COMPONENT24</constant>,
-                    <constant>GL_DEPTH_COMPONENT32</constant>,
-                    <constant>GL_R3_G3_B2</constant>,
-                    <constant>GL_RED</constant>,
-                    <constant>GL_RG</constant>,
-                    <constant>GL_RGB</constant>,
-                    <constant>GL_RGB4</constant>,
-                    <constant>GL_RGB5</constant>,
-                    <constant>GL_RGB8</constant>,
-                    <constant>GL_RGB10</constant>,
-                    <constant>GL_RGB12</constant>,
-                    <constant>GL_RGB16</constant>,
-                    <constant>GL_RGBA</constant>,
-                    <constant>GL_RGBA2</constant>,
-                    <constant>GL_RGBA4</constant>,
-                    <constant>GL_RGB5_A1</constant>,
-                    <constant>GL_RGBA8</constant>,
-                    <constant>GL_RGB10_A2</constant>,
-                    <constant>GL_RGBA12</constant>,
-                    <constant>GL_RGBA16</constant>,
-                    <constant>GL_SRGB</constant>,
-                    <constant>GL_SRGB8</constant>,
-                    <constant>GL_SRGB_ALPHA</constant>, or 
-                    <constant>GL_SRGB8_ALPHA8</constant>.
+                    Must be one of base internal formats given in Table 1,
+                    one of the sized internal formats given in Table 2, or one
+                    of the compressed internal formats given in Table 3, below.
                 </para>
             </listitem>
         </varlistentry>
@@ -308,6 +278,27 @@
             it may not match exactly.
             (The representations specified by <constant>GL_RED</constant>, <constant>GL_RG</constant>,
             <constant>GL_RGB</constant> and <constant>GL_RGBA</constant> must match exactly.)
+        </para>
+        <para>
+            <parameter>internalFormat</parameter> may be one of the base internal formats shown in
+            Table 1, below
+        </para>
+        <para>
+            <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="baseformattable.xml" />
+        </para>
+        <para>
+            <parameter>internalFormat</parameter> may also be one of the sized internal formats
+            shown in Table 2, below
+        </para>
+        <para>
+            <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="internalformattable.xml" />
+        </para>
+        <para>
+            Finally, <parameter>internalFormat</parameter> may also be one of the generic or compressed
+            compressed texture formats shown in Table 3 below
+        </para>
+        <para>
+            <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="compressedformattable.xml" />
         </para>
         <para>
         	If the <parameter>internalFormat</parameter> parameter is one of the generic compressed formats,
@@ -591,8 +582,9 @@
     </refsect1>
     <refsect1 id="Copyright"><title>Copyright</title>
         <para>
-            Copyright <trademark class="copyright"></trademark> 1991-2006
-            Silicon Graphics, Inc. This document is licensed under the SGI
+            Copyright <trademark class="copyright"></trademark> 1991-2006 Silicon Graphics, Inc.
+            Copyright <trademark class="copyright"></trademark> 2011 Khronos Group.
+            This document is licensed under the SGI
             Free Software B License. For details, see
             <ulink url="http://oss.sgi.com/projects/FreeB/">http://oss.sgi.com/projects/FreeB/</ulink>.
         </para>

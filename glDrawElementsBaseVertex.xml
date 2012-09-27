@@ -39,7 +39,8 @@
                     Symbolic constants
                     <constant>GL_POINTS</constant>, <constant>GL_LINE_STRIP</constant>, <constant>GL_LINE_LOOP</constant>,
                     <constant>GL_LINES</constant>, <constant>GL_TRIANGLE_STRIP</constant>, <constant>GL_TRIANGLE_FAN</constant>,
-                    and <constant>GL_TRIANGLES</constant> are accepted.
+                    <constant>GL_TRIANGLES</constant>, <constant>GL_LINES_ADJACENCY</constant>, <constant>GL_LINE_STRIP_ADJACENCY</constant>,
+                    <constant>GL_TRIANGLES_ADJACENCY</constant>, <constant>GL_TRIANGLE_STRIP_ADJACENCY</constant> and <constant>GL_PATCHES</constant> are accepted.
                 </para>
             </listitem>
         </varlistentry>

@@ -134,8 +134,9 @@
     <constant>NULL</constant> can be passed in the
     <parameter>length</parameter> argument.</para>
 
-    <para>The <parameter>type</parameter> argument will return a
-    pointer to the attribute variable's data type. The symbolic
+    <para>The <parameter>type</parameter> argument specifies a
+    pointer to a variable into which the attribute variable's data type
+    will be written. The symbolic
     constants <constant>GL_FLOAT</constant>,
     <constant>GL_FLOAT_VEC2</constant>,
     <constant>GL_FLOAT_VEC3</constant>,
@@ -155,8 +156,22 @@
     <constant>GL_INT_VEC4</constant>,
     <constant>GL_UNSIGNED_INT_VEC</constant>,
     <constant>GL_UNSIGNED_INT_VEC2</constant>,
-    <constant>GL_UNSIGNED_INT_VEC3</constant>, or
-    <constant>GL_UNSIGNED_INT_VEC4</constant> may be returned. The
+    <constant>GL_UNSIGNED_INT_VEC3</constant>,
+    <constant>GL_UNSIGNED_INT_VEC4</constant>,
+    <constant>DOUBLE</constant>,
+    <constant>DOUBLE_VEC2</constant>,
+    <constant>DOUBLE_VEC3</constant>,
+    <constant>DOUBLE_VEC4</constant>,
+    <constant>DOUBLE_MAT2</constant>,
+    <constant>DOUBLE_MAT3</constant>,
+    <constant>DOUBLE_MAT4</constant>,
+    <constant>DOUBLE_MAT2x3</constant>,
+    <constant>DOUBLE_MAT2x4</constant>,
+    <constant>DOUBLE_MAT3x2</constant>,
+    <constant>DOUBLE_MAT3x4</constant>,
+    <constant>DOUBLE_MAT4x2</constant>, or
+    <constant>DOUBLE_MAT4x3</constant>
+     may be returned. The
     <parameter>size</parameter> argument will return the size of the
     attribute, in units of the type returned in
     <parameter>type</parameter>.</para>

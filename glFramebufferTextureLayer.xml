@@ -86,11 +86,6 @@
             or multisample array texture.
         </para>
     </refsect1>
-    <refsect1 id="notes"><title>Notes</title>
-        <para>
-            <function>glFramebufferTextureLayer</function> is available only if the GL version is 3.2 or greater.
-        </para>
-    </refsect1>
     <refsect1 id="errors"><title>Errors</title>
         <para>
             <constant>GL_INVALID_ENUM</constant> is generated if <parameter>target</parameter> is not one of the accepted tokens.
