@@ -1,0 +1,10 @@
+categories:
+- tex_env_property
+gtu:
+  name: src1_alpha
+usage:
+- glGetTexEnvfv.property
+- glGetTexEnviv.property
+- glTexEnvf.property
+- glTexEnvi.property
+value: 0x8589
