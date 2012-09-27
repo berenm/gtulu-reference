@@ -1,7 +1,0 @@
-categories:
-- gl_VERSION_3_2
-- gl_ARB_provoking_vertex
-gtu:
-  name: quads_follow_provoking_vertex_convention
-usage: []
-value: 0x8e4c
