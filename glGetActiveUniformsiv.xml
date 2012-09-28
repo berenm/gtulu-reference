@@ -777,8 +777,10 @@
     <constant>GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS</constant>,
     <constant>GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS</constant>,
     <constant>GL_MAX_GEOMETRY_UNIFORM_COMPONENTS</constant>,
-    <constant>GL_MAX_FRAGMENT_UNIFORM_COMPONENTS</constant>, or
-    <constant>GL_MAX_COMBINED_UNIFORM_COMPONENTS</constant>.</para>
+    <constant>GL_MAX_FRAGMENT_UNIFORM_COMPONENTS</constant>, 
+    <constant>GL_MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS</constant>, 
+    <constant>GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS</constant>, or
+    <constant>GL_MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS</constant>.</para>
 
     <para><citerefentry><refentrytitle>glGetProgram</refentrytitle></citerefentry>
     with argument <constant>GL_ACTIVE_UNIFORMS</constant> or

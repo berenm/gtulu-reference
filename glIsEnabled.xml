@@ -274,7 +274,7 @@
                     </row>
                     <row>
                         <entry align="left">
-                        <constant>GL_TEXTURE_CUBEMAP_SEAMLESS</constant>
+                        <constant>GL_TEXTURE_CUBE_MAP_SEAMLESS</constant>
                         </entry>
                         <entry align="left">
                         <citerefentry><refentrytitle>glEnable</refentrytitle></citerefentry>

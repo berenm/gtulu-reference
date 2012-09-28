@@ -61,7 +61,7 @@
     <refsect1 id="description"><title>Description</title>
         <para>
             <function>glFlushMappedBufferRange</function> indicates that modifications have been made to a range of a mapped buffer.
-            The buffer must previously have been mapped with the <constant>GL_MAP_FLUSH_EXPLICIT</constant> flag. <parameter>offset</parameter>
+            The buffer must previously have been mapped with the <constant>GL_MAP_FLUSH_EXPLICIT_BIT</constant> flag. <parameter>offset</parameter>
             and <parameter>length</parameter> indicate the modified subrange of the mapping, in basic units. The specified subrange to flush
             is relative to the start of the currently mapped range of the buffer. <function>glFlushMappedBufferRange</function> may be called
             multiple times to indicate distinct subranges of the mapping which require flushing.
@@ -77,7 +77,7 @@
         </para>
         <para>
             <constant>GL_INVALID_OPERATION</constant> is generated if the buffer bound to <parameter>target</parameter> is not
-            mapped, or is mapped without the <constant>GL_MAP_FLUSH_EXPLICIT</constant> flag.
+            mapped, or is mapped without the <constant>GL_MAP_FLUSH_EXPLICIT_BIT</constant> flag.
         </para>
     </refsect1>
     <refsect1 id="seealso"><title>See Also</title>

@@ -1086,7 +1086,7 @@
                 </listitem>
             </varlistentry>
             <varlistentry>
-                <term><constant>GL_MAX_DUALSOURCE_DRAW_BUFFERS</constant></term>
+                <term><constant>GL_MAX_DUAL_SOURCE_DRAW_BUFFERS</constant></term>
                 <listitem>
               <para>
               </para>
@@ -1394,7 +1394,7 @@
                         <parameter>params</parameter> returns one value.
                         The value gives a rough estimate of the largest rectangular texture that
                         the GL can handle. The value must be at least 1024.
-                        Use <constant>GL_PROXY_RECTANGLE_TEXTURE</constant>
+                        Use <constant>GL_PROXY_TEXTURE_RECTANGLE</constant>
                         to determine if a texture is too large.
                         See <citerefentry><refentrytitle>glTexImage2D</refentrytitle></citerefentry>.
                     </para>
@@ -2711,7 +2711,7 @@
                 </listitem>
             </varlistentry>
             <varlistentry>
-                <term><constant>GL_TEXTURE_BUFFER_BINDING</constant></term>
+                <term><constant>GL_TEXTURE_BINDING_BUFFER</constant></term>
                 <listitem>
               <para>
               </para>
