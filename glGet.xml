@@ -662,31 +662,6 @@
                 </listitem>
             </varlistentry>
             <varlistentry>
-                <term><constant>GL_LINE_WIDTH_GRANULARITY</constant></term>
-                <listitem>
-              <para>
-              </para>
-                    <para>
-                        <parameter>params</parameter> returns one value,
-                        the width difference between adjacent supported widths for antialiased lines.
-                        See <citerefentry><refentrytitle>glLineWidth</refentrytitle></citerefentry>.
-                    </para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><constant>GL_LINE_WIDTH_RANGE</constant></term>
-                <listitem>
-              <para>
-              </para>
-                    <para>
-                        <parameter>params</parameter> returns two values:
-                        the smallest and largest supported widths for antialiased
-                        lines.
-                        See <citerefentry><refentrytitle>glLineWidth</refentrytitle></citerefentry>.
-                    </para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
                 <term><constant>GL_LOGIC_OP_MODE</constant></term>
                 <listitem>
               <para>
@@ -1025,20 +1000,6 @@
                         the maximum size in basic machine units of a uniform block.  
                         The value must be at least 16384.
                         See <citerefentry><refentrytitle>glUniformBlockBinding</refentrytitle></citerefentry>.
-                    </para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><constant>GL_MAX_VARYING_FLOATS</constant></term>
-                <listitem>
-              <para>
-              </para>
-                    <para>
-                        <parameter>params</parameter> returns one value,
-                        the maximum number of interpolators available for processing varying variables used by
-                        vertex and fragment shaders. This value represents the number of individual floating-point 
-                        values that can be interpolated; varying variables declared as vectors, matrices, and arrays 
-                        will all consume multiple interpolators. The value must be at least 32.
                     </para>
                 </listitem>
             </varlistentry>
@@ -2345,21 +2306,6 @@
                     <para>
                         <parameter>params</parameter> returns one value,
                         the flags with which the context was created (such as debugging functionality).
-                    </para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><constant>GL_VERTEX_PROGRAM_POINT_SIZE</constant></term>
-                <listitem>
-              <para>
-              </para>
-                    <para>
-                        <parameter>params</parameter> returns a single boolean value indicating whether vertex
-                        program point size mode is enabled. If enabled, and a vertex shader is active, then the
-                        point size is taken from the shader built-in <code>gl_PointSize</code>. If disabled,
-                        and a vertex shader is active, then the point size is taken from the point state as specified
-                        by <citerefentry><refentrytitle>glPointSize</refentrytitle></citerefentry>.
-                        The initial value is <constant>GL_FALSE</constant>.
                     </para>
                 </listitem>
             </varlistentry>
