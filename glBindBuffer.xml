@@ -138,7 +138,7 @@
             but will not directly affect transform feedback state. Instead, the indexed <constant>GL_TRANSFORM_FEEDBACK_BUFFER</constant>
             bindings must be used through a call to <citerefentry><refentrytitle>glBindBufferBase</refentrytitle></citerefentry>
             or <citerefentry><refentrytitle>glBindBufferRange</refentrytitle></citerefentry>. This will affect the generic
-            <constant>GL_TRANSFORM_FEEDABCK_BUFFER</constant> binding.
+            <constant>GL_TRANSFORM_FEEDBACK_BUFFER</constant> binding.
         </para>
         <para>
             Likewise, the <constant>GL_UNIFORM_BUFFER</constant> buffer binding point may be used, but does not directly affect
@@ -178,10 +178,10 @@
             <citerefentry><refentrytitle>glGet</refentrytitle></citerefentry> with argument <constant>GL_ARRAY_BUFFER_BINDING</constant>
         </para>
         <para>
-            <citerefentry><refentrytitle>glGet</refentrytitle></citerefentry> with argument <constant>GL_COPY_READ_BUFFER_BINDING</constant>
+            <citerefentry><refentrytitle>glGet</refentrytitle></citerefentry> with argument <constant>GL_COPY_READ_BUFFER</constant>
         </para>
         <para>
-            <citerefentry><refentrytitle>glGet</refentrytitle></citerefentry> with argument <constant>GL_COPY_WRITE_BUFFER_BINDING</constant>
+            <citerefentry><refentrytitle>glGet</refentrytitle></citerefentry> with argument <constant>GL_COPY_WRITE_BUFFER</constant>
         </para>
         <para>
             <citerefentry><refentrytitle>glGet</refentrytitle></citerefentry> with argument <constant>GL_ELEMENT_ARRAY_BUFFER_BINDING</constant>

@@ -830,7 +830,7 @@
                 </listitem>
             </varlistentry>
             <varlistentry>
-                <term><constant>GL_MAX_DUALSOURCE_DRAW_BUFFERS</constant></term>
+                <term><constant>GL_MAX_DUAL_SOURCE_DRAW_BUFFERS</constant></term>
                 <listitem>
               <para>
               </para>
@@ -933,7 +933,7 @@
                         <parameter>params</parameter> returns one value.
                         The value gives a rough estimate of the largest rectangular texture that
                         the GL can handle. The value must be at least 1024.
-                        Use <constant>GL_PROXY_RECTANGLE_TEXTURE</constant>
+                        Use <constant>GL_PROXY_TEXTURE_RECTANGLE</constant>
                         to determine if a texture is too large.
                         See <citerefentry><refentrytitle>glTexImage2D</refentrytitle></citerefentry>.
                     </para>
@@ -2076,7 +2076,7 @@
                 </listitem>
             </varlistentry>
             <varlistentry>
-                <term><constant>GL_TEXTURE_BUFFER_BINDING</constant></term>
+                <term><constant>GL_TEXTURE_BINDING_BUFFER</constant></term>
                 <listitem>
               <para>
               </para>
@@ -2402,7 +2402,7 @@
         </para>
         <para>
             <constant>GL_MAX_RECTANGLE_TEXTURE_SIZE</constant>, <constant>GL_MAX_TEXTURE_BUFFER_SIZE</constant>, 
-            <constant>GL_UNIFORM_BUFFER_BINDING</constant>, <constant>GL_TEXTURE_BUFFER_BINDING</constant>,
+            <constant>GL_UNIFORM_BUFFER_BINDING</constant>, <constant>GL_TEXTURE_BINDING_BUFFER</constant>,
             <constant>GL_MAX_VERTEX_UNIFORM_BLOCKS</constant>, <constant>GL_MAX_FRAGMENT_UNIFORM_BLOCKS</constant>,
             <constant>GL_MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS</constant>, <constant>GL_MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS</constant>
             <constant>GL_MAX_COMBINED_UNIFORM_BLOCKS</constant>, <constant>GL_MAX_UNIFORM_BLOCK_SIZE</constant>,
@@ -2420,7 +2420,7 @@
             the GL version is 3.2 or greater.
         </para>
         <para>
-            <constant>GL_MAX_DUALSOURCE_DRAW_BUFFERS</constant>, <constant>GL_SAMPLER_BINDING</constant>, and
+            <constant>GL_MAX_DUAL_SOURCE_DRAW_BUFFERS</constant>, <constant>GL_SAMPLER_BINDING</constant>, and
             <constant>GL_TIMESTAMP</constant> are available only if the GL version is 3.3 or greater.
         </para>
     </refsect1>

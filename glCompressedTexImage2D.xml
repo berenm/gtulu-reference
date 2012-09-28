@@ -132,7 +132,7 @@
         </para>
         <para>
             If <parameter>target</parameter> is <constant>GL_PROXY_TEXTURE_2D</constant>, <constant>GL_PROXY_TEXTURE_1D_ARRAY</constant>
-            or <constant>GL_PROXY_CUBE_MAP</constant>, no data is read from <parameter>data</parameter>, but
+            or <constant>GL_PROXY_TEXTURE_CUBE_MAP</constant>, no data is read from <parameter>data</parameter>, but
             all of the texture image state is recalculated, checked for consistency,
             and checked against the implementation's capabilities.  If the
             implementation cannot handle a texture of the requested texture size, it
