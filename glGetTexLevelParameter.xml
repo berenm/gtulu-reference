@@ -95,7 +95,6 @@
                     <constant>GL_TEXTURE_HEIGHT</constant>,
                     <constant>GL_TEXTURE_DEPTH</constant>,
                     <constant>GL_TEXTURE_INTERNAL_FORMAT</constant>,
-                    <constant>GL_TEXTURE_BORDER</constant>,
                     <constant>GL_TEXTURE_RED_SIZE</constant>,
                     <constant>GL_TEXTURE_GREEN_SIZE</constant>,
                     <constant>GL_TEXTURE_BLUE_SIZE</constant>,
