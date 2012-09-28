@@ -225,18 +225,15 @@
         <para>
             <constant>GL_INVALID_VALUE</constant> is generated if 
             <inlineequation><mml:math>
-                <!-- eqn: xoffset  <  -b: -->
+                <!-- eqn: xoffset  <  0: -->
                 <mml:mrow>
                     <mml:mi mathvariant="italic">xoffset</mml:mi>
                     <mml:mo>&lt;</mml:mo>
-                    <mml:mrow>
-                        <mml:mo>-</mml:mo>
-                        <mml:mi mathvariant="italic">b</mml:mi>
-                    </mml:mrow>
+                    <mml:mn>0</mml:mn>
                 </mml:mrow>
             </mml:math></inlineequation>,
             <inlineequation><mml:math>
-                <!-- eqn: (xoffset  +  width)  >  (w  -  b): -->
+                <!-- eqn: (xoffset  +  width)  >  w: -->
                 <mml:mrow>
                     <mml:mfenced open="(" close=")">
                         <mml:mrow>
@@ -246,29 +243,20 @@
                         </mml:mrow>
                     </mml:mfenced>
                     <mml:mo>&gt;</mml:mo>
-                    <mml:mfenced open="(" close=")">
-                        <mml:mrow>
-                            <mml:mi mathvariant="italic">w</mml:mi>
-                            <mml:mo>-</mml:mo>
-                            <mml:mi mathvariant="italic">b</mml:mi>
-                        </mml:mrow>
-                    </mml:mfenced>
+                    <mml:mi mathvariant="italic">w</mml:mi>
                 </mml:mrow>
             </mml:math></inlineequation>,
             <inlineequation><mml:math>
-                <!-- eqn: yoffset  <   -b: -->
+                <!-- eqn: yoffset  <   0: -->
                 <mml:mrow>
                     <mml:mi mathvariant="italic">yoffset</mml:mi>
                     <mml:mo>&lt;</mml:mo>
-                    <mml:mrow>
-                        <mml:mo>-</mml:mo>
-                        <mml:mi mathvariant="italic">b</mml:mi>
-                    </mml:mrow>
+                    <mml:mn>0</mml:mn>
                 </mml:mrow>
             </mml:math></inlineequation>,
             or
             <inlineequation><mml:math>
-                <!-- eqn: (yoffset  +  height)  >  (h  - b): -->
+                <!-- eqn: (yoffset  +  height)  >  h: -->
                 <mml:mrow>
                     <mml:mfenced open="(" close=")">
                         <mml:mrow>
@@ -278,23 +266,14 @@
                         </mml:mrow>
                     </mml:mfenced>
                     <mml:mo>&gt;</mml:mo>
-                    <mml:mfenced open="(" close=")">
-                        <mml:mrow>
-                            <mml:mi mathvariant="italic">h</mml:mi>
-                            <mml:mo>-</mml:mo>
-                            <mml:mi mathvariant="italic">b</mml:mi>
-                        </mml:mrow>
-                    </mml:mfenced>
+                    <mml:mi mathvariant="italic">h</mml:mi>
                 </mml:mrow>
             </mml:math></inlineequation>,
             where 
             <inlineequation><mml:math><mml:mi mathvariant="italic">w</mml:mi></mml:math></inlineequation>
-            is the <constant>GL_TEXTURE_WIDTH</constant>,
+            is the <constant>GL_TEXTURE_WIDTH</constant>, and
             <inlineequation><mml:math><mml:mi mathvariant="italic">h</mml:mi></mml:math></inlineequation>
-            is the <constant>GL_TEXTURE_HEIGHT</constant>,
-            and 
-            <inlineequation><mml:math><mml:mi mathvariant="italic">b</mml:mi></mml:math></inlineequation>
-            is the <constant>GL_TEXTURE_BORDER</constant>
+            is the <constant>GL_TEXTURE_HEIGHT</constant>
             of the texture image being modified.
             Note that 
             <inlineequation><mml:math><mml:mi mathvariant="italic">w</mml:mi></mml:math></inlineequation>
