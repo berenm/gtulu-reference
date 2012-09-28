@@ -872,31 +872,6 @@
                 </listitem>
             </varlistentry>
             <varlistentry>
-                <term><constant>GL_LINE_WIDTH_GRANULARITY</constant></term>
-                <listitem>
-              <para>
-              </para>
-                    <para>
-                        <parameter>params</parameter> returns one value,
-                        the width difference between adjacent supported widths for antialiased lines.
-                        See <citerefentry><refentrytitle>glLineWidth</refentrytitle></citerefentry>.
-                    </para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><constant>GL_LINE_WIDTH_RANGE</constant></term>
-                <listitem>
-              <para>
-              </para>
-                    <para>
-                        <parameter>params</parameter> returns two values:
-                        the smallest and largest supported widths for antialiased
-                        lines.
-                        See <citerefentry><refentrytitle>glLineWidth</refentrytitle></citerefentry>.
-                    </para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
                 <term><constant>GL_LOGIC_OP_MODE</constant></term>
                 <listitem>
               <para>

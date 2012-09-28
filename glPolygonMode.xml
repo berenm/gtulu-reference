@@ -75,7 +75,6 @@
                         <constant>GL_POINT_SIZE</constant> and
                         <constant>GL_POINT_SMOOTH</constant> control
                         the rasterization of the points.
-                        Polygon rasterization attributes other than <constant>GL_POLYGON_MODE</constant> have no effect.
                     </para>
                 </listitem>
             </varlistentry>
@@ -88,7 +87,6 @@
                         <constant>GL_LINE_WIDTH</constant> and
                         <constant>GL_LINE_SMOOTH</constant> control
                         the rasterization of the lines.
-                        Polygon rasterization attributes other than <constant>GL_POLYGON_MODE</constant> have no effect.
                     </para>
                 </listitem>
             </varlistentry>
@@ -123,11 +121,6 @@ glPolygonMode(<constant>GL_FRONT_AND_BACK</constant>, <constant>GL_LINE</constan
         <para>
             <constant>GL_INVALID_ENUM</constant> is generated if either <parameter>face</parameter> or <parameter>mode</parameter> is not
             an accepted value.
-        </para>
-    </refsect1>
-    <refsect1 id="associatedgets"><title>Associated Gets</title>
-        <para>
-            <citerefentry><refentrytitle>glGet</refentrytitle></citerefentry> with argument <constant>GL_POLYGON_MODE</constant>
         </para>
     </refsect1>
     <refsect1 id="seealso"><title>See Also</title>
