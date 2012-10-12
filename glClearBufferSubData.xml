@@ -20,6 +20,7 @@
         <funcsynopsis>
             <funcprototype>
                 <funcdef>void <function>glClearBufferSubData</function></funcdef>
+                <paramdef>GLenum <parameter>target</parameter></paramdef>
                 <paramdef>GLenum <parameter>internalformat</parameter></paramdef>
                 <paramdef>GLintptr <parameter>offset</parameter></paramdef>
                 <paramdef>GLsizeiptr <parameter>size</parameter></paramdef>
