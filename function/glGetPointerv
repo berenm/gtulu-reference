@@ -1,0 +1,18 @@
+gl:
+  name: glGetPointerv
+  params:
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&pointer'
+    name: params
+    type: GLvoid**
+  return: void
+gtu:
+  name: get_pointer
+  params:
+  - name: property
+    type: gtu::constant const
+  - name: pointer
+    type: void*&
+  return: void
