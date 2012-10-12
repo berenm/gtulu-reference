@@ -19,7 +19,7 @@
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
             <funcprototype>
-                <funcdef>void <function>glGetFramebufferAttachmentParameter</function></funcdef>
+                <funcdef>void <function>glGetFramebufferAttachmentParameteriv</function></funcdef>
                 <paramdef>GLenum <parameter>target</parameter></paramdef>
                 <paramdef>GLenum <parameter>attachment</parameter></paramdef>
                 <paramdef>GLenum <parameter>pname</parameter></paramdef>
@@ -66,7 +66,7 @@
     </refsect1>
     <refsect1 id="description"><title>Description</title>
         <para>
-            <function>glGetFramebufferAttachmentParameter</function> returns information about attachments of a bound framebuffer
+            <function>glGetFramebufferAttachmentParameteriv</function> returns information about attachments of a bound framebuffer
             object. <parameter>target</parameter> specifies the framebuffer binding point and must be <constant>GL_DRAW_FRAMEBUFFER</constant>,
             <constant>GL_READ_FRAMEBUFFER</constant> or <constant>GL_FRAMEBUFFER</constant>. <constant>GL_FRAMEBUFFER</constant> is equivalent
             to <constant>GL_DRAW_FRAMEBUFFER</constant>.
