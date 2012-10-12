@@ -16,6 +16,10 @@
     <refname>glUniform2i</refname>
     <refname>glUniform3i</refname>
     <refname>glUniform4i</refname>
+    <refname>glUniform1d</refname>
+    <refname>glUniform2d</refname>
+    <refname>glUniform3d</refname>
+    <refname>glUniform4d</refname>
     <refname>glUniform1ui</refname>
     <refname>glUniform2ui</refname>
     <refname>glUniform3ui</refname>
@@ -28,6 +32,10 @@
     <refname>glUniform2iv</refname>
     <refname>glUniform3iv</refname>
     <refname>glUniform4iv</refname>
+    <refname>glUniform1dv</refname>
+    <refname>glUniform2dv</refname>
+    <refname>glUniform3dv</refname>
+    <refname>glUniform4dv</refname>
     <refname>glUniform1uiv</refname>
     <refname>glUniform2uiv</refname>
     <refname>glUniform3uiv</refname>
@@ -35,12 +43,21 @@
     <refname>glUniformMatrix2fv</refname>
     <refname>glUniformMatrix3fv</refname>
     <refname>glUniformMatrix4fv</refname>
+    <refname>glUniformMatrix2dv</refname>
+    <refname>glUniformMatrix3dv</refname>
+    <refname>glUniformMatrix4dv</refname>
     <refname>glUniformMatrix2x3fv</refname>
     <refname>glUniformMatrix3x2fv</refname>
     <refname>glUniformMatrix2x4fv</refname>
     <refname>glUniformMatrix4x2fv</refname>
     <refname>glUniformMatrix3x4fv</refname>
     <refname>glUniformMatrix4x3fv</refname>
+    <refname>glUniformMatrix2x3dv</refname>
+    <refname>glUniformMatrix3x2dv</refname>
+    <refname>glUniformMatrix2x4dv</refname>
+    <refname>glUniformMatrix4x2dv</refname>
+    <refname>glUniformMatrix3x4dv</refname>
+    <refname>glUniformMatrix4x3dv</refname>
     <refpurpose>Specify the value of a uniform variable for the current program object</refpurpose>
     </refnamediv>
     <refsynopsisdiv><title>C Specification</title>
@@ -96,6 +113,32 @@
         <paramdef>GLint <parameter>v1</parameter></paramdef>
         <paramdef>GLint <parameter>v2</parameter></paramdef>
         <paramdef>GLint <parameter>v3</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glUniform1d</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v0</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glUniform2d</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v0</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v1</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glUniform3d</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v0</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v1</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v2</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glUniform4d</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v0</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v1</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v2</parameter></paramdef>
+        <paramdef>GLdouble <parameter>v3</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glUniform1ui</function></funcdef>
@@ -199,6 +242,30 @@
         <paramdef>const GLint *<parameter>value</parameter></paramdef>
         </funcprototype>
         <funcprototype>
+        <funcdef>void <function>glUniform1dv</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLsizei <parameter>count</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>value</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glUniform2dv</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLsizei <parameter>count</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>value</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glUniform3dv</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLsizei <parameter>count</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>value</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glUniform4dv</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLsizei <parameter>count</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>value</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
         <funcdef>void <function>glUniform1uiv</function></funcdef>
         <paramdef>GLint <parameter>location</parameter></paramdef>
         <paramdef>GLsizei <parameter>count</parameter></paramdef>
@@ -277,6 +344,27 @@
         <paramdef>const GLfloat *<parameter>value</parameter></paramdef>
         </funcprototype>
         <funcprototype>
+        <funcdef>void <function>glUniformMatrix2dv</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLsizei <parameter>count</parameter></paramdef>
+        <paramdef>GLboolean <parameter>transpose</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>value</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glUniformMatrix3dv</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLsizei <parameter>count</parameter></paramdef>
+        <paramdef>GLboolean <parameter>transpose</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>value</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glUniformMatrix4dv</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLsizei <parameter>count</parameter></paramdef>
+        <paramdef>GLboolean <parameter>transpose</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>value</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
         <funcdef>void <function>glUniformMatrix2x3fv</function></funcdef>
         <paramdef>GLint <parameter>location</parameter></paramdef>
         <paramdef>GLsizei <parameter>count</parameter></paramdef>
@@ -317,6 +405,48 @@
         <paramdef>GLsizei <parameter>count</parameter></paramdef>
         <paramdef>GLboolean <parameter>transpose</parameter></paramdef>
         <paramdef>const GLfloat *<parameter>value</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glUniformMatrix2x3dv</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLsizei <parameter>count</parameter></paramdef>
+        <paramdef>GLboolean <parameter>transpose</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>value</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glUniformMatrix3x2dv</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLsizei <parameter>count</parameter></paramdef>
+        <paramdef>GLboolean <parameter>transpose</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>value</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glUniformMatrix2x4dv</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLsizei <parameter>count</parameter></paramdef>
+        <paramdef>GLboolean <parameter>transpose</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>value</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glUniformMatrix4x2dv</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLsizei <parameter>count</parameter></paramdef>
+        <paramdef>GLboolean <parameter>transpose</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>value</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glUniformMatrix3x4dv</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLsizei <parameter>count</parameter></paramdef>
+        <paramdef>GLboolean <parameter>transpose</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>value</parameter></paramdef>
+        </funcprototype>
+        <funcprototype>
+        <funcdef>void <function>glUniformMatrix4x3dv</function></funcdef>
+        <paramdef>GLint <parameter>location</parameter></paramdef>
+        <paramdef>GLsizei <parameter>count</parameter></paramdef>
+        <paramdef>GLboolean <parameter>transpose</parameter></paramdef>
+        <paramdef>const GLdouble *<parameter>value</parameter></paramdef>
         </funcprototype>
     </funcsynopsis>
     </refsynopsisdiv>

@@ -61,6 +61,15 @@
             </funcprototype>
         </funcsynopsis>
     </refsynopsisdiv>
+    <refsynopsisdiv><title>C Specification</title>
+        <funcsynopsis>
+            <funcprototype>
+                <funcdef>void <function>glGetPointerv</function></funcdef>
+                <paramdef>GLenum <parameter>pname</parameter></paramdef>
+                <paramdef>GLvoid ** <parameter>params</parameter></paramdef>
+            </funcprototype>
+        </funcsynopsis>
+    </refsynopsisdiv>
     <!-- eqn: ignoring delim $$ -->
     <refsect1 id="parameters"><title>Parameters</title>
         <variablelist>
