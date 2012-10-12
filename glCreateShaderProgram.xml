@@ -22,7 +22,7 @@
                 <funcdef>GLuint <function>glCreateShaderProgramv</function></funcdef>
                 <paramdef>GLenum <parameter>type</parameter></paramdef>
                 <paramdef>GLsizei <parameter>count</parameter></paramdef>
-                <paramdef>const char **<parameter>strings</parameter></paramdef>
+                <paramdef>const char * const *<parameter>strings</parameter></paramdef>
             </funcprototype>
         </funcsynopsis>
     </refsynopsisdiv>

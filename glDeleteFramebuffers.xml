@@ -21,7 +21,7 @@
             <funcprototype>
                 <funcdef>void <function>glDeleteFramebuffers</function></funcdef>
                 <paramdef>GLsizei <parameter>n</parameter></paramdef>
-                <paramdef>GLuint *<parameter>framebuffers</parameter></paramdef>
+                <paramdef>const GLuint *<parameter>framebuffers</parameter></paramdef>
             </funcprototype>
         </funcsynopsis>
     </refsynopsisdiv>
