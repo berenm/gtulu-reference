@@ -98,9 +98,9 @@
         <funcprototype>
         <funcdef>void <function>glVertexAttribI3ui</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLoint <parameter>v0</parameter></paramdef>
-        <paramdef>GLoint <parameter>v1</parameter></paramdef>
-        <paramdef>GLoint <parameter>v2</parameter></paramdef>
+        <paramdef>GLuint <parameter>v0</parameter></paramdef>
+        <paramdef>GLuint <parameter>v1</parameter></paramdef>
+        <paramdef>GLuint <parameter>v2</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttrib4f</function></funcdef>
