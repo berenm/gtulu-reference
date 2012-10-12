@@ -19,7 +19,7 @@
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
             <funcprototype>
-                <funcdef>GLuint <function>glGetProgramResourceName</function></funcdef>
+                <funcdef>void <function>glGetProgramResourceName</function></funcdef>
                 <paramdef>GLuint <parameter>program</parameter></paramdef>
                 <paramdef>GLenum <parameter>programInterface</parameter></paramdef>
                 <paramdef>GLuint <parameter>index</parameter></paramdef>

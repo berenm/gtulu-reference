@@ -24,7 +24,7 @@
                 <paramdef>GLuint<parameter>index</parameter></paramdef>
                 <paramdef>GLsizei<parameter>bufSize</parameter></paramdef>
                 <paramdef>GLsizei *<parameter>length</parameter></paramdef>
-                <paramdef>GLsizei<parameter>size</parameter></paramdef>
+                <paramdef>GLsizei *<parameter>size</parameter></paramdef>
                 <paramdef>GLenum *<parameter>type</parameter></paramdef>
                 <paramdef>char *<parameter>name</parameter></paramdef>
             </funcprototype>

@@ -19,7 +19,7 @@
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
             <funcprototype>
-                <funcdef>GLsync <function>glFlushMappedBufferRange</function></funcdef>
+                <funcdef>void <function>glFlushMappedBufferRange</function></funcdef>
                 <paramdef>GLenum <parameter>target</parameter></paramdef>
                 <paramdef>GLintptr <parameter>offset</parameter></paramdef>
                 <paramdef>GLsizeiptr <parameter>length</parameter></paramdef>

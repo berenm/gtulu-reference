@@ -19,7 +19,7 @@
     <refsynopsisdiv><title>C Specification</title>
         <funcsynopsis>
             <funcprototype>
-                <funcdef>void <function>glGetInternalFormativ</function></funcdef>
+                <funcdef>void <function>glGetInternalformativ</function></funcdef>
                 <paramdef>GLenum <parameter>target</parameter></paramdef>
                 <paramdef>GLenum <parameter>internalformat</parameter></paramdef>
                 <paramdef>GLenum <parameter>pname</parameter></paramdef>
@@ -27,7 +27,7 @@
                 <paramdef>GLint *<parameter>params</parameter></paramdef>
             </funcprototype>
             <funcprototype>
-                <funcdef>void <function>glGetInternalFormati64v</function></funcdef>
+                <funcdef>void <function>glGetInternalformati64v</function></funcdef>
                 <paramdef>GLenum <parameter>target</parameter></paramdef>
                 <paramdef>GLenum <parameter>internalformat</parameter></paramdef>
                 <paramdef>GLenum <parameter>pname</parameter></paramdef>

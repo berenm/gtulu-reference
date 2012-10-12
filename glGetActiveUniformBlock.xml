@@ -23,7 +23,7 @@
                 <paramdef>GLuint <parameter>program</parameter></paramdef>
                 <paramdef>GLuint <parameter>uniformBlockIndex</parameter></paramdef>
                 <paramdef>GLenum <parameter>pname</parameter></paramdef>
-                <paramdef>GLint <parameter>params</parameter></paramdef>
+                <paramdef>GLint *<parameter>params</parameter></paramdef>
             </funcprototype>
         </funcsynopsis>
     </refsynopsisdiv>
