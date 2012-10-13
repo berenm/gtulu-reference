@@ -16,7 +16,7 @@
 		<funcdef>void <function>glShaderSource</function></funcdef>
 		<paramdef>GLuint <parameter>shader</parameter></paramdef>
 		<paramdef>GLsizei <parameter>count</parameter></paramdef>
-		<paramdef>const GLchar **<parameter>string</parameter></paramdef>
+		<paramdef>const GLchar * const *<parameter>string</parameter></paramdef>
 		<paramdef>const GLint *<parameter>length</parameter></paramdef>
 	    </funcprototype>
 	</funcsynopsis>
