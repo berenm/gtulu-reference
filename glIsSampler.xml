@@ -20,14 +20,14 @@
         <funcsynopsis>
             <funcprototype>
                 <funcdef>GLboolean <function>glIsSampler</function></funcdef>
-                <paramdef>GLuint <parameter>id</parameter></paramdef>
+                <paramdef>GLuint <parameter>sampler</parameter></paramdef>
             </funcprototype>
         </funcsynopsis>
     </refsynopsisdiv>
     <refsect1 id="parameters"><title>Parameters</title>
         <variablelist>
         <varlistentry>
-            <term><parameter>id</parameter></term>
+            <term><parameter>sampler</parameter></term>
             <listitem>
                 <para>
                     Specifies a value that may be the name of a sampler object.
@@ -38,8 +38,8 @@
     </refsect1>
     <refsect1 id="description"><title>Description</title>
         <para>
-            <function>glIsSampler</function> returns <constant>GL_TRUE</constant> if <parameter>id</parameter> is currently the name of a sampler object.
-            If <parameter>id</parameter> is zero, or is a non-zero value that is not currently the
+            <function>glIsSampler</function> returns <constant>GL_TRUE</constant> if <parameter>sampler</parameter> is currently the name of a sampler object.
+            If <parameter>sampler</parameter> is zero, or is a non-zero value that is not currently the
             name of a sampler object, or if an error occurs, <function>glIsSampler</function> returns <constant>GL_FALSE</constant>.
         </para>
         <para>

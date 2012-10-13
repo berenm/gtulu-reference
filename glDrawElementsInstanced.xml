@@ -24,7 +24,7 @@
                 <paramdef>GLsizei <parameter>count</parameter></paramdef>
                 <paramdef>GLenum <parameter>type</parameter></paramdef>
                 <paramdef>const void * <parameter>indices</parameter></paramdef>
-                <paramdef>GLsizei <parameter>primcount</parameter></paramdef>
+                <paramdef>GLsizei <parameter>instancecount</parameter></paramdef>
             </funcprototype>
         </funcsynopsis>
     </refsynopsisdiv>
@@ -77,7 +77,7 @@
             </listitem>
         </varlistentry>
         <varlistentry>
-            <term><parameter>primcount</parameter></term>
+            <term><parameter>instancecount</parameter></term>
             <listitem>
                 <para>
                     Specifies the number of instances of the specified range of indices to be rendered.
@@ -89,7 +89,7 @@
     <refsect1 id="description"><title>Description</title>
         <para>
             <function>glDrawElementsInstanced</function> behaves identically to <citerefentry><refentrytitle>glDrawElements</refentrytitle></citerefentry>
-            except that <parameter>primcount</parameter> instances of the set of elements are executed and the value of the internal counter
+            except that <parameter>instancecount</parameter> instances of the set of elements are executed and the value of the internal counter
             <parameter>instanceID</parameter> advances for each iteration. <parameter>instanceID</parameter> is an internal 32-bit integer counter
             that may be read by a vertex shader as <constant>gl_InstanceID</constant>.
         </para>
@@ -125,7 +125,7 @@
             <constant>GL_TRIANGLE_STRIP</constant>, <constant>GL_TRIANGLE_FAN</constant>, or <constant>GL_TRIANGLES</constant>.
         </para>
         <para>
-            <constant>GL_INVALID_VALUE</constant> is generated if <parameter>count</parameter> or <parameter>primcount</parameter> are negative.
+            <constant>GL_INVALID_VALUE</constant> is generated if <parameter>count</parameter> or <parameter>instancecount</parameter> are negative.
         </para>
         <para>
             <constant>GL_INVALID_OPERATION</constant> is generated if a geometry shader is active and <parameter>mode</parameter>

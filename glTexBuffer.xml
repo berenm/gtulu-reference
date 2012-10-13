@@ -21,7 +21,7 @@
             <funcprototype>
                 <funcdef>void <function>glTexBuffer</function></funcdef>
                 <paramdef>GLenum <parameter>target</parameter></paramdef>
-                <paramdef>GLenum <parameter>internalFormat</parameter></paramdef>
+                <paramdef>GLenum <parameter>internalformat</parameter></paramdef>
                 <paramdef>GLuint<parameter>buffer</parameter></paramdef>
             </funcprototype>
         </funcsynopsis>
@@ -37,7 +37,7 @@
             </listitem>
         </varlistentry>
         <varlistentry>
-            <term><parameter>internalFormat</parameter></term>
+            <term><parameter>internalformat</parameter></term>
             <listitem>
                 <para>
                     Specifies the internal format of the data in the store belonging to <parameter>buffer</parameter>.
@@ -427,7 +427,7 @@
             <constant>GL_INVALID_ENUM</constant> is generated if <parameter>target</parameter> is not <constant>GL_TEXTURE_BUFFER</constant>.
         </para>
         <para>
-            <constant>GL_INVALID_ENUM</constant> is generated if <parameter>internalFormat</parameter> is not one of the accepted tokens.
+            <constant>GL_INVALID_ENUM</constant> is generated if <parameter>internalformat</parameter> is not one of the accepted tokens.
         </para>
         <para>
             <constant>GL_INVALID_OPERATION</constant> is generated if <parameter>buffer</parameter> is not zero or the name of an existing buffer object.

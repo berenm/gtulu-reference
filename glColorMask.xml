@@ -20,20 +20,20 @@
         <funcsynopsis>
             <funcprototype>
                 <funcdef>void <function>glColorMask</function></funcdef>
-                <paramdef>GLboolean <parameter>red</parameter></paramdef>
-                <paramdef>GLboolean <parameter>green</parameter></paramdef>
-                <paramdef>GLboolean <parameter>blue</parameter></paramdef>
-                <paramdef>GLboolean <parameter>alpha</parameter></paramdef>
+                <paramdef>GLboolean <parameter>r</parameter></paramdef>
+                <paramdef>GLboolean <parameter>g</parameter></paramdef>
+                <paramdef>GLboolean <parameter>b</parameter></paramdef>
+                <paramdef>GLboolean <parameter>a</parameter></paramdef>
             </funcprototype>
         </funcsynopsis>
         <funcsynopsis>
             <funcprototype>
                 <funcdef>void <function>glColorMaski</function></funcdef>
                 <paramdef>GLuint <parameter>buf</parameter></paramdef>
-                <paramdef>GLboolean <parameter>red</parameter></paramdef>
-                <paramdef>GLboolean <parameter>green</parameter></paramdef>
-                <paramdef>GLboolean <parameter>blue</parameter></paramdef>
-                <paramdef>GLboolean <parameter>alpha</parameter></paramdef>
+                <paramdef>GLboolean <parameter>r</parameter></paramdef>
+                <paramdef>GLboolean <parameter>g</parameter></paramdef>
+                <paramdef>GLboolean <parameter>b</parameter></paramdef>
+                <paramdef>GLboolean <parameter>a</parameter></paramdef>
             </funcprototype>
         </funcsynopsis>
     </refsynopsisdiv>
@@ -49,10 +49,10 @@
             </listitem>
         </varlistentry>
         <varlistentry>
-            <term><parameter>red</parameter></term>
-            <term><parameter>green</parameter></term>
-            <term><parameter>blue</parameter></term>
-            <term><parameter>alpha</parameter></term>
+            <term><parameter>r</parameter></term>
+            <term><parameter>g</parameter></term>
+            <term><parameter>b</parameter></term>
+            <term><parameter>a</parameter></term>
             <listitem>
                 <para>
                     Specify whether red, green, blue, and alpha are to be written
@@ -69,7 +69,7 @@
             <function>glColorMask</function> and <function>glColorMaski</function> specify whether the individual color components in the frame buffer
             can or cannot be written. <function>glColorMaski</function> sets the mask for a specific draw buffer, whereas
             <function>glColorMask</function> sets the mask for all draw buffers.
-            If <parameter>red</parameter> is <constant>GL_FALSE</constant>,
+            If <parameter>r</parameter> is <constant>GL_FALSE</constant>,
             for example,
             no change is made to the red component of any pixel in any of the
             color buffers,

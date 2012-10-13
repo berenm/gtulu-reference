@@ -21,7 +21,7 @@
             <funcprototype>
                 <funcdef>void <function>glGenFramebuffers</function></funcdef>
                 <paramdef>GLsizei <parameter>n</parameter></paramdef>
-                <paramdef>GLuint *<parameter>ids</parameter></paramdef>
+                <paramdef>GLuint *<parameter>framebuffers</parameter></paramdef>
             </funcprototype>
         </funcsynopsis>
     </refsynopsisdiv>
@@ -37,7 +37,7 @@
             </listitem>
         </varlistentry>
         <varlistentry>
-            <term><parameter>ids</parameter></term>
+            <term><parameter>framebuffers</parameter></term>
             <listitem>
                 <para>
                     Specifies an array in which the generated framebuffer object names are stored.
@@ -48,7 +48,7 @@
     </refsect1>
     <refsect1 id="description"><title>Description</title>
         <para>
-            <function>glGenFramebuffers</function> returns <parameter>n</parameter> framebuffer object names in <parameter>ids</parameter>.
+            <function>glGenFramebuffers</function> returns <parameter>n</parameter> framebuffer object names in <parameter>framebuffers</parameter>.
             There is no guarantee that the names form a contiguous set of integers; however, it is guaranteed that none of the returned names
             was in use immediately before the call to <function>glGenFramebuffers</function>.
         </para>
@@ -57,7 +57,7 @@
             they are first deleted with <citerefentry><refentrytitle>glDeleteFramebuffers</refentrytitle></citerefentry>.
         </para>
         <para>
-            The names returned in <parameter>ids</parameter> are marked as used, for the purposes of <function>glGenFramebuffers</function> only,
+            The names returned in <parameter>framebuffers</parameter> are marked as used, for the purposes of <function>glGenFramebuffers</function> only,
             but they acquire state and type only when they are first bound.
         </para>
     </refsect1>

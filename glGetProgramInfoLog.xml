@@ -15,7 +15,7 @@
 	    <funcprototype>
 		<funcdef>void <function>glGetProgramInfoLog</function></funcdef>
 		<paramdef>GLuint <parameter>program</parameter></paramdef>
-		<paramdef>GLsizei <parameter>maxLength</parameter></paramdef>
+		<paramdef>GLsizei <parameter>bufSize</parameter></paramdef>
 		<paramdef>GLsizei *<parameter>length</parameter></paramdef>
 		<paramdef>GLchar *<parameter>infoLog</parameter></paramdef>
 	    </funcprototype>
@@ -31,7 +31,7 @@
 		</listitem>
 	    </varlistentry>
 	    <varlistentry>
-		<term><parameter>maxLength</parameter></term>
+		<term><parameter>bufSize</parameter></term>
 		<listitem>
 		    <para>Specifies the size of the character buffer for
 		    storing the returned information log.</para>
@@ -63,7 +63,7 @@
 
 	<para><function>glGetProgramInfoLog</function> returns in
 	<parameter>infoLog</parameter> as much of the information log as
-	it can, up to a maximum of <parameter>maxLength</parameter>
+	it can, up to a maximum of <parameter>bufSize</parameter>
 	characters. The number of characters actually returned,
 	excluding the null termination character, is specified by
 	<parameter>length</parameter>. If the length of the returned
@@ -100,7 +100,7 @@
 	<parameter>program</parameter> is not a program object.</para>
 
 	<para><constant>GL_INVALID_VALUE</constant> is generated if
-	<parameter>maxLength</parameter> is less than 0.</para>
+	<parameter>bufSize</parameter> is less than 0.</para>
 
     </refsect1>
     <refsect1 id="associatedgets"><title>Associated Gets</title>
