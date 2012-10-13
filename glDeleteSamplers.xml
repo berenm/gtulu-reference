@@ -20,7 +20,7 @@
         <funcsynopsis>
             <funcprototype>
                 <funcdef>void <function>glDeleteSamplers</function></funcdef>
-                <paramdef>GLsizei <parameter>n</parameter></paramdef>
+                <paramdef>GLsizei <parameter>count</parameter></paramdef>
                 <paramdef>const GLuint * <parameter>samplers</parameter></paramdef>
             </funcprototype>
         </funcsynopsis>
@@ -28,7 +28,7 @@
     <refsect1 id="parameters"><title>Parameters</title>
         <variablelist>
         <varlistentry>
-            <term><parameter>n</parameter></term>
+            <term><parameter>count</parameter></term>
             <listitem>
                 <para>
                     Specifies the number of sampler objects to be deleted.
@@ -47,7 +47,7 @@
     </refsect1>
     <refsect1 id="description"><title>Description</title>
         <para>
-            <function>glDeleteSamplers</function> deletes <parameter>n</parameter> sampler objects named by the elements of the array <parameter>samplers</parameter>.
+            <function>glDeleteSamplers</function> deletes <parameter>count</parameter> sampler objects named by the elements of the array <parameter>samplers</parameter>.
             After a sampler object is deleted, its name is again unused. If a sampler object that is currently bound to a sampler unit is deleted, it is as
             though <citerefentry><refentrytitle>glBindSampler</refentrytitle></citerefentry> is called with unit set to the unit the sampler is bound to and
             sampler zero. Unused names in samplers are silently ignored, as is the reserved name zero.
@@ -60,7 +60,7 @@
     </refsect1>
     <refsect1 id="errors"><title>Errors</title>
         <para>
-            <constant>GL_INVALID_VALUE</constant> is generated if <parameter>n</parameter> is negative.
+            <constant>GL_INVALID_VALUE</constant> is generated if <parameter>count</parameter> is negative.
         </para>
     </refsect1>
     <refsect1 id="associatedgets"><title>Associated Gets</title>

@@ -15,140 +15,140 @@
         <funcprototype>
         <funcdef>void <function>glVertexAttrib1f</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLfloat <parameter>v0</parameter></paramdef>
+        <paramdef>GLfloat <parameter>x</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttrib1s</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLshort <parameter>v0</parameter></paramdef>
+        <paramdef>GLshort <parameter>x</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttrib1d</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLdouble <parameter>v0</parameter></paramdef>
+        <paramdef>GLdouble <parameter>x</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttribI1i</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLint <parameter>v0</parameter></paramdef>
+        <paramdef>GLint <parameter>x</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttribI1ui</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLuint <parameter>v0</parameter></paramdef>
+        <paramdef>GLuint <parameter>x</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttrib2f</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLfloat <parameter>v0</parameter></paramdef>
-        <paramdef>GLfloat <parameter>v1</parameter></paramdef>
+        <paramdef>GLfloat <parameter>x</parameter></paramdef>
+        <paramdef>GLfloat <parameter>y</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttrib2s</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLshort <parameter>v0</parameter></paramdef>
-        <paramdef>GLshort <parameter>v1</parameter></paramdef>
+        <paramdef>GLshort <parameter>x</parameter></paramdef>
+        <paramdef>GLshort <parameter>y</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttrib2d</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLdouble <parameter>v0</parameter></paramdef>
-        <paramdef>GLdouble <parameter>v1</parameter></paramdef>
+        <paramdef>GLdouble <parameter>x</parameter></paramdef>
+        <paramdef>GLdouble <parameter>y</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttribI2i</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLint <parameter>v0</parameter></paramdef>
-        <paramdef>GLint <parameter>v1</parameter></paramdef>
+        <paramdef>GLint <parameter>x</parameter></paramdef>
+        <paramdef>GLint <parameter>y</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttribI2ui</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLuint <parameter>v0</parameter></paramdef>
-        <paramdef>GLuint <parameter>v1</parameter></paramdef>
+        <paramdef>GLuint <parameter>x</parameter></paramdef>
+        <paramdef>GLuint <parameter>y</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttrib3f</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLfloat <parameter>v0</parameter></paramdef>
-        <paramdef>GLfloat <parameter>v1</parameter></paramdef>
-        <paramdef>GLfloat <parameter>v2</parameter></paramdef>
+        <paramdef>GLfloat <parameter>x</parameter></paramdef>
+        <paramdef>GLfloat <parameter>y</parameter></paramdef>
+        <paramdef>GLfloat <parameter>z</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttrib3s</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLshort <parameter>v0</parameter></paramdef>
-        <paramdef>GLshort <parameter>v1</parameter></paramdef>
-        <paramdef>GLshort <parameter>v2</parameter></paramdef>
+        <paramdef>GLshort <parameter>x</parameter></paramdef>
+        <paramdef>GLshort <parameter>y</parameter></paramdef>
+        <paramdef>GLshort <parameter>z</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttrib3d</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLdouble <parameter>v0</parameter></paramdef>
-        <paramdef>GLdouble <parameter>v1</parameter></paramdef>
-        <paramdef>GLdouble <parameter>v2</parameter></paramdef>
+        <paramdef>GLdouble <parameter>x</parameter></paramdef>
+        <paramdef>GLdouble <parameter>y</parameter></paramdef>
+        <paramdef>GLdouble <parameter>z</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttribI3i</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLint <parameter>v0</parameter></paramdef>
-        <paramdef>GLint <parameter>v1</parameter></paramdef>
-        <paramdef>GLint <parameter>v2</parameter></paramdef>
+        <paramdef>GLint <parameter>x</parameter></paramdef>
+        <paramdef>GLint <parameter>y</parameter></paramdef>
+        <paramdef>GLint <parameter>z</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttribI3ui</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLuint <parameter>v0</parameter></paramdef>
-        <paramdef>GLuint <parameter>v1</parameter></paramdef>
-        <paramdef>GLuint <parameter>v2</parameter></paramdef>
+        <paramdef>GLuint <parameter>x</parameter></paramdef>
+        <paramdef>GLuint <parameter>y</parameter></paramdef>
+        <paramdef>GLuint <parameter>z</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttrib4f</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLfloat <parameter>v0</parameter></paramdef>
-        <paramdef>GLfloat <parameter>v1</parameter></paramdef>
-        <paramdef>GLfloat <parameter>v2</parameter></paramdef>
-        <paramdef>GLfloat <parameter>v3</parameter></paramdef>
+        <paramdef>GLfloat <parameter>x</parameter></paramdef>
+        <paramdef>GLfloat <parameter>y</parameter></paramdef>
+        <paramdef>GLfloat <parameter>z</parameter></paramdef>
+        <paramdef>GLfloat <parameter>w</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttrib4s</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLshort <parameter>v0</parameter></paramdef>
-        <paramdef>GLshort <parameter>v1</parameter></paramdef>
-        <paramdef>GLshort <parameter>v2</parameter></paramdef>
-        <paramdef>GLshort <parameter>v3</parameter></paramdef>
+        <paramdef>GLshort <parameter>x</parameter></paramdef>
+        <paramdef>GLshort <parameter>y</parameter></paramdef>
+        <paramdef>GLshort <parameter>z</parameter></paramdef>
+        <paramdef>GLshort <parameter>w</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttrib4d</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLdouble <parameter>v0</parameter></paramdef>
-        <paramdef>GLdouble <parameter>v1</parameter></paramdef>
-        <paramdef>GLdouble <parameter>v2</parameter></paramdef>
-        <paramdef>GLdouble <parameter>v3</parameter></paramdef>
+        <paramdef>GLdouble <parameter>x</parameter></paramdef>
+        <paramdef>GLdouble <parameter>y</parameter></paramdef>
+        <paramdef>GLdouble <parameter>z</parameter></paramdef>
+        <paramdef>GLdouble <parameter>w</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttrib4Nub</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLubyte <parameter>v0</parameter></paramdef>
-        <paramdef>GLubyte <parameter>v1</parameter></paramdef>
-        <paramdef>GLubyte <parameter>v2</parameter></paramdef>
-        <paramdef>GLubyte <parameter>v3</parameter></paramdef>
+        <paramdef>GLubyte <parameter>x</parameter></paramdef>
+        <paramdef>GLubyte <parameter>y</parameter></paramdef>
+        <paramdef>GLubyte <parameter>z</parameter></paramdef>
+        <paramdef>GLubyte <parameter>w</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttribI4i</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLint <parameter>v0</parameter></paramdef>
-        <paramdef>GLint <parameter>v1</parameter></paramdef>
-        <paramdef>GLint <parameter>v2</parameter></paramdef>
-        <paramdef>GLint <parameter>v3</parameter></paramdef>
+        <paramdef>GLint <parameter>x</parameter></paramdef>
+        <paramdef>GLint <parameter>y</parameter></paramdef>
+        <paramdef>GLint <parameter>z</parameter></paramdef>
+        <paramdef>GLint <parameter>w</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttribI4ui</function></funcdef>
         <paramdef>GLuint <parameter>index</parameter></paramdef>
-        <paramdef>GLuint <parameter>v0</parameter></paramdef>
-        <paramdef>GLuint <parameter>v1</parameter></paramdef>
-        <paramdef>GLuint <parameter>v2</parameter></paramdef>
-        <paramdef>GLuint <parameter>v3</parameter></paramdef>
+        <paramdef>GLuint <parameter>x</parameter></paramdef>
+        <paramdef>GLuint <parameter>y</parameter></paramdef>
+        <paramdef>GLuint <parameter>z</parameter></paramdef>
+        <paramdef>GLuint <parameter>w</parameter></paramdef>
         </funcprototype>
         <funcprototype>
         <funcdef>void <function>glVertexAttribL1d</function></funcdef>
@@ -189,10 +189,10 @@
         </varlistentry>
         <varlistentry>
         <term>
-            <parameter>v0</parameter>,
-            <parameter>v1</parameter>,
-            <parameter>v2</parameter>,
-            <parameter>v3</parameter>
+            <parameter>x</parameter>,
+            <parameter>y</parameter>,
+            <parameter>z</parameter>,
+            <parameter>w</parameter>
         </term>
         <listitem>
             <para>Specifies the new values to be used for the

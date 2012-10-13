@@ -21,7 +21,7 @@
             <funcprototype>
                 <funcdef>void <function>glGetBufferParameteriv</function></funcdef>
                 <paramdef>GLenum <parameter>target</parameter></paramdef>
-                <paramdef>GLenum <parameter>value</parameter></paramdef>
+                <paramdef>GLenum <parameter>pname</parameter></paramdef>
                 <paramdef>GLint * <parameter>data</parameter></paramdef>
             </funcprototype>
         </funcsynopsis>
@@ -29,7 +29,7 @@
             <funcprototype>
                 <funcdef>void <function>glGetBufferParameteri64v</function></funcdef>
                 <paramdef>GLenum <parameter>target</parameter></paramdef>
-                <paramdef>GLenum <parameter>value</parameter></paramdef>
+                <paramdef>GLenum <parameter>pname</parameter></paramdef>
                 <paramdef>GLint64 * <parameter>data</parameter></paramdef>
             </funcprototype>
         </funcsynopsis>
@@ -59,7 +59,7 @@
             </listitem>
         </varlistentry>
         <varlistentry>
-            <term><parameter>value</parameter></term>
+            <term><parameter>pname</parameter></term>
             <listitem>
                 <para>
                     Specifies the symbolic name of a buffer object parameter.
@@ -84,7 +84,7 @@
             specified by <parameter>target</parameter>.
         </para>
         <para>
-            <parameter>value</parameter> names a specific buffer object parameter, as follows:
+            <parameter>pname</parameter> names a specific buffer object parameter, as follows:
         </para>
         <variablelist>
             <varlistentry>
@@ -139,7 +139,7 @@
     </refsect1>
     <refsect1 id="errors"><title>Errors</title>
         <para>
-            <constant>GL_INVALID_ENUM</constant> is generated if <parameter>target</parameter> or <parameter>value</parameter> is not an
+            <constant>GL_INVALID_ENUM</constant> is generated if <parameter>target</parameter> or <parameter>pname</parameter> is not an
             accepted value.
         </para>
         <para>
