@@ -1,0 +1,102 @@
+#!/usr/bin/python
+
+from lxml import etree
+import os
+import sys
+import re
+import gtuluref as gtu
+
+
+for version in ['2', '3', '4', 'es2', 'es3']:
+  folder = os.path.join('list', 'gl%s' % version)
+  if not os.path.exists(folder):
+    os.makedirs(folder)
+
+  csts = set()
+
+  for f in os.listdir(gtu.man(version)):
+    filename = gtu.man(version, f)
+
+    if f.endswith(".xml"):
+      tree = etree.parse(filename, parser=etree.XMLParser(recover=True))
+      root = tree.getroot()
+
+      constants = root.xpath('//constant')
+      for c in constants:
+        p = c.getparent()
+        n = None
+
+        text = etree.tostring(c, encoding='utf-8', method='text', with_tail=False).strip()
+        if c.tail is None or len(c.tail.strip()) == 0:
+          n = c.getnext()
+        
+        if n is not None and n.tag in ['emphasis', 'inlineequation']:
+          n = etree.tostring(n, encoding='utf-8', method='text', with_tail=False).strip()
+          if len(n) == 1:
+            text = text + n
+
+        csts.add(text)
+        p.remove(c)
+
+      constants = root.xpath('//refsect1[starts-with(@id, "parameters")]//constant')
+      for c in constants:
+        c.getparent().remove(c)
+        csts.add(c.text)
+        # print f, 'param', c.text
+
+      constants = root.xpath('//refsect1[@id="description"]//constant')
+      for c in constants:
+        c.getparent().remove(c)
+        csts.add(c.text)
+        # print f, 'desc', c.text
+
+      constants = root.xpath('//refsect1[@id="notes"]//constant')
+      for c in constants:
+        c.getparent().remove(c)
+        csts.add(c.text)
+        # print f, 'note', c.text
+
+      constants = root.xpath('//refsect1[@id="examples"]//constant')
+      for c in constants:
+        c.getparent().remove(c)
+        csts.add(c.text)
+        # print f, 'example', c.text
+
+      constants = root.xpath('//refsect1[@id="associatedgets"]//constant')
+      for c in constants:
+        c.getparent().remove(c)
+        csts.add(c.text)
+        # print f, 'get', c.text
+
+      constants = root.xpath('//refsect1[@id="errors"]')
+      for c in constants:
+        c.getparent().remove(c)
+
+        # print 'Errors'
+        # print '---------------------'
+
+        for p in c.xpath('para'):
+          e = p.xpath('constant[1]/text()')
+
+          if len(e) == 0:
+            # print 'Other:'
+            pass
+          else:
+            csts.add(e[0])
+            # print '%s:' % e[0]
+
+          # for n in p.xpath('.//text()[count(../text())=1]'):
+            # n.getparent().text = '*' + n + '*'
+
+          # print '  %s' % ' '.join([ s.strip() for s in etree.tostring(p, encoding='utf-8', method='text').splitlines() if len(s.strip()) > 0 ]).replace(' ,', ',')
+          # print ''
+        # print f, 'error', c.text
+
+      constants = root.xpath('//constant/text()')
+      for c in constants:
+        print f, c
+      # print f, [ etree.tostring(s) for s in root.xpath('//refsect1[@id="parameters"]//constant') ]
+
+  output = open(gtu.list(version, 'constants'), 'w')
+  for c in sorted(csts):
+    print >>output, c

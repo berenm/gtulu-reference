@@ -1,0 +1,100 @@
+#!/usr/bin/python
+
+import os
+from renamable import Renamable
+import gtuluref as gtu
+
+
+class Function(Renamable):
+  def __init__(self, name):
+    self.name = name
+    super(Function, self).__init__(['gl'])
+
+compatapi = {}
+compatcall = {}
+
+for v in ['2.1', '3.0', '3.1', '3.2', '3.3', '4.0', '4.1', '4.2', '4.3']:
+  if v == '2.1':
+    comps = ['']
+  else:
+    comps = ['core', 'comp']
+
+  for c in comps:
+    functionapi = {}
+    apisource = gtu.list(v, 'functions.api')
+    with open(apisource, 'r') as apis:
+      for a in apis:
+        f = a.split('(')[0]
+        if ' ' in f:
+          f = f.split(' ')[-1]
+        functionapi[f] = a.strip()
+
+    functioncall = {}
+    callsource = gtu.list(v, 'functions.call')
+    with open(callsource, 'r') as calls:
+      for a in calls:
+        functioncall[a.split('(')[0]] = a.strip()
+
+    if v == '2.1':
+      compatapi = functionapi
+      compatcall = functioncall
+
+    functions = os.listdir(gtu.ref(v, c, 'function'))
+
+    target = gtu.api(v, c, 'gtulu_api.hpp')
+    with open(target, 'w') as o:
+      print >>o, '#ifndef __GTULU_OPENGL_API__'
+      print >>o, '#define __GTULU_OPENGL_API__\n'
+
+      if c == 'core':
+        print >>o, '#define GLCOREARB_PROTOTYPES'
+        print >>o, '#include <GL/glcorearb.h>\n'
+      else:
+        print >>o, '#include <GL/gl.h>\n'
+      print >>o, '#include <boost/config.hpp>\n'
+
+      print >>o, 'namespace gtulu {'
+      print >>o, 'namespace api {\n'
+
+      for f in sorted(functions):
+        print >>o, 'BOOST_SYMBOL_EXPORT %s' % functionapi.get(f, compatapi.get(f, '')).replace(f, Function(f).new_name)
+
+      print >>o, '\n} // namespace api'
+      print >>o, '} // namespace gtulu'
+      print >>o, '\n#endif /* __GTULU_OPENGL_API__ */'
+
+    target = gtu.api(v, c, 'gtulu_api.cpp')
+    with open(target, 'w') as o:
+      print >>o, '#include <gtulu_api.hpp>\n'
+
+      print >>o, 'namespace gtulu {'
+      print >>o, 'namespace api {\n'
+
+      for f in sorted(functions):
+        glapi = functionapi.get(f, compatapi.get(f, ''))
+        glcall = functioncall.get(f, compatcall.get(f, ''))
+        print >>o, '%s { %s }' % (glapi.replace(f, Function(f).new_name).replace(';', ''), glcall.replace('\n', ''))
+
+      print >>o, '\n} // namespace api'
+      print >>o, '} // namespace gtulu'
+
+    target = gtu.api(v, c, 'gtulu_%s.h' % v)
+    with open(target, 'w') as o:
+      print >>o, '#ifndef __GTULU_%s_H__' % v.replace('.', '_')
+      print >>o, '#define __GTULU_%s_H__\n' % v.replace('.', '_')
+
+      print >>o, '#include <boost/config.hpp>\n'
+
+      print >>o, '#ifdef __cplusplus'
+      print >>o, 'extern "C" {'
+      print >>o, '#endif\n'
+
+      for f in sorted(functions):
+        print >>o, 'BOOST_SYMBOL_IMPORT %s' % functionapi.get(f, compatapi.get(f, '/* %s */' % f))
+
+      print >>o, '\n#ifdef __cplusplus'
+      print >>o, '}'
+      print >>o, '#endif\n'
+
+      print >>o, '#endif /* __GTULU_%s_H__ */' % v.replace('.', '_')
+

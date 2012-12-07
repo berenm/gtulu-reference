@@ -67,3 +67,6 @@
 [submodule "man/gl/4"]
 	path = man/gl/4
 	url = git://github.com/berenm/gtulu-reference.git
+[submodule "lib/registry"]
+	path = lib/registry
+	url = git://github.com/berenm/libgtulu.git

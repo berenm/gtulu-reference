@@ -1,0 +1,49 @@
+#!/usr/bin/python
+
+import os
+import re
+import gtuluref as gtu
+
+
+versions = {}
+with open('../gl.spec', 'r') as spec:
+  fct = None
+  ver = None
+  for line in spec:
+    if fct is None:
+      fct = re.match(r'^(?P<name>\w+)\([\w, ]*\)$', line)
+      if fct is not None:
+        fct = 'gl%s' % fct.group('name')
+        continue
+
+    if len(line.strip()) == 0:
+      fct = None
+      continue
+
+    ver = re.match(r'^\s*version\s+(?P<version>[\w.]+).*$', line)
+    if ver is not None:
+      ver = ver.group('version').strip()
+      versions[fct] = ver
+
+
+
+for v in ['2.1', '3.0', '3.1', '3.2', '3.3', '4.0', '4.1', '4.2', '4.3']:
+  if v == '2.1':
+    comps = ['']
+  else:
+    comps = ['.core', '.comp']
+
+  for c in comps:
+    target = gtu.specs(v, 'index%s' % c)
+
+    functions = os.listdir(gtu.ref('function'))
+    with open('%s.functions' % target, 'w') as output:
+      for f in sorted(functions):
+        if f in versions:
+          f = f + ' (%s)' % versions[f]
+        print >>output, f
+
+    constants = os.listdir(gtu.ref('constant'))
+    with open('%s.constants' % target, 'w') as output:
+      for cn in sorted(constants):
+        print >>output, cn

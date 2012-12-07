@@ -1,0 +1,120 @@
+#!/usr/bin/python
+
+from lxml import etree
+import os
+import sys
+import re
+import gtuluref as gtu
+
+
+versions = {}
+with open(gtu.spec('gl.spec'), 'r') as spec:
+  fct = None
+  ver = None
+  for line in spec:
+    if fct is None:
+      fct = re.match(r'^(?P<name>\w+)\([\w, ]*\)$', line)
+      if fct is not None:
+        fct = 'gl%s' % fct.group('name')
+        continue
+
+    if len(line.strip()) == 0:
+      fct = None
+      continue
+
+    ver = re.match(r'^\s*version\s+(?P<version>[\w.]+).*$', line)
+    if ver is not None:
+      ver = ver.group('version').strip()
+      versions[fct] = ver
+
+
+for version in ['2', '3', '4', 'es2', 'es3']:
+  fcts = set()
+  fcts_api = set()
+  fcts_call = set()
+
+  for f in os.listdir(gtu.man(version)):
+    filename = gtu.man(version, f)
+
+    if f.endswith(".xml"):
+      tree = etree.parse(filename, parser=etree.XMLParser(recover=True))
+
+      root = tree.getroot()
+      functions = root.xpath('//funcprototype')
+      for f in functions:
+        f.getparent().remove(f)
+
+        ftype, fname = f.xpath('funcdef//text()')
+        ftype = ftype.replace(' *', '*').strip()
+        fname = fname.strip()
+        # print '%s -> %s' % (fname, ftype)
+        fcts.add(fname)
+
+        function_api = '%s %s(%%s);' % (ftype, fname)
+        function_call = '%s(%%s);' % fname
+
+        param_api = []
+        param_call = []
+        for p in f.xpath('paramdef'):
+          param = ' '.join([t.strip() for t in p.xpath('.//text()') if t.strip() != '' ])
+          # param = etree.tostring(p, encoding='utf-8', method='text', with_tail=False).strip()
+          param = re.sub(r'^const\s+(\w+)\s*\*\s*(\w+)$', r'\1 const* \2', param)
+          param = re.sub(r'\s+\*', r'*', param)
+
+          param = param.replace('DEBUGPROC', 'GLDEBUGPROC')
+
+          if param == 'void':
+            continue
+
+          param_api.append(param)
+
+          pcall = p.xpath('parameter')
+          param_call.append(etree.tostring(pcall[0], encoding='utf-8', method='text', with_tail=False).strip())
+
+          pdata = [ s.strip() for s in p.xpath('.//text()') if s.strip() not in [ '', 'void' ] ]
+          if len(pdata) == 0:
+            continue
+          
+          if len(pdata) == 2:
+            ptype, pname = pdata
+            ptype = ptype.replace(' *', '*').strip()
+            pname = pname.strip()
+          #  print '  - %s -> %s' % (pname, ptype)
+          else:
+          #  print '  ~ %s' % pdata
+            pass
+
+        function_api = function_api % ', '.join(param_api)
+        fcts_api.add(function_api)
+
+        function_call = function_call % ', '.join(param_call)
+        fcts_call.add(function_call)
+
+        # for p in f.xpath('funcdef'):
+        #   e = p.xpath('constant[1]/text()')
+
+        #   if len(e) == 0:
+        #     print 'Other:'
+        #   else:
+        #     print '%s:' % e[0]
+
+        #   for n in p.xpath('.//text()[count(../text())=1]'):
+        #     n.getparent().text = '*' + n + '*'
+
+        #   print '  %s' % ' '.join([ s.strip() for s in etree.tostring(p, encoding='utf-8', method='text').splitlines() if len(s.strip()) > 0 ]).replace(' ,', ',')
+        #   print ''
+        # # print f, 'error', c.text
+
+  output = open(gtu.list(version, 'functions'), 'w')
+  for f in sorted(fcts):
+    if f in versions:
+      f = f + ' (%s)' % versions[f]
+    print >>output, f
+
+  output = open(gtu.list(version, 'functions.api'), 'w')
+  for f in sorted(fcts_api):
+    print >>output, f
+
+  output = open(gtu.list(version, 'functions.call'), 'w')
+  for f in sorted(fcts_call):
+    print >>output, f
