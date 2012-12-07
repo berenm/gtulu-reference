@@ -34,8 +34,8 @@ extern "C" {
 
 /* Header file version number */
 /* Current version at http://www.khronos.org/registry/egl/ */
-/* $Revision: 18175 $ on $Date: 2012-06-13 11:26:12 -0700 (Wed, 13 Jun 2012) $ */
-#define EGL_EGLEXT_VERSION 13
+/* $Revision: 19571 $ on $Date: 2012-10-31 10:10:33 -0700 (Wed, 31 Oct 2012) $ */
+#define EGL_EGLEXT_VERSION 14
 
 #ifndef EGL_KHR_config_attribs
 #define EGL_KHR_config_attribs 1
@@ -333,19 +333,19 @@ typedef EGLuint64NV (EGLAPIENTRYP PFNEGLGETSYSTEMTIMENVPROC) (void);
 #define EGL_KHR_stream 1
 typedef void* EGLStreamKHR;
 typedef khronos_uint64_t EGLuint64KHR;
-#define EGL_NO_STREAM_KHR			    ((EGLStreamKHR)0)
-#define EGL_CONSUMER_LATENCY_USEC_KHR		    0x3210
-#define EGL_PRODUCER_FRAME_KHR			    0x3212
-#define EGL_CONSUMER_FRAME_KHR			    0x3213
-#define EGL_STREAM_STATE_KHR			    0x3214
-#define EGL_STREAM_STATE_CREATED_KHR		    0x3215
-#define EGL_STREAM_STATE_CONNECTING_KHR		    0x3216
-#define EGL_STREAM_STATE_EMPTY_KHR		    0x3217
+#define EGL_NO_STREAM_KHR			((EGLStreamKHR)0)
+#define EGL_CONSUMER_LATENCY_USEC_KHR		0x3210
+#define EGL_PRODUCER_FRAME_KHR			0x3212
+#define EGL_CONSUMER_FRAME_KHR			0x3213
+#define EGL_STREAM_STATE_KHR			0x3214
+#define EGL_STREAM_STATE_CREATED_KHR		0x3215
+#define EGL_STREAM_STATE_CONNECTING_KHR		0x3216
+#define EGL_STREAM_STATE_EMPTY_KHR		0x3217
 #define EGL_STREAM_STATE_NEW_FRAME_AVAILABLE_KHR    0x3218
 #define EGL_STREAM_STATE_OLD_FRAME_AVAILABLE_KHR    0x3219
-#define EGL_STREAM_STATE_DISCONNECTED_KHR	    0x321A
-#define EGL_BAD_STREAM_KHR			    0x321B
-#define EGL_BAD_STATE_KHR			    0x321C
+#define EGL_STREAM_STATE_DISCONNECTED_KHR	0x321A
+#define EGL_BAD_STREAM_KHR			0x321B
+#define EGL_BAD_STATE_KHR			0x321C
 #ifdef EGL_EGLEXT_PROTOTYPES
 EGLAPI EGLStreamKHR EGLAPIENTRY eglCreateStreamKHR(EGLDisplay dpy, const EGLint *attrib_list);
 EGLAPI EGLBoolean EGLAPIENTRY eglDestroyStreamKHR(EGLDisplay dpy, EGLStreamKHR stream);
@@ -364,7 +364,7 @@ typedef EGLBoolean (EGLAPIENTRYP PFNEGLQUERYSTREAMU64KHRPROC)(EGLDisplay dpy, EG
 #ifdef EGL_KHR_stream /* Requires KHR_stream extension */
 #ifndef EGL_KHR_stream_consumer_gltexture
 #define EGL_KHR_stream_consumer_gltexture 1
-#define EGL_CONSUMER_ACQUIRE_TIMEOUT_USEC_KHR	    0x321E
+#define EGL_CONSUMER_ACQUIRE_TIMEOUT_USEC_KHR	0x321E
 #ifdef EGL_EGLEXT_PROTOTYPES
 EGLAPI EGLBoolean EGLAPIENTRY eglStreamConsumerGLTextureExternalKHR(EGLDisplay dpy, EGLStreamKHR stream);
 EGLAPI EGLBoolean EGLAPIENTRY eglStreamConsumerAcquireKHR(EGLDisplay dpy, EGLStreamKHR stream);
@@ -379,7 +379,7 @@ typedef EGLBoolean (EGLAPIENTRYP PFNEGLSTREAMCONSUMERRELEASEKHRPROC)(EGLDisplay 
 #ifdef EGL_KHR_stream /* Requires KHR_stream extension */
 #ifndef EGL_KHR_stream_producer_eglsurface
 #define EGL_KHR_stream_producer_eglsurface 1
-#define EGL_STREAM_BIT_KHR			    0x0800
+#define EGL_STREAM_BIT_KHR			0x0800
 #ifdef EGL_EGLEXT_PROTOTYPES
 EGLAPI EGLSurface EGLAPIENTRY eglCreateStreamProducerSurfaceKHR(EGLDisplay dpy, EGLConfig config, EGLStreamKHR stream, const EGLint *attrib_list);
 #endif /* EGL_EGLEXT_PROTOTYPES */
@@ -397,10 +397,10 @@ typedef EGLSurface (EGLAPIENTRYP PFNEGLCREATESTREAMPRODUCERSURFACEKHRPROC)(EGLDi
 #ifndef EGL_KHR_stream_fifo
 #define EGL_KHR_stream_fifo 1
 /* reuse EGLTimeKHR */
-#define EGL_STREAM_FIFO_LENGTH_KHR		    0x31FC
-#define EGL_STREAM_TIME_NOW_KHR			    0x31FD
-#define EGL_STREAM_TIME_CONSUMER_KHR		    0x31FE
-#define EGL_STREAM_TIME_PRODUCER_KHR		    0x31FF
+#define EGL_STREAM_FIFO_LENGTH_KHR		0x31FC
+#define EGL_STREAM_TIME_NOW_KHR			0x31FD
+#define EGL_STREAM_TIME_CONSUMER_KHR		0x31FE
+#define EGL_STREAM_TIME_PRODUCER_KHR		0x31FF
 #ifdef EGL_EGLEXT_PROTOTYPES
 EGLAPI EGLBoolean EGLAPIENTRY eglQueryStreamTimeKHR(EGLDisplay dpy, EGLStreamKHR stream, EGLenum attribute, EGLTimeKHR *value);
 #endif /* EGL_EGLEXT_PROTOTYPES */
@@ -410,10 +410,10 @@ typedef EGLBoolean (EGLAPIENTRYP PFNEGLQUERYSTREAMTIMEKHRPROC)(EGLDisplay dpy, E
 
 #ifndef EGL_EXT_create_context_robustness
 #define EGL_EXT_create_context_robustness 1
-#define EGL_CONTEXT_OPENGL_ROBUST_ACCESS_EXT	    0x30BF
+#define EGL_CONTEXT_OPENGL_ROBUST_ACCESS_EXT	0x30BF
 #define EGL_CONTEXT_OPENGL_RESET_NOTIFICATION_STRATEGY_EXT 0x3138
-#define EGL_NO_RESET_NOTIFICATION_EXT		    0x31BE
-#define EGL_LOSE_CONTEXT_ON_RESET_EXT		    0x31BF
+#define EGL_NO_RESET_NOTIFICATION_EXT		0x31BE
+#define EGL_LOSE_CONTEXT_ON_RESET_EXT		0x31BF
 #endif
 
 #ifndef EGL_ANGLE_d3d_share_handle_client_buffer
@@ -435,6 +435,39 @@ typedef EGLBoolean (EGLAPIENTRYP PFNEGLQUERYSTREAMTIMEKHRPROC)(EGLDisplay dpy, E
 #define EGL_CONTEXT_OPENGL_ROBUST_ACCESS_BIT_KHR	    0x00000004
 #define EGL_CONTEXT_OPENGL_CORE_PROFILE_BIT_KHR		    0x00000001
 #define EGL_CONTEXT_OPENGL_COMPATIBILITY_PROFILE_BIT_KHR    0x00000002
+#define EGL_OPENGL_ES3_BIT_KHR				    0x00000040
+#endif
+
+#ifndef EGL_KHR_surfaceless_context
+#define EGL_KHR_surfaceless_context 1
+/* No tokens/entry points, just relaxes an error condition */
+#endif
+
+#ifdef EGL_KHR_stream /* Requires KHR_stream extension */
+#ifndef EGL_KHR_stream_cross_process_fd
+#define EGL_KHR_stream_cross_process_fd 1
+typedef int EGLNativeFileDescriptorKHR;
+#define EGL_NO_FILE_DESCRIPTOR_KHR		((EGLNativeFileDescriptorKHR)(-1))
+#ifdef EGL_EGLEXT_PROTOTYPES
+EGLAPI EGLNativeFileDescriptorKHR EGLAPIENTRY eglGetStreamFileDescriptorKHR(EGLDisplay dpy, EGLStreamKHR stream);
+EGLAPI EGLStreamKHR EGLAPIENTRY eglCreateStreamFromFileDescriptorKHR(EGLDisplay dpy, EGLNativeFileDescriptorKHR file_descriptor);
+#endif /* EGL_EGLEXT_PROTOTYPES */
+typedef EGLNativeFileDescriptorKHR (EGLAPIENTRYP PFNEGLGETSTREAMFILEDESCRIPTORKHRPROC)(EGLDisplay dpy, EGLStreamKHR stream);
+typedef EGLStreamKHR (EGLAPIENTRYP PFNEGLCREATESTREAMFROMFILEDESCRIPTORKHRPROC)(EGLDisplay dpy, EGLNativeFileDescriptorKHR file_descriptor);
+#endif
+#endif
+
+#ifndef EGL_EXT_multiview_window
+#define EGL_EXT_multiview_window 1
+#define EGL_MULTIVIEW_VIEW_COUNT_EXT		0x3134
+#endif
+
+#ifndef EGL_KHR_wait_sync
+#define EGL_KHR_wait_sync 1
+#ifdef EGL_EGLEXT_PROTOTYPES
+EGLAPI EGLint EGLAPIENTRY eglWaitSyncKHR(EGLDisplay dpy, EGLSyncKHR sync, EGLint flags);
+#endif /* EGL_EGLEXT_PROTOTYPES */
+typedef EGLint (EGLAPIENTRYP PFNEGLWAITSYNCKHRPROC)(EGLDisplay dpy, EGLSyncKHR sync, EGLint flags);
 #endif
 
 #ifdef __cplusplus

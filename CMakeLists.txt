@@ -49,3 +49,24 @@ if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/include/GL" OR "${GTULU_FORCE_DOWNLOA
   message(STATUS "downloading GL/glcorearb.h...")
   file(DOWNLOAD "http://www.opengl.org/registry/api/glcorearb.h" "${CMAKE_CURRENT_SOURCE_DIR}/include/GL/glcorearb.h")
 endif()
+
+if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/share/gl/spec" OR "${GTULU_FORCE_DOWNLOAD}" EQUAL 1)
+  file(MAKE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/share/gl/spec")
+  message(STATUS "downloading enum.spec...")
+  file(DOWNLOAD "http://www.opengl.org/registry/api/enum.spec" "${CMAKE_CURRENT_SOURCE_DIR}/share/gl/spec/enum.spec")
+
+  message(STATUS "downloading enumext.spec...")
+  file(DOWNLOAD "http://www.opengl.org/registry/api/enumext.spec" "${CMAKE_CURRENT_SOURCE_DIR}/share/gl/spec/enumext.spec")
+
+  message(STATUS "downloading gl.spec...")
+  file(DOWNLOAD "http://www.opengl.org/registry/api/gl.spec" "${CMAKE_CURRENT_SOURCE_DIR}/share/gl/spec/gl.spec")
+
+  message(STATUS "downloading gl.tm...")
+  file(DOWNLOAD "http://www.opengl.org/registry/api/gl.tm" "${CMAKE_CURRENT_SOURCE_DIR}/share/gl/spec/gl.tm")
+endif()
+
+if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/share/egl/spec" OR "${GTULU_FORCE_DOWNLOAD}" EQUAL 1)
+  file(MAKE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/share/egl/spec")
+  message(STATUS "downloading glenum.spec...")
+  file(DOWNLOAD "http://www.khronos.org/registry/egl/api/eglenum.spec" "${CMAKE_CURRENT_SOURCE_DIR}/share/egl/spec/glenum.spec")
+endif()
