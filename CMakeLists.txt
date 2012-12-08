@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 2.8)
 
-# list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+include(CMakeExtraBootstrap)
 include(GNUInstallDirs)
-# include(ParseVersion)
+include(FindOpenGL)
 # include(AddSubmodule)
 # include(FindCXX11)
 
@@ -14,14 +15,6 @@ project(libgtulu_api CXX)
 
 find_package(PkgConfig REQUIRED)
 
-# On debian, pkg-config finds the MESA libGL.so, lets try using NVidia's if available.
-find_library(OPENGL_LIBRARIES libnvidia-cfg.so.1)
-if(OPENGL_LIBRARIES)
-  string(REPLACE "libnvidia-cfg.so.1" "libGL.so.1" OPENGL_LIBRARIES ":${OPENGL_LIBRARIES}")
-  list(APPEND OPENGL_LIBRARIES X11 EGL)
-else()
-  pkg_check_modules(OPENGL REQUIRED gl egl)
-endif()
 include_directories(${OPENGL_INCLUDE_DIRS})
 link_directories(${OPENGL_LIBRARY_DIRS})
 

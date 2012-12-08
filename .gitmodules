@@ -69,4 +69,7 @@
 	url = git://github.com/berenm/gtulu-reference.git
 [submodule "lib/registry"]
 	path = lib/registry
-	url = git://github.com/berenm/libgtulu.git
+	url = git://github.com/berenm/gtulu-reference.git
+[submodule "cmake/extra"]
+	path = cmake/extra
+	url = git://github.com/berenm/cmake-extra.git
