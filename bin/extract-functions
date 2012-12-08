@@ -28,7 +28,12 @@ with open(gtu.spec('gl.spec'), 'r') as spec:
       versions[fct] = ver
 
 
-for version in ['2', '3', '4', 'es2', 'es3']:
+if len(sys.argv) < 2:
+  versions = ['2', '3', '4', 'es2', 'es3']
+else:
+  versions = [ v.split('.')[0] for v in sys.argv[1:] ]
+
+for version in versions:
   fcts = set()
   fcts_api = set()
   fcts_call = set()
