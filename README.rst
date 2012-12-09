@@ -8,7 +8,7 @@ gtulu-reference — opengl reference C++ wrapper library
 PURPOSE OF GTULU
 `````````````````````
 
-1. **Track the OpenGL specifications and API evolutions**, keeping track of the functions and constants additions or removals.
+1. **Track the OpenGL specifications and API evolutions**, keeping track of the functions and constants additions or removals. Tracking inconsistencies and correcting the manpages.
 2. **Provide a programmable way to generate headers and libraries** corresponding to a specific version of OpenGL.
 3. **Provide a stable API layer for OpenGL programming**, without having to rely on vendor-dependent OpenGL libraries with heterogeneous symbol availability. Targetting a specific version of OpenGL would simply mean linking against a specific version of such library set, disregarding of the availability of the vendor's symbols at the compilation time.
 4. **Provide a modern C++-style API**, using function overloading, namespaces, strong type checks and datastructures, to simplify the OpenGL API and improve the interoperability with the C++ standard library. 
