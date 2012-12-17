@@ -73,3 +73,6 @@
 [submodule "cmake/extra"]
 	path = cmake/extra
 	url = git://github.com/berenm/cmake-extra.git
+[submodule "lib/logging"]
+	path = lib/logging
+	url = git://github.com/berenm/liblogging.git

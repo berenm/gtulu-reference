@@ -23,7 +23,7 @@ for v in versions:
   if v == '2.1':
     comps = ['']
   else:
-    comps = ['core', 'comp']
+    comps = ['core'] #, 'comp']
 
   for c in comps:
     functionapi = {}
@@ -45,15 +45,58 @@ for v in versions:
       compatapi = functionapi
       compatcall = functioncall
 
-    functions = os.listdir(gtu.ref(v, c, 'function'))
+    functions = {}
+    for f in os.listdir(gtu.ref(v, c, 'function')):
+      function = {}
+
+      function_name = f
+      function['gl_name'] = function_name
+      function['gtulu_name'] = Function(function_name).new_name
+      function['gtulu_ni_name'] = '__gtuluNI%s' % function['gl_name'][2:]
+
+      function_decl = functionapi.get(f, '/* %s */' % function_name).replace(function_name, '%s')
+      function['gl_decl'] = function_decl.strip(';') % function['gl_name']
+      function['gtulu_decl'] = function_decl.strip(';') % function['gtulu_name']
+      function['gtulu_ni_decl'] = function_decl.strip(';') % function['gtulu_ni_name']
+
+      function['output'] = function_decl.split('%s')[0].strip()
+
+      return_statement = function['output']
+      if '*' in return_statement:
+        function['default_return']  = 'nullptr'
+        function['assign_variable'] = '%s const __r = ' % return_statement
+        function['return_variable'] = '__r'
+      elif return_statement != 'void':
+        function['default_return']  = '%s()' % return_statement.replace('const', '')
+        function['assign_variable'] = '%s const __r = ' % return_statement.replace('const', '')
+        function['return_variable'] = '__r'
+      else:
+        function['default_return']  = ''
+        function['assign_variable'] = ''
+        function['return_variable'] = ''
+
+      if function['gl_name'] == 'glGetError':
+        function['check_error'] = ''
+      else:
+        function['check_error'] = 'api::__check_error();'
+
+      function['gl_call'] = functioncall.get(f, '').strip(';')
+      function['gl_call'] = '%(assign_variable)s %(gl_call)s; %(check_error)s return %(return_variable)s;' % function
+
+      function['gtulu_ni_return'] = 'return %(default_return)s;' % function
+
+      functions[function_name] = function
+
+
 
     target = gtu.api(v, c, 'gtulu')
     if not os.path.exists(target):
       os.makedirs(target)
 
+
     target = gtu.api(v, c, 'gtulu/types.h')
-    with open(target, 'w') as output:
-      print >>output, '''\
+    with open(target, 'w') as o:
+      print >>o, '''\
 #ifndef __GTULU_TYPES_H__
 #define __GTULU_TYPES_H__
 
@@ -86,16 +129,18 @@ typedef void (* GLDEBUGPROC)(GLenum source,GLenum type,GLuint id,GLenum severity
 
 #endif // ifndef __GTULU_TYPES_H__'''
 
+
+
     target = gtu.api(v, c, 'gtulu/api.hpp')
-    with open(target, 'w') as output:
-      print >>output, '''\
+    with open(target, 'w') as o:
+      print >>o, '''\
 #ifndef __GTULU_OPENGL_API__
 #define __GTULU_OPENGL_API__
 
 #include <gtulu/types.h>
 
 #ifdef __IN_GTULU_OPENGL_API__
-#define GTULU_API_EXPORT BOOST_SYMBOL_EXPORT
+#define GTULU_API_EXPORT __attribute__ ((visibility ("default")))
 #else
 #define GTULU_API_EXPORT BOOST_SYMBOL_IMPORT
 #endif
@@ -103,56 +148,85 @@ typedef void (* GLDEBUGPROC)(GLenum source,GLenum type,GLuint id,GLenum severity
 namespace gtulu {
 namespace api {
 '''
-      for f in sorted(functions):
-        print >>output, 'GTULU_API_EXPORT %s' % functionapi.get(f, compatapi.get(f, '')).replace(f, Function(f).new_name)
+      for n,f in sorted(functions.items()):
+        print >>o, 'GTULU_API_EXPORT %(gtulu_decl)s;' % f
 
-      print >>output, '''
+      print >>o, '''
 } // namespace api
 } // namespace gtulu
 
 #endif /* __GTULU_OPENGL_API__ */'''
 
-    target = gtu.api(v, c, 'gtulu/api.cpp')
-    with open(target, 'w') as output:
-      print >>output, '''\
-#define __IN_GTULU_OPENGL_API__
-#include <gtulu/api.hpp>
-#include <gtulu/api.h>
 
-namespace gtulu {
-namespace api {
-'''
-      for f in sorted(functions):
-        glapi = functionapi.get(f, compatapi.get(f, ''))
-        glcall = functioncall.get(f, compatcall.get(f, ''))
-        ret = glapi[:4] == 'void' and '' or 'return '
-
-        print >>output, '%s { %s%s }' % (glapi.replace(f, Function(f).new_name).replace(';', ''), ret, glcall.replace('\n', ''))
-
-      print >>output, '''\
-\n} // namespace api
-} // namespace gtulu'''
 
     target = gtu.api(v, c, 'gtulu/api.h')
-    with open(target, 'w') as output:
-      print >>output, '''\
+    with open(target, 'w') as o:
+      print >>o, '''\
 #ifndef __GTULU_API_H__
 #define __GTULU_API_H__
 
 #include <gtulu/types.h>
 
-#define GTULU_API_IMPORT BOOST_SYMBOL_IMPORT __attribute__((weak))
+#define GTULU_API_EXPORT __attribute__ ((visibility ("default")))
+#define GTULU_API_IMPORT BOOST_SYMBOL_IMPORT
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 '''
-      for f in sorted(functions):
-        print >>output, 'GTULU_API_IMPORT %s' % functionapi.get(f, compatapi.get(f, '/* %s */' % f))
+      for n,f in sorted(functions.items()):
+        print >>o, 'GTULU_API_IMPORT %(gl_decl)s;' % f
 
-      print >>output, '''
+      print >>o, '''
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* __GTULU_API_H__ */'''
+
+
+
+    target = gtu.api(v, c, 'gtulu/api.cpp')
+    with open(target, 'w') as o:
+      print >>o, '''\
+#define __IN_GTULU_OPENGL_API__
+#include <gtulu/api.hpp>
+#include <gtulu/api.h>
+#include <gtulu/error.hpp>
+
+namespace gtulu {
+namespace api {
+'''
+      for n,f in sorted(functions.items()):
+        print >>o, '%(gtulu_decl)s { %(gl_call)s }' % f
+
+      print >>o, '''\
+\n} // namespace api
+} // namespace gtulu'''
+
+
+
+    target = gtu.api(v, c, 'gtulu/api_ni.cpp')
+    with open(target, 'w') as o:
+      print >>o, '''\
+#include <gtulu/api.h>
+#include <gtulu/logging.hpp>
+
+namespace gtulu {
+namespace api {
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+'''
+      for n,f in sorted(functions.items()):
+        print >>o, 'static %(gtulu_ni_decl)s { __warn() << "not implemented: %(gl_name)s"; %(gtulu_ni_return)s }' % f
+        print >>o, 'GTULU_API_EXPORT __attribute__((weak, alias("%(gtulu_ni_name)s"))) %(gl_decl)s;' % f
+
+      print >>o, '''
+#ifdef __cplusplus
+}
+#endif
+
+} // namespace api
+} // namespace gtulu'''
