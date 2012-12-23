@@ -1,0 +1,24 @@
+categories:
+- tex_image_target
+- texture_bind_target
+- texture_level_target
+- internal_format_target
+- buffer_target
+gtu:
+  name: texture_buffer
+usage:
+- glBindBuffer.target
+- glBindTexture.target
+- glBufferData.target
+- glBufferSubData.target
+- glFlushMappedBufferRange.target
+- glGetBufferParameteriv.target
+- glGetBufferPointerv.target
+- glGetBufferSubData.target
+- glGetTexLevelParameterfv.target
+- glGetTexLevelParameteriv.target
+- glMapBuffer.target
+- glMapBufferRange.target
+- glTexBuffer.target
+- glUnmapBuffer.target
+value: 0x8c2a

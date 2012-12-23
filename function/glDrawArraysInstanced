@@ -1,0 +1,28 @@
+gl:
+  name: glDrawArraysInstanced
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  - mapping: first
+    name: first
+    type: GLint
+  - mapping: count
+    name: count
+    type: GLsizei
+  - mapping: instancecount
+    name: instancecount
+    type: GLsizei
+  return: void
+gtu:
+  name: draw_arrays_instanced
+  params:
+  - name: mode
+    type: gtu::constant const
+  - name: first
+    type: int32_t const
+  - name: count
+    type: gtu::size const
+  - name: instancecount
+    type: gtu::size const
+  return: void

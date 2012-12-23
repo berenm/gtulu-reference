@@ -1,0 +1,7 @@
+categories:
+- uniforms_property
+gtu:
+  name: uniform_is_row_major
+usage:
+- glGetActiveUniformsiv.property
+value: 0x8a3e

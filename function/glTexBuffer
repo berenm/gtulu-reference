@@ -1,0 +1,23 @@
+gl:
+  name: glTexBuffer
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: internal_format
+    name: internalformat
+    type: GLenum
+  - mapping: buffer
+    name: buffer
+    type: GLuint
+  return: void
+gtu:
+  name: tex_buffer
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: internal_format
+    type: gtu::constant const
+  - name: buffer
+    type: gtu::buffer const
+  return: void

@@ -1,0 +1,7 @@
+categories:
+- uniform_block_property
+gtu:
+  name: uniform_block_data_size
+usage:
+- glGetActiveUniformBlockiv.property
+value: 0x8a40

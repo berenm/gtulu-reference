@@ -1,0 +1,27 @@
+categories:
+- tex_image_target
+- texture_target
+- texture_bind_target
+- texture_level_target
+- writable_texture_property_target
+- texture_view_target
+- internal_format_target
+gtu:
+  name: texture_rectangle
+usage:
+- glBindTexture.target
+- glGetTexImage.target
+- glGetTexLevelParameterfv.target
+- glGetTexLevelParameteriv.target
+- glGetTexParameterIiv.target
+- glGetTexParameterIuiv.target
+- glGetTexParameterfv.target
+- glGetTexParameteriv.target
+- glTexImage2D.target
+- glTexParameterIiv.target
+- glTexParameterIuiv.target
+- glTexParameterf.target
+- glTexParameterfv.target
+- glTexParameteri.target
+- glTexParameteriv.target
+value: 0x84f5

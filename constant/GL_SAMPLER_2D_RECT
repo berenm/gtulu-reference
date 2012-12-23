@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_1
+gtu:
+  name: sampler_2d_rect
+usage: []
+value: 0x8b63

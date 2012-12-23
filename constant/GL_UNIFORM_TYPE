@@ -1,0 +1,7 @@
+categories:
+- uniforms_property
+gtu:
+  name: uniform_type
+usage:
+- glGetActiveUniformsiv.property
+value: 0x8a37

@@ -1,0 +1,31 @@
+gl:
+  name: glGetActiveUniformName
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: uniform
+    name: uniformIndex
+    type: GLuint
+  - mapping: name.capacity()
+    name: bufSize
+    type: GLsizei
+  - mapping: '&length'
+    name: length
+    type: GLsizei*
+  - mapping: '&name[0]'
+    name: uniformName
+    type: GLchar*
+  return: void
+gtu:
+  name: get_active_uniform_name
+  params:
+  - name: program
+    type: gtu::program const
+  - name: uniform
+    type: gtu::uniform const
+  - name: length
+    type: gtu::size&
+  - name: name
+    type: std::string&
+  return: void

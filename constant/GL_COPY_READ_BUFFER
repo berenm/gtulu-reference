@@ -1,0 +1,16 @@
+categories:
+- buffer_target
+gtu:
+  name: copy_read_buffer
+usage:
+- glBindBuffer.target
+- glBufferData.target
+- glBufferSubData.target
+- glFlushMappedBufferRange.target
+- glGetBufferParameteriv.target
+- glGetBufferPointerv.target
+- glGetBufferSubData.target
+- glMapBuffer.target
+- glMapBufferRange.target
+- glUnmapBuffer.target
+value: 0x8f36

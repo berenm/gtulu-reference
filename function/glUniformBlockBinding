@@ -1,0 +1,23 @@
+gl:
+  name: glUniformBlockBinding
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: uniform_block
+    name: uniformBlockIndex
+    type: GLuint
+  - mapping: uniformBlockBinding
+    name: uniformBlockBinding
+    type: GLuint
+  return: void
+gtu:
+  name: uniform_block_binding
+  params:
+  - name: program
+    type: gtu::program const
+  - name: uniform_block
+    type: gtu::uniform_block const
+  - name: uniformBlockBinding
+    type: uint32_t const
+  return: void

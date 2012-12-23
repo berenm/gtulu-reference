@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_1
+gtu:
+  name: signed_normalized
+usage: []
+value: 0x8f9c

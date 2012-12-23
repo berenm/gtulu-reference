@@ -1,0 +1,13 @@
+gl:
+  name: glPrimitiveRestartIndex
+  params:
+  - mapping: index
+    name: index
+    type: GLuint
+  return: void
+gtu:
+  name: primitive_restart_index
+  params:
+  - name: index
+    type: uint32_t const
+  return: void

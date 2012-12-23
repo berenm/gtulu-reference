@@ -1,0 +1,30 @@
+gl:
+  name: glGetUniformIndices
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: names.size()
+    name: uniformCount
+    type: GLsizei
+  - mapping: '&strings[0]'
+    name: uniformNames
+    type: const GLchar**
+  - mapping: '&indices[0]'
+    name: uniformIndices
+    type: GLuint*
+  return: void
+gtu:
+  name: get_uniform_indices
+  params:
+  - name: program
+    type: gtu::program const
+  - name: names
+    type: std::vector< std::string > const&
+  - name: indices
+    type: std::vector< uint32_t >&
+  precall: |
+    std::vector< char const* >  strings;
+    std::transform(names.begin(), names.end(), std::back_inserter(strings), [](std::string const& e) { return e.data(); });
+    indices.resize(names.size());
+  return: void

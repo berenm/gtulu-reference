@@ -1,0 +1,28 @@
+gl:
+  name: glGetActiveUniformBlockiv
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: uniform_block
+    name: uniformBlockIndex
+    type: GLuint
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: params
+    type: GLint*
+  return: void
+gtu:
+  name: get_active_uniform_block
+  params:
+  - name: program
+    type: gtu::program const
+  - name: uniform_block
+    type: gtu::uniform_block const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: std::vector< int32_t >&
+  return: void

@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_1
+gtu:
+  name: texture_buffer_data_store_binding
+usage: []
+value: 0x8c2d

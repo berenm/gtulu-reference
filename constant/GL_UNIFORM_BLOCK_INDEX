@@ -1,0 +1,7 @@
+categories:
+- uniforms_property
+gtu:
+  name: uniform_block_index
+usage:
+- glGetActiveUniformsiv.property
+value: 0x8a3a
