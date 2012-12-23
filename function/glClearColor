@@ -3,16 +3,16 @@ gl:
   params:
   - mapping: color[0]
     name: red
-    type: GLclampf
+    type: GLfloat
   - mapping: color[1]
     name: green
-    type: GLclampf
+    type: GLfloat
   - mapping: color[2]
     name: blue
-    type: GLclampf
+    type: GLfloat
   - mapping: color[3]
     name: alpha
-    type: GLclampf
+    type: GLfloat
   return: void
 gtu:
   name: clear_color
