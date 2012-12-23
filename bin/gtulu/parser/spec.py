@@ -29,8 +29,8 @@ class SpecParser(object):
   def parse(self):
     result = {'functions':{}, 'enumerations':{}}
 
-    function = lambda: {'name':'', 'params':[], 'return': 'void', 'categories':[], 'properties': {}}
-    enumeration = lambda: {'name':'', 'values':{}}
+    function = lambda: {'name': None, 'params':[], 'return': None, 'categories':[], 'properties': {}}
+    enumeration = lambda: {'value': None, 'categories':[]}
 
     current_function = None
     current_enumeration = None
@@ -52,10 +52,7 @@ class SpecParser(object):
 
         elif SpecParser.EnumerationRE.match(line) is not None:
           m = SpecParser.EnumerationRE.match(line)
-          if not m.group('name') in result['enumerations']:
-            result['enumerations'][m.group('name')] = enumeration()
-          current_enumeration = result['enumerations'][m.group('name')]
-          current_enumeration['name'] = m.group('name')
+          current_enumeration = m.group('name')
 
         elif SpecParser.AttributeRE.match(line) is not None:
           m = SpecParser.AttributeRE.match(line)
@@ -74,17 +71,38 @@ class SpecParser(object):
           elif m.group('keyword') == 'return':
             current_function['return'] = m.group('value').strip()
           elif m.group('keyword') == 'category':
-            current_function['categories'] = [ cat.strip() for cat in m.group('value').strip().split('# old:') ]
+            current_function['categories'].extend([ cat.strip() for cat in m.group('value').strip().split('# old:') ])
           elif m.group('keyword')[:3] != 'glx':
             current_function['properties'][m.group('keyword')] = m.group('value').strip()
 
         elif SpecParser.EnumerationValueRE.match(line) is not None:
           m = SpecParser.EnumerationValueRE.match(line)
-          current_enumeration['values'][m.group('name')] = m.group('value').strip()
+          name  = m.group('name')
+          if not name in result['enumerations']:
+            result['enumerations'][name] = enumeration()
+          result['enumerations'][name]['categories'].append(current_enumeration)
+
+          value = m.group('value').strip()
+          try:
+            if value[:2] == '0x':
+              value = int(value, 16)
+            else:
+              value = int(value, 10)
+          except ValueError:
+            pass
+
+          current_value = result['enumerations'][name]['value']
+          if current_value is not None and current_value != value:
+            log.error('%s value differs previous: %s, new: %s' % (name, current_value, value))
+          result['enumerations'][name]['value'] = value
 
         elif SpecParser.EnumerationAliasRE.match(line) is not None:
           m = SpecParser.EnumerationAliasRE.match(line)
-          current_enumeration['values'][m.group('name_value')] = '%s.%s' % (m.group('name_enum'), m.group('name_value'))
+          name  = m.group('name_value')
+          if not name in result['enumerations']:
+            result['enumerations'][name] = enumeration()
+          result['enumerations'][name]['categories'].append(current_enumeration)
+          result['enumerations'][name]['categories'].append(m.group('name_enum'))
 
         else:
           matches = [ p.match(line) for p in [ SpecParser.NewCategoryRE, SpecParser.PassthruRE, \
@@ -97,15 +115,9 @@ class SpecParser(object):
             # log.debug('Match: type_spec: %s, type_c: %s' % (match.group('type_spec'), match.group('type_c')))
         pline = line
 
-    for v in result['enumerations'].values():
-      for k,vv in v['values'].items():
-        s = vv.split('.')
-        if len(s) == 2:
-          if s[0] not in result['enumerations']:
-            log.error('alias target enum %s does not exist.' % (s[0]))
-          elif s[1] not in result['enumerations'][s[0]]['values']:
-            log.error('alias target value %s.%s does not exist.' % (s[0], s[1]))
-          else:
-            v[k] = result['enumerations'][s[0]]['values'][s[1]]
+      for k,v in result['functions'].items():
+        v['categories'] = list(set(v['categories']))
+      for k,v in result['enumerations'].items():
+        v['categories'] = list(set(v['categories']))
 
     return result
