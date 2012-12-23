@@ -1,0 +1,28 @@
+gl:
+  name: glGetQueryIndexediv
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: index
+    name: index
+    type: GLuint
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: params
+    type: GLint*
+  return: void
+gtu:
+  name: get_query_indexed
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: index
+    type: uint32_t const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: gtu::vec1< int32_t >&
+  return: void

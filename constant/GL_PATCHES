@@ -1,0 +1,6 @@
+categories:
+- draw_mode
+gtu:
+  name: patches
+usage: []
+value: 0xe

@@ -1,0 +1,36 @@
+gl:
+  name: glGetActiveSubroutineName
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: shadertype
+    name: shadertype
+    type: GLenum
+  - mapping: subroutine
+    name: index
+    type: GLuint
+  - mapping: name.capacity()
+    name: bufsize
+    type: GLsizei
+  - mapping: '&length'
+    name: length
+    type: GLsizei*
+  - mapping: '&name[0]'
+    name: name
+    type: GLchar*
+  return: void
+gtu:
+  name: get_active_subroutine_name
+  params:
+  - name: program
+    type: gtu::program const
+  - name: shadertype
+    type: gtu::constant const
+  - name: subroutine
+    type: gtu::subroutine const
+  - name: length
+    type: gtu::size&
+  - name: name
+    type: std::string&
+  return: void

@@ -1,0 +1,13 @@
+gl:
+  name: glIsTransformFeedback
+  params:
+  - mapping: transform_feedback
+    name: id
+    type: GLuint
+  return: GLboolean
+gtu:
+  name: is_transform_feedback
+  params:
+  - name: transform_feedback
+    type: gtu::transform_feedback const
+  return: bool

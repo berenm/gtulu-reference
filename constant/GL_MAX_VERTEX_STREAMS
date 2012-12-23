@@ -1,0 +1,8 @@
+categories:
+- gl_ARB_gpu_shader5
+- gl_ARB_texture_multisample
+- gl_ARB_transform_feedback3
+gtu:
+  name: max_vertex_streams
+usage: []
+value: 0x8e71

@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_texture_cube_map_array
+gtu:
+  name: int_sampler_cube_map_array
+usage: []
+value: 0x900e

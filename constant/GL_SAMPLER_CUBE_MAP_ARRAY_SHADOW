@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_texture_cube_map_array
+gtu:
+  name: sampler_cube_map_array_shadow
+usage: []
+value: 0x900d

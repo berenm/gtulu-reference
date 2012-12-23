@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_gpu_shader_fp64
+gtu:
+  name: double_mat2x4
+usage: []
+value: 0x8f4a

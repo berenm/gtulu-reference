@@ -1,0 +1,7 @@
+categories:
+- program_stage_property
+gtu:
+  name: active_subroutines
+usage:
+- glGetProgramStageiv.property
+value: 0x8de5

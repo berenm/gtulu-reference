@@ -1,0 +1,23 @@
+gl:
+  name: glBeginQueryIndexed
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: index
+    name: index
+    type: GLuint
+  - mapping: query
+    name: id
+    type: GLuint
+  return: void
+gtu:
+  name: begin_query_indexed
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: index
+    type: uint32_t const
+  - name: query
+    type: gtu::query const
+  return: void

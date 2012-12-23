@@ -4,5 +4,6 @@ categories:
 gtu:
   name: uniform_size
 usage:
+- glGetActiveSubroutineUniformiv.property
 - glGetActiveUniformsiv.property
 value: 0x8a38

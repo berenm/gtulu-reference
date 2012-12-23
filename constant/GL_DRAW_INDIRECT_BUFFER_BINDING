@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_draw_indirect
+gtu:
+  name: draw_indirect_buffer_binding
+usage: []
+value: 0x8f43

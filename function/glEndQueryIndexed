@@ -1,0 +1,18 @@
+gl:
+  name: glEndQueryIndexed
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: index
+    name: index
+    type: GLuint
+  return: void
+gtu:
+  name: end_query_indexed
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: index
+    type: uint32_t const
+  return: void

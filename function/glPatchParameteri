@@ -1,0 +1,18 @@
+gl:
+  name: glPatchParameteri
+  params:
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: value
+    name: value
+    type: GLint
+  return: void
+gtu:
+  name: patch_parameter
+  params:
+  - name: property
+    type: gtu::constant const
+  - name: value
+    type: int32_t const
+  return: void

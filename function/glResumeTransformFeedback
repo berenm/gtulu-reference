@@ -1,0 +1,8 @@
+gl:
+  name: glResumeTransformFeedback
+  params: []
+  return: void
+gtu:
+  name: resume_transform_feedback
+  params: []
+  return: void

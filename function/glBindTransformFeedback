@@ -1,0 +1,18 @@
+gl:
+  name: glBindTransformFeedback
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: transform_feedback
+    name: id
+    type: GLuint
+  return: void
+gtu:
+  name: bind_transform_feedback
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: transform_feedback
+    type: gtu::transform_feedback const
+  return: void

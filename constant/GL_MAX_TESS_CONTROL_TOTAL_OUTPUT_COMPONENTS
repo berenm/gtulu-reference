@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_tessellation_shader
+gtu:
+  name: max_tess_control_total_output_components
+usage: []
+value: 0x8e85

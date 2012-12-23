@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_shader_subroutine
+gtu:
+  name: max_subroutine_uniform_locations
+usage: []
+value: 0x8de8
