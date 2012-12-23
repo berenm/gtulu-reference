@@ -1,0 +1,123 @@
+#!/bin/bash
+
+__checkpoint() {
+  local c
+  read -e -i Y -r -p 'continue? [Y/n] ' c
+  [ "$c" == "Y" -o "$c" == "y" ] && return 0
+  return 1
+}
+
+__confirm() {
+  local c
+  read -e -r -p '$ ' -i "$(echo $@ | sed -re 's@ @\ @g')" c
+  [ ! -z "$c" ] && $c
+  return $?
+}
+
+__inform() {
+  echo "# $@"
+  $@ &>/dev/null
+}
+
+__fetch() {
+  __inform git stash
+  __inform git fetch origin
+  __inform git checkout origin/$1 -B $1
+  __inform git stash pop
+
+  echo "# git status --short"
+  git status --short
+  git diff
+}
+
+__commit() {
+  __inform git add -u .
+
+  [ -z "$(git commit --short)" ] && return 0
+  __confirm git commit
+}
+
+__push() {
+  [ ! -z "$(git diff $1..origin/$1)" ] && __confirm git push origin $1
+  __inform git checkout origin/$1 -B $1
+}
+
+__update() {
+  __inform cd $1/$3
+
+  echo $2 | grep origin && remote=$2 || remote=origin/$2/$3
+  upstream=$(git rev-parse --short $remote)
+
+  __fetch $1/$3
+  __commit
+
+  echo "# git log --oneline --graph --decorate --topo-order $1/$3 origin/$1/$3"
+  git log --oneline --graph --decorate --topo-order $1/$3 origin/$1/$3
+  __confirm git checkout $upstream -B upstream
+  __inform git checkout -
+
+  __confirm git rebase --preserve-merges --onto $remote upstream $1/$3 --interactive
+
+  echo "# git log --oneline --graph --decorate --topo-order $1/$3 origin/$1/$3"
+  git log --oneline --graph --decorate --topo-order $1/$3 origin/$1/$3
+  __push $1/$3
+
+  cd - &>/dev/null
+}
+
+
+__cherry_picks() {
+  upstream=$(git log --oneline | grep 'Merge' | awk '{ print $1 }' | head -1)
+  head=$(git rev-parse --short HEAD)
+  echo $upstream..$head
+}
+
+
+__update_core() {
+  __inform cd $1/$3
+
+  cherry_pick=$(__cherry_picks)
+
+  __fetch $1/$3
+  __inform git checkout origin/$2/$3 -B $1/$3
+  __inform git checkout origin/$1/comp -B $1/comp
+  __inform git checkout -
+  __inform git merge $1/comp
+
+  [ ! -z "$cherry_pick" ] && __inform git cherry-pick $cherry_pick
+
+  echo "# git log --oneline --graph --decorate --topo-order $1/$3 origin/$1/$3"
+  git log --oneline --graph --decorate --topo-order $1/$3 origin/$1/$3
+  __push $1/$3
+
+  cd - &>/dev/null
+}
+
+
+cd $(dirname $0)/..
+
+__inform cd gl/2.1
+__fetch gl/2.1
+__commit
+  echo "# git log --oneline --graph --decorate --topo-order gl/2.1 origin/gl/2.1"
+  git log --oneline --graph --decorate --topo-order gl/2.1 origin/gl/2.1
+__push gl/2.1
+cd - &>/dev/null
+
+__update gl/3.0 origin/gl/2.1 comp
+__update gl/3.1 gl/3.0 comp
+__update gl/3.2 gl/3.1 comp
+__update gl/3.3 gl/3.2 comp
+__update gl/4.0 gl/3.3 comp
+__update gl/4.1 gl/4.0 comp
+__update gl/4.2 gl/4.1 comp
+__update gl/4.3 gl/4.2 comp
+
+__update gl/3.0 origin/gl/3.0/comp core
+__update_core gl/3.1 gl/3.0 core
+__update_core gl/3.2 gl/3.1 core
+__update_core gl/3.3 gl/3.2 core
+__update_core gl/4.0 gl/3.3 core
+__update_core gl/4.1 gl/4.0 core
+__update_core gl/4.2 gl/4.1 core
+__update_core gl/4.3 gl/4.2 core

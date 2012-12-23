@@ -5,7 +5,18 @@ import os
 import sys
 import re
 import gtuluref as gtu
+import yaml
 
+from gtulu.parser.tm import TMParser
+from gtulu.parser.spec import SpecParser
+
+args = gtu.arguments()
+TMParser(gtu.spec('gl.tm')).parse()
+yaml.dump(SpecParser(gtu.spec('enum.spec')).parse(), file('enum.spec.yaml', 'w'), default_flow_style=False)
+yaml.dump(SpecParser(gtu.spec('gl.spec')).parse(), file('gl.spec.yaml', 'w'), default_flow_style=False)
+yaml.dump(SpecParser(gtu.spec('enumext.spec')).parse(), file('enumex.spec.yaml', 'w'), default_flow_style=False)
+
+# ../lib/registry/share/egl/spec/glenum.spec
 
 versions = {}
 with open(gtu.spec('gl.spec'), 'r') as spec:

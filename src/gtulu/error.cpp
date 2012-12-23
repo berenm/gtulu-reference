@@ -20,9 +20,9 @@ namespace gtulu {
 #define GL_INVALID_FRAMEBUFFER_OPERATION 0x0506
 
     void __check_error() {
-      static char const* const __gtulu_errors = std::getenv("GTULU_NOERROR");
+      static char const* const __gtulu_error_nocheck = std::getenv("GTULU_ERROR_NOCHECK");
 
-      if (__gtulu_errors != nullptr)
+      if (__gtulu_error_nocheck != nullptr)
         return;
 
       int32_t const __gl_error        = gtulu::api::get_error();
@@ -65,8 +65,11 @@ namespace gtulu {
       }
 
       __error() << __gl_error_string;
-      throw std::runtime_error(__gl_error_string);
-    }
+
+      static char const* const __gtulu_error_nothrow = std::getenv("GTULU_ERROR_NOTHROW");
+      if (__gtulu_error_nothrow == nullptr)
+        throw std::runtime_error(__gl_error_string);
+    } // __check_error
 
   }
 }

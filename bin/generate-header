@@ -1,9 +1,11 @@
 #!/usr/bin/python
 
 import os
+import re
 import sys
 from renamable import Renamable
 import gtuluref as gtu
+import yaml
 
 
 class Function(Renamable):
@@ -23,7 +25,7 @@ for v in versions:
   if v == '2.1':
     comps = ['']
   else:
-    comps = ['core'] #, 'comp']
+    comps = ['core', 'comp']
 
   for c in comps:
     functionapi = {}
@@ -54,7 +56,7 @@ for v in versions:
       function['gtulu_name'] = Function(function_name).new_name
       function['gtulu_ni_name'] = '__gtuluNI%s' % function['gl_name'][2:]
 
-      function_decl = functionapi.get(f, '/* %s */' % function_name).replace(function_name, '%s')
+      function_decl = functionapi.get(f, compatapi.get(f, '/* %s */' % function_name)).replace(function_name, '%s')
       function['gl_decl'] = function_decl.strip(';') % function['gl_name']
       function['gtulu_decl'] = function_decl.strip(';') % function['gtulu_name']
       function['gtulu_ni_decl'] = function_decl.strip(';') % function['gtulu_ni_name']
@@ -80,13 +82,26 @@ for v in versions:
       else:
         function['check_error'] = 'api::__check_error();'
 
-      function['gl_call'] = functioncall.get(f, '').strip(';')
-      function['gl_call'] = '%(assign_variable)s %(gl_call)s; %(check_error)s return %(return_variable)s;' % function
+      function['gl_call']     = functioncall.get(f, compatcall.get(f, '')).strip(';')
+      function['gl_log_call'] = '"call %(gl_name)s(" ' % function + ' << ", " '.join([ '<< "%s:" << %s' % (p.strip(), p.strip()) for p in function['gl_call'].replace('%(gl_name)s(' % function, '').replace(')', '').split(',') if p.strip() != '' ]) + ' << ")"'
+      function['gl_call']     = '__trace() << %(gl_log_call)s;\n%(assign_variable)s %(gl_call)s;\n%(check_error)s\nreturn %(return_variable)s;' % function
 
       function['gtulu_ni_return'] = 'return %(default_return)s;' % function
 
       functions[function_name] = function
 
+      signature = '%(output)s %(gl_name)s' % function
+      extract_params = re.compile(r'^%s\((?P<params>.*)\)$' % signature.replace(r'*', r'\*'))
+      # print r'^%s\((?P<params>.*)\)$' % signature.replace(r'*', r'\*')
+      # print function['gl_decl']
+      # print extract_params.match(function['gl_decl']) and extract_params.match(function['gl_decl']).group('params')
+
+      function['params'] = [ {'type': ' '.join(s[:-1]), 'name': s[-1]} for p in extract_params.sub('\g<params>', function['gl_decl']).split(',') for s in [p.strip().split(' ')] if p.strip() != '']
+
+      with open(os.path.join(gtu.ref(v, c, 'function'), f), 'w') as out:
+        d = dict([(key,value) for couple in ('gl-name:%(gl_name)s,gl-return:%(output)s,gtulu-name:%(gtulu_name)s' % function).split(',') for (key,value) in [couple.split(':')]])
+        d['gl-params'] = function['params']
+        yaml.dump(d, out, default_flow_style=False)
 
 
     target = gtu.api(v, c, 'gtulu')
@@ -193,6 +208,7 @@ extern "C" {
 #include <gtulu/api.hpp>
 #include <gtulu/api.h>
 #include <gtulu/error.hpp>
+#include <gtulu/logging.hpp>
 
 namespace gtulu {
 namespace api {
@@ -210,7 +226,7 @@ namespace api {
     with open(target, 'w') as o:
       print >>o, '''\
 #include <gtulu/api.h>
-#include <gtulu/logging.hpp>
+#include <gtulu/notimp.hpp>
 
 namespace gtulu {
 namespace api {
@@ -220,7 +236,7 @@ extern "C" {
 #endif
 '''
       for n,f in sorted(functions.items()):
-        print >>o, 'static %(gtulu_ni_decl)s { __warn() << "not implemented: %(gl_name)s"; %(gtulu_ni_return)s }' % f
+        print >>o, 'static %(gtulu_ni_decl)s { api::__not_implemented("%(gl_name)s"); %(gtulu_ni_return)s }' % f
         print >>o, 'GTULU_API_EXPORT __attribute__((weak, alias("%(gtulu_ni_name)s"))) %(gl_decl)s;' % f
 
       print >>o, '''

@@ -72,7 +72,7 @@ function(add_api_library API_SOURCE_DIR)
     COMPILE_FLAGS "-fvisibility=hidden -I${API_SOURCE_DIR}"
     LINK_FLAGS    "-Wl,--as-needed -Wl,--no-undefined"
   )
-  add_library(${API_TARGET}_ni SHARED ${API_SOURCE_DIR}/gtulu/api_ni.cpp src/gtulu/logging.cpp)
+  add_library(${API_TARGET}_ni SHARED ${API_SOURCE_DIR}/gtulu/api_ni.cpp src/gtulu/logging.cpp src/gtulu/notimp.cpp)
   add_dependencies(${API_TARGET}_ni generate-api)
   set_target_properties(${API_TARGET}_ni PROPERTIES
     VERSION       ${API_VERSION}
