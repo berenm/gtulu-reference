@@ -1,0 +1,18 @@
+language: cpp
+script:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
+compiler:
+  - clang
+  - gcc
+before_install:
+  - sudo apt-add-repository -y ppa:ubuntu-x-swat/mesa9
+  - sudo apt-get update
+  - sudo apt-get install libboost1.48-all-dev libglm-dev libgl1-mesa-dev libegl1-mesa-dev python-lxml python-cheetah python-yaml
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+branches:
+  only:
+    - master
