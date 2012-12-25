@@ -39,15 +39,17 @@ set(CHEETAH_ENVIRONMENT "PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/bin" "GTULU_VERS
 if(API_COMPAT)
   list(APPEND CHEETAH_ENVIRONMENT "GTULU_COMPAT=1")
   add_submodule(${API_TARGET} gl/${API_VERSION}/comp)
+  file(GLOB API_SOURCES gl/${API_VERSION}/comp/function *)
 else()
   add_submodule(${API_TARGET} gl/${API_VERSION}/core)
+  file(GLOB API_SOURCES gl/${API_VERSION}/core/function *)
 endif()
 
-cheetah_generate(${API_TARGET}-hpp src/gtulu/api.thpp OUTPUT_VARIABLE GTULU_API_HPP
+cheetah_generate(${API_TARGET}-hpp src/gtulu/api.thpp OUTPUT_VARIABLE GTULU_API_HPP DEPENDS ${API_SOURCES}
   ENVIRONMENT ${CHEETAH_ENVIRONMENT}
 )
 
-cheetah_generate(${API_TARGET}-ni-cpp src/gtulu/api_ni.tcpp OUTPUT_VARIABLE GTULU_API_NI_CPP DEPENDS ${API_TARGET}-hpp
+cheetah_generate(${API_TARGET}-ni-cpp src/gtulu/api_ni.tcpp OUTPUT_VARIABLE GTULU_API_NI_CPP DEPENDS ${API_TARGET}-hpp ${API_SOURCES}
   ENVIRONMENT ${CHEETAH_ENVIRONMENT}
 )
 add_library(${API_TARGET}_ni SHARED ${GTULU_API_NI_CPP} src/gtulu/logging.cpp src/gtulu/notimp.cpp)
@@ -62,7 +64,7 @@ set_target_properties(${API_TARGET}_ni PROPERTIES
 )
 target_link_libraries(${API_TARGET}_ni logging)
 
-cheetah_generate(${API_TARGET}-cpp src/gtulu/api.tcpp OUTPUT_VARIABLE GTULU_API_CPP DEPENDS ${API_TARGET}-hpp
+cheetah_generate(${API_TARGET}-cpp src/gtulu/api.tcpp OUTPUT_VARIABLE GTULU_API_CPP DEPENDS ${API_TARGET}-hpp ${API_SOURCES}
   ENVIRONMENT ${CHEETAH_ENVIRONMENT}
 )
 add_library(${API_TARGET} SHARED ${GTULU_API_CPP} src/gtulu/logging.cpp src/gtulu/error.cpp)

@@ -13,17 +13,16 @@
 #ifndef __GTULU_OPENGL_API__
 #define __GTULU_OPENGL_API__
 
-#include <gtulu/types.h>
+#include <gtulu/types.hpp>
 
 namespace gtulu {
   namespace api {
 
     // @for n,f in sorted(__tpl_functions.items()):
-    // @  set __tpl_gl_params_decl  = ', '.join(['%(type)s %(name)s' % p for p in __tpl_f['gl-params']])
-    // @  set __tpl_gl_return       = __tpl_f['gl-return']
+    // @  set __tpl_gtulu_params    = ', '.join(['%(type)s %(name)s' % p for p in __tpl_f['gtulu-params']])
+    // @  set __tpl_gtulu_return    = __tpl_f['gtulu-return']
     // @  set __tpl_gtulu_name      = lambda x: '%s(%s)' % (f['gtulu-name'], x)
-    GTULU_API_EXPORT __tpl_gl_return __tpl_gtulu_name(__tpl_gl_params_decl);
-
+    GTULU_API_EXPORT __tpl_gtulu_return __tpl_gtulu_name(__tpl_gtulu_params);
     // @end for
 
   } // namespace api

@@ -11,8 +11,9 @@
 // @end for
 
 #define __IN_GTULU_OPENGL_API__
-#include <gtulu/types.h>
+#include <gtulu/types.hpp>
 #include <gtulu/notimp.hpp>
+#include <gtulu/types.h>
 
 extern "C" {
 
