@@ -5,7 +5,7 @@ gl:
     name: index
     type: GLuint
   - mapping: values[0]
-    name: v0
+    name: x
     type: GLfloat
   return: void
 gtu:

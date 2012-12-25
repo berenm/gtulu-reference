@@ -5,16 +5,16 @@ gl:
     name: index
     type: GLuint
   - mapping: values[0]
-    name: v0
+    name: x
     type: GLubyte
   - mapping: values[1]
-    name: v1
+    name: y
     type: GLubyte
   - mapping: values[2]
-    name: v2
+    name: z
     type: GLubyte
   - mapping: values[3]
-    name: v3
+    name: w
     type: GLubyte
   return: void
 gtu:
