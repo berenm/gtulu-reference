@@ -1,0 +1,42 @@
+// @cheetah --env --nobackup --iext=tcpp --oext=cpp --settings allowWhitespaceAfterDirectiveStartToken=True,cheetahVarStartToken='__tpl_',commentStartToken='// \#',directiveStartToken='// @',directiveEndToken=' @//',multiLineCommentStartToken='/*\#',multiLineCommentEndToken='\#*/'
+
+// @import os
+// @import yaml
+// @import gtuluref as gtu
+
+// @set __tpl_folder = gtu.ref(__tpl_GTULU_VERSION, __tpl_getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'function')
+// @set __tpl_functions = {}
+// @for f in os.listdir(__tpl_folder):
+// @  set __tpl_functions[f] = yaml.load(file(os.path.join(__tpl_folder, f), 'r'))
+// @end for
+
+#define __IN_GTULU_OPENGL_API__
+#include <gtulu/api.hpp>
+#include <gtulu/error.hpp>
+#include <gtulu/logging.hpp>
+
+namespace gtulu {
+  namespace api {
+
+    // @for n,f in sorted(__tpl_functions.items()):
+    // @  set __tpl_gl_params_decl  = ', '.join(['%(type)s %(name)s' % p for p in __tpl_f['gl-params']])
+    // @  set __tpl_gl_params_call  = ', '.join(['%(name)s' % p for p in __tpl_f['gl-params']])
+    // @  set __tpl_gl_params_log   = ', '.join(['%(name)s:" << %(name)s << "' % p for p in __tpl_f['gl-params']])
+    // @  set __tpl_gl_return       = __tpl_f['gl-return']
+    // @  set __tpl_gl_name         = lambda x: '%s(%s)' % (f['gl-name'], x)
+    // @  set __tpl_gtulu_name      = lambda x: '%s(%s)' % (f['gtulu-name'], x)
+    // @  set __tpl_check_error     = lambda: f['gl-name'] != 'glGetError' and 'api::__check_error()' or ''
+    // @  set __tpl_assign_variable = __tpl_gl_return != 'void' and '%s __r = ' % __tpl_gl_return or ''
+    // @  set __tpl_return_variable = __tpl_gl_return != 'void' and '__r' or ''
+    extern "C" GTULU_API_IMPORT __tpl_gl_return __tpl_gl_name(__tpl_gl_params_decl);
+    GTULU_API_EXPORT __tpl_gl_return __tpl_gtulu_name(__tpl_gl_params_decl) {
+      __trace() << "call __tpl_gl_name(__tpl_gl_params_log)";
+      __tpl_assign_variable __tpl_gl_name(__tpl_gl_params_call);
+      __tpl_check_error();
+      return __tpl_return_variable;
+    }
+
+    // @end for
+
+  } // namespace api
+} // namespace gtulu

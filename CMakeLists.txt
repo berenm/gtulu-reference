@@ -6,6 +6,7 @@ include(GNUInstallDirs)
 include(FindOpenGL)
 include(AddSubmodule)
 include(FindCXX11)
+include(CheetahGenerate)
 
 project(libgtulu_api CXX)
 # parse_version(libgtulu_api DEBIAN)
@@ -23,31 +24,6 @@ link_directories(${OPENGL_LIBRARY_DIRS})
 
 # -------------------------------------------------------------------------
 # libgtulu_api
-file(GLOB_RECURSE API_MAN_SOURCES man/*.xml)
-add_custom_command(
-  OUTPUT  list/gl2/constants
-          list/gl3/constants
-          list/gl4/constants 
-  COMMAND python ${CMAKE_CURRENT_SOURCE_DIR}/bin/extract-constants ${GTULU_API_VERSION}
-  COMMENT "Extracting constant lists from the man pages"
-  DEPENDS bin/extract-constants ${API_MAN_SOURCES}
-)
-
-add_custom_command(
-  OUTPUT  list/gl2/functions
-          list/gl2/functions.api
-          list/gl2/functions.call
-          list/gl3/functions
-          list/gl3/functions.api
-          list/gl3/functions.call
-          list/gl4/functions
-          list/gl4/functions.api
-          list/gl4/functions.call 
-  COMMAND python ${CMAKE_CURRENT_SOURCE_DIR}/bin/extract-functions ${GTULU_API_VERSION}
-  COMMENT "Extracting function definitions from the man pages"
-  DEPENDS bin/extract-functions ${API_MAN_SOURCES}
-)
-
 include_directories(src)
 
 function(add_api_library API_SOURCE_DIR)
@@ -59,27 +35,48 @@ function(add_api_library API_SOURCE_DIR)
     return()
   endif()
 
+  file(MAKE_DIRECTORY ${API_SOURCE_DIR})
+
+  set(CHEETAH_ENVIRONMENT "GTULU_VERSION=${API_VERSION}" "PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/bin")
+  cheetah_generate(gtulu-api-${API_VERSION}-hpp src/gtulu/api.thpp
+    OUTPUT_VARIABLE GTULU_API_HPP
+    ENVIRONMENT ${CHEETAH_ENVIRONMENT}
+    WORKING_DIRECTORY ${API_SOURCE_DIR}
+  )
+  cheetah_generate(gtulu-api-${API_VERSION}-cpp src/gtulu/api.tcpp
+    OUTPUT_VARIABLE GTULU_API_CPP
+    ENVIRONMENT ${CHEETAH_ENVIRONMENT}
+    WORKING_DIRECTORY ${API_SOURCE_DIR}
+    DEPENDS ${GTULU_API_HPP}
+  )
   set(API_TARGET gtulu-api-${API_VERSION})
-  add_library(${API_TARGET} SHARED ${API_SOURCE_DIR}/gtulu/api.cpp src/gtulu/logging.cpp src/gtulu/error.cpp)
+  add_library(${API_TARGET} SHARED ${GTULU_API_CPP} src/gtulu/logging.cpp src/gtulu/error.cpp)
   add_dependencies(${API_TARGET} generate-api)
   set_target_properties(${API_TARGET} PROPERTIES
     VERSION       ${API_VERSION}
     SOVERSION     ${API_SOVERSION}
     SONAME        libgtulu-api${API_SOVERSION}
     OUTPUT_NAME   gtulu-api
-    PUBLIC_HEADER ${API_SOURCE_DIR}/gtulu/api.hpp
-    PUBLIC_HEADER ${API_SOURCE_DIR}/gtulu/types.h
-    COMPILE_FLAGS "-fvisibility=hidden -I${API_SOURCE_DIR}"
+    PUBLIC_HEADER ${GTULU_API_HPP}
+    PUBLIC_HEADER src/gtulu/types.h
+    COMPILE_FLAGS "-fvisibility=hidden -I${API_SOURCE_DIR}/src/"
     LINK_FLAGS    "-Wl,--as-needed -Wl,--no-undefined"
   )
-  add_library(${API_TARGET}_ni SHARED ${API_SOURCE_DIR}/gtulu/api_ni.cpp src/gtulu/logging.cpp src/gtulu/notimp.cpp)
+
+  cheetah_generate(gtulu-api-${API_VERSION}-ni-cpp src/gtulu/api_ni.tcpp
+    OUTPUT_VARIABLE GTULU_API_NI_CPP
+    ENVIRONMENT ${CHEETAH_ENVIRONMENT}
+    WORKING_DIRECTORY ${API_SOURCE_DIR}
+    DEPENDS ${GTULU_API_HPP}
+  )
+  add_library(${API_TARGET}_ni SHARED ${GTULU_API_NI_CPP} src/gtulu/logging.cpp src/gtulu/notimp.cpp)
   add_dependencies(${API_TARGET}_ni generate-api)
   set_target_properties(${API_TARGET}_ni PROPERTIES
     VERSION       ${API_VERSION}
     SOVERSION     ${API_SOVERSION}
     SONAME        libgtulu-api-ni${API_SOVERSION}
     OUTPUT_NAME   gtulu-api-ni
-    COMPILE_FLAGS "-fvisibility=hidden -I${API_SOURCE_DIR}"
+    COMPILE_FLAGS "-fvisibility=hidden -I${API_SOURCE_DIR}/src/"
     LINK_FLAGS    "-Wl,--as-needed -Wl,--no-undefined"
   )
   target_link_libraries(${API_TARGET}_ni logging)
@@ -124,25 +121,6 @@ else()
   add_submodule(gtulu-api-${GTULU_API_VERSION}      gl/${GTULU_API_VERSION}/core)
   add_submodule(gtulu-api-${GTULU_API_VERSION}-comp gl/${GTULU_API_VERSION}/comp)
 endif()
-
-
-add_custom_command(OUTPUT ${API_SOURCES}
-  COMMAND python ${CMAKE_CURRENT_SOURCE_DIR}/bin/generate-header ${GTULU_API_VERSION}
-  COMMENT "Generating API sources and headers"
-  DEPENDS list/gl2/constants
-          list/gl3/constants
-          list/gl4/constants
-          list/gl2/functions
-          list/gl2/functions.api
-          list/gl2/functions.call
-          list/gl3/functions
-          list/gl3/functions.api
-          list/gl3/functions.call
-          list/gl4/functions
-          list/gl4/functions.api
-          list/gl4/functions.call
-          bin/generate-header
-)
 
 foreach(API_SOURCE_DIR ${API_SOURCE_DIRS})
   get_filename_component(API_SOURCE_DIR "${API_SOURCE_DIR}" PATH)
