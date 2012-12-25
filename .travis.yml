@@ -7,7 +7,6 @@ script:
   - make test
 compiler:
   - clang
-  - gcc
 before_install:
   - sudo apt-add-repository -y ppa:ubuntu-x-swat/mesa9
   - sudo apt-get update
