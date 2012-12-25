@@ -1,7 +1,7 @@
 ======================================================
 gtulu-reference — opengl reference C++ wrapper library
 ======================================================
-.. image:: https://secure.travis-ci.org/berenm/gtulu-reference.png?branch=master
+.. image:: https://travis-ci.org/berenm/gtulu-reference.png?branch=master
     :alt: Build Status
     :target: https://travis-ci.org/berenm/gtulu-reference
 
