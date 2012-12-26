@@ -27,24 +27,26 @@ namespace gtulu {
     // @  end if
     // @  set __tpl_gl_params       = ', '.join(['%(type)s %(name)s'           % p for p in __tpl_gl.params])
     // @  set __tpl_gtu_params      = ', '.join(['%(type)s %(name)s'           % p for p in __tpl_gtu.params])
-    // @  set __tpl_params_call     = ', '.join(['%(mapping)s'                 % p for p in __tpl_gl.params])
-    // @  set __tpl_params_log      = ', '.join(['%(name)s:" << %(name)s << "' % p for p in __tpl_gtu.params])
-    // @  set __tpl_gl_return       = __tpl_gl.return
-    // @  set __tpl_gtu_return      = __tpl_gtu.return
+    // @  set __tpl_call_params     = ', '.join(['%(mapping)s'                 % p for p in __tpl_gl.params])
+    // @  set __tpl_log_params      = ', '.join(['%(name)s:" << %(name)s << "' % p for p in __tpl_gtu.params])
     // @  set __tpl_gl_name         = lambda x: '%s(%s)' % (gl['name'], x)
     // @  set __tpl_gtu_name        = lambda x: '%s(%s)' % (gtu['name'], x)
-    // @  set __tpl_gtu_mapping     = lambda: gtu.get('mapping', '')
+    // @  set __tpl_gl_return       = __tpl_gl.return
+    // @  set __tpl_gtu_return      = __tpl_gtu.return
+    // @  set __tpl_out_variable    = __tpl_gl_return != 'void' and '__r' or ''
+    // @  set __tpl_out_assign      = __tpl_gl_return != 'void' and '%s __r = ' % (__tpl_gl_return) or ''
+    // @  set __tpl_assign_variable = lambda x: '%s %s' % (out_assign, x)
+    // @  set __tpl_return_variable = 'return %s' % (__tpl_gl_return != 'void' and '%s(%s)' % (gtu.get('return-cast', ''), __tpl_out_variable) or '')
+    // @  set __tpl_precall         = lambda: gtu.get('precall', '')
+    // @  set __tpl_postcall        = lambda: gtu.get('postcall', return_variable)
     // @  set __tpl_check_error     = lambda: gl['name'] != 'glGetError' and 'api::__check_error()' or ''
-    // @  set __tpl_output          = __tpl_gl_return != 'void' and '%s __r =' % gtu_return or ''
-    // @  set __tpl_assign_variable = lambda x: '%s %s(%s)' % (output, gtu.get('return-cast', ''), x)
-    // @  set __tpl_return_variable = __tpl_gl_return != 'void' and '__r' or ''
     extern "C" GTULU_API_IMPORT __tpl_gl_return __tpl_gl_name(__tpl_gl_params);
     GTULU_API_EXPORT __tpl_gtu_return __tpl_gtu_name(__tpl_gtu_params) {
-        __trace() << "call __tpl_gl_name(__tpl_params_log)";
-        __tpl_gtu_mapping();
-        __tpl_assign_variable(__tpl_gl_name(__tpl_params_call));
+        __trace() << "call __tpl_gl_name(__tpl_log_params)";
+        __tpl_precall();
+        __tpl_assign_variable(__tpl_gl_name(__tpl_call_params));
         __tpl_check_error();
-        return __tpl_return_variable;
+        __tpl_postcall();
     }
     // @end for
 
