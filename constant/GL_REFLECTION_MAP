@@ -1,7 +1,0 @@
-categories:
-- gl_NV_texgen_reflection
-- gl_VERSION_1_3
-gtu:
-  name: reflection_map
-usage: []
-value: 0x8512

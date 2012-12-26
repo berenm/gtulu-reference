@@ -1,6 +1,0 @@
-categories:
-- error
-gtu:
-  name: stack_underflow
-usage: []
-value: 0x504

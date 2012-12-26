@@ -1,6 +1,0 @@
-categories:
-- gl_GetMapQuery
-gtu:
-  name: coeff
-usage: []
-value: 0xa00

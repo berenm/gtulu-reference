@@ -1,6 +1,0 @@
-categories:
-- gl_VERSION_1_3
-gtu:
-  name: compressed_luminance_alpha
-usage: []
-value: 0x84eb

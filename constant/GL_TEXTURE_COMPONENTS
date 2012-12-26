@@ -1,6 +1,0 @@
-categories:
-- gl_GetTextureParameter
-gtu:
-  name: texture_components
-usage: []
-value: 0x1003

@@ -1,7 +1,0 @@
-categories:
-- gl_VERSION_1_2
-- gl_LightModelColorControl
-gtu:
-  name: single_color
-usage: []
-value: 0x81f9

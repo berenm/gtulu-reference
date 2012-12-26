@@ -1,8 +1,0 @@
-gl:
-  name: glPushMatrix
-  params: []
-  return: void
-gtu:
-  name: push_matrix
-  params: []
-  return: void

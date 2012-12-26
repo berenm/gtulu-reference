@@ -1,6 +1,0 @@
-categories:
-- gl_VERSION_1_5
-gtu:
-  name: fog_coord
-usage: []
-value: 0x8451

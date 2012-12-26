@@ -1,6 +1,0 @@
-categories:
-- gl_InterleavedArrayFormat
-gtu:
-  name: t2f_n3f_v3f
-usage: []
-value: 0x2a2b

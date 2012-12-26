@@ -1,6 +1,0 @@
-categories:
-- gl_AttribMask
-gtu:
-  name: texture_bit
-usage: []
-value: 0x40000

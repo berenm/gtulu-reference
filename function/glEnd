@@ -1,8 +1,0 @@
-gl:
-  name: glEnd
-  params: []
-  return: void
-gtu:
-  name: end
-  params: []
-  return: void

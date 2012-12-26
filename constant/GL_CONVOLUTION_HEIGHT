@@ -1,8 +1,0 @@
-categories:
-- convolution_property
-gtu:
-  name: convolution_height
-usage:
-- glGetConvolutionParameterfv.property
-- glGetConvolutionParameteriv.property
-value: 0x8019

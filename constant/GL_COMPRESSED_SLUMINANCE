@@ -1,6 +1,0 @@
-categories:
-- gl_VERSION_2_1
-gtu:
-  name: compressed_sluminance
-usage: []
-value: 0x8c4a

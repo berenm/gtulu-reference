@@ -5,16 +5,10 @@ categories:
 gtu:
   name: texture_lod_bias
 usage:
-- glGetTexEnvfv.property
-- glGetTexEnviv.property
 - glGetTexParameterIiv.property
 - glGetTexParameterIuiv.property
 - glGetTexParameterfv.property
 - glGetTexParameteriv.property
-- glTexEnvf.property
-- glTexEnvfv.property
-- glTexEnvi.property
-- glTexEnviv.property
 - glTexParameterIiv.property
 - glTexParameterIuiv.property
 - glTexParameterf.property

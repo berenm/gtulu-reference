@@ -1,6 +1,0 @@
-categories:
-- gl_FogMode
-gtu:
-  name: exp2
-usage: []
-value: 0x801

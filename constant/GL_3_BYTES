@@ -1,7 +1,0 @@
-categories:
-- gl_DataType
-- gl_ListNameType
-gtu:
-  name: three_bytes
-usage: []
-value: 0x1408

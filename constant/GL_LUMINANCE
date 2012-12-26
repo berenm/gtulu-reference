@@ -1,7 +1,0 @@
-categories:
-- gl_PixelFormat
-- gl_PixelTexGenMode
-gtu:
-  name: luminance
-usage: []
-value: 0x1909

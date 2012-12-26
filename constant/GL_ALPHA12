@@ -1,6 +1,0 @@
-categories:
-- gl_PixelInternalFormat
-gtu:
-  name: alpha12
-usage: []
-value: 0x803d

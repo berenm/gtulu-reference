@@ -1,7 +1,0 @@
-categories:
-- gl_PixelMap
-- gl_GetPixelMap
-gtu:
-  name: pixel_map_r_to_r
-usage: []
-value: 0xc76

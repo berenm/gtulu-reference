@@ -1,6 +1,0 @@
-categories:
-- gl_VERSION_1_2
-gtu:
-  name: table_too_large
-usage: []
-value: 0x8031

@@ -1,8 +1,0 @@
-categories:
-- histogram_property
-gtu:
-  name: histogram_width
-usage:
-- glGetHistogramParameterfv.property
-- glGetHistogramParameteriv.property
-value: 0x8026

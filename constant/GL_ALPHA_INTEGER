@@ -1,6 +1,0 @@
-categories:
-- gl_EXT_texture_integer
-gtu:
-  name: alpha_integer
-usage: []
-value: 0x8d97

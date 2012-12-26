@@ -1,6 +1,0 @@
-categories:
-- gl_ClientAttribMask
-gtu:
-  name: client_all_attrib_bits
-usage: []
-value: 0xffffffff

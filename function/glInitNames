@@ -1,8 +1,0 @@
-gl:
-  name: glInitNames
-  params: []
-  return: void
-gtu:
-  name: init_name
-  params: []
-  return: void

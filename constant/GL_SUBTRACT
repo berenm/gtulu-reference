@@ -1,6 +1,0 @@
-categories:
-- gl_VERSION_1_3
-gtu:
-  name: subtract
-usage: []
-value: 0x84e7

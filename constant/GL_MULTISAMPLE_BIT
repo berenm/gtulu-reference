@@ -1,6 +1,0 @@
-categories:
-- gl_VERSION_1_3
-gtu:
-  name: multisample_bit
-usage: []
-value: 0x20000000

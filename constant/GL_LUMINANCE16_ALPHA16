@@ -1,6 +1,0 @@
-categories:
-- gl_PixelInternalFormat
-gtu:
-  name: luminance16_alpha16
-usage: []
-value: 0x8048

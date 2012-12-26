@@ -1,8 +1,0 @@
-gl:
-  name: glPopAttrib
-  params: []
-  return: void
-gtu:
-  name: pop_attrib
-  params: []
-  return: void

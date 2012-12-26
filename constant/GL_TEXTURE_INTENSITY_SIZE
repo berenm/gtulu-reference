@@ -1,8 +1,0 @@
-categories:
-- gl_GetTextureParameter
-gtu:
-  name: texture_intensity_size
-usage:
-- glGetTexLevelParameterfv.property
-- glGetTexLevelParameteriv.property
-value: 0x8061

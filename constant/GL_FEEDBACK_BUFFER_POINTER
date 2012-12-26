@@ -1,7 +1,0 @@
-categories:
-- context_pointer_property
-gtu:
-  name: feedback_buffer_pointer
-usage:
-- glGetPointerv.property
-value: 0xdf0
