@@ -1,22 +1,12 @@
 categories:
-- enableable_target
+- context_property
 gtu:
-  name: clip_planei
+  name: max_varying_components
 usage:
-- glDisable.target
-- glEnable.target
 - glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
 - glGetIntegeri_v.property
 - glGetIntegerv.property
-values:
-- 0x3000
-- 0x3001
-- 0x3002
-- 0x3003
-- 0x3004
-- 0x3005
-- 0x3006
-- 0x3007
+value: 0x8b4b

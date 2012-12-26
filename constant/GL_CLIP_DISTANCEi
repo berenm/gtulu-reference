@@ -1,12 +1,22 @@
 categories:
-- context_property
+- enableable_target
 gtu:
-  name: max_clip_planes
+  name: clip_distancei
 usage:
+- glDisable.target
+- glEnable.target
 - glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
 - glGetIntegeri_v.property
 - glGetIntegerv.property
-value: 0xd32
+values:
+- 0x3000
+- 0x3001
+- 0x3002
+- 0x3003
+- 0x3004
+- 0x3005
+- 0x3006
+- 0x3007

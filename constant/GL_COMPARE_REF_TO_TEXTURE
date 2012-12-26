@@ -1,6 +1,6 @@
 categories:
 - gl_VERSION_3_0
 gtu:
-  name: compare_r_to_texture
+  name: compare_ref_to_texture
 usage: []
 value: 0x884e

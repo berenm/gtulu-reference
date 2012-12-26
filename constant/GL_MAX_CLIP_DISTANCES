@@ -1,7 +1,7 @@
 categories:
 - context_property
 gtu:
-  name: max_varying_floats
+  name: max_clip_distances
 usage:
 - glGetBooleani_v.property
 - glGetBooleanv.property
@@ -9,4 +9,4 @@ usage:
 - glGetFloatv.property
 - glGetIntegeri_v.property
 - glGetIntegerv.property
-value: 0x8b4b
+value: 0xd32
