@@ -22,6 +22,9 @@ namespace gtulu {
     // @for f in sorted(__tpl_functions.values(), key=lambda x: '%s(%s)' % (x['gtu']['name'], ', '.join(['%(type)s %(name)s' % p for p in x['gtu']['params']]))):
     // @  set __tpl_gl  = __tpl_f.gl
     // @  set __tpl_gtu = __tpl_f.gtu
+    // @  if gtu.get('skip', False):
+    // @    continue
+    // @  end if
     // @  set __tpl_gl_params       = ', '.join(['%(type)s %(name)s'           % p for p in __tpl_gl.params])
     // @  set __tpl_gtu_params      = ', '.join(['%(type)s %(name)s'           % p for p in __tpl_gtu.params])
     // @  set __tpl_params_call     = ', '.join(['%(mapping)s'                 % p for p in __tpl_gl.params])

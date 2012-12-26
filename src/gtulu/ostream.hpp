@@ -33,6 +33,8 @@ namespace std {
   template< class T1, class T2 > struct pair;
   template< class T > class complex;
 
+  template< class F > class function;
+
   namespace detail {
     struct sequence_container;
     struct associative_container;
@@ -154,6 +156,13 @@ namespace std {
     s << b.to_string();
     return s;
   }
+
+  template< class R, class... Args >
+  static inline std::ostream& operator<<(std::ostream& s, std::function< R(Args...) > const& f) {
+    s << reinterpret_cast< void const* >(*f.template target< R(*)(Args...) >());
+    return s;
+  }
+
 }
 
 #endif // ifndef __GTULU_UTILS_STL_OSTREAM_HPP__

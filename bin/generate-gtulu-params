@@ -56,6 +56,60 @@ for filename in os.listdir(folder):
         old_param['type'] = gtu_param['type']
 
 
+  def vectorize(glnames, gtuname):
+    if any([p['name'] == glnames[0] for p in gl['params']]):
+      dimp = [p for p in gl['params'] if p['name'] in glnames]
+      dimt = 'gtu::vec%d< %%s > const&' % len(dimp)
+      for i,p in enumerate(dimp):
+        if p['mapping'] != p['name']:
+          return
+        p['mapping'] = '%s[%d]' % (gtuname, i)
+
+      gtup = []
+      for p in gtu['params']:
+        if p['name'] in glnames[1:]:
+          continue
+        elif p['name'] == glnames[0]:
+          p['name'] = gtuname
+          p['type'] = dimt % p['type'].replace(' const', '')
+        gtup.append(p)
+      gtu['params'] = gtup
+
+  vectorize(['width', 'height', 'depth'], 'dimension')
+  vectorize(['xoffset', 'yoffset', 'zoffset'], 'offset')
+  vectorize(['x', 'y', 'z', 'w'], 'position')
+  vectorize(['nx', 'ny', 'nz', 'nw'], 'direction')
+  vectorize(['v0', 'v1', 'v2', 'v3'], 'values')
+  vectorize(['s', 't', 'r', 'q'], 'coordinates')
+  vectorize(['red', 'green', 'blue', 'alpha'], 'color')
+  vectorize(['r', 'g', 'b', 'a'], 'color')
+
+  if gtu['name'][-2:] in ['_1', '_2', '_3', '_4']:
+    ptrp = [p for p in gtu['params'] if p['type'][-7:] == ' const*']
+    if len(ptrp) == 1:
+      ptrp[0]['type'] = 'gtu::vec%s< %s > const&' % (gtu['name'][-1], p['type'].replace(' const*', ''))
+      valp = [ p for p in gl['params'] if p['mapping'] == ptrp[0]['name'] ]
+
+      ptrp[0]['name'] = 'values'
+      gtu['name'] = gtu['name'][:-2]
+
+      cntp = [p for p in gl['params'] if p['name'] == 'count']
+      if len(cntp) == 1:
+        cntp[0]['mapping'] = 'values.size()'
+        ptrp[0]['type'] = 'std::vector< %s > const&' % ptrp[0]['type'].replace(' const&', '')
+        if len(valp) == 1:
+          valp[0]['mapping'] = 'values.data()->data()'
+
+        gtup = []
+        for p in gtu['params']:
+          if p['name'] == 'count':
+            continue
+          gtup.append(p)
+        gtu['params'] = gtup
+
+      elif len(valp) == 1:
+        valp[0]['mapping'] = 'values.data()'
+
   for p in gtu['params']:
     if not '*' in p['type'] and not '&' in p['type'] and not ' const' in p['type']:
       p['type'] = p['type'] + ' const'

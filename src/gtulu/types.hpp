@@ -5,6 +5,7 @@
 #include <bitset>
 #include <array>
 #include <vector>
+#include <functional>
 
 #include <boost/config.hpp>
 
@@ -18,7 +19,8 @@
 
 struct __GLsync;
 
-namespace gtulu {
+namespace gtulu
+{
   namespace gtu = ::gtulu;
 
   typedef std::uint32_t     constant;
@@ -29,6 +31,10 @@ namespace gtulu {
   typedef std::bitset< 32 > bitmask;
   typedef void*             buffer_ref;
   typedef struct __GLsync*  barrier;
+
+  typedef std::function< void (gtu::constant const source, gtu::constant const type, uint32_t const id,
+                               gtu::constant const severity, gtu::size const length, char const* message, void* userParam)
+                         > debug_callback;
 
   template< class T > using vec1 = std::array< T, 1 >;
   template< class T > using vec2 = std::array< T, 2 >;
