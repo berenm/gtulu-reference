@@ -1,55 +1,70 @@
 #!/usr/bin/python
 
 import os, sys, re, yaml
-import gtuluref as gtu
+import gtuluref
 
 class literal_unicode(unicode): pass
 def literal_unicode_representer(dumper, data):
     return dumper.represent_scalar(u'tag:yaml.org,2002:str', data, style='|')
 yaml.add_representer(literal_unicode, literal_unicode_representer)
 
-args = gtu.arguments()
+args = gtuluref.arguments()
 
-folder = gtu.ref(args.version, args.compat and 'comp' or 'core', 'function')
+folder = gtuluref.ref(args.version, args.compat and 'comp' or 'core', 'function')
 for filename in os.listdir(folder):
   with open(os.path.join(folder, filename), 'r') as f:
     fct = yaml.load(f)
 
-  if 'gtulu-params' not in fct:
-    fct['gtulu-params'] = []
+  if 'gl-name' in fct:
+    keys = fct.keys()
 
-  for gl_param in fct['gl-params']:
+    fct['gl'] = {}
+    fct['gtu'] = {}
+    for k in keys:
+      if 'gl-' in k:
+        fct['gl'][k[3:]] = fct[k]
+        del fct[k]
+      elif 'gtulu-' in k:
+        fct['gtu'][k[6:]] = fct[k]
+        del fct[k]
+
+  gl = fct['gl']
+  gtu = fct['gtu']
+  if 'params' not in gtu:
+    gtu['params'] = []
+
+  for gl_param in gl['params']:
     if 'mapping' not in gl_param:
       gl_param['mapping'] = gl_param['name']
 
-    gtulu_param = dict(gl_param)
-    if 'mapping' in gtulu_param:
-      del gtulu_param['mapping']
-    gtulu_param['type'] = gtu.convert_type(gtulu_param['type'])
+    gtu_param = dict(gl_param)
+    if 'mapping' in gtu_param:
+      del gtu_param['mapping']
+    gtu_param['type'] = gtuluref.convert_type(gtu_param['type'])
 
-    if gl_param['mapping'] == gl_param['name'] and not any([p['name'] == gtulu_param['name'] for p in fct['gtulu-params']]):
-      fct['gtulu-params'].append(gtulu_param)
-    elif any([p['name'] == gtulu_param['name'] for p in fct['gtulu-params']]):
-      old_param = [p for p in fct['gtulu-params'] if p['name'] == gtulu_param['name']][0]
+    if gl_param['mapping'] == gl_param['name'] and not any([p['name'] == gtu_param['name'] for p in gtu['params']]):
+      gtu['params'].append(gtu_param)
+    elif any([p['name'] == gtu_param['name'] for p in gtu['params']]):
+      old_param = [p for p in gtu['params'] if p['name'] == gtu_param['name']][0]
 
       if 'mapping' in old_param:
         del old_param['mapping']
 
-      if old_param['type'] + ' const' == gtulu_param['type']:
-        old_param['type'] = gtulu_param['type']
-      elif old_param['type'] + ' const&' == gtulu_param['type']:
-        old_param['type'] = gtulu_param['type']
+      if old_param['type'] + ' const' == gtu_param['type']:
+        old_param['type'] = gtu_param['type']
+      elif old_param['type'] + ' const&' == gtu_param['type']:
+        old_param['type'] = gtu_param['type']
 
 
-  for p in fct['gtulu-params']:
+  for p in gtu['params']:
     if not '*' in p['type'] and not '&' in p['type'] and not ' const' in p['type']:
       p['type'] = p['type'] + ' const'
 
 
-  if 'gtulu-mapping' in fct:
-    fct['gtulu-mapping'] = literal_unicode(fct['gtulu-mapping'])
+  if 'mapping' in gtu:
+    gtu['mapping'] = literal_unicode(gtu['mapping'])
 
-  fct['gtulu-return'] = gtu.convert_type(fct['gl-return'], True)
+  gtu['return'] = gtuluref.convert_type(gl['return'], True)
 
   with open(os.path.join(folder, filename), 'w') as f:
     yaml.dump(fct, f, default_flow_style=False)

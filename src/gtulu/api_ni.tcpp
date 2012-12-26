@@ -2,9 +2,9 @@
 
 // @import os
 // @import yaml
-// @import gtuluref as gtu
+// @import gtuluref
 
-// @set __tpl_folder = gtu.ref(__tpl_GTULU_VERSION, __tpl_getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'function')
+// @set __tpl_folder = gtuluref.ref(__tpl_GTULU_VERSION, __tpl_getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'function')
 // @set __tpl_functions = {}
 // @for f in os.listdir(__tpl_folder):
 // @  set __tpl_functions[f] = yaml.load(file(os.path.join(__tpl_folder, f), 'r'))
@@ -18,19 +18,20 @@
 extern "C" {
 
 // @for n,f in sorted(__tpl_functions.items()):
-// @  set __tpl_gl_params_decl = ', '.join(['%(type)s %(name)s' % p for p in __tpl_f['gl-params']])
-// @  set __tpl_gl_return      = __tpl_f['gl-return']
-// @  set __tpl_gl_name        = lambda x: '%s(%s)' % (f['gl-name'], x)
-// @  set __tpl_gtulu_ni_symb  = '__gtuluNI%s' % __tpl_f['gl-name'][2:]
-// @  set __tpl_gtulu_ni_name  = lambda x: '%s(%s)' % (gtulu_ni_symb, x)
+// @  set __tpl_gl  = __tpl_f.gl
+// @  set __tpl_gtu = __tpl_f.gtu
+// @  set __tpl_gl_params_decl = ', '.join(['%(type)s %(name)s' % p for p in __tpl_gl.params])
+// @  set __tpl_gl_return      = __tpl_gl.return
+// @  set __tpl_gl_name        = lambda x: '%s(%s)' % (gl['name'], x)
+// @  set __tpl_gtu_ni_symb    = '__gtuluNI%s' % __tpl_gl.name[2:]
+// @  set __tpl_gtu_ni_name    = lambda x: '%s(%s)' % (gtu_ni_symb, x)
 // @  set __tpl_return_value   = __tpl_gl_return != 'void' and ('*' in __tpl_gl_return and 'nullptr' or '%s()' % __tpl_gl_return) or ''
-static __tpl_gl_return           __tpl_gtulu_ni_name(__tpl_gl_params_decl);
-GTULU_API_EXPORT __tpl_gl_return __tpl_gl_name(__tpl_gl_params_decl) __attribute__((weak, alias("__tpl_gtulu_ni_symb")));
-static __tpl_gl_return __tpl_gtulu_ni_name(__tpl_gl_params_decl) {
-  gtulu::api::__not_implemented("__tpl_gl_name(__tpl_gl_params_decl)");
-  return __tpl_return_value;
+static __tpl_gl_return           __tpl_gtu_ni_name(__tpl_gl_params_decl);
+GTULU_API_EXPORT __tpl_gl_return __tpl_gl_name(__tpl_gl_params_decl) __attribute__((weak, alias("__tpl_gtu_ni_symb")));
+static __tpl_gl_return __tpl_gtu_ni_name(__tpl_gl_params_decl) {
+    gtulu::api::__not_implemented("__tpl_gl_name(__tpl_gl_params_decl)");
+    return __tpl_return_value;
 }
-
 // @end for
 
 }
