@@ -1,0 +1,31 @@
+gl:
+  name: glCopyConvolutionFilter1D
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: internalformat
+    name: internalformat
+    type: GLenum
+  - mapping: position[0]
+    name: x
+    type: GLint
+  - mapping: position[1]
+    name: y
+    type: GLint
+  - mapping: dimension[0]
+    name: width
+    type: GLsizei
+  return: void
+gtu:
+  name: copy_convolution_filter
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: internalformat
+    type: gtu::constant const
+  - name: position
+    type: gtu::vec2< int32_t > const&
+  - name: dimension
+    type: gtu::vec1< gtu::size > const&
+  return: void

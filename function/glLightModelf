@@ -1,0 +1,18 @@
+gl:
+  name: glLightModelf
+  params:
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: param
+    name: param
+    type: GLfloat
+  return: void
+gtu:
+  name: light_model
+  params:
+  - name: property
+    type: gtu::constant const
+  - name: param
+    type: float32 const
+  return: void

@@ -1,0 +1,14 @@
+categories:
+- context_property
+- enableable_target
+- indexed_enableable_target
+gtu:
+  name: blend
+usage:
+- glDisable.target
+- glEnable.target
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xbe2

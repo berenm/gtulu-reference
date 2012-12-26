@@ -1,0 +1,18 @@
+gl:
+  name: glPixelZoom
+  params:
+  - mapping: xfactor
+    name: xfactor
+    type: GLfloat
+  - mapping: yfactor
+    name: yfactor
+    type: GLfloat
+  return: void
+gtu:
+  name: pixel_zoom
+  params:
+  - name: xfactor
+    type: float32 const
+  - name: yfactor
+    type: float32 const
+  return: void

@@ -1,0 +1,13 @@
+categories:
+- texture_property
+- writable_texture_property
+gtu:
+  name: texture_max_level
+usage:
+- glGetTexParameterfv.property
+- glGetTexParameteriv.property
+- glTexParameterf.property
+- glTexParameterfv.property
+- glTexParameteri.property
+- glTexParameteriv.property
+value: 0x813d

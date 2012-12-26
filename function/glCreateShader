@@ -1,0 +1,13 @@
+gl:
+  name: glCreateShader
+  params:
+  - mapping: shader_type
+    name: shaderType
+    type: GLenum
+  return: GLuint
+gtu:
+  name: create_shader
+  params:
+  - name: shader_type
+    type: gtu::constant const
+  return: gtu::shader

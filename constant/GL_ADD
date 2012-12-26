@@ -1,0 +1,8 @@
+categories:
+- gl_TextureEnvMode
+- gl_AccumOp
+- gl_LightEnvModeSGIX
+gtu:
+  name: add
+usage: []
+value: 0x104

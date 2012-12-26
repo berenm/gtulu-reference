@@ -1,0 +1,12 @@
+categories:
+- tex_gen_property
+gtu:
+  name: eye_plane
+usage:
+- glGetTexGendv.property
+- glGetTexGenfv.property
+- glGetTexGeniv.property
+- glTexGendv.property
+- glTexGenfv.property
+- glTexGeniv.property
+value: 0x2502

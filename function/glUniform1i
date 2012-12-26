@@ -1,0 +1,18 @@
+gl:
+  name: glUniform1i
+  params:
+  - mapping: uniform
+    name: location
+    type: GLint
+  - mapping: values[0]
+    name: v0
+    type: GLint
+  return: void
+gtu:
+  name: uniform
+  params:
+  - name: uniform
+    type: gtu::uniform const
+  - name: values
+    type: gtu::vec1< int32_t > const&
+  return: void

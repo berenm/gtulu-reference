@@ -1,0 +1,7 @@
+categories:
+- gl_PixelMap
+- gl_GetPixelMap
+gtu:
+  name: pixel_map_i_to_i
+usage: []
+value: 0xc70

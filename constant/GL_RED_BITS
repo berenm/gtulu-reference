@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: red_bits
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xd52

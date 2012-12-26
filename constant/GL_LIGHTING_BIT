@@ -1,0 +1,6 @@
+categories:
+- gl_AttribMask
+gtu:
+  name: lighting_bit
+usage: []
+value: 0x40

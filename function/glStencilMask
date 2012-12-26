@@ -1,0 +1,13 @@
+gl:
+  name: glStencilMask
+  params:
+  - mapping: mask
+    name: mask
+    type: GLuint
+  return: void
+gtu:
+  name: stencil_mask
+  params:
+  - name: mask
+    type: uint32_t const
+  return: void

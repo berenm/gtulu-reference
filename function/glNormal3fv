@@ -1,0 +1,13 @@
+gl:
+  name: glNormal3fv
+  params:
+  - mapping: '&direction[0]'
+    name: v
+    type: GLfloat const*
+  return: void
+gtu:
+  name: normal
+  params:
+  - name: direction
+    type: gtu::vec3< float32 > const&
+  return: void

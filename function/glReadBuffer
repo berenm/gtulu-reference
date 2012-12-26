@@ -1,0 +1,13 @@
+gl:
+  name: glReadBuffer
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  return: void
+gtu:
+  name: read_buffer
+  params:
+  - name: mode
+    type: gtu::constant const
+  return: void

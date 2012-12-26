@@ -1,0 +1,18 @@
+gl:
+  name: glPixelTransferi
+  params:
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: param
+    name: param
+    type: GLint
+  return: void
+gtu:
+  name: pixel_transfer
+  params:
+  - name: property
+    type: gtu::constant const
+  - name: param
+    type: int32_t const
+  return: void

@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: stencil_back_pass_depth_fail
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0x8802

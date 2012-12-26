@@ -1,0 +1,15 @@
+categories:
+- context_property
+- point_property
+gtu:
+  name: point_size_max
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+- glPointParameterf.property
+- glPointParameterfv.property
+- glPointParameteri.property
+- glPointParameteriv.property
+value: 0x8127

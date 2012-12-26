@@ -1,0 +1,7 @@
+categories:
+- context_pointer_property
+gtu:
+  name: selection_buffer_pointer
+usage:
+- glGetPointerv.property
+value: 0xdf3

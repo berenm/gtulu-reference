@@ -1,0 +1,7 @@
+categories:
+- shader_property
+gtu:
+  name: compile_status
+usage:
+- glGetShaderiv.property
+value: 0x8b81

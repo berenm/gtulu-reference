@@ -1,0 +1,18 @@
+gl:
+  name: glGetClipPlane
+  params:
+  - mapping: plane
+    name: plane
+    type: GLenum
+  - mapping: '&equation[0]'
+    name: equation
+    type: GLdouble*
+  return: void
+gtu:
+  name: get_clip_plane
+  params:
+  - name: plane
+    type: gtu::constant const
+  - name: equation
+    type: gtu::vec4< float64 >&
+  return: void

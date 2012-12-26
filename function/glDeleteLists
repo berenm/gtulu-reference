@@ -1,0 +1,16 @@
+gl:
+  name: glDeleteLists
+  params:
+  - mapping: list
+    name: list
+    type: GLuint
+  - mapping: 1
+    name: range
+    type: GLsizei
+  return: void
+gtu:
+  name: delete_list
+  params:
+  - name: list
+    type: gtu::list const
+  return: void

@@ -1,0 +1,7 @@
+categories:
+- gl_BlendingFactorDest
+- gl_BlendingFactorSrc
+gtu:
+  name: dst_alpha
+usage: []
+value: 0x304

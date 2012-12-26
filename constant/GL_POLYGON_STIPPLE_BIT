@@ -1,0 +1,6 @@
+categories:
+- gl_AttribMask
+gtu:
+  name: polygon_stipple_bit
+usage: []
+value: 0x10

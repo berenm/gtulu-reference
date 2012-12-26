@@ -1,0 +1,6 @@
+categories:
+- error
+gtu:
+  name: invalid_enum
+usage: []
+value: 0x500

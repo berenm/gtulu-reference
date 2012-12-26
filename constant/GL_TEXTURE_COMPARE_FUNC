@@ -1,0 +1,15 @@
+categories:
+- sampler_property
+- writable_sampler_property
+- texture_property
+- writable_texture_property
+gtu:
+  name: texture_compare_func
+usage:
+- glGetTexParameterfv.property
+- glGetTexParameteriv.property
+- glTexParameterf.property
+- glTexParameterfv.property
+- glTexParameteri.property
+- glTexParameteriv.property
+value: 0x884d

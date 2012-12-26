@@ -1,0 +1,13 @@
+gl:
+  name: glFrontFace
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  return: void
+gtu:
+  name: front_face
+  params:
+  - name: mode
+    type: gtu::constant const
+  return: void

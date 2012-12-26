@@ -1,0 +1,6 @@
+categories:
+- gl_GetMapQuery
+gtu:
+  name: domain
+usage: []
+value: 0xa02

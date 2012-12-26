@@ -1,0 +1,28 @@
+gl:
+  name: glDrawElements
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  - mapping: count
+    name: count
+    type: GLsizei
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: indices
+    name: indices
+    type: GLvoid const*
+  return: void
+gtu:
+  name: draw_elements
+  params:
+  - name: mode
+    type: gtu::constant const
+  - name: count
+    type: gtu::size const
+  - name: type
+    type: gtu::constant const
+  - name: indices
+    type: gtu::buffer_ref const&
+  return: void

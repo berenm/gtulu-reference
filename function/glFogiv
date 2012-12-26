@@ -1,0 +1,18 @@
+gl:
+  name: glFogiv
+  params:
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: params
+    type: GLint const*
+  return: void
+gtu:
+  name: fog
+  params:
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: gtu::vec4< int32_t > const&
+  return: void

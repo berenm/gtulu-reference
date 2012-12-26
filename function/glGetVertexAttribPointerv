@@ -1,0 +1,23 @@
+gl:
+  name: glGetVertexAttribPointerv
+  params:
+  - mapping: vertex_attrib
+    name: index
+    type: GLuint
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: pointer
+    name: pointer
+    type: GLvoid**
+  return: void
+gtu:
+  name: get_vertex_attrib_pointer
+  params:
+  - name: vertex_attrib
+    type: gtu::vertex_attrib const
+  - name: property
+    type: gtu::constant const
+  - name: pointer
+    type: void**
+  return: void

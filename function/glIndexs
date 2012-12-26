@@ -1,0 +1,13 @@
+gl:
+  name: glIndexs
+  params:
+  - mapping: c
+    name: c
+    type: GLshort
+  return: void
+gtu:
+  name: index
+  params:
+  - name: c
+    type: int16_t const
+  return: void

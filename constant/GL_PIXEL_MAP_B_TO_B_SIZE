@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: pixel_map_b_to_b_size
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xcb8

@@ -1,0 +1,13 @@
+gl:
+  name: glIsProgram
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  return: GLboolean
+gtu:
+  name: is_program
+  params:
+  - name: program
+    type: gtu::program const
+  return: bool

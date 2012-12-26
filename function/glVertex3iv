@@ -1,0 +1,13 @@
+gl:
+  name: glVertex3iv
+  params:
+  - mapping: '&position[0]'
+    name: v
+    type: GLint const*
+  return: void
+gtu:
+  name: vertex
+  params:
+  - name: position
+    type: gtu::vec3< int32_t > const&
+  return: void

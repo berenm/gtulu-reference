@@ -1,0 +1,28 @@
+gl:
+  name: glBufferSubData
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: offset
+    name: offset
+    type: GLintptr
+  - mapping: size
+    name: size
+    type: GLsizeiptr
+  - mapping: data
+    name: data
+    type: GLvoid const*
+  return: void
+gtu:
+  name: buffer_sub_data
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: offset
+    type: std::ptrdiff_t const
+  - name: size
+    type: std::ptrdiff_t const
+  - name: data
+    type: gtu::bytearray const&
+  return: void

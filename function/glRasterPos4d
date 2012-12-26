@@ -1,0 +1,23 @@
+gl:
+  name: glRasterPos4d
+  params:
+  - mapping: position[0]
+    name: x
+    type: GLdouble
+  - mapping: position[1]
+    name: y
+    type: GLdouble
+  - mapping: position[2]
+    name: z
+    type: GLdouble
+  - mapping: position[3]
+    name: w
+    type: GLdouble
+  return: void
+gtu:
+  name: raster_pos
+  params:
+  - name: position
+    type: gtu::vec3< float64 > const&
+  return: void
+  skip: true

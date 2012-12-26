@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: max_viewport_dims
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xd3a

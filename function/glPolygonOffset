@@ -1,0 +1,18 @@
+gl:
+  name: glPolygonOffset
+  params:
+  - mapping: factor
+    name: factor
+    type: GLfloat
+  - mapping: units
+    name: units
+    type: GLfloat
+  return: void
+gtu:
+  name: polygon_offset
+  params:
+  - name: factor
+    type: float32 const
+  - name: units
+    type: float32 const
+  return: void

@@ -1,0 +1,6 @@
+categories:
+- shade_mode
+gtu:
+  name: smooth
+usage: []
+value: 0x1d01

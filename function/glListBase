@@ -1,0 +1,13 @@
+gl:
+  name: glListBase
+  params:
+  - mapping: base
+    name: base
+    type: GLuint
+  return: void
+gtu:
+  name: list_base
+  params:
+  - name: base
+    type: gtu::list const
+  return: void

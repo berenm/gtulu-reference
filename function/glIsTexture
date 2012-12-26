@@ -1,0 +1,13 @@
+gl:
+  name: glIsTexture
+  params:
+  - mapping: texture
+    name: texture
+    type: GLuint
+  return: GLboolean
+gtu:
+  name: is_texture
+  params:
+  - name: texture
+    type: gtu::texture const
+  return: bool

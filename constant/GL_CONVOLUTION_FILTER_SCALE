@@ -1,0 +1,11 @@
+categories:
+- convolution_property
+- writable_convolution_property
+gtu:
+  name: convolution_filter_scale
+usage:
+- glConvolutionParameterfv.property
+- glConvolutionParameteriv.property
+- glGetConvolutionParameterfv.property
+- glGetConvolutionParameteriv.property
+value: 0x8014

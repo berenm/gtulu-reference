@@ -1,0 +1,16 @@
+gl:
+  name: glDeleteQueries
+  params:
+  - mapping: 1
+    name: n
+    type: GLsizei
+  - mapping: '&query'
+    name: ids
+    type: GLuint const*
+  return: void
+gtu:
+  name: delete_query
+  params:
+  - name: query
+    type: gtu::query const
+  return: void

@@ -1,0 +1,6 @@
+categories:
+- gl_PixelCopyType
+gtu:
+  name: stencil
+usage: []
+value: 0x1802

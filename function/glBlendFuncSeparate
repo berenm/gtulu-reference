@@ -1,0 +1,28 @@
+gl:
+  name: glBlendFuncSeparate
+  params:
+  - mapping: srcRGB
+    name: srcRGB
+    type: GLenum
+  - mapping: dstRGB
+    name: dstRGB
+    type: GLenum
+  - mapping: srcAlpha
+    name: srcAlpha
+    type: GLenum
+  - mapping: dstAlpha
+    name: dstAlpha
+    type: GLenum
+  return: void
+gtu:
+  name: blend_func_separate
+  params:
+  - name: srcRGB
+    type: gtu::constant const
+  - name: dstRGB
+    type: gtu::constant const
+  - name: srcAlpha
+    type: gtu::constant const
+  - name: dstAlpha
+    type: gtu::constant const
+  return: void

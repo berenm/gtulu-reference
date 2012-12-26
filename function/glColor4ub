@@ -1,0 +1,23 @@
+gl:
+  name: glColor4ub
+  params:
+  - mapping: color[0]
+    name: red
+    type: GLubyte
+  - mapping: color[1]
+    name: green
+    type: GLubyte
+  - mapping: color[2]
+    name: blue
+    type: GLubyte
+  - mapping: color[3]
+    name: alpha
+    type: GLubyte
+  return: void
+gtu:
+  name: color
+  params:
+  - name: color
+    type: gtu::vec4< uint8_t > const&
+  return: void
+  skip: true

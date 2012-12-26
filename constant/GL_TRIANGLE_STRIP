@@ -1,0 +1,7 @@
+categories:
+- begin_mode
+- draw_mode
+gtu:
+  name: triangle_strip
+usage: []
+value: 0x5

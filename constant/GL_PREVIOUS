@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_1_3
+gtu:
+  name: previous
+usage: []
+value: 0x8578

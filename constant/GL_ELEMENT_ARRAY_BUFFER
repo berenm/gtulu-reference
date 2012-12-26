@@ -1,0 +1,14 @@
+categories:
+- buffer_target
+gtu:
+  name: element_array_buffer
+usage:
+- glBindBuffer.target
+- glBufferData.target
+- glBufferSubData.target
+- glGetBufferParameteriv.target
+- glGetBufferPointerv.target
+- glGetBufferSubData.target
+- glMapBuffer.target
+- glUnmapBuffer.target
+value: 0x8893

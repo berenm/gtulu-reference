@@ -1,0 +1,6 @@
+categories:
+- gl_PixelFormat
+gtu:
+  name: alpha
+usage: []
+value: 0x1906

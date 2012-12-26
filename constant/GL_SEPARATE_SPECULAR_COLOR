@@ -1,0 +1,7 @@
+categories:
+- gl_VERSION_1_2
+- gl_LightModelColorControl
+gtu:
+  name: separate_specular_color
+usage: []
+value: 0x81fa

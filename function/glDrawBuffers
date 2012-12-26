@@ -1,0 +1,16 @@
+gl:
+  name: glDrawBuffers
+  params:
+  - mapping: buffers.size()
+    name: n
+    type: GLsizei
+  - mapping: '&buffers[0]'
+    name: bufs
+    type: GLenum const*
+  return: void
+gtu:
+  name: draw_buffers
+  params:
+  - name: buffers
+    type: std::vector< gtu::constant > const&
+  return: void

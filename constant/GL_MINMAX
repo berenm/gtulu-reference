@@ -1,0 +1,18 @@
+categories:
+- context_property
+- min_max_target
+gtu:
+  name: minmax
+usage:
+- glDisable.target
+- glEnable.target
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+- glGetMinmax.target
+- glGetMinmaxParameterfv.target
+- glGetMinmaxParameteriv.target
+- glMinmax.target
+- glResetMinmax.target
+value: 0x802e

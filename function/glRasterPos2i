@@ -1,0 +1,17 @@
+gl:
+  name: glRasterPos2i
+  params:
+  - mapping: position[0]
+    name: x
+    type: GLint
+  - mapping: position[1]
+    name: y
+    type: GLint
+  return: void
+gtu:
+  name: raster_pos
+  params:
+  - name: position
+    type: gtu::vec2< int32_t > const&
+  return: void
+  skip: true

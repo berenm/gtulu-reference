@@ -1,0 +1,6 @@
+categories:
+- gl_AttribMask
+gtu:
+  name: color_buffer_bit
+usage: []
+value: 0x4000

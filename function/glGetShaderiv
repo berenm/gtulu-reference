@@ -1,0 +1,23 @@
+gl:
+  name: glGetShaderiv
+  params:
+  - mapping: shader
+    name: shader
+    type: GLuint
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: params
+    type: GLint*
+  return: void
+gtu:
+  name: get_shader
+  params:
+  - name: shader
+    type: gtu::shader const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: gtu::vec1< int32_t >&
+  return: void

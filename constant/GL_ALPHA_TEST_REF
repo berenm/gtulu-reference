@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: alpha_test_ref
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xbc2

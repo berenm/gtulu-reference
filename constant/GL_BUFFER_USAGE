@@ -1,0 +1,7 @@
+categories:
+- buffer_property
+gtu:
+  name: buffer_usage
+usage:
+- glGetBufferParameteriv.property
+value: 0x8765

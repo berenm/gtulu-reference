@@ -1,0 +1,28 @@
+gl:
+  name: glStencilOpSeparate
+  params:
+  - mapping: face
+    name: face
+    type: GLenum
+  - mapping: sfail
+    name: sfail
+    type: GLenum
+  - mapping: dpfail
+    name: dpfail
+    type: GLenum
+  - mapping: dppass
+    name: dppass
+    type: GLenum
+  return: void
+gtu:
+  name: stencil_op_separate
+  params:
+  - name: face
+    type: gtu::constant const
+  - name: sfail
+    type: gtu::constant const
+  - name: dpfail
+    type: gtu::constant const
+  - name: dppass
+    type: gtu::constant const
+  return: void

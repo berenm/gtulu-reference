@@ -1,0 +1,6 @@
+categories:
+- gl_PixelFormat
+gtu:
+  name: stencil_index
+usage: []
+value: 0x1901

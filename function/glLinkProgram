@@ -1,0 +1,13 @@
+gl:
+  name: glLinkProgram
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  return: void
+gtu:
+  name: link_program
+  params:
+  - name: program
+    type: gtu::program const
+  return: void

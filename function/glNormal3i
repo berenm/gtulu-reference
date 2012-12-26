@@ -1,0 +1,20 @@
+gl:
+  name: glNormal3i
+  params:
+  - mapping: direction[0]
+    name: nx
+    type: GLint
+  - mapping: direction[1]
+    name: ny
+    type: GLint
+  - mapping: direction[2]
+    name: nz
+    type: GLint
+  return: void
+gtu:
+  name: normal
+  params:
+  - name: direction
+    type: gtu::vec3< int32_t > const&
+  return: void
+  skip: true

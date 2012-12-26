@@ -1,0 +1,6 @@
+categories:
+- gl_AttribMask
+gtu:
+  name: eval_bit
+usage: []
+value: 0x10000

@@ -1,0 +1,8 @@
+gl:
+  name: glFinish
+  params: []
+  return: void
+gtu:
+  name: finish
+  params: []
+  return: void

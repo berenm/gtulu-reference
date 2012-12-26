@@ -1,0 +1,13 @@
+gl:
+  name: glFogCoordd
+  params:
+  - mapping: coord
+    name: coord
+    type: GLdouble
+  return: void
+gtu:
+  name: fog_coord
+  params:
+  - name: coord
+    type: float64 const
+  return: void

@@ -1,0 +1,16 @@
+gl:
+  name: glDeleteBuffers
+  params:
+  - mapping: 1
+    name: n
+    type: GLsizei
+  - mapping: '&buffer'
+    name: buffers
+    type: GLuint const*
+  return: void
+gtu:
+  name: delete_buffer
+  params:
+  - name: buffer
+    type: gtu::buffer const
+  return: void

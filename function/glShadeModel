@@ -1,0 +1,13 @@
+gl:
+  name: glShadeModel
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  return: void
+gtu:
+  name: shade_model
+  params:
+  - name: mode
+    type: gtu::constant const
+  return: void

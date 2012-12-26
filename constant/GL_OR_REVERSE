@@ -1,0 +1,6 @@
+categories:
+- gl_LogicOp
+gtu:
+  name: or_reverse
+usage: []
+value: 0x150b

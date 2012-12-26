@@ -1,0 +1,13 @@
+gl:
+  name: glMultMatrixf
+  params:
+  - mapping: '&matrix[0][0]'
+    name: m
+    type: GLfloat const*
+  return: void
+gtu:
+  name: mult_matrix
+  params:
+  - name: matrix
+    type: gtu::mat4x4< float32 > const&
+  return: void

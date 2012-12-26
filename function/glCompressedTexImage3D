@@ -1,0 +1,49 @@
+gl:
+  name: glCompressedTexImage3D
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: level
+    name: level
+    type: GLint
+  - mapping: internal_format
+    name: internalformat
+    type: GLenum
+  - mapping: dimension[0]
+    name: width
+    type: GLsizei
+  - mapping: dimension[1]
+    name: height
+    type: GLsizei
+  - mapping: dimension[2]
+    name: depth
+    type: GLsizei
+  - mapping: border
+    name: border
+    type: GLint
+  - mapping: imageSize
+    name: imageSize
+    type: GLsizei
+  - mapping: data
+    name: data
+    type: GLvoid const*
+  return: void
+gtu:
+  name: compressed_tex_image
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: level
+    type: int32_t const
+  - name: internal_format
+    type: gtu::constant const
+  - name: dimension
+    type: gtu::vec3< gtu::size > const&
+  - name: border
+    type: int32_t const
+  - name: imageSize
+    type: gtu::size const
+  - name: data
+    type: gtu::buffer_ref const&
+  return: void

@@ -1,0 +1,9 @@
+categories:
+- proxyable_color_table_target
+gtu:
+  name: proxy_color_table
+usage:
+- glColorTable.target
+- glGetColorTableParameterfv.target
+- glGetColorTableParameteriv.target
+value: 0x80d3

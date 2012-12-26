@@ -1,0 +1,6 @@
+categories:
+- matrix_mode
+gtu:
+  name: color
+usage: []
+value: 0x1800

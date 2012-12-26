@@ -1,0 +1,23 @@
+gl:
+  name: glNormalPointer
+  params:
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: stride
+    name: stride
+    type: GLsizei
+  - mapping: data
+    name: pointer
+    type: GLvoid const*
+  return: void
+gtu:
+  name: normal_pointer
+  params:
+  - name: type
+    type: gtu::constant const
+  - name: stride
+    type: gtu::size const
+  - name: data
+    type: gtu::buffer_ref const&
+  return: void

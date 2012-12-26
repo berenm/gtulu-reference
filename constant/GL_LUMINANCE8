@@ -1,0 +1,6 @@
+categories:
+- gl_PixelInternalFormat
+gtu:
+  name: luminance8
+usage: []
+value: 0x8040

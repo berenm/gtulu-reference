@@ -1,0 +1,10 @@
+categories:
+- point_property
+gtu:
+  name: point_sprite_coord_origin
+usage:
+- glPointParameterf.property
+- glPointParameterfv.property
+- glPointParameteri.property
+- glPointParameteriv.property
+value: 0x8ca0

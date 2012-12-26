@@ -1,0 +1,25 @@
+categories:
+- context_property
+- texture_target
+- texture_bind_target
+- writable_texture_property_target
+- mipmapable_texture_target
+- texture_view_target
+- internal_format_target
+gtu:
+  name: texture_cube_map
+usage:
+- glBindTexture.target
+- glDisable.target
+- glEnable.target
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+- glGetTexParameterfv.target
+- glGetTexParameteriv.target
+- glTexParameterf.target
+- glTexParameterfv.target
+- glTexParameteri.target
+- glTexParameteriv.target
+value: 0x8513

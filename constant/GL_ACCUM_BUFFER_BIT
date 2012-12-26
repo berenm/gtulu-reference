@@ -1,0 +1,6 @@
+categories:
+- gl_AttribMask
+gtu:
+  name: accum_buffer_bit
+usage: []
+value: 0x200

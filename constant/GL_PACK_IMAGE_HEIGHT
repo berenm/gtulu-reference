@@ -1,0 +1,13 @@
+categories:
+- context_property
+- pixel_store_property
+gtu:
+  name: pack_image_height
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+- glPixelStoref.property
+- glPixelStorei.property
+value: 0x806c

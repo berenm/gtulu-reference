@@ -1,0 +1,23 @@
+gl:
+  name: glMaterialf
+  params:
+  - mapping: face
+    name: face
+    type: GLenum
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: param
+    name: param
+    type: GLfloat
+  return: void
+gtu:
+  name: material
+  params:
+  - name: face
+    type: gtu::constant const
+  - name: property
+    type: gtu::constant const
+  - name: param
+    type: float32 const
+  return: void

@@ -1,0 +1,13 @@
+categories:
+- gl_ColorPointerType
+- gl_DataType
+- gl_PixelType
+- gl_ListNameType
+- gl_NormalPointerType
+- gl_VertexPointerType
+- gl_TexCoordPointerType
+- gl_IndexPointerType
+gtu:
+  name: float_
+usage: []
+value: 0x1406

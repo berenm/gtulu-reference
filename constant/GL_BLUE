@@ -1,0 +1,6 @@
+categories:
+- gl_PixelFormat
+gtu:
+  name: blue
+usage: []
+value: 0x1905

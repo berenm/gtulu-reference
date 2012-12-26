@@ -1,0 +1,26 @@
+gl:
+  name: glGetAttachedShaders
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: shaders.capacity()
+    name: maxCount
+    type: GLsizei
+  - mapping: '&count'
+    name: count
+    type: GLsizei*
+  - mapping: '&shaders[0]'
+    name: shaders
+    type: GLuint*
+  return: void
+gtu:
+  name: get_attached_shaders
+  params:
+  - name: program
+    type: gtu::program const
+  - name: count
+    type: gtu::size&
+  - name: shaders
+    type: std::vector< gtu::shader >&
+  return: void

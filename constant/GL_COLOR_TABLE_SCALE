@@ -1,0 +1,11 @@
+categories:
+- color_table_property
+- writable_color_table_property
+gtu:
+  name: color_table_scale
+usage:
+- glColorTableParameterfv.property
+- glColorTableParameteriv.property
+- glGetColorTableParameterfv.property
+- glGetColorTableParameteriv.property
+value: 0x80d6

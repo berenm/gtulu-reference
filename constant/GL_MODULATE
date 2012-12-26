@@ -1,0 +1,7 @@
+categories:
+- gl_TextureEnvMode
+- gl_LightEnvModeSGIX
+gtu:
+  name: modulate
+usage: []
+value: 0x2100

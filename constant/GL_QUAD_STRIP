@@ -1,0 +1,6 @@
+categories:
+- begin_mode
+gtu:
+  name: quad_strip
+usage: []
+value: 0x8

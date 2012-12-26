@@ -1,0 +1,6 @@
+categories:
+- gl_LogicOp
+gtu:
+  name: nor
+usage: []
+value: 0x1508

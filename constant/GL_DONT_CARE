@@ -1,0 +1,6 @@
+categories:
+- hint_mode
+gtu:
+  name: dont_care
+usage: []
+value: 0x1100

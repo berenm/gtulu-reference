@@ -1,0 +1,13 @@
+gl:
+  name: glVertex4dv
+  params:
+  - mapping: '&position[0]'
+    name: v
+    type: GLdouble const*
+  return: void
+gtu:
+  name: vertex
+  params:
+  - name: position
+    type: gtu::vec4< float64 > const&
+  return: void

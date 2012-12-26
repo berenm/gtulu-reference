@@ -1,0 +1,41 @@
+gl:
+  name: glGetActiveAttrib
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: vertex_attrib
+    name: index
+    type: GLuint
+  - mapping: name.capacity()
+    name: bufSize
+    type: GLsizei
+  - mapping: '&length'
+    name: length
+    type: GLsizei*
+  - mapping: '&size'
+    name: size
+    type: GLint*
+  - mapping: '&type'
+    name: type
+    type: GLenum*
+  - mapping: '&name[0]'
+    name: name
+    type: GLchar*
+  return: void
+gtu:
+  name: get_active_attrib
+  params:
+  - name: program
+    type: gtu::program const
+  - name: vertex_attrib
+    type: gtu::vertex_attrib const
+  - name: length
+    type: gtu::size&
+  - name: size
+    type: int32_t&
+  - name: type
+    type: gtu::constant&
+  - name: name
+    type: std::string&
+  return: void

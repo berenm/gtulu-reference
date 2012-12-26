@@ -1,0 +1,6 @@
+categories:
+- gl_FeedBackToken
+gtu:
+  name: pass_through_token
+usage: []
+value: 0x700

@@ -1,0 +1,7 @@
+categories:
+- vertex_attrib_pointer_property
+gtu:
+  name: vertex_attrib_array_pointer
+usage:
+- glGetVertexAttribPointerv.property
+value: 0x8645

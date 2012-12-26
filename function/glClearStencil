@@ -1,0 +1,13 @@
+gl:
+  name: glClearStencil
+  params:
+  - mapping: color[0]
+    name: s
+    type: GLint
+  return: void
+gtu:
+  name: clear_stencil
+  params:
+  - name: color
+    type: gtu::vec1< int32_t > const&
+  return: void

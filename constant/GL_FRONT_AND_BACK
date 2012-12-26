@@ -1,0 +1,7 @@
+categories:
+- cull_mode
+- draw_buffer_mode
+gtu:
+  name: front_and_back
+usage: []
+value: 0x408

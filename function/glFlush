@@ -1,0 +1,8 @@
+gl:
+  name: glFlush
+  params: []
+  return: void
+gtu:
+  name: flush
+  params: []
+  return: void

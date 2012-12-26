@@ -1,0 +1,18 @@
+gl:
+  name: glBlendEquationSeparate
+  params:
+  - mapping: modeRGB
+    name: modeRGB
+    type: GLenum
+  - mapping: modeAlpha
+    name: modeAlpha
+    type: GLenum
+  return: void
+gtu:
+  name: blend_equation_separate
+  params:
+  - name: modeRGB
+    type: gtu::constant const
+  - name: modeAlpha
+    type: gtu::constant const
+  return: void

@@ -1,0 +1,18 @@
+gl:
+  name: glMultiTexCoord1dv
+  params:
+  - mapping: texture_unit
+    name: target
+    type: GLenum
+  - mapping: '&coordinates[0]'
+    name: v
+    type: GLdouble const*
+  return: void
+gtu:
+  name: multi_tex_coord
+  params:
+  - name: texture_unit
+    type: gtu::texture_unit const
+  - name: coordinates
+    type: gtu::vec1< float64 > const&
+  return: void

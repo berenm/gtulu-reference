@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: compressed_texture_formats
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0x86a3

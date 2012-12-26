@@ -1,0 +1,23 @@
+gl:
+  name: glBindAttribLocation
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: vertex_attrib
+    name: index
+    type: GLuint
+  - mapping: '&name[0]'
+    name: name
+    type: GLchar const*
+  return: void
+gtu:
+  name: bind_attrib_location
+  params:
+  - name: program
+    type: gtu::program const
+  - name: vertex_attrib
+    type: gtu::vertex_attrib const
+  - name: name
+    type: std::string const&
+  return: void

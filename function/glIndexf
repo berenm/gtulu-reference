@@ -1,0 +1,13 @@
+gl:
+  name: glIndexf
+  params:
+  - mapping: c
+    name: c
+    type: GLfloat
+  return: void
+gtu:
+  name: index
+  params:
+  - name: c
+    type: float32 const
+  return: void

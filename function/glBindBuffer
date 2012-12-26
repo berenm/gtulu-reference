@@ -1,0 +1,18 @@
+gl:
+  name: glBindBuffer
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: buffer
+    name: buffer
+    type: GLuint
+  return: void
+gtu:
+  name: bind_buffer
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: buffer
+    type: gtu::buffer const
+  return: void

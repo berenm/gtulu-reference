@@ -1,0 +1,11 @@
+categories:
+- tex_image_target
+- texture_level_target
+gtu:
+  name: proxy_texture_3d
+usage:
+- glCompressedTexImage3D.target
+- glGetTexLevelParameterfv.target
+- glGetTexLevelParameteriv.target
+- glTexImage3D.target
+value: 0x8070

@@ -1,0 +1,13 @@
+categories:
+- context_property
+- point_property
+gtu:
+  name: point_distance_attenuation
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+- glPointParameterfv.property
+- glPointParameteriv.property
+value: 0x8129

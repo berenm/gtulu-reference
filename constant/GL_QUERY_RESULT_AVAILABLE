@@ -1,0 +1,8 @@
+categories:
+- query_object_property
+gtu:
+  name: query_result_available
+usage:
+- glGetQueryObjectiv.property
+- glGetQueryObjectuiv.property
+value: 0x8867

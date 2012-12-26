@@ -1,0 +1,49 @@
+gl:
+  name: glTexSubImage2D
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: level
+    name: level
+    type: GLint
+  - mapping: offset[0]
+    name: xoffset
+    type: GLint
+  - mapping: offset[1]
+    name: yoffset
+    type: GLint
+  - mapping: dimension[0]
+    name: width
+    type: GLsizei
+  - mapping: dimension[1]
+    name: height
+    type: GLsizei
+  - mapping: format
+    name: format
+    type: GLenum
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: data
+    name: data
+    type: GLvoid const*
+  return: void
+gtu:
+  name: tex_sub_image
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: level
+    type: int32_t const
+  - name: offset
+    type: gtu::vec2< int32_t > const&
+  - name: dimension
+    type: gtu::vec2< gtu::size > const&
+  - name: format
+    type: gtu::constant const
+  - name: type
+    type: gtu::constant const
+  - name: data
+    type: gtu::buffer_ref const&
+  return: void

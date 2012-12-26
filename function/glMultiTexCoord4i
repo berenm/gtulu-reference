@@ -1,0 +1,28 @@
+gl:
+  name: glMultiTexCoord4i
+  params:
+  - mapping: texture_unit
+    name: target
+    type: GLenum
+  - mapping: coordinates[0]
+    name: s
+    type: GLint
+  - mapping: coordinates[1]
+    name: t
+    type: GLint
+  - mapping: coordinates[2]
+    name: r
+    type: GLint
+  - mapping: coordinates[3]
+    name: q
+    type: GLint
+  return: void
+gtu:
+  name: multi_tex_coord
+  params:
+  - name: texture_unit
+    type: gtu::texture_unit const
+  - name: coordinates
+    type: gtu::vec4< int32_t > const&
+  return: void
+  skip: true

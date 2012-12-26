@@ -1,0 +1,13 @@
+gl:
+  name: glDepthFunc
+  params:
+  - mapping: func
+    name: func
+    type: GLenum
+  return: void
+gtu:
+  name: depth_func
+  params:
+  - name: func
+    type: gtu::constant const
+  return: void

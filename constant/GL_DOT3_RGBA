@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_1_3
+gtu:
+  name: dot3_rgba
+usage: []
+value: 0x86af

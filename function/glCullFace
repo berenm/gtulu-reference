@@ -1,0 +1,13 @@
+gl:
+  name: glCullFace
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  return: void
+gtu:
+  name: cull_face
+  params:
+  - name: mode
+    type: gtu::constant const
+  return: void

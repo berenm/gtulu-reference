@@ -1,0 +1,13 @@
+gl:
+  name: glClear
+  params:
+  - mapping: mask.to_ulong()
+    name: mask
+    type: GLbitfield
+  return: void
+gtu:
+  name: clear
+  params:
+  - name: mask
+    type: gtu::bitmask const&
+  return: void

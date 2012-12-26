@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_1_5
+gtu:
+  name: buffer_map_pointer
+usage: []
+value: 0x88bd

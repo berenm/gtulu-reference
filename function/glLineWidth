@@ -1,0 +1,13 @@
+gl:
+  name: glLineWidth
+  params:
+  - mapping: dimension[0]
+    name: width
+    type: GLfloat
+  return: void
+gtu:
+  name: line_width
+  params:
+  - name: dimension
+    type: gtu::vec1< float32 > const&
+  return: void

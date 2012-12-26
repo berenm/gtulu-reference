@@ -1,0 +1,7 @@
+categories:
+- context_pointer_property
+gtu:
+  name: normal_array_pointer
+usage:
+- glGetPointerv.property
+value: 0x808f

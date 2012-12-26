@@ -1,0 +1,6 @@
+categories:
+- gl_AttribMask
+gtu:
+  name: fog_bit
+usage: []
+value: 0x80

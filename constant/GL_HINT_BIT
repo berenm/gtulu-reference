@@ -1,0 +1,6 @@
+categories:
+- gl_AttribMask
+gtu:
+  name: hint_bit
+usage: []
+value: 0x8000

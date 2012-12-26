@@ -1,0 +1,8 @@
+gl:
+  name: glPopMatrix
+  params: []
+  return: void
+gtu:
+  name: pop_matrix
+  params: []
+  return: void

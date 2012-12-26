@@ -1,0 +1,7 @@
+categories:
+- context_string_property
+gtu:
+  name: renderer
+usage:
+- glGetString.property
+value: 0x1f01

@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: element_array_buffer_binding
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0x8895

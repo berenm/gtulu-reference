@@ -1,0 +1,7 @@
+categories:
+- shader_property
+gtu:
+  name: shader_source_length
+usage:
+- glGetShaderiv.property
+value: 0x8b88

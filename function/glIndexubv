@@ -1,0 +1,13 @@
+gl:
+  name: glIndexubv
+  params:
+  - mapping: '&values[0]'
+    name: c
+    type: GLubyte const*
+  return: void
+gtu:
+  name: index
+  params:
+  - name: values
+    type: gtu::vec1< uint8_t > const&
+  return: void

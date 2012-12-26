@@ -1,0 +1,6 @@
+categories:
+- gl_InterleavedArrayFormat
+gtu:
+  name: c4ub_v2f
+usage: []
+value: 0x2a22

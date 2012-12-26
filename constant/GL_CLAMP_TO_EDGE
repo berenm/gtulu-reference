@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_1_2
+gtu:
+  name: clamp_to_edge
+usage: []
+value: 0x812f

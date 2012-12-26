@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_1_5
+gtu:
+  name: read_only
+usage: []
+value: 0x88b8

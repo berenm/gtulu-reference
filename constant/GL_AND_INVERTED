@@ -1,0 +1,6 @@
+categories:
+- gl_LogicOp
+gtu:
+  name: and_inverted
+usage: []
+value: 0x1504

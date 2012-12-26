@@ -1,0 +1,18 @@
+gl:
+  name: glStencilMaskSeparate
+  params:
+  - mapping: face
+    name: face
+    type: GLenum
+  - mapping: mask
+    name: mask
+    type: GLuint
+  return: void
+gtu:
+  name: stencil_mask_separate
+  params:
+  - name: face
+    type: gtu::constant const
+  - name: mask
+    type: uint32_t const
+  return: void

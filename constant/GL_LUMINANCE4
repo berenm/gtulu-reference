@@ -1,0 +1,6 @@
+categories:
+- gl_PixelInternalFormat
+gtu:
+  name: luminance4
+usage: []
+value: 0x803f

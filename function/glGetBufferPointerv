@@ -1,0 +1,23 @@
+gl:
+  name: glGetBufferPointerv
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: pname
+    name: pname
+    type: GLenum
+  - mapping: '&pointer'
+    name: params
+    type: GLvoid**
+  return: void
+gtu:
+  name: get_buffer_pointer
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: pname
+    type: gtu::constant const
+  - name: pointer
+    type: void*&
+  return: void

@@ -1,0 +1,20 @@
+categories:
+- writable_sampler_property
+- writable_texture_property
+- tex_env_property
+gtu:
+  name: texture_lod_bias
+usage:
+- glGetTexEnvfv.property
+- glGetTexEnviv.property
+- glGetTexParameterfv.property
+- glGetTexParameteriv.property
+- glTexEnvf.property
+- glTexEnvfv.property
+- glTexEnvi.property
+- glTexEnviv.property
+- glTexParameterf.property
+- glTexParameterfv.property
+- glTexParameteri.property
+- glTexParameteriv.property
+value: 0x8501

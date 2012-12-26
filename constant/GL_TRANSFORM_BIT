@@ -1,0 +1,6 @@
+categories:
+- gl_AttribMask
+gtu:
+  name: transform_bit
+usage: []
+value: 0x1000

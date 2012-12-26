@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_1_4
+gtu:
+  name: fragment_depth
+usage: []
+value: 0x8452

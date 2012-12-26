@@ -1,0 +1,7 @@
+categories:
+- base_internal_format
+- internal_format
+gtu:
+  name: red
+usage: []
+value: 0x1903

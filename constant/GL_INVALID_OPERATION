@@ -1,0 +1,6 @@
+categories:
+- error
+gtu:
+  name: invalid_operation
+usage: []
+value: 0x502

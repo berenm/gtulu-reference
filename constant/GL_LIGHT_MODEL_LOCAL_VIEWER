@@ -1,0 +1,15 @@
+categories:
+- context_property
+- light_model_property
+gtu:
+  name: light_model_local_viewer
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+- glLightModelf.property
+- glLightModelfv.property
+- glLightModeli.property
+- glLightModeliv.property
+value: 0xb51

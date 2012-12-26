@@ -1,0 +1,21 @@
+gl:
+  name: glPixelMapuiv
+  params:
+  - mapping: map
+    name: map
+    type: GLenum
+  - mapping: values.size()
+    name: mapsize
+    type: GLsizei
+  - mapping: '&values[0]'
+    name: values
+    type: GLuint const*
+  return: void
+gtu:
+  name: pixel_map
+  params:
+  - name: map
+    type: gtu::constant const
+  - name: values
+    type: std::vector< uint32_t > const&
+  return: void

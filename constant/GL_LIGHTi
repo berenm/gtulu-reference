@@ -1,0 +1,20 @@
+categories:
+- context_property
+gtu:
+  name: lighti
+usage:
+- glDisable.target
+- glEnable.target
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+values:
+- 0x4000
+- 0x4001
+- 0x4002
+- 0x4003
+- 0x4004
+- 0x4005
+- 0x4006
+- 0x4007

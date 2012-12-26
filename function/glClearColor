@@ -1,0 +1,22 @@
+gl:
+  name: glClearColor
+  params:
+  - mapping: color[0]
+    name: red
+    type: GLclampf
+  - mapping: color[1]
+    name: green
+    type: GLclampf
+  - mapping: color[2]
+    name: blue
+    type: GLclampf
+  - mapping: color[3]
+    name: alpha
+    type: GLclampf
+  return: void
+gtu:
+  name: clear_color
+  params:
+  - name: color
+    type: gtu::vec4< float32 > const&
+  return: void

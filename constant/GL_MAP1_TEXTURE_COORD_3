@@ -1,0 +1,19 @@
+categories:
+- context_property
+- map1_target
+- map_target
+gtu:
+  name: map1_texture_coord_3
+usage:
+- glDisable.target
+- glEnable.target
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+- glGetMapdv.target
+- glGetMapfv.target
+- glGetMapiv.target
+- glMap1d.target
+- glMap1f.target
+value: 0xd95

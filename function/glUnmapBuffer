@@ -1,0 +1,13 @@
+gl:
+  name: glUnmapBuffer
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  return: GLboolean
+gtu:
+  name: unmap_buffer
+  params:
+  - name: target
+    type: gtu::constant const
+  return: bool

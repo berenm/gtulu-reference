@@ -1,0 +1,29 @@
+gl:
+  name: glCopyPixels
+  params:
+  - mapping: position[0]
+    name: x
+    type: GLint
+  - mapping: position[1]
+    name: y
+    type: GLint
+  - mapping: dimension[0]
+    name: width
+    type: GLsizei
+  - mapping: dimension[1]
+    name: height
+    type: GLsizei
+  - mapping: type
+    name: type
+    type: GLenum
+  return: void
+gtu:
+  name: copy_pixels
+  params:
+  - name: position
+    type: gtu::vec2< int32_t > const&
+  - name: dimension
+    type: gtu::vec2< gtu::size > const&
+  - name: type
+    type: gtu::constant const
+  return: void

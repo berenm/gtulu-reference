@@ -1,0 +1,18 @@
+gl:
+  name: glRectiv
+  params:
+  - mapping: '&v1[0]'
+    name: v1
+    type: GLint const*
+  - mapping: '&v2[0]'
+    name: v2
+    type: GLint const*
+  return: void
+gtu:
+  name: rect
+  params:
+  - name: v1
+    type: gtu::vec2< int32_t > const&
+  - name: v2
+    type: gtu::vec2< int32_t > const&
+  return: void

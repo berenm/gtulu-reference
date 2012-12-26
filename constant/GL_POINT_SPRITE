@@ -1,0 +1,17 @@
+categories:
+- context_property
+- tex_env_target
+gtu:
+  name: point_sprite
+usage:
+- glDisable.target
+- glEnable.target
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+- glGetTexEnvfv.target
+- glGetTexEnviv.target
+- glTexEnvf.target
+- glTexEnvi.target
+value: 0x8861

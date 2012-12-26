@@ -1,0 +1,14 @@
+categories:
+- buffer_target
+gtu:
+  name: pixel_unpack_buffer
+usage:
+- glBindBuffer.target
+- glBufferData.target
+- glBufferSubData.target
+- glGetBufferParameteriv.target
+- glGetBufferPointerv.target
+- glGetBufferSubData.target
+- glMapBuffer.target
+- glUnmapBuffer.target
+value: 0x88ec

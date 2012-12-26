@@ -1,0 +1,13 @@
+gl:
+  name: glResetMinmax
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  return: void
+gtu:
+  name: reset_minmax
+  params:
+  - name: target
+    type: gtu::constant const
+  return: void

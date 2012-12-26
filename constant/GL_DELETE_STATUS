@@ -1,0 +1,9 @@
+categories:
+- program_property
+- shader_property
+gtu:
+  name: delete_status
+usage:
+- glGetProgramiv.property
+- glGetShaderiv.property
+value: 0x8b80

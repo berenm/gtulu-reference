@@ -1,0 +1,38 @@
+gl:
+  name: glMapGrid2f
+  params:
+  - mapping: un
+    name: un
+    type: GLint
+  - mapping: u1
+    name: u1
+    type: GLfloat
+  - mapping: u2
+    name: u2
+    type: GLfloat
+  - mapping: vn
+    name: vn
+    type: GLint
+  - mapping: v1
+    name: v1
+    type: GLfloat
+  - mapping: v2
+    name: v2
+    type: GLfloat
+  return: void
+gtu:
+  name: mapGrid_2
+  params:
+  - name: un
+    type: int32_t const
+  - name: u1
+    type: float32 const
+  - name: u2
+    type: float32 const
+  - name: vn
+    type: int32_t const
+  - name: v1
+    type: float32 const
+  - name: v2
+    type: float32 const
+  return: void

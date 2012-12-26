@@ -1,0 +1,18 @@
+gl:
+  name: glNewList
+  params:
+  - mapping: list
+    name: list
+    type: GLuint
+  - mapping: mode
+    name: mode
+    type: GLenum
+  return: void
+gtu:
+  name: new_list
+  params:
+  - name: list
+    type: gtu::list const
+  - name: mode
+    type: gtu::constant const
+  return: void

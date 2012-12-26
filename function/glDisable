@@ -1,0 +1,13 @@
+gl:
+  name: glDisable
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  return: void
+gtu:
+  name: disable
+  params:
+  - name: target
+    type: gtu::constant const
+  return: void

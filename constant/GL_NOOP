@@ -1,0 +1,6 @@
+categories:
+- gl_LogicOp
+gtu:
+  name: noop
+usage: []
+value: 0x1505

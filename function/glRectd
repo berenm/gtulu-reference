@@ -1,0 +1,28 @@
+gl:
+  name: glRectd
+  params:
+  - mapping: x1
+    name: x1
+    type: GLdouble
+  - mapping: y1
+    name: y1
+    type: GLdouble
+  - mapping: x2
+    name: x2
+    type: GLdouble
+  - mapping: y2
+    name: y2
+    type: GLdouble
+  return: void
+gtu:
+  name: rect
+  params:
+  - name: x1
+    type: float64 const
+  - name: y1
+    type: float64 const
+  - name: x2
+    type: float64 const
+  - name: y2
+    type: float64 const
+  return: void

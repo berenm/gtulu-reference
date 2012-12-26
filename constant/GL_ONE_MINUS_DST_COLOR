@@ -1,0 +1,6 @@
+categories:
+- gl_BlendingFactorSrc
+gtu:
+  name: one_minus_dst_color
+usage: []
+value: 0x307

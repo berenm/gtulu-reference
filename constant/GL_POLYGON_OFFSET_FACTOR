@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: polygon_offset_factor
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0x8038

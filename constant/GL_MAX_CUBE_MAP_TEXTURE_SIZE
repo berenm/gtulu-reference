@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: max_cube_map_texture_size
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0x851c

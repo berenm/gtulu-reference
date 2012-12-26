@@ -1,0 +1,11 @@
+categories:
+- tex_image_target
+- texture_level_target
+gtu:
+  name: proxy_texture_1d
+usage:
+- glCompressedTexImage1D.target
+- glGetTexLevelParameterfv.target
+- glGetTexLevelParameteriv.target
+- glTexImage1D.target
+value: 0x8063

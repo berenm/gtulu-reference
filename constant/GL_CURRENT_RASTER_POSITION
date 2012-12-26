@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: current_raster_position
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xb07

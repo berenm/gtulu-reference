@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_1_2
+gtu:
+  name: unsigned_short_4_4_4_4_rev
+usage: []
+value: 0x8365

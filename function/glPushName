@@ -1,0 +1,13 @@
+gl:
+  name: glPushName
+  params:
+  - mapping: name
+    name: name
+    type: GLuint
+  return: void
+gtu:
+  name: push_name
+  params:
+  - name: name
+    type: uint32_t const
+  return: void

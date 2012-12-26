@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: max_texture_units
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0x84e2

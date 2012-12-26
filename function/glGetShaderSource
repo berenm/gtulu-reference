@@ -1,0 +1,26 @@
+gl:
+  name: glGetShaderSource
+  params:
+  - mapping: shader
+    name: shader
+    type: GLuint
+  - mapping: source.capacity()
+    name: bufSize
+    type: GLsizei
+  - mapping: '&length'
+    name: length
+    type: GLsizei*
+  - mapping: '&source[0]'
+    name: source
+    type: GLchar*
+  return: void
+gtu:
+  name: get_shader_source
+  params:
+  - name: shader
+    type: gtu::shader const
+  - name: length
+    type: gtu::size&
+  - name: source
+    type: std::string&
+  return: void

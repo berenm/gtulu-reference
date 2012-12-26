@@ -1,0 +1,6 @@
+categories:
+- gl_FogMode
+gtu:
+  name: exp
+usage: []
+value: 0x800

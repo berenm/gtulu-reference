@@ -1,0 +1,6 @@
+categories:
+- error
+gtu:
+  name: invalid_value
+usage: []
+value: 0x501

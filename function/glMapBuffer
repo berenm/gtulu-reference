@@ -1,0 +1,18 @@
+gl:
+  name: glMapBuffer
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: access
+    name: access
+    type: GLenum
+  return: void*
+gtu:
+  name: map_buffer
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: access
+    type: gtu::constant const
+  return: void*

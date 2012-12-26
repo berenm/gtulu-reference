@@ -1,0 +1,8 @@
+categories:
+- texture_level_property
+gtu:
+  name: texture_blue_size
+usage:
+- glGetTexLevelParameterfv.property
+- glGetTexLevelParameteriv.property
+value: 0x805e

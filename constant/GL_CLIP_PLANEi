@@ -1,0 +1,20 @@
+categories:
+- enableable_target
+gtu:
+  name: clip_planei
+usage:
+- glDisable.target
+- glEnable.target
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+values:
+- 0x3000
+- 0x3001
+- 0x3002
+- 0x3003
+- 0x3004
+- 0x3005
+- 0x3006
+- 0x3007

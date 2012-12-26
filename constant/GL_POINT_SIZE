@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: point_size
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xb11

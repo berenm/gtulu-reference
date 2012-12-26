@@ -1,0 +1,10 @@
+categories:
+- tex_env_property
+gtu:
+  name: src0_rgb
+usage:
+- glGetTexEnvfv.property
+- glGetTexEnviv.property
+- glTexEnvf.property
+- glTexEnvi.property
+value: 0x8580

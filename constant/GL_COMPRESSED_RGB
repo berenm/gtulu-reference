@@ -1,0 +1,7 @@
+categories:
+- compressed_internal_format
+- internal_format
+gtu:
+  name: compressed_rgb
+usage: []
+value: 0x84ed

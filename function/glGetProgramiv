@@ -1,0 +1,23 @@
+gl:
+  name: glGetProgramiv
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: params
+    type: GLint*
+  return: void
+gtu:
+  name: get_program
+  params:
+  - name: program
+    type: gtu::program const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: gtu::vec3< int32_t >&
+  return: void

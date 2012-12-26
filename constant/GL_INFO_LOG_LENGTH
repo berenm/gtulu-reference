@@ -1,0 +1,10 @@
+categories:
+- program_property
+- pipeline_property
+- shader_property
+gtu:
+  name: info_log_length
+usage:
+- glGetProgramiv.property
+- glGetShaderiv.property
+value: 0x8b84

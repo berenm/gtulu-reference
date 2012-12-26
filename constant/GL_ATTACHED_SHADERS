@@ -1,0 +1,7 @@
+categories:
+- program_property
+gtu:
+  name: attached_shaders
+usage:
+- glGetProgramiv.property
+value: 0x8b85

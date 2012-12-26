@@ -1,0 +1,23 @@
+gl:
+  name: glGetUniformiv
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: location
+    name: location
+    type: GLint
+  - mapping: '&values[0]'
+    name: params
+    type: GLint*
+  return: void
+gtu:
+  name: get_uniform
+  params:
+  - name: program
+    type: gtu::program const
+  - name: location
+    type: int32_t const
+  - name: values
+    type: std::vector< int32_t >&
+  return: void

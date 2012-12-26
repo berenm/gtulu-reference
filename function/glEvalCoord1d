@@ -1,0 +1,13 @@
+gl:
+  name: glEvalCoord1d
+  params:
+  - mapping: u
+    name: u
+    type: GLdouble
+  return: void
+gtu:
+  name: eval_coord_1
+  params:
+  - name: u
+    type: float64 const
+  return: void

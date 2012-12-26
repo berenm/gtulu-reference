@@ -1,0 +1,19 @@
+categories:
+- context_property
+- map2_target
+- map_target
+gtu:
+  name: map2_index
+usage:
+- glDisable.target
+- glEnable.target
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+- glGetMapdv.target
+- glGetMapfv.target
+- glGetMapiv.target
+- glMap2d.target
+- glMap2f.target
+value: 0xdb1

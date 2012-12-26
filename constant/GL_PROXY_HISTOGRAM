@@ -1,0 +1,9 @@
+categories:
+- proxyable_histogram_target
+gtu:
+  name: proxy_histogram
+usage:
+- glGetHistogramParameterfv.target
+- glGetHistogramParameteriv.target
+- glHistogram.target
+value: 0x8025

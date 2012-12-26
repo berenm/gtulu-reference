@@ -1,0 +1,6 @@
+categories:
+- gl_PixelCopyType
+gtu:
+  name: depth
+usage: []
+value: 0x1801

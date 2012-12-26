@@ -1,0 +1,23 @@
+categories:
+- context_property
+- color_table_target
+- proxyable_color_table_target
+gtu:
+  name: color_table
+usage:
+- glColorSubTable.target
+- glColorTable.target
+- glColorTableParameterfv.target
+- glColorTableParameteriv.target
+- glCopyColorSubTable.target
+- glCopyColorTable.target
+- glDisable.target
+- glEnable.target
+- glGetBooleanv.property
+- glGetColorTable.target
+- glGetColorTableParameterfv.target
+- glGetColorTableParameteriv.target
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0x80d0

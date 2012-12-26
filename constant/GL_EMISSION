@@ -1,0 +1,12 @@
+categories:
+- material_property
+- writable_material_property
+- material_mode
+gtu:
+  name: emission
+usage:
+- glGetMaterialfv.property
+- glGetMaterialiv.property
+- glMaterialfv.property
+- glMaterialiv.property
+value: 0x1600

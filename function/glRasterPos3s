@@ -1,0 +1,20 @@
+gl:
+  name: glRasterPos3s
+  params:
+  - mapping: position[0]
+    name: x
+    type: GLshort
+  - mapping: position[1]
+    name: y
+    type: GLshort
+  - mapping: position[2]
+    name: z
+    type: GLshort
+  return: void
+gtu:
+  name: raster_pos
+  params:
+  - name: position
+    type: gtu::vec3< int16_t > const&
+  return: void
+  skip: true

@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: max_projection_stack_depth
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xd38

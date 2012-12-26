@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: smooth_point_size_range
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xb12

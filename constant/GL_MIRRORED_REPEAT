@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_1_4
+gtu:
+  name: mirrored_repeat
+usage: []
+value: 0x8370

@@ -1,0 +1,13 @@
+gl:
+  name: glIsEnabled
+  params:
+  - mapping: cap
+    name: cap
+    type: GLenum
+  return: GLboolean
+gtu:
+  name: is_enabled
+  params:
+  - name: cap
+    type: gtu::constant const
+  return: bool

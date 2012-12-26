@@ -1,0 +1,7 @@
+categories:
+- query_property
+gtu:
+  name: query_counter_bits
+usage:
+- glGetQueryiv.property
+value: 0x8864

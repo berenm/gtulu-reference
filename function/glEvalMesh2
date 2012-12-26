@@ -1,0 +1,33 @@
+gl:
+  name: glEvalMesh2
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  - mapping: i1
+    name: i1
+    type: GLint
+  - mapping: i2
+    name: i2
+    type: GLint
+  - mapping: j1
+    name: j1
+    type: GLint
+  - mapping: j2
+    name: j2
+    type: GLint
+  return: void
+gtu:
+  name: eval_mesh_2
+  params:
+  - name: mode
+    type: gtu::constant const
+  - name: i1
+    type: int32_t const
+  - name: i2
+    type: int32_t const
+  - name: j1
+    type: int32_t const
+  - name: j2
+    type: int32_t const
+  return: void

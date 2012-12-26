@@ -1,0 +1,13 @@
+gl:
+  name: glEndQuery
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  return: void
+gtu:
+  name: end_query
+  params:
+  - name: target
+    type: gtu::constant const
+  return: void

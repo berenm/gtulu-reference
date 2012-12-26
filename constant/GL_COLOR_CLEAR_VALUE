@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: color_clear_value
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xc22

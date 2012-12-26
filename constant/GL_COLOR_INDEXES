@@ -1,0 +1,11 @@
+categories:
+- material_property
+- writable_material_property
+gtu:
+  name: color_indexes
+usage:
+- glGetMaterialfv.property
+- glGetMaterialiv.property
+- glMaterialfv.property
+- glMaterialiv.property
+value: 0x1603

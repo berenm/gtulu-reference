@@ -1,0 +1,18 @@
+gl:
+  name: glDetachShader
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: shader
+    name: shader
+    type: GLuint
+  return: void
+gtu:
+  name: detach_shader
+  params:
+  - name: program
+    type: gtu::program const
+  - name: shader
+    type: gtu::shader const
+  return: void

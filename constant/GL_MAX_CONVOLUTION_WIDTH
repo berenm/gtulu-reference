@@ -1,0 +1,8 @@
+categories:
+- convolution_property
+gtu:
+  name: max_convolution_width
+usage:
+- glGetConvolutionParameterfv.property
+- glGetConvolutionParameteriv.property
+value: 0x801a

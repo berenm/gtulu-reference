@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_1_5
+gtu:
+  name: static_copy
+usage: []
+value: 0x88e6

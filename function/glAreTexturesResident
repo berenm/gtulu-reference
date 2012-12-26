@@ -1,0 +1,23 @@
+gl:
+  name: glAreTexturesResident
+  params:
+  - mapping: textures.size()
+    name: n
+    type: GLsizei
+  - mapping: '&textures[0]'
+    name: textures
+    type: GLuint const*
+  - mapping: '&residences[0]'
+    name: residences
+    type: GLboolean*
+  return: GLboolean
+gtu:
+  name: are_textures_resident
+  params:
+  - name: textures
+    type: std::vector< gtu::texture > const&
+  - name: residences
+    type: std::vector< uint8_t >&
+  precall: |
+    residences.resize(textures.size(), false);
+  return: bool

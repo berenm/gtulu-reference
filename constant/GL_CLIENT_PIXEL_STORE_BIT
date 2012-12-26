@@ -1,0 +1,6 @@
+categories:
+- gl_ClientAttribMask
+gtu:
+  name: client_pixel_store_bit
+usage: []
+value: 0x1

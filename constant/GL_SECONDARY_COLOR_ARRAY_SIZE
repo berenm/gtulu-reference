@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: secondary_color_array_size
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0x845a

@@ -1,0 +1,7 @@
+categories:
+- begin_mode
+- draw_mode
+gtu:
+  name: triangles
+usage: []
+value: 0x4

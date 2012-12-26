@@ -1,0 +1,13 @@
+gl:
+  name: glColor4sv
+  params:
+  - mapping: '&color[0]'
+    name: v
+    type: GLshort const*
+  return: void
+gtu:
+  name: color
+  params:
+  - name: color
+    type: gtu::vec4< int16_t > const&
+  return: void

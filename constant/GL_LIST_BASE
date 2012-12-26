@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: list_base
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xb32

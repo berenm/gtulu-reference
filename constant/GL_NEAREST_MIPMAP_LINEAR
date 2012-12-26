@@ -1,0 +1,6 @@
+categories:
+- gl_TextureMinFilter
+gtu:
+  name: nearest_mipmap_linear
+usage: []
+value: 0x2702

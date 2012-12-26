@@ -1,0 +1,6 @@
+categories:
+- gl_BlendingFactorDest
+gtu:
+  name: src_color
+usage: []
+value: 0x300

@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: accum_alpha_bits
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xd5b

@@ -1,0 +1,8 @@
+gl:
+  name: glPopClientAttrib
+  params: []
+  return: void
+gtu:
+  name: pop_client_attrib
+  params: []
+  return: void

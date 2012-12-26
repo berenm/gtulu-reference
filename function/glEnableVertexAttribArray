@@ -1,0 +1,13 @@
+gl:
+  name: glEnableVertexAttribArray
+  params:
+  - mapping: vertex_attrib
+    name: index
+    type: GLuint
+  return: void
+gtu:
+  name: enable_vertex_attrib_array
+  params:
+  - name: vertex_attrib
+    type: gtu::vertex_attrib const
+  return: void

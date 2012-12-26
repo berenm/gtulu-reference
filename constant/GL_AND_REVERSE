@@ -1,0 +1,6 @@
+categories:
+- gl_LogicOp
+gtu:
+  name: and_reverse
+usage: []
+value: 0x1502

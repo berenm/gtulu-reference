@@ -1,0 +1,38 @@
+gl:
+  name: glConvolutionFilter1D
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: internalformat
+    name: internalformat
+    type: GLenum
+  - mapping: dimension[0]
+    name: width
+    type: GLsizei
+  - mapping: format
+    name: format
+    type: GLenum
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: data
+    name: data
+    type: GLvoid const*
+  return: void
+gtu:
+  name: convolution_filter
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: internalformat
+    type: gtu::constant const
+  - name: dimension
+    type: gtu::vec1< gtu::size > const&
+  - name: format
+    type: gtu::constant const
+  - name: type
+    type: gtu::constant const
+  - name: data
+    type: gtu::buffer_ref const&
+  return: void

@@ -1,0 +1,13 @@
+gl:
+  name: glSecondaryColor3iv
+  params:
+  - mapping: '&color[0]'
+    name: v
+    type: GLint const*
+  return: void
+gtu:
+  name: secondary_color
+  params:
+  - name: color
+    type: gtu::vec3< int32_t > const&
+  return: void

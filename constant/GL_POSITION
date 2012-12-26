@@ -1,0 +1,10 @@
+categories:
+- light_property
+gtu:
+  name: position
+usage:
+- glGetLightfv.property
+- glGetLightiv.property
+- glLightfv.property
+- glLightiv.property
+value: 0x1203

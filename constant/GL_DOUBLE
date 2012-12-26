@@ -1,0 +1,13 @@
+categories:
+- gl_EXT_vertex_attrib_64bit
+- gl_DataType
+- gl_NormalPointerType
+- gl_VertexPointerType
+- gl_ColorPointerType
+- gl_TexCoordPointerType
+- gl_IndexPointerType
+- gl_VERSION_1_1
+gtu:
+  name: double_
+usage: []
+value: 0x140a

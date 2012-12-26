@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: map2_grid_domain
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xdd2

@@ -1,0 +1,9 @@
+categories:
+- internal_format_property
+- texture_level_property
+gtu:
+  name: texture_compressed
+usage:
+- glGetTexLevelParameterfv.property
+- glGetTexLevelParameteriv.property
+value: 0x86a1

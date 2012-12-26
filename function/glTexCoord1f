@@ -1,0 +1,14 @@
+gl:
+  name: glTexCoord1f
+  params:
+  - mapping: coordinates[0]
+    name: s
+    type: GLfloat
+  return: void
+gtu:
+  name: tex_coord
+  params:
+  - name: coordinates
+    type: gtu::vec1< float32 > const&
+  return: void
+  skip: true

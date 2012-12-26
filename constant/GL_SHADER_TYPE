@@ -1,0 +1,7 @@
+categories:
+- shader_property
+gtu:
+  name: shader_type
+usage:
+- glGetShaderiv.property
+value: 0x8b4f

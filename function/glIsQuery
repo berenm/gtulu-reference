@@ -1,0 +1,13 @@
+gl:
+  name: glIsQuery
+  params:
+  - mapping: query
+    name: id
+    type: GLuint
+  return: GLboolean
+gtu:
+  name: is_query
+  params:
+  - name: query
+    type: gtu::query const
+  return: bool

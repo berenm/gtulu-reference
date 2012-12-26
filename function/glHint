@@ -1,0 +1,18 @@
+gl:
+  name: glHint
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: mode
+    name: mode
+    type: GLenum
+  return: void
+gtu:
+  name: hint
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: mode
+    type: gtu::constant const
+  return: void

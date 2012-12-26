@@ -1,0 +1,18 @@
+gl:
+  name: glBindTexture
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: texture
+    name: texture
+    type: GLuint
+  return: void
+gtu:
+  name: bind_texture
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: texture
+    type: gtu::texture const
+  return: void

@@ -1,0 +1,25 @@
+gl:
+  name: glPrioritizeTextures
+  params:
+  - mapping: priorities.size()
+    name: n
+    type: GLsizei
+  - mapping: '&textures[0]'
+    name: textures
+    type: GLuint const*
+  - mapping: '&priorities[0]'
+    name: priorities
+    type: GLclampf const*
+  return: void
+gtu:
+  name: prioritize_textures
+  params:
+  - name: textures_priorities
+    type: std::vector< std::tuple< gtu::texture, float32 > > const&
+  precall: |
+    std::vector< gtu::texture > textures;
+    std::vector< float32 > priorities;
+    typedef std::tuple< gtu::texture, float32 > tuple_type;
+    std::transform(textures_priorities.begin(), textures_priorities.end(), std::back_inserter(textures),   [](tuple_type const& e) { return std::get< 0 >(e); });
+    std::transform(textures_priorities.begin(), textures_priorities.end(), std::back_inserter(priorities), [](tuple_type const& e) { return std::get< 1 >(e); });
+  return: void

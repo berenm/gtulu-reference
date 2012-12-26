@@ -1,0 +1,18 @@
+gl:
+  name: glAccum
+  params:
+  - mapping: op
+    name: op
+    type: GLenum
+  - mapping: value
+    name: value
+    type: GLfloat
+  return: void
+gtu:
+  name: accum
+  params:
+  - name: op
+    type: gtu::constant const
+  - name: value
+    type: float32 const
+  return: void

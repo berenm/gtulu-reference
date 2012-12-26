@@ -1,0 +1,13 @@
+categories:
+- context_property
+- fog_property
+gtu:
+  name: fog_color
+usage:
+- glFogfv.property
+- glFogiv.property
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xb66

@@ -1,0 +1,12 @@
+categories:
+- context_property
+gtu:
+  name: unpack_skip_images
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+- glPixelStoref.property
+- glPixelStorei.property
+value: 0x806d

@@ -1,0 +1,28 @@
+gl:
+  name: glGetTexLevelParameterfv
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: level
+    name: level
+    type: GLint
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: params
+    type: GLfloat*
+  return: void
+gtu:
+  name: get_tex_level_parameter
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: level
+    type: int32_t const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: gtu::vec1< float32 >&
+  return: void

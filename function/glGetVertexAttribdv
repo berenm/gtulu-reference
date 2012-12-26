@@ -1,0 +1,23 @@
+gl:
+  name: glGetVertexAttribdv
+  params:
+  - mapping: vertex_attrib
+    name: index
+    type: GLuint
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: params
+    type: GLdouble*
+  return: void
+gtu:
+  name: get_vertex_attrib
+  params:
+  - name: vertex_attrib
+    type: gtu::vertex_attrib const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: gtu::vec4< float64 >&
+  return: void

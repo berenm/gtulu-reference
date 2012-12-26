@@ -1,0 +1,13 @@
+gl:
+  name: glTexCoord4sv
+  params:
+  - mapping: '&coordinates[0]'
+    name: v
+    type: GLshort const*
+  return: void
+gtu:
+  name: tex_coord
+  params:
+  - name: coordinates
+    type: gtu::vec4< int16_t > const&
+  return: void

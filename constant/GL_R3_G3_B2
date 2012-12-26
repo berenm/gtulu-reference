@@ -1,0 +1,7 @@
+categories:
+- sized_internal_format
+- internal_format
+gtu:
+  name: r3_g3_b2
+usage: []
+value: 0x2a10

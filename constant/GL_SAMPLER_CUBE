@@ -1,0 +1,6 @@
+categories:
+- gl_NV_vertex_program3
+gtu:
+  name: sampler_cube
+usage: []
+value: 0x8b60

@@ -1,0 +1,13 @@
+gl:
+  name: glRasterPos2fv
+  params:
+  - mapping: '&position[0]'
+    name: v
+    type: GLfloat const*
+  return: void
+gtu:
+  name: raster_pos
+  params:
+  - name: position
+    type: gtu::vec2< float32 > const&
+  return: void

@@ -1,0 +1,21 @@
+gl:
+  name: glFeedbackBuffer
+  params:
+  - mapping: buffer.capacity()
+    name: size
+    type: GLsizei
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: '&buffer[0]'
+    name: buffer
+    type: GLfloat*
+  return: void
+gtu:
+  name: feedback_buffer
+  params:
+  - name: type
+    type: gtu::constant const
+  - name: buffer
+    type: std::vector< float32 >&
+  return: void

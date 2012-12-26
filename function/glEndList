@@ -1,0 +1,8 @@
+gl:
+  name: glEndList
+  params: []
+  return: void
+gtu:
+  name: end_list
+  params: []
+  return: void

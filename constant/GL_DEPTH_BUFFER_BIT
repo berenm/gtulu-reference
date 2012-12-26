@@ -1,0 +1,6 @@
+categories:
+- gl_AttribMask
+gtu:
+  name: depth_buffer_bit
+usage: []
+value: 0x100

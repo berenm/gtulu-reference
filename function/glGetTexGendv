@@ -1,0 +1,23 @@
+gl:
+  name: glGetTexGendv
+  params:
+  - mapping: coord
+    name: coord
+    type: GLenum
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: params
+    type: GLdouble*
+  return: void
+gtu:
+  name: get_tex_gen
+  params:
+  - name: coord
+    type: gtu::constant const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: gtu::vec4< float64 >&
+  return: void

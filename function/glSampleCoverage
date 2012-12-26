@@ -1,0 +1,18 @@
+gl:
+  name: glSampleCoverage
+  params:
+  - mapping: value
+    name: value
+    type: GLfloat
+  - mapping: invert
+    name: invert
+    type: GLboolean
+  return: void
+gtu:
+  name: sample_coverage
+  params:
+  - name: value
+    type: float32 const
+  - name: invert
+    type: bool const
+  return: void

@@ -1,0 +1,7 @@
+categories:
+- draw_buffer_mode
+- read_buffer_mode
+gtu:
+  name: back_right
+usage: []
+value: 0x403

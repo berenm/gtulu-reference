@@ -1,0 +1,6 @@
+categories:
+- gl_AttribMask
+gtu:
+  name: list_bit
+usage: []
+value: 0x20000

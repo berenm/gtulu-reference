@@ -1,0 +1,17 @@
+gl:
+  name: glTexCoord2i
+  params:
+  - mapping: coordinates[0]
+    name: s
+    type: GLint
+  - mapping: coordinates[1]
+    name: t
+    type: GLint
+  return: void
+gtu:
+  name: tex_coord
+  params:
+  - name: coordinates
+    type: gtu::vec2< int32_t > const&
+  return: void
+  skip: true

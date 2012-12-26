@@ -1,0 +1,7 @@
+categories:
+- begin_mode
+- draw_mode
+gtu:
+  name: points
+usage: []
+value: 0x0

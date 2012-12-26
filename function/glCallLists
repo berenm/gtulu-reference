@@ -1,0 +1,21 @@
+gl:
+  name: glCallLists
+  params:
+  - mapping: lists.size()
+    name: n
+    type: GLsizei
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: '&lists[0]'
+    name: lists
+    type: GLvoid const*
+  return: void
+gtu:
+  name: call_list
+  params:
+  - name: type
+    type: gtu::constant const
+  - name: lists
+    type: std::vector< gtu::list > const&
+  return: void

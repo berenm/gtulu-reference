@@ -1,0 +1,6 @@
+categories:
+- gl_AttribMask
+gtu:
+  name: enable_bit
+usage: []
+value: 0x2000

@@ -1,0 +1,20 @@
+gl:
+  name: glColor3b
+  params:
+  - mapping: color[0]
+    name: red
+    type: GLbyte
+  - mapping: color[1]
+    name: green
+    type: GLbyte
+  - mapping: color[2]
+    name: blue
+    type: GLbyte
+  return: void
+gtu:
+  name: color
+  params:
+  - name: color
+    type: gtu::vec3< int8_t > const&
+  return: void
+  skip: true

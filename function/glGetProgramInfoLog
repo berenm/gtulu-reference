@@ -1,0 +1,26 @@
+gl:
+  name: glGetProgramInfoLog
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: info_log.capacity()
+    name: bufSize
+    type: GLsizei
+  - mapping: '&length'
+    name: length
+    type: GLsizei*
+  - mapping: '&info_log[0]'
+    name: infoLog
+    type: GLchar*
+  return: void
+gtu:
+  name: get_program_info_log
+  params:
+  - name: program
+    type: gtu::program const
+  - name: length
+    type: gtu::size&
+  - name: info_log
+    type: std::string&
+  return: void

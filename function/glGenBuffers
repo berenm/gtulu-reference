@@ -1,0 +1,18 @@
+gl:
+  name: glGenBuffers
+  params:
+  - mapping: 1
+    name: n
+    type: GLsizei
+  - mapping: '&buffer'
+    name: buffers
+    type: GLuint*
+  return: void
+gtu:
+  name: create_buffer
+  params: []
+  postcall: |
+    return buffer;
+  precall: |
+    uint32_t buffer;
+  return: gtu::buffer

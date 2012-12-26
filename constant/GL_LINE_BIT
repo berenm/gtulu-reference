@@ -1,0 +1,6 @@
+categories:
+- gl_AttribMask
+gtu:
+  name: line_bit
+usage: []
+value: 0x4

@@ -1,0 +1,13 @@
+categories:
+- sampler_property
+- writable_sampler_property
+- texture_property
+- writable_texture_property
+gtu:
+  name: texture_border_color
+usage:
+- glGetTexParameterfv.property
+- glGetTexParameteriv.property
+- glTexParameterfv.property
+- glTexParameteriv.property
+value: 0x1004

@@ -1,0 +1,13 @@
+gl:
+  name: glIndexiv
+  params:
+  - mapping: '&values[0]'
+    name: c
+    type: GLint const*
+  return: void
+gtu:
+  name: index
+  params:
+  - name: values
+    type: gtu::vec1< int32_t > const&
+  return: void

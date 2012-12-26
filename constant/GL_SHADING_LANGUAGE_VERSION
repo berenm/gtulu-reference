@@ -1,0 +1,8 @@
+categories:
+- context_string_property
+- indexed_context_string_property
+gtu:
+  name: shading_language_version
+usage:
+- glGetString.property
+value: 0x8b8c

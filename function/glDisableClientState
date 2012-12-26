@@ -1,0 +1,13 @@
+gl:
+  name: glDisableClientState
+  params:
+  - mapping: cap
+    name: cap
+    type: GLenum
+  return: void
+gtu:
+  name: disable_client_state
+  params:
+  - name: cap
+    type: gtu::constant const
+  return: void

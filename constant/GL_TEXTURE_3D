@@ -1,0 +1,36 @@
+categories:
+- context_property
+- tex_image_target
+- texture_target
+- texture_bind_target
+- texture_level_target
+- writable_texture_property_target
+- mipmapable_texture_target
+- texture_view_target
+- internal_format_target
+gtu:
+  name: texture_3d
+usage:
+- glBindTexture.target
+- glCompressedTexImage3D.target
+- glCompressedTexSubImage3D.target
+- glCopyTexSubImage3D.target
+- glDisable.target
+- glEnable.target
+- glGetBooleanv.property
+- glGetCompressedTexImage.target
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+- glGetTexImage.target
+- glGetTexLevelParameterfv.target
+- glGetTexLevelParameteriv.target
+- glGetTexParameterfv.target
+- glGetTexParameteriv.target
+- glTexImage3D.target
+- glTexParameterf.target
+- glTexParameterfv.target
+- glTexParameteri.target
+- glTexParameteriv.target
+- glTexSubImage3D.target
+value: 0x806f

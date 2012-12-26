@@ -1,0 +1,6 @@
+categories:
+- gl_AttribMask
+gtu:
+  name: viewport_bit
+usage: []
+value: 0x800

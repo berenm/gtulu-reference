@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: selection_buffer_size
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xdf4

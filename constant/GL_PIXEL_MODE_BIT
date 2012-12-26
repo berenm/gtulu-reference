@@ -1,0 +1,6 @@
+categories:
+- gl_AttribMask
+gtu:
+  name: pixel_mode_bit
+usage: []
+value: 0x20

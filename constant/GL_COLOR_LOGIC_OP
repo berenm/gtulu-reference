@@ -1,0 +1,13 @@
+categories:
+- context_property
+- enableable_target
+gtu:
+  name: color_logic_op
+usage:
+- glDisable.target
+- glEnable.target
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xbf2

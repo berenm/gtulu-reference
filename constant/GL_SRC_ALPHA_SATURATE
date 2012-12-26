@@ -1,0 +1,6 @@
+categories:
+- gl_BlendingFactorSrc
+gtu:
+  name: src_alpha_saturate
+usage: []
+value: 0x308

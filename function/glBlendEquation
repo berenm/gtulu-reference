@@ -1,0 +1,13 @@
+gl:
+  name: glBlendEquation
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  return: void
+gtu:
+  name: blend_equation
+  params:
+  - name: mode
+    type: gtu::constant const
+  return: void

@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_1_3
+gtu:
+  name: constant
+usage: []
+value: 0x8576

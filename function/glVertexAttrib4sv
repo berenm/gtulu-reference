@@ -1,0 +1,18 @@
+gl:
+  name: glVertexAttrib4sv
+  params:
+  - mapping: vertex_attrib
+    name: index
+    type: GLuint
+  - mapping: '&values[0]'
+    name: v
+    type: GLshort const*
+  return: void
+gtu:
+  name: vertex_attrib
+  params:
+  - name: vertex_attrib
+    type: gtu::vertex_attrib const
+  - name: values
+    type: gtu::vec4< int16_t > const&
+  return: void

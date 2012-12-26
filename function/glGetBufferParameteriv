@@ -1,0 +1,23 @@
+gl:
+  name: glGetBufferParameteriv
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: data
+    type: GLint*
+  return: void
+gtu:
+  name: get_buffer_parameter
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: gtu::vec1< int32_t >&
+  return: void

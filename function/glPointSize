@@ -1,0 +1,13 @@
+gl:
+  name: glPointSize
+  params:
+  - mapping: size
+    name: size
+    type: GLfloat
+  return: void
+gtu:
+  name: point_size
+  params:
+  - name: size
+    type: float32 const
+  return: void

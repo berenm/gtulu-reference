@@ -1,0 +1,11 @@
+categories:
+- tex_image_target
+- texture_level_target
+gtu:
+  name: proxy_texture_cube_map
+usage:
+- glCompressedTexImage2D.target
+- glGetTexLevelParameterfv.target
+- glGetTexLevelParameteriv.target
+- glTexImage2D.target
+value: 0x851b

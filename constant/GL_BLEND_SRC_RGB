@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: blend_src_rgb
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0x80c9

@@ -1,0 +1,8 @@
+gl:
+  name: glCreateProgram
+  params: []
+  return: GLuint
+gtu:
+  name: create_program
+  params: []
+  return: gtu::program

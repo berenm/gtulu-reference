@@ -1,0 +1,9 @@
+gl:
+  name: glGetError
+  params: []
+  return: GLenum
+gtu:
+  name: get_error
+  params: []
+  return: gtu::constant
+  return-cast: static_cast< gtu::constant >

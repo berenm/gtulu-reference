@@ -1,0 +1,6 @@
+categories:
+- gl_LogicOp
+gtu:
+  name: xor_
+usage: []
+value: 0x1506

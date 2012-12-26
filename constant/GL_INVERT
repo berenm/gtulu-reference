@@ -1,0 +1,7 @@
+categories:
+- gl_StencilOp
+- gl_LogicOp
+gtu:
+  name: invert
+usage: []
+value: 0x150a

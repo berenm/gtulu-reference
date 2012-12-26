@@ -1,0 +1,26 @@
+categories:
+- context_property
+gtu:
+  name: draw_bufferi
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+values:
+- 0x8825
+- 0x8826
+- 0x8827
+- 0x8828
+- 0x8829
+- 0x882a
+- 0x882b
+- 0x882c
+- 0x882d
+- 0x882e
+- 0x882f
+- 0x8830
+- 0x8831
+- 0x8832
+- 0x8833
+- 0x8834

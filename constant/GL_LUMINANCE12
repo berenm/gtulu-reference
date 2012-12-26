@@ -1,0 +1,6 @@
+categories:
+- gl_PixelInternalFormat
+gtu:
+  name: luminance12
+usage: []
+value: 0x8041

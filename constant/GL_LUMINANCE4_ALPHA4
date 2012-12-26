@@ -1,0 +1,6 @@
+categories:
+- gl_PixelInternalFormat
+gtu:
+  name: luminance4_alpha4
+usage: []
+value: 0x8043

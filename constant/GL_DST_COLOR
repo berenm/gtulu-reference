@@ -1,0 +1,6 @@
+categories:
+- gl_BlendingFactorSrc
+gtu:
+  name: dst_color
+usage: []
+value: 0x306

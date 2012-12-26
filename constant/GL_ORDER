@@ -1,0 +1,6 @@
+categories:
+- gl_GetMapQuery
+gtu:
+  name: order
+usage: []
+value: 0xa01

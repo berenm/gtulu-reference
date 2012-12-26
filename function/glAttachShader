@@ -1,0 +1,18 @@
+gl:
+  name: glAttachShader
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: shader
+    name: shader
+    type: GLuint
+  return: void
+gtu:
+  name: attach_shader
+  params:
+  - name: program
+    type: gtu::program const
+  - name: shader
+    type: gtu::shader const
+  return: void

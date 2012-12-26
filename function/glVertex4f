@@ -1,0 +1,23 @@
+gl:
+  name: glVertex4f
+  params:
+  - mapping: position[0]
+    name: x
+    type: GLfloat
+  - mapping: position[1]
+    name: y
+    type: GLfloat
+  - mapping: position[2]
+    name: z
+    type: GLfloat
+  - mapping: position[3]
+    name: w
+    type: GLfloat
+  return: void
+gtu:
+  name: vertex
+  params:
+  - name: position
+    type: gtu::vec3< float32 > const&
+  return: void
+  skip: true

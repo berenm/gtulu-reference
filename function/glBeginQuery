@@ -1,0 +1,18 @@
+gl:
+  name: glBeginQuery
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: query
+    name: id
+    type: GLuint
+  return: void
+gtu:
+  name: begin_query
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: query
+    type: gtu::query const
+  return: void

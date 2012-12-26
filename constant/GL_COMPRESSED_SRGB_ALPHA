@@ -1,0 +1,7 @@
+categories:
+- compressed_internal_format
+- internal_format
+gtu:
+  name: compressed_srgb_alpha
+usage: []
+value: 0x8c49

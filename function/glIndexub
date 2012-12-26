@@ -1,0 +1,13 @@
+gl:
+  name: glIndexub
+  params:
+  - mapping: c
+    name: c
+    type: GLubyte
+  return: void
+gtu:
+  name: index
+  params:
+  - name: c
+    type: uint8_t const
+  return: void

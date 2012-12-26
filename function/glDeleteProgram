@@ -1,0 +1,13 @@
+gl:
+  name: glDeleteProgram
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  return: void
+gtu:
+  name: delete_program
+  params:
+  - name: program
+    type: gtu::program const
+  return: void

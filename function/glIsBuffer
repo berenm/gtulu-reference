@@ -1,0 +1,13 @@
+gl:
+  name: glIsBuffer
+  params:
+  - mapping: buffer
+    name: buffer
+    type: GLuint
+  return: GLboolean
+gtu:
+  name: is_buffer
+  params:
+  - name: buffer
+    type: gtu::buffer const
+  return: bool

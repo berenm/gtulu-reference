@@ -1,0 +1,28 @@
+gl:
+  name: glVertexAttrib4Nub
+  params:
+  - mapping: vertex_attrib
+    name: index
+    type: GLuint
+  - mapping: values[0]
+    name: v0
+    type: GLubyte
+  - mapping: values[1]
+    name: v1
+    type: GLubyte
+  - mapping: values[2]
+    name: v2
+    type: GLubyte
+  - mapping: values[3]
+    name: v3
+    type: GLubyte
+  return: void
+gtu:
+  name: vertex_attrib_normalized
+  params:
+  - name: vertex_attrib
+    type: gtu::vertex_attrib const
+  - name: values
+    type: gtu::vec4< uint8_t > const&
+  return: void
+  skip: true

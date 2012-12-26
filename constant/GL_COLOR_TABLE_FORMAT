@@ -1,0 +1,8 @@
+categories:
+- color_table_property
+gtu:
+  name: color_table_format
+usage:
+- glGetColorTableParameterfv.property
+- glGetColorTableParameteriv.property
+value: 0x80d8

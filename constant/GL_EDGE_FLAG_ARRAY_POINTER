@@ -1,0 +1,7 @@
+categories:
+- context_pointer_property
+gtu:
+  name: edge_flag_array_pointer
+usage:
+- glGetPointerv.property
+value: 0x8093

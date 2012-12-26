@@ -1,0 +1,7 @@
+categories:
+- program_property
+gtu:
+  name: link_status
+usage:
+- glGetProgramiv.property
+value: 0x8b82

@@ -1,0 +1,13 @@
+gl:
+  name: glColor4iv
+  params:
+  - mapping: '&color[0]'
+    name: v
+    type: GLint const*
+  return: void
+gtu:
+  name: color
+  params:
+  - name: color
+    type: gtu::vec4< int32_t > const&
+  return: void

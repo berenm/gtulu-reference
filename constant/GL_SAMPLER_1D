@@ -1,0 +1,6 @@
+categories:
+- gl_NV_vertex_program3
+gtu:
+  name: sampler_1d
+usage: []
+value: 0x8b5d

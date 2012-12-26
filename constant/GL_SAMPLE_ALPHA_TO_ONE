@@ -1,0 +1,8 @@
+categories:
+- enableable_target
+gtu:
+  name: sample_alpha_to_one
+usage:
+- glDisable.target
+- glEnable.target
+value: 0x809f

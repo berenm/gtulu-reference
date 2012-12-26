@@ -1,0 +1,18 @@
+gl:
+  name: glEvalCoord2f
+  params:
+  - mapping: u
+    name: u
+    type: GLfloat
+  - mapping: v
+    name: v
+    type: GLfloat
+  return: void
+gtu:
+  name: eval_coord_2
+  params:
+  - name: u
+    type: float32 const
+  - name: v
+    type: float32 const
+  return: void

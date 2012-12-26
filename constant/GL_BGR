@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_1_2
+gtu:
+  name: bgr
+usage: []
+value: 0x80e0

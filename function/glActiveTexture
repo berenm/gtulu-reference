@@ -1,0 +1,13 @@
+gl:
+  name: glActiveTexture
+  params:
+  - mapping: texture_unit
+    name: texture
+    type: GLenum
+  return: void
+gtu:
+  name: active_texture
+  params:
+  - name: texture_unit
+    type: gtu::texture_unit const
+  return: void

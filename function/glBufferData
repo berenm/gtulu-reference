@@ -1,0 +1,28 @@
+gl:
+  name: glBufferData
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: size
+    name: size
+    type: GLsizeiptr
+  - mapping: data
+    name: data
+    type: GLvoid const*
+  - mapping: usage
+    name: usage
+    type: GLenum
+  return: void
+gtu:
+  name: buffer_data
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: size
+    type: std::ptrdiff_t const
+  - name: data
+    type: gtu::bytearray const&
+  - name: usage
+    type: gtu::constant const
+  return: void

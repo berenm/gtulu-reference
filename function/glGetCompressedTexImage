@@ -1,0 +1,23 @@
+gl:
+  name: glGetCompressedTexImage
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: lod
+    name: lod
+    type: GLint
+  - mapping: '&data[0]'
+    name: img
+    type: GLvoid*
+  return: void
+gtu:
+  name: get_compressed_tex_image
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: lod
+    type: int32_t const
+  - name: data
+    type: std::vector< uint8_t >&
+  return: void

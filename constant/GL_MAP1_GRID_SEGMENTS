@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: map1_grid_segments
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xdd1

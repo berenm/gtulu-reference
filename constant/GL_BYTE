@@ -1,0 +1,10 @@
+categories:
+- gl_DataType
+- gl_NormalPointerType
+- gl_ColorPointerType
+- gl_ListNameType
+- gl_PixelType
+gtu:
+  name: byte
+usage: []
+value: 0x1400

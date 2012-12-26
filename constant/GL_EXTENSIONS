@@ -1,0 +1,8 @@
+categories:
+- context_string_property
+- indexed_context_string_property
+gtu:
+  name: extensions
+usage:
+- glGetString.property
+value: 0x1f03

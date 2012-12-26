@@ -1,0 +1,13 @@
+gl:
+  name: glSecondaryColor3usv
+  params:
+  - mapping: '&color[0]'
+    name: v
+    type: GLushort const*
+  return: void
+gtu:
+  name: secondary_color
+  params:
+  - name: color
+    type: gtu::vec3< uint16_t > const&
+  return: void

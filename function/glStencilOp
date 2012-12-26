@@ -1,0 +1,23 @@
+gl:
+  name: glStencilOp
+  params:
+  - mapping: sfail
+    name: sfail
+    type: GLenum
+  - mapping: dpfail
+    name: dpfail
+    type: GLenum
+  - mapping: dppass
+    name: dppass
+    type: GLenum
+  return: void
+gtu:
+  name: stencil_op
+  params:
+  - name: sfail
+    type: gtu::constant const
+  - name: dpfail
+    type: gtu::constant const
+  - name: dppass
+    type: gtu::constant const
+  return: void

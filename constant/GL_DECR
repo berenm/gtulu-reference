@@ -1,0 +1,6 @@
+categories:
+- gl_StencilOp
+gtu:
+  name: decr
+usage: []
+value: 0x1e03

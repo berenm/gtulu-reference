@@ -1,0 +1,13 @@
+gl:
+  name: glLoadTransposeMatrixd
+  params:
+  - mapping: '&matrix[0][0]'
+    name: m
+    type: GLdouble const*
+  return: void
+gtu:
+  name: load_transpose_matrix
+  params:
+  - name: matrix
+    type: gtu::mat4x4< float64 > const&
+  return: void

@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: aliased_point_size_range
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0x846d

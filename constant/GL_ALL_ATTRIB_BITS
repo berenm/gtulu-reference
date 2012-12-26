@@ -1,0 +1,6 @@
+categories:
+- gl_AttribMask
+gtu:
+  name: all_attrib_bits
+usage: []
+value: 0xffffffff

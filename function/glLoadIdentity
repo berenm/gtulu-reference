@@ -1,0 +1,8 @@
+gl:
+  name: glLoadIdentity
+  params: []
+  return: void
+gtu:
+  name: load_identity
+  params: []
+  return: void

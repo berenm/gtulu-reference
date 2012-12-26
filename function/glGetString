@@ -1,0 +1,14 @@
+gl:
+  name: glGetString
+  params:
+  - mapping: property
+    name: name
+    type: GLenum
+  return: const GLubyte*
+gtu:
+  name: get_string
+  params:
+  - name: property
+    type: gtu::constant const
+  return: std::string
+  return-cast: reinterpret_cast< char const* >

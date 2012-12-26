@@ -1,0 +1,23 @@
+gl:
+  name: glGetTexEnvfv
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: params
+    type: GLfloat*
+  return: void
+gtu:
+  name: get_tex_env
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: gtu::vec4< float32 >&
+  return: void

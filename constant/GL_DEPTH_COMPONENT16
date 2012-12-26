@@ -1,0 +1,7 @@
+categories:
+- sized_internal_format
+- internal_format
+gtu:
+  name: depth_component16
+usage: []
+value: 0x81a5

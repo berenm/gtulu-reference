@@ -1,0 +1,8 @@
+categories:
+- gl_AlphaFunction
+- gl_StencilFunction
+- gl_DepthFunction
+gtu:
+  name: greater
+usage: []
+value: 0x204

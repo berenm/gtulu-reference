@@ -1,0 +1,7 @@
+categories:
+- context_pointer_property
+gtu:
+  name: index_array_pointer
+usage:
+- glGetPointerv.property
+value: 0x8091

@@ -1,0 +1,6 @@
+categories:
+- gl_AccumOp
+gtu:
+  name: return_
+usage: []
+value: 0x102

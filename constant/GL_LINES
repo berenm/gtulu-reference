@@ -1,0 +1,7 @@
+categories:
+- begin_mode
+- draw_mode
+gtu:
+  name: lines
+usage: []
+value: 0x1

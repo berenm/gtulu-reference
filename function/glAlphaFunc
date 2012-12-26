@@ -1,0 +1,18 @@
+gl:
+  name: glAlphaFunc
+  params:
+  - mapping: func
+    name: func
+    type: GLenum
+  - mapping: ref
+    name: ref
+    type: GLclampf
+  return: void
+gtu:
+  name: alpha_func
+  params:
+  - name: func
+    type: gtu::constant const
+  - name: ref
+    type: float32 const
+  return: void

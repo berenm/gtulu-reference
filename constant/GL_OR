@@ -1,0 +1,6 @@
+categories:
+- gl_LogicOp
+gtu:
+  name: or_
+usage: []
+value: 0x1507

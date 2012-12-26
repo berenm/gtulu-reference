@@ -1,0 +1,26 @@
+gl:
+  name: glGetShaderInfoLog
+  params:
+  - mapping: shader
+    name: shader
+    type: GLuint
+  - mapping: info_log.capacity()
+    name: bufSize
+    type: GLsizei
+  - mapping: '&length'
+    name: length
+    type: GLsizei*
+  - mapping: '&info_log[0]'
+    name: infoLog
+    type: GLchar*
+  return: void
+gtu:
+  name: get_shader_info_log
+  params:
+  - name: shader
+    type: gtu::shader const
+  - name: length
+    type: gtu::size&
+  - name: info_log
+    type: std::string&
+  return: void

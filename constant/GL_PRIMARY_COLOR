@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_1_3
+gtu:
+  name: primary_color
+usage: []
+value: 0x8577

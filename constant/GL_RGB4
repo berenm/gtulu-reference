@@ -1,0 +1,7 @@
+categories:
+- sized_internal_format
+- internal_format
+gtu:
+  name: rgb4
+usage: []
+value: 0x804f

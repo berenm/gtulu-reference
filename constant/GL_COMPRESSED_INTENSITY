@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_1_3
+gtu:
+  name: compressed_intensity
+usage: []
+value: 0x84ec

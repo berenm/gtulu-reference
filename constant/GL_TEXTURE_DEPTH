@@ -1,0 +1,8 @@
+categories:
+- texture_level_property
+gtu:
+  name: texture_depth
+usage:
+- glGetTexLevelParameterfv.property
+- glGetTexLevelParameteriv.property
+value: 0x8071

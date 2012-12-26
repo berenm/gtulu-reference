@@ -1,0 +1,18 @@
+categories:
+- context_property
+- pixel_transfer_property
+- tex_env_property
+gtu:
+  name: alpha_scale
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+- glGetTexEnvfv.property
+- glGetTexEnviv.property
+- glPixelTransferf.property
+- glPixelTransferi.property
+- glTexEnvf.property
+- glTexEnvi.property
+value: 0xd1c

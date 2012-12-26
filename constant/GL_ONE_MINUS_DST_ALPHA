@@ -1,0 +1,7 @@
+categories:
+- gl_BlendingFactorDest
+- gl_BlendingFactorSrc
+gtu:
+  name: one_minus_dst_alpha
+usage: []
+value: 0x305

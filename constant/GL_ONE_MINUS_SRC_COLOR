@@ -1,0 +1,6 @@
+categories:
+- gl_BlendingFactorDest
+gtu:
+  name: one_minus_src_color
+usage: []
+value: 0x301

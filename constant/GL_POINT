@@ -1,0 +1,8 @@
+categories:
+- mesh1_mode
+- mesh2_mode
+- polygon_mode
+gtu:
+  name: point
+usage: []
+value: 0x1b00

@@ -1,0 +1,13 @@
+gl:
+  name: glEvalPoint1
+  params:
+  - mapping: i
+    name: i
+    type: GLint
+  return: void
+gtu:
+  name: eval_point_1
+  params:
+  - name: i
+    type: int32_t const
+  return: void

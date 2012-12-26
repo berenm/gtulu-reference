@@ -1,0 +1,7 @@
+categories:
+- mesh2_mode
+- polygon_mode
+gtu:
+  name: fill
+usage: []
+value: 0x1b02

@@ -1,0 +1,13 @@
+gl:
+  name: glLogicOp
+  params:
+  - mapping: opcode
+    name: opcode
+    type: GLenum
+  return: void
+gtu:
+  name: logic_op
+  params:
+  - name: opcode
+    type: gtu::constant const
+  return: void

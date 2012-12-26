@@ -1,0 +1,8 @@
+categories:
+- gl_GetTextureParameter
+gtu:
+  name: texture_resident
+usage:
+- glGetTexParameterfv.property
+- glGetTexParameteriv.property
+value: 0x8067

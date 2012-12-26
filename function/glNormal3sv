@@ -1,0 +1,13 @@
+gl:
+  name: glNormal3sv
+  params:
+  - mapping: '&direction[0]'
+    name: v
+    type: GLshort const*
+  return: void
+gtu:
+  name: normal
+  params:
+  - name: direction
+    type: gtu::vec3< int16_t > const&
+  return: void

@@ -1,0 +1,18 @@
+gl:
+  name: glGenQueries
+  params:
+  - mapping: 1
+    name: n
+    type: GLsizei
+  - mapping: '&query'
+    name: ids
+    type: GLuint*
+  return: void
+gtu:
+  name: create_query
+  params: []
+  postcall: |
+    return query;
+  precall: |
+    uint32_t query;
+  return: gtu::query

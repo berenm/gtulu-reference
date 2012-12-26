@@ -1,0 +1,13 @@
+gl:
+  name: glEdgeFlag
+  params:
+  - mapping: flag
+    name: flag
+    type: GLboolean
+  return: void
+gtu:
+  name: edge_flag
+  params:
+  - name: flag
+    type: bool const
+  return: void

@@ -1,0 +1,10 @@
+categories:
+- context_property
+gtu:
+  name: current_program
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0x8b8d

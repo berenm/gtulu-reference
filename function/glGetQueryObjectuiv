@@ -1,0 +1,23 @@
+gl:
+  name: glGetQueryObjectuiv
+  params:
+  - mapping: query
+    name: id
+    type: GLuint
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: params
+    type: GLuint*
+  return: void
+gtu:
+  name: get_query_object
+  params:
+  - name: query
+    type: gtu::query const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: gtu::vec1< uint32_t >&
+  return: void

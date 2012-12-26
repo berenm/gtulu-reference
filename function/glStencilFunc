@@ -1,0 +1,23 @@
+gl:
+  name: glStencilFunc
+  params:
+  - mapping: func
+    name: func
+    type: GLenum
+  - mapping: ref
+    name: ref
+    type: GLint
+  - mapping: mask
+    name: mask
+    type: GLuint
+  return: void
+gtu:
+  name: stencil_func
+  params:
+  - name: func
+    type: gtu::constant const
+  - name: ref
+    type: int32_t const
+  - name: mask
+    type: uint32_t const
+  return: void

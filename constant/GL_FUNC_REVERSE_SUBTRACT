@@ -1,0 +1,6 @@
+categories:
+- blend_mode
+gtu:
+  name: func_reverse_subtract
+usage: []
+value: 0x800b

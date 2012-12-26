@@ -1,0 +1,8 @@
+categories:
+- gl_BlendingFactorDest
+- gl_StencilOp
+- gl_BlendingFactorSrc
+gtu:
+  name: zero
+usage: []
+value: 0x0

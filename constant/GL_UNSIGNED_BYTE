@@ -1,0 +1,9 @@
+categories:
+- gl_DataType
+- gl_PixelType
+- gl_ColorPointerType
+- gl_ListNameType
+gtu:
+  name: unsigned_byte
+usage: []
+value: 0x1401

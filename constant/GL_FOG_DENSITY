@@ -1,0 +1,15 @@
+categories:
+- context_property
+- fog_property
+gtu:
+  name: fog_density
+usage:
+- glFogf.property
+- glFogfv.property
+- glFogi.property
+- glFogiv.property
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+value: 0xb62

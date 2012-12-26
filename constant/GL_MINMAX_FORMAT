@@ -1,0 +1,8 @@
+categories:
+- min_max_property
+gtu:
+  name: minmax_format
+usage:
+- glGetMinmaxParameterfv.property
+- glGetMinmaxParameteriv.property
+value: 0x802f

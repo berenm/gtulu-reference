@@ -1,0 +1,30 @@
+gl:
+  name: glMultiDrawArrays
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  - mapping: '&firsts[0]'
+    name: first
+    type: GLint const*
+  - mapping: '&counts[0]'
+    name: count
+    type: GLsizei const*
+  - mapping: arrays.size()
+    name: drawcount
+    type: GLsizei
+  return: void
+gtu:
+  name: multi_draw_arrays
+  params:
+  - name: mode
+    type: gtu::constant const
+  - name: arrays
+    type: std::vector< std::tuple< int32_t, gtu::size > > const&
+  precall: |
+    std::vector< int32_t >   firsts;
+    std::vector< gtu::size > counts;
+    typedef std::tuple< int32_t, gtu::size > vtype;
+    std::transform(arrays.begin(), arrays.end(), std::back_inserter(firsts), [](vtype const& e) { return std::get< 0 >(e); });
+    std::transform(arrays.begin(), arrays.end(), std::back_inserter(counts), [](vtype const& e) { return std::get< 1 >(e); });
+  return: void

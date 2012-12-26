@@ -1,0 +1,18 @@
+gl:
+  name: glPolygonMode
+  params:
+  - mapping: face
+    name: face
+    type: GLenum
+  - mapping: mode
+    name: mode
+    type: GLenum
+  return: void
+gtu:
+  name: polygon_mode
+  params:
+  - name: face
+    type: gtu::constant const
+  - name: mode
+    type: gtu::constant const
+  return: void

@@ -1,0 +1,23 @@
+gl:
+  name: glColor4s
+  params:
+  - mapping: color[0]
+    name: red
+    type: GLshort
+  - mapping: color[1]
+    name: green
+    type: GLshort
+  - mapping: color[2]
+    name: blue
+    type: GLshort
+  - mapping: color[3]
+    name: alpha
+    type: GLshort
+  return: void
+gtu:
+  name: color
+  params:
+  - name: color
+    type: gtu::vec4< int16_t > const&
+  return: void
+  skip: true

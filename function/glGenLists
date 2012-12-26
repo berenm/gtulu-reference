@@ -1,0 +1,11 @@
+gl:
+  name: glGenLists
+  params:
+  - mapping: 1
+    name: range
+    type: GLsizei
+  return: GLuint
+gtu:
+  name: create_list
+  params: []
+  return: gtu::list

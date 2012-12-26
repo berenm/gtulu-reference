@@ -1,0 +1,17 @@
+categories:
+- tex_image_target
+- texture_level_target
+gtu:
+  name: texture_cube_map_negative_y
+usage:
+- glCompressedTexImage2D.target
+- glCompressedTexSubImage2D.target
+- glCopyTexImage2D.target
+- glCopyTexSubImage2D.target
+- glGetCompressedTexImage.target
+- glGetTexImage.target
+- glGetTexLevelParameterfv.target
+- glGetTexLevelParameteriv.target
+- glTexImage2D.target
+- glTexSubImage2D.target
+value: 0x8518

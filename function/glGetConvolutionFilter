@@ -1,0 +1,28 @@
+gl:
+  name: glGetConvolutionFilter
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: format
+    name: format
+    type: GLenum
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: data
+    name: image
+    type: GLvoid*
+  return: void
+gtu:
+  name: get_convolution_filter
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: format
+    type: gtu::constant const
+  - name: type
+    type: gtu::constant const
+  - name: data
+    type: gtu::buffer_ref&
+  return: void

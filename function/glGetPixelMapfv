@@ -1,0 +1,18 @@
+gl:
+  name: glGetPixelMapfv
+  params:
+  - mapping: map
+    name: map
+    type: GLenum
+  - mapping: data
+    name: data
+    type: GLfloat*
+  return: void
+gtu:
+  name: get_pixel_map
+  params:
+  - name: map
+    type: gtu::constant const
+  - name: data
+    type: float32*
+  return: void

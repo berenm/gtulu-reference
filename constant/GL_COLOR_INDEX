@@ -1,0 +1,6 @@
+categories:
+- gl_PixelFormat
+gtu:
+  name: color_index
+usage: []
+value: 0x1900

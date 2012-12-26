@@ -1,0 +1,18 @@
+gl:
+  name: glGenTextures
+  params:
+  - mapping: 1
+    name: n
+    type: GLsizei
+  - mapping: '&texture'
+    name: textures
+    type: GLuint*
+  return: void
+gtu:
+  name: create_texture
+  params: []
+  postcall: |
+    return texture;
+  precall: |
+    uint32_t texture;
+  return: gtu::texture

@@ -1,0 +1,7 @@
+categories:
+- query_property
+gtu:
+  name: current_query
+usage:
+- glGetQueryiv.property
+value: 0x8865

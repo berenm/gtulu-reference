@@ -1,0 +1,22 @@
+gl:
+  name: glColorMask
+  params:
+  - mapping: color[0]
+    name: red
+    type: GLboolean
+  - mapping: color[1]
+    name: green
+    type: GLboolean
+  - mapping: color[2]
+    name: blue
+    type: GLboolean
+  - mapping: color[3]
+    name: alpha
+    type: GLboolean
+  return: void
+gtu:
+  name: color_mask
+  params:
+  - name: color
+    type: gtu::vec4< bool > const&
+  return: void

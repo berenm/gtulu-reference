@@ -1,0 +1,17 @@
+categories:
+- light_property
+- material_property
+- writable_material_property
+- material_mode
+gtu:
+  name: ambient
+usage:
+- glGetLightfv.property
+- glGetLightiv.property
+- glGetMaterialfv.property
+- glGetMaterialiv.property
+- glLightfv.property
+- glLightiv.property
+- glMaterialfv.property
+- glMaterialiv.property
+value: 0x1200

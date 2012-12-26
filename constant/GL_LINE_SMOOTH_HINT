@@ -1,0 +1,12 @@
+categories:
+- context_property
+- hint_target
+gtu:
+  name: line_smooth_hint
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+- glHint.target
+value: 0xc52

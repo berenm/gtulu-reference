@@ -1,0 +1,18 @@
+gl:
+  name: glGetIntegerv
+  params:
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: params
+    name: params
+    type: GLint*
+  return: void
+gtu:
+  name: get
+  params:
+  - name: property
+    type: gtu::constant const
+  - name: params
+    type: int32_t*
+  return: void

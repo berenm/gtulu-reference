@@ -1,0 +1,13 @@
+gl:
+  name: glColor4dv
+  params:
+  - mapping: '&color[0]'
+    name: v
+    type: GLdouble const*
+  return: void
+gtu:
+  name: color
+  params:
+  - name: color
+    type: gtu::vec4< float64 > const&
+  return: void

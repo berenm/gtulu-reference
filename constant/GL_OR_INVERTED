@@ -1,0 +1,6 @@
+categories:
+- gl_LogicOp
+gtu:
+  name: or_inverted
+usage: []
+value: 0x150d

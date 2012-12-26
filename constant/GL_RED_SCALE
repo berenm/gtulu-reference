@@ -1,0 +1,13 @@
+categories:
+- context_property
+- pixel_transfer_property
+gtu:
+  name: red_scale
+usage:
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegerv.property
+- glPixelTransferf.property
+- glPixelTransferi.property
+value: 0xd14

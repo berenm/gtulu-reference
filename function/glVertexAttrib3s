@@ -1,0 +1,25 @@
+gl:
+  name: glVertexAttrib3s
+  params:
+  - mapping: vertex_attrib
+    name: index
+    type: GLuint
+  - mapping: values[0]
+    name: v0
+    type: GLshort
+  - mapping: values[1]
+    name: v1
+    type: GLshort
+  - mapping: values[2]
+    name: v2
+    type: GLshort
+  return: void
+gtu:
+  name: vertex_attrib
+  params:
+  - name: vertex_attrib
+    type: gtu::vertex_attrib const
+  - name: values
+    type: gtu::vec3< int16_t > const&
+  return: void
+  skip: true

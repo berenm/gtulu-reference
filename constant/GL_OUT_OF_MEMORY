@@ -1,0 +1,6 @@
+categories:
+- error
+gtu:
+  name: out_of_memory
+usage: []
+value: 0x505

@@ -1,0 +1,23 @@
+gl:
+  name: glGetMapiv
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: query
+    name: query
+    type: GLenum
+  - mapping: v
+    name: v
+    type: GLint*
+  return: void
+gtu:
+  name: get_map
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: query
+    type: gtu::constant const
+  - name: v
+    type: int32_t*
+  return: void

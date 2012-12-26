@@ -1,0 +1,6 @@
+categories:
+- gl_FeedbackType
+gtu:
+  name: threed_color
+usage: []
+value: 0x602
