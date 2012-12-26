@@ -17,7 +17,7 @@
 
 extern "C" {
 
-// @for n,f in sorted(__tpl_functions.items()):
+// @for f in sorted(__tpl_functions.values(), key=lambda x: '%s(%s)' % (x['gtu']['name'], ', '.join(['%(type)s %(name)s' % p for p in x['gtu']['params']]))):
 // @  set __tpl_gl  = __tpl_f.gl
 // @  set __tpl_gtu = __tpl_f.gtu
 // @  set __tpl_gl_params_decl = ', '.join(['%(type)s %(name)s' % p for p in __tpl_gl.params])
