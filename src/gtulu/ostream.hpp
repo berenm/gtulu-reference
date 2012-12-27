@@ -159,7 +159,7 @@ namespace std {
 
   template< class R, class... Args >
   static inline std::ostream& operator<<(std::ostream& s, std::function< R(Args...) > const& f) {
-    s << reinterpret_cast< void const* >(*f.template target< R(*)(Args...) >());
+    s << reinterpret_cast< void const* >(*f.template target< R (*)(Args...) >());
     return s;
   }
 

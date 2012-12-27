@@ -22,24 +22,32 @@
 #include <gtulu/types.hpp>
 
 namespace gtulu {
+  namespace cst {
+
+    // @set __tpl_categories = gtuluref.categorize_constants(__tpl_constants)
+    // @for cat,csts in sorted(__tpl_categories.items()):
+    // @  if __tpl_cat == '__all__'
+    // @    for c in sorted(__tpl_csts.values(), key=lambda x: x['name']):
+    static constexpr size_t __tpl_c.name = __tpl_c.value; // @slurp
+
+    // @    end for
+    // @  else
+
+    enum struct __tpl_cat : size_t {
+      // @  for c in sorted(__tpl_csts.values(), key=lambda x: x['name']):
+      __tpl_c.name = __tpl_c.value, // @slurp
+
+      // @  end for
+    }; // @slurp
+
+    std::ostream& operator<<(std::ostream& s, __tpl_cat const v); // @slurp
+
+    // @  end if
+    // @end for
+
+  } // namespace cst
+
   namespace api {
-
-    namespace constant {
-      // @for n,c in sorted(__tpl_constants.items()):
-      // @  if 'value' in __tpl_c
-      // @    set __tpl_value = hex(__tpl_c.value)
-      static constexpr size_t __tpl_c.gtu.name = __tpl_value; // @slurp
-
-      // @  else
-      // @    for i,v in enumerate(__tpl_c.values)
-      // @      set __tpl_value = hex(__tpl_v)
-      // @      set __tpl_name  = __tpl_c.gtu.name[:-1] + str(i)
-      static constexpr size_t __tpl_name = __tpl_value; // @slurp
-
-      // @    end for
-      // @  end if
-      // @end for
-    }
 
     // @for f in sorted(__tpl_functions.values(), key=lambda x: '%s(%s)' % (x['gtu']['name'], ', '.join(['%(type)s %(name)s' % p for p in x['gtu']['params']]))):
     // @  set __tpl_gl  = __tpl_f.gl

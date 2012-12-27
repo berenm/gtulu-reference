@@ -10,6 +10,12 @@
 // @  set __tpl_functions[f] = yaml.load(file(os.path.join(__tpl_folder, f), 'r'))
 // @end for
 
+// @set __tpl_folder = gtuluref.ref(__tpl_GTULU_VERSION, __tpl_getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'constant')
+// @set __tpl_constants = {}
+// @for f in os.listdir(__tpl_folder):
+// @  set __tpl_constants[f] = yaml.load(file(os.path.join(__tpl_folder, f), 'r'))
+// @end for
+
 #define __IN_GTULU_OPENGL_API__
 #include <gtulu/api.hpp>
 #include <gtulu/error.hpp>
@@ -17,6 +23,32 @@
 #include <gtulu/types.h>
 
 namespace gtulu {
+  namespace cst {
+
+    // @set __tpl_categories = gtuluref.categorize_constants(__tpl_constants)
+    // @for cat,csts in sorted(__tpl_categories.items()):
+    // @  if __tpl_cat != '__all__' and __tpl_cat[:3] != 'gl_':
+    std::ostream& operator<<(std::ostream& s, cst::__tpl_cat const v) {
+      switch (v) {
+        // @  for c in sorted(__tpl_csts.values(), key=lambda x: x['name']):
+        case cst::__tpl_cat::__tpl_c.name:
+          s << "__tpl_cat::__tpl_c.name";
+          break; // @slurp
+
+        // @  end for
+        default:
+          s << "<unknown-__tpl_cat:" << static_cast< size_t >(v) << ">";
+          break;
+      }
+
+      return s;
+    }
+
+    // @  end if
+    // @end for
+
+  } // namespace cst
+
   namespace api {
 
     // @for f in sorted(__tpl_functions.values(), key=lambda x: '%s(%s)' % (x['gtu']['name'], ', '.join(['%(type)s %(name)s' % p for p in x['gtu']['params']]))):
@@ -42,12 +74,13 @@ namespace gtulu {
     // @  set __tpl_check_error     = lambda: gl['name'] != 'glGetError' and 'api::__check_error()' or ''
     extern "C" GTULU_API_IMPORT __tpl_gl_return __tpl_gl_name(__tpl_gl_params);
     GTULU_API_EXPORT __tpl_gtu_return __tpl_gtu_name(__tpl_gtu_params) {
-        __trace() << "call __tpl_gl_name(__tpl_log_params)";
-        __tpl_precall();
-        __tpl_assign_variable(__tpl_gl_name(__tpl_call_params));
-        __tpl_check_error();
-        __tpl_postcall();
-    }
+      __trace() << "call __tpl_gl_name(__tpl_log_params)";
+      __tpl_precall();
+      __tpl_assign_variable(__tpl_gl_name(__tpl_call_params));
+      __tpl_check_error();
+      __tpl_postcall();
+    } // @slurp
+
     // @end for
 
   } // namespace api

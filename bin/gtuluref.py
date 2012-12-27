@@ -65,6 +65,30 @@ def convert_type(t, is_return=False):
     return ct + ((not '*' in t and ' const' not in ct) and ' const' or '')
 
 
+def enumerate_values(constant):
+  if 'value' in constant:
+    return [{'name': constant['gtu']['name'], 'value': hex(constant['value'])}]
+  else:
+    return [{'name': constant['gtu']['name'][:-1] + str(i), 'value': hex(v)} for i,v in enumerate(constant['values'])]
+
+
+def categorize_constants(constants):
+  categories = {'__all__': {}}
+  for n,c in sorted(constants.items()):
+    if 'categories' not in c or all([ 'gl_' == cat[:3] for cat in c['categories']]):
+      for u in enumerate_values(c):
+        categories['__all__'][u['name']] = u
+
+    else:
+      for cat in [cc.lower() for cc in c['categories'] if cc[:3] != 'gl_']:
+        if cat not in categories:
+          categories[cat] = {}
+        for u in enumerate_values(c):
+          categories[cat][u['name']] = u
+
+  return categories
+
+
 def man(v, file=None):
   if '.' in v:
     v = v[0]

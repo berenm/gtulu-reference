@@ -29,9 +29,10 @@ extern "C" {
 static __tpl_gl_return           __tpl_gtu_ni_name(__tpl_gl_params_decl);
 GTULU_API_EXPORT __tpl_gl_return __tpl_gl_name(__tpl_gl_params_decl) __attribute__((weak, alias("__tpl_gtu_ni_symb")));
 static __tpl_gl_return __tpl_gtu_ni_name(__tpl_gl_params_decl) {
-    gtulu::api::__not_implemented("__tpl_gl_name(__tpl_gl_params_decl)");
-    return __tpl_return_value;
-}
+  gtulu::api::__not_implemented("__tpl_gl_name(__tpl_gl_params_decl)");
+  return __tpl_return_value;
+} // @slurp
+
 // @end for
 
 }

@@ -166,5 +166,15 @@ for filename in os.listdir(folder):
   elif 'values' in cst:
     cst['values'] = [ hexadecimal(v) for v in cst['values'] ]
 
+  cats = []
+  if 'categories' not in cst:
+    cst['categories'] = []
+
+  for cat in cst['categories']:
+    if not 'gl_' in cat and cat != 'error':
+      cat = 'gl_%s' % cat
+    cats.append(cat)
+  cst['categories'] = cats
+
   with open(os.path.join(folder, filename), 'w') as f:
     yaml.dump(cst, f, default_flow_style=False)

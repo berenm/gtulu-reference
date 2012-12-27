@@ -12,7 +12,7 @@ project(libgtulu_api CXX)
 # parse_version(libgtulu_api DEBIAN)
 
 if(NOT libgtulu_api_VERSION)
-  set(libgtulu_api_VERSION 3.3)
+  set(libgtulu_api_VERSION 4.3-comp)
 endif()
 
 add_submodule(api-registry lib/registry INCLUDE_DIRS include)
