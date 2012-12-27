@@ -10,6 +10,12 @@
 // @  set __tpl_functions[f] = yaml.load(file(os.path.join(__tpl_folder, f), 'r'))
 // @end for
 
+// @set __tpl_folder = gtuluref.ref(__tpl_GTULU_VERSION, __tpl_getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'constant')
+// @set __tpl_constants = {}
+// @for f in os.listdir(__tpl_folder):
+// @  set __tpl_constants[f] = yaml.load(file(os.path.join(__tpl_folder, f), 'r'))
+// @end for
+
 #ifndef __GTULU_OPENGL_API__
 #define __GTULU_OPENGL_API__
 
@@ -17,6 +23,23 @@
 
 namespace gtulu {
   namespace api {
+
+    namespace constant {
+      // @for n,c in sorted(__tpl_constants.items()):
+      // @  if 'value' in __tpl_c
+      // @    set __tpl_value = hex(__tpl_c.value)
+      static constexpr size_t __tpl_c.gtu.name = __tpl_value; // @slurp
+
+      // @  else
+      // @    for i,v in enumerate(__tpl_c.values)
+      // @      set __tpl_value = hex(__tpl_v)
+      // @      set __tpl_name  = __tpl_c.gtu.name[:-1] + str(i)
+      static constexpr size_t __tpl_name = __tpl_value; // @slurp
+
+      // @    end for
+      // @  end if
+      // @end for
+    }
 
     // @for f in sorted(__tpl_functions.values(), key=lambda x: '%s(%s)' % (x['gtu']['name'], ', '.join(['%(type)s %(name)s' % p for p in x['gtu']['params']]))):
     // @  set __tpl_gl  = __tpl_f.gl
@@ -27,7 +50,8 @@ namespace gtulu {
     // @  set __tpl_gtulu_params    = ', '.join(['%(type)s %(name)s' % p for p in __tpl_gtu.params])
     // @  set __tpl_gtulu_return    = __tpl_gtu.return
     // @  set __tpl_gtulu_name      = lambda x: '%s(%s)' % (gtu['name'], x)
-    GTULU_API_EXPORT __tpl_gtulu_return __tpl_gtulu_name(__tpl_gtulu_params);
+    GTULU_API_EXPORT __tpl_gtulu_return __tpl_gtulu_name(__tpl_gtulu_params); // @slurp
+
     // @end for
 
   } // namespace api

@@ -10,115 +10,161 @@ yaml.add_representer(literal_unicode, literal_unicode_representer)
 
 args = gtuluref.arguments()
 
-folder = gtuluref.ref(args.version, args.compat and 'comp' or 'core', 'function')
+# folder = gtuluref.ref(args.version, args.compat and 'comp' or 'core', 'function')
+# for filename in os.listdir(folder):
+#   with open(os.path.join(folder, filename), 'r') as f:
+#     fct = yaml.load(f)
+
+#   if 'gl-name' in fct:
+#     keys = fct.keys()
+
+#     fct['gl'] = {}
+#     fct['gtu'] = {}
+#     for k in keys:
+#       if 'gl-' in k:
+#         fct['gl'][k[3:]] = fct[k]
+#         del fct[k]
+#       elif 'gtulu-' in k:
+#         fct['gtu'][k[6:]] = fct[k]
+#         del fct[k]
+
+#   gl = fct['gl']
+#   gtu = fct['gtu']
+#   if 'params' not in gtu:
+#     gtu['params'] = []
+
+#   for gl_param in gl['params']:
+#     if 'mapping' not in gl_param:
+#       gl_param['mapping'] = gl_param['name']
+
+#     gtu_param = dict(gl_param)
+#     if 'mapping' in gtu_param:
+#       del gtu_param['mapping']
+#     gtu_param['type'] = gtuluref.convert_type(gtu_param['type'])
+
+#     if gl_param['mapping'] == gl_param['name'] and not any([p['name'] == gtu_param['name'] for p in gtu['params']]):
+#       gtu['params'].append(gtu_param)
+#     elif any([p['name'] == gtu_param['name'] for p in gtu['params']]):
+#       old_param = [p for p in gtu['params'] if p['name'] == gtu_param['name']][0]
+
+#       if 'mapping' in old_param:
+#         del old_param['mapping']
+
+#       if old_param['type'] + ' const' == gtu_param['type']:
+#         old_param['type'] = gtu_param['type']
+#       elif old_param['type'] + ' const&' == gtu_param['type']:
+#         old_param['type'] = gtu_param['type']
+
+
+#   def vectorize(glnames, gtuname):
+#     if any([p['name'] == glnames[0] for p in gl['params']]):
+#       dimp = [p for p in gl['params'] if p['name'] in glnames]
+#       dimt = 'gtu::vec%d< %%s > const&' % len(dimp)
+#       for i,p in enumerate(dimp):
+#         if p['mapping'] != p['name']:
+#           return
+#         p['mapping'] = '%s[%d]' % (gtuname, i)
+
+#       gtup = []
+#       for p in gtu['params']:
+#         if p['name'] in glnames[1:]:
+#           continue
+#         elif p['name'] == glnames[0]:
+#           p['name'] = gtuname
+#           p['type'] = dimt % p['type'].replace(' const', '')
+#         gtup.append(p)
+#       gtu['params'] = gtup
+
+#   vectorize(['width', 'height', 'depth'], 'dimension')
+#   vectorize(['xoffset', 'yoffset', 'zoffset'], 'offset')
+#   vectorize(['x', 'y', 'z', 'w'], 'position')
+#   vectorize(['nx', 'ny', 'nz', 'nw'], 'direction')
+#   vectorize(['v0', 'v1', 'v2', 'v3'], 'values')
+#   vectorize(['s', 't', 'r', 'q'], 'coordinates')
+#   vectorize(['red', 'green', 'blue', 'alpha'], 'color')
+#   vectorize(['r', 'g', 'b', 'a'], 'color')
+
+#   if gtu['name'][-2:] in ['_1', '_2', '_3', '_4']:
+#     ptrp = [p for p in gtu['params'] if p['type'][-7:] == ' const*']
+#     if len(ptrp) == 1:
+#       ptrp[0]['type'] = 'gtu::vec%s< %s > const&' % (gtu['name'][-1], p['type'].replace(' const*', ''))
+#       valp = [ p for p in gl['params'] if p['mapping'] == ptrp[0]['name'] ]
+
+#       ptrp[0]['name'] = 'values'
+#       gtu['name'] = gtu['name'][:-2]
+
+#       cntp = [p for p in gl['params'] if p['name'] == 'count']
+#       if len(cntp) == 1:
+#         cntp[0]['mapping'] = 'values.size()'
+#         ptrp[0]['type'] = 'std::vector< %s > const&' % ptrp[0]['type'].replace(' const&', '')
+#         if len(valp) == 1:
+#           valp[0]['mapping'] = 'values.data()->data()'
+
+#         gtup = []
+#         for p in gtu['params']:
+#           if p['name'] == 'count':
+#             continue
+#           gtup.append(p)
+#         gtu['params'] = gtup
+
+#       elif len(valp) == 1:
+#         valp[0]['mapping'] = 'values.data()'
+
+#   for p in gtu['params']:
+#     if not '*' in p['type'] and not '&' in p['type'] and not ' const' in p['type']:
+#       p['type'] = p['type'] + ' const'
+
+
+#   if 'precall' in gtu:
+#     gtu['precall'] = literal_unicode(gtu['precall'])
+
+#   if 'postcall' in gtu:
+#     gtu['postcall'] = literal_unicode(gtu['postcall'])
+
+#   gtu['return'] = gtuluref.convert_type(gl['return'], True)
+
+#   with open(os.path.join(folder, filename), 'w') as f:
+#     yaml.dump(fct, f, default_flow_style=False)
+
+
+class hexadecimal(long): pass
+def hexadecimal_representer(dumper, data):
+    return dumper.represent_scalar(u'tag:yaml.org,2002:int', hex(data).strip('L'))
+yaml.add_representer(hexadecimal, hexadecimal_representer)
+
+
+folder = gtuluref.ref(args.version, args.compat and 'comp' or 'core', 'constant')
 for filename in os.listdir(folder):
   with open(os.path.join(folder, filename), 'r') as f:
-    fct = yaml.load(f)
+    cst = yaml.load(f)
 
-  if 'gl-name' in fct:
-    keys = fct.keys()
+  if 'gtu' not in cst:
+    cst['gtu'] = {}
 
-    fct['gl'] = {}
-    fct['gtu'] = {}
-    for k in keys:
-      if 'gl-' in k:
-        fct['gl'][k[3:]] = fct[k]
-        del fct[k]
-      elif 'gtulu-' in k:
-        fct['gtu'][k[6:]] = fct[k]
-        del fct[k]
+  gtu = cst['gtu']
+  if 'name' not in gtu:
+    gtu['name'] = filename.lower().replace('gl_', '')
+    if gtu['name'][0] in ['1', '2', '3', '4']:
+      gtu['name'] = {'1': 'one', '2': 'two', '3': 'three', '4': 'four'}[gtu['name'][0]] + gtu['name'][1:]
+    elif gtu['name'] in ['alignas', 'alignof', 'and', 'and_eq', 'asm', 'auto', 'bitand', 'bitor', 'bool', \
+                         'break', 'case', 'catch', 'char', 'char16_t', 'char32_t', 'class', 'compl', 'const', \
+                         'constexpr', 'const_cast', 'continue', 'decltype', 'default', 'delete', 'do', 'double', \
+                         'dynamic_cast', 'else', 'enum', 'explicit', 'export', 'extern', 'false', 'float', 'for', \
+                         'friend', 'goto', 'if', 'inline', 'int', 'long', 'mutable', 'namespace', 'new', 'noexcept', \
+                         'not', 'not_eq', 'nullptr', 'operator', 'or', 'or_eq', 'private', 'protected', 'public', \
+                         'register', 'reinterpret_cast', 'return', 'short', 'signed', 'sizeof', 'static', 'static_assert', \
+                         'static_cast', 'struct', 'switch', 'template', 'this', 'thread_local', 'throw', 'true', 'try', \
+                         'typedef', 'typeid', 'typename', 'union', 'unsigned', 'using', 'virtual', 'void', 'volatile', \
+                         'wchar_t', 'while', 'xor', 'xor_eq']:
+      gtu['name'] = '%s_' % gtu['name']
 
-  gl = fct['gl']
-  gtu = fct['gtu']
-  if 'params' not in gtu:
-    gtu['params'] = []
+  if 'params' in gtu:
+    del gtu['params']
 
-  for gl_param in gl['params']:
-    if 'mapping' not in gl_param:
-      gl_param['mapping'] = gl_param['name']
-
-    gtu_param = dict(gl_param)
-    if 'mapping' in gtu_param:
-      del gtu_param['mapping']
-    gtu_param['type'] = gtuluref.convert_type(gtu_param['type'])
-
-    if gl_param['mapping'] == gl_param['name'] and not any([p['name'] == gtu_param['name'] for p in gtu['params']]):
-      gtu['params'].append(gtu_param)
-    elif any([p['name'] == gtu_param['name'] for p in gtu['params']]):
-      old_param = [p for p in gtu['params'] if p['name'] == gtu_param['name']][0]
-
-      if 'mapping' in old_param:
-        del old_param['mapping']
-
-      if old_param['type'] + ' const' == gtu_param['type']:
-        old_param['type'] = gtu_param['type']
-      elif old_param['type'] + ' const&' == gtu_param['type']:
-        old_param['type'] = gtu_param['type']
-
-
-  def vectorize(glnames, gtuname):
-    if any([p['name'] == glnames[0] for p in gl['params']]):
-      dimp = [p for p in gl['params'] if p['name'] in glnames]
-      dimt = 'gtu::vec%d< %%s > const&' % len(dimp)
-      for i,p in enumerate(dimp):
-        if p['mapping'] != p['name']:
-          return
-        p['mapping'] = '%s[%d]' % (gtuname, i)
-
-      gtup = []
-      for p in gtu['params']:
-        if p['name'] in glnames[1:]:
-          continue
-        elif p['name'] == glnames[0]:
-          p['name'] = gtuname
-          p['type'] = dimt % p['type'].replace(' const', '')
-        gtup.append(p)
-      gtu['params'] = gtup
-
-  vectorize(['width', 'height', 'depth'], 'dimension')
-  vectorize(['xoffset', 'yoffset', 'zoffset'], 'offset')
-  vectorize(['x', 'y', 'z', 'w'], 'position')
-  vectorize(['nx', 'ny', 'nz', 'nw'], 'direction')
-  vectorize(['v0', 'v1', 'v2', 'v3'], 'values')
-  vectorize(['s', 't', 'r', 'q'], 'coordinates')
-  vectorize(['red', 'green', 'blue', 'alpha'], 'color')
-  vectorize(['r', 'g', 'b', 'a'], 'color')
-
-  if gtu['name'][-2:] in ['_1', '_2', '_3', '_4']:
-    ptrp = [p for p in gtu['params'] if p['type'][-7:] == ' const*']
-    if len(ptrp) == 1:
-      ptrp[0]['type'] = 'gtu::vec%s< %s > const&' % (gtu['name'][-1], p['type'].replace(' const*', ''))
-      valp = [ p for p in gl['params'] if p['mapping'] == ptrp[0]['name'] ]
-
-      ptrp[0]['name'] = 'values'
-      gtu['name'] = gtu['name'][:-2]
-
-      cntp = [p for p in gl['params'] if p['name'] == 'count']
-      if len(cntp) == 1:
-        cntp[0]['mapping'] = 'values.size()'
-        ptrp[0]['type'] = 'std::vector< %s > const&' % ptrp[0]['type'].replace(' const&', '')
-        if len(valp) == 1:
-          valp[0]['mapping'] = 'values.data()->data()'
-
-        gtup = []
-        for p in gtu['params']:
-          if p['name'] == 'count':
-            continue
-          gtup.append(p)
-        gtu['params'] = gtup
-
-      elif len(valp) == 1:
-        valp[0]['mapping'] = 'values.data()'
-
-  for p in gtu['params']:
-    if not '*' in p['type'] and not '&' in p['type'] and not ' const' in p['type']:
-      p['type'] = p['type'] + ' const'
-
-
-  if 'mapping' in gtu:
-    gtu['mapping'] = literal_unicode(gtu['mapping'])
-
-  gtu['return'] = gtuluref.convert_type(gl['return'], True)
+  if 'value' in cst:
+    cst['value'] = hexadecimal(cst['value'])
+  elif 'values' in cst:
+    cst['values'] = [ hexadecimal(v) for v in cst['values'] ]
 
   with open(os.path.join(folder, filename), 'w') as f:
-    yaml.dump(fct, f, default_flow_style=False)
+    yaml.dump(cst, f, default_flow_style=False)
