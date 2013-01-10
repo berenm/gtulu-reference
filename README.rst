@@ -17,6 +17,15 @@ GOAL OF GTULU
 
 .. _libgtulu: https://github.com/berenm/libgtulu
 
+BUILDING
+```````````````
+.. code:: bash
+
+  mkdir build
+  cd build
+  cmake ..
+  make
+
 COPYING INFORMATION
 `````````````````````
 *Except from the man pages and registry headers, which are property of OpenGL and Khronos group and under specific copyright*
