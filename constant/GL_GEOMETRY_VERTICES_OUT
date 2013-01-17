@@ -1,0 +1,7 @@
+categories:
+- program_property
+gtu:
+  name: geometry_vertices_out
+usage:
+- glGetProgramiv.property
+value: 0x8916

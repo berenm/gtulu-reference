@@ -1,0 +1,7 @@
+categories:
+- uniform_block_property
+gtu:
+  name: uniform_block_referenced_by_geometry_shader
+usage:
+- glGetActiveUniformBlockiv.property
+value: 0x8a45

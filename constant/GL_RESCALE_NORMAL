@@ -9,6 +9,8 @@ usage:
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetInteger64i_v.property
+- glGetInteger64v.property
 - glGetIntegeri_v.property
 - glGetIntegerv.property
 value: 0x803a

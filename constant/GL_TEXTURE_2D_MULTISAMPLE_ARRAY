@@ -1,0 +1,14 @@
+categories:
+- tex_image_target
+- texture_bind_target
+- texture_level_target
+- texture_view_target
+- internal_format_target
+gtu:
+  name: texture_2d_multisample_array
+usage:
+- glBindTexture.target
+- glGetTexLevelParameterfv.target
+- glGetTexLevelParameteriv.target
+- glTexImage3DMultisample.target
+value: 0x9102

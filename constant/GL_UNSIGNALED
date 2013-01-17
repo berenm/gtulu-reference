@@ -1,0 +1,7 @@
+categories:
+- gl_VERSION_3_2
+- gl_ARB_sync
+gtu:
+  name: unsignaled
+usage: []
+value: 0x9118

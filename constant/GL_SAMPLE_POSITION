@@ -1,0 +1,7 @@
+categories:
+- multisample_property
+gtu:
+  name: sample_position
+usage:
+- glGetMultisamplefv.property
+value: 0x8e50

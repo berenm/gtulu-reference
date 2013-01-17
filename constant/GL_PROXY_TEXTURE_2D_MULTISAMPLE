@@ -1,0 +1,10 @@
+categories:
+- tex_image_target
+- texture_level_target
+gtu:
+  name: proxy_texture_2d_multisample
+usage:
+- glGetTexLevelParameterfv.target
+- glGetTexLevelParameteriv.target
+- glTexImage2DMultisample.target
+value: 0x9101

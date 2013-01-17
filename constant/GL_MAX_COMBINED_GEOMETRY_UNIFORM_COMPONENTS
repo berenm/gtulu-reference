@@ -1,0 +1,14 @@
+categories:
+- context_property
+gtu:
+  name: max_combined_geometry_uniform_components
+usage:
+- glGetBooleani_v.property
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetInteger64i_v.property
+- glGetInteger64v.property
+- glGetIntegeri_v.property
+- glGetIntegerv.property
+value: 0x8a32

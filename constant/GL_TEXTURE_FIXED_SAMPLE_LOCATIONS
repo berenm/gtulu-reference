@@ -1,0 +1,7 @@
+categories:
+- gl_VERSION_3_2
+- gl_ARB_texture_multisample
+gtu:
+  name: texture_fixed_sample_locations
+usage: []
+value: 0x9107

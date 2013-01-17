@@ -6,6 +6,7 @@ usage:
 - glBindFramebuffer.target
 - glCheckFramebufferStatus.target
 - glFramebufferRenderbuffer.target
+- glFramebufferTexture.target
 - glFramebufferTexture1D.target
 - glFramebufferTexture2D.target
 - glFramebufferTexture3D.target

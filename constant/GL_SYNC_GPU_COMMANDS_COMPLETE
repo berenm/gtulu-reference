@@ -1,0 +1,7 @@
+categories:
+- gl_VERSION_3_2
+- gl_ARB_sync
+gtu:
+  name: sync_gpu_commands_complete
+usage: []
+value: 0x9117

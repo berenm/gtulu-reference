@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_2
+gtu:
+  name: max_geometry_total_output_components
+usage: []
+value: 0x8de1

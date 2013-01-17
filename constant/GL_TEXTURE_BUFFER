@@ -12,6 +12,7 @@ usage:
 - glBufferData.target
 - glBufferSubData.target
 - glFlushMappedBufferRange.target
+- glGetBufferParameteri64v.target
 - glGetBufferParameteriv.target
 - glGetBufferPointerv.target
 - glGetBufferSubData.target

@@ -1,0 +1,7 @@
+categories:
+- sync_property
+gtu:
+  name: sync_condition
+usage:
+- glGetSynciv.property
+value: 0x9113

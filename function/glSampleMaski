@@ -1,0 +1,18 @@
+gl:
+  name: glSampleMaski
+  params:
+  - mapping: maskNumber
+    name: maskNumber
+    type: GLuint
+  - mapping: mask.to_ulong()
+    name: mask
+    type: GLbitfield
+  return: void
+gtu:
+  name: sample_mask
+  params:
+  - name: maskNumber
+    type: uint32_t const
+  - name: mask
+    type: gtu::bitmask const&
+  return: void
