@@ -6,11 +6,10 @@
 namespace gtulu {
   namespace gtu = ::gtulu;
 
-  typedef std::uint32_t constant;
-  typedef std::int32_t  size;
-  typedef std::int16_t  float16;
-  typedef float         float32;
-  typedef double        float64;
+  typedef int32_t size;
+  typedef int16_t float16;
+  typedef float   float32;
+  typedef double  float64;
 
 }
 

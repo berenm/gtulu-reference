@@ -7,6 +7,8 @@ namespace gtulu {
   namespace gtu = ::gtulu;
 
   namespace tag {
+    struct constant;
+
     struct buffer;
     struct framebuffer;
     struct list;
@@ -30,6 +32,9 @@ namespace gtulu {
 
     struct texture_unit;
   }
+
+  typedef gtu::tagged_value< gtu::tag::constant, uint32_t > constant;
+  typedef gtu::constant                                     checked_constant;
 
   typedef gtu::tagged_value< gtu::tag::buffer >             buffer;
   typedef gtu::tagged_value< gtu::tag::framebuffer >        framebuffer;

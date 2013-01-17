@@ -107,7 +107,9 @@ then
   __fetch gl/2.1
   __commit
   __showlog gl/2.1 origin/gl/2.1
-  __push gl/2.1
+
+  [ ! -z "$(git diff gl/2.1..origin/gl/2.1)" ] && __confirm git push origin gl/2.1 --force
+  __inform git checkout -B gl/2.1 origin/gl/2.1
   cd - &>/dev/null
 
   __update gl/3.0 origin/gl/2.1 comp

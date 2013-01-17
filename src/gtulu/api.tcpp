@@ -1,20 +1,21 @@
-// @cheetah --env --nobackup --iext=tcpp --oext=cpp --settings allowWhitespaceAfterDirectiveStartToken=True,cheetahVarStartToken='__tpl_',commentStartToken='// \#',directiveStartToken='// @',directiveEndToken=' @//',multiLineCommentStartToken='/*\#',multiLineCommentEndToken='\#*/'
+// :cheetah --env --nobackup --iext=tcpp --oext=cpp --settings allowWhitespaceAfterDirectiveStartToken=True,cheetahVarStartToken='___',commentStartToken='// \#',directiveStartToken='// :',directiveEndToken=': //',multiLineCommentStartToken='/*\#',multiLineCommentEndToken='\#*/'
 
-// @import os
-// @import yaml
-// @import gtuluref
+// :import os
+// :import yaml
+// :import gtuluref
 
-// @set __tpl_folder = gtuluref.ref(__tpl_GTULU_VERSION, __tpl_getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'function')
-// @set __tpl_functions = {}
-// @for f in os.listdir(__tpl_folder):
-// @  set __tpl_functions[f] = yaml.load(file(os.path.join(__tpl_folder, f), 'r'))
-// @end for
+// :set ___folder = gtuluref.ref(___GTULU_VERSION, ___getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'function')
+// :set ___functions = {}
+// :for f in os.listdir(___folder):
+// :  set ___functions[f] = yaml.load(file(os.path.join(___folder, f), 'r'))
+// :end for
 
-// @set __tpl_folder = gtuluref.ref(__tpl_GTULU_VERSION, __tpl_getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'constant')
-// @set __tpl_constants = {}
-// @for f in os.listdir(__tpl_folder):
-// @  set __tpl_constants[f] = yaml.load(file(os.path.join(__tpl_folder, f), 'r'))
-// @end for
+// :set ___folder = gtuluref.ref(___GTULU_VERSION, ___getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'constant')
+// :set ___constants = {}
+// :for f in os.listdir(___folder):
+// :  set ___constants[f] = yaml.load(file(os.path.join(___folder, f), 'r'))
+// :end for
+// :set ___categories = gtuluref.categorize_constants(___constants)
 
 #define __IN_GTULU_OPENGL_API__
 #include <gtulu/api.hpp>
@@ -23,65 +24,68 @@
 #include <gtulu/types.h>
 
 namespace gtulu {
-  namespace cst {
-
-    // @set __tpl_categories = gtuluref.categorize_constants(__tpl_constants)
-    // @for cat,csts in sorted(__tpl_categories.items()):
-    // @  if __tpl_cat != '__all__' and __tpl_cat[:3] != 'gl_':
-    std::ostream& operator<<(std::ostream& s, cst::__tpl_cat const v) {
-      switch (v) {
-        // @  for c in sorted(__tpl_csts.values(), key=lambda x: x['name']):
-        case cst::__tpl_cat::__tpl_c.name:
-          s << "__tpl_cat::__tpl_c.name";
-          break; // @slurp
-
-        // @  end for
-        default:
-          s << "<unknown-__tpl_cat:" << static_cast< size_t >(v) << ">";
-          break;
-      }
-
-      return s;
-    }
-
-    // @  end if
-    // @end for
-
-  } // namespace cst
-
   namespace api {
 
-    // @for f in sorted(__tpl_functions.values(), key=lambda x: '%s(%s)' % (x['gtu']['name'], ', '.join(['%(type)s %(name)s' % p for p in x['gtu']['params']]))):
-    // @  set __tpl_gl  = __tpl_f.gl
-    // @  set __tpl_gtu = __tpl_f.gtu
-    // @  if gtu.get('skip', False):
-    // @    continue
-    // @  end if
-    // @  set __tpl_gl_params       = ', '.join(['%(type)s %(name)s'           % p for p in __tpl_gl.params])
-    // @  set __tpl_gtu_params      = ', '.join(['%(type)s %(name)s'           % p for p in __tpl_gtu.params])
-    // @  set __tpl_call_params     = ', '.join(['%(mapping)s'                 % p for p in __tpl_gl.params])
-    // @  set __tpl_log_params      = ', '.join(['%(name)s:" << %(name)s << "' % p for p in __tpl_gtu.params])
-    // @  set __tpl_gl_name         = lambda x: '%s(%s)' % (gl['name'], x)
-    // @  set __tpl_gtu_name        = lambda x: '%s(%s)' % (gtu['name'], x)
-    // @  set __tpl_gl_return       = __tpl_gl.return
-    // @  set __tpl_gtu_return      = __tpl_gtu.return
-    // @  set __tpl_out_variable    = __tpl_gl_return != 'void' and '__r' or ''
-    // @  set __tpl_out_assign      = __tpl_gl_return != 'void' and '%s __r = ' % (__tpl_gl_return) or ''
-    // @  set __tpl_assign_variable = lambda x: '%s %s' % (out_assign, x)
-    // @  set __tpl_return_variable = 'return %s' % (__tpl_gl_return != 'void' and '%s(%s)' % (gtu.get('return-cast', ''), __tpl_out_variable) or '')
-    // @  set __tpl_precall         = lambda: gtu.get('precall', '')
-    // @  set __tpl_postcall        = lambda: gtu.get('postcall', return_variable)
-    // @  set __tpl_check_error     = lambda: gl['name'] != 'glGetError' and 'api::__check_error()' or ''
-    extern "C" GTULU_API_IMPORT __tpl_gl_return __tpl_gl_name(__tpl_gl_params);
-    GTULU_API_EXPORT __tpl_gtu_return __tpl_gtu_name(__tpl_gtu_params) {
-      __trace() << "call __tpl_gl_name(__tpl_log_params)";
-      __tpl_precall();
-      __tpl_assign_variable(__tpl_gl_name(__tpl_call_params));
-      __tpl_check_error();
-      __tpl_postcall();
-    } // @slurp
+    // :set ___parameter_groups = {}
+    // :for f in sorted(___functions.values(), key=lambda x: '%s(%s)' % (x['gtu']['name'], ', '.join(['%(type)s %(name)s' % p for p in x['gtu']['params']]))):
+    // :  if ___f.gtu.get('skip', False):
+    // :    continue
+    // :  end if
+    // :  set ___gl_params       = ', '.join(['%(type)s %(name)s'           % p for p in ___f.gl.params])
+    // :  set ___gtu_params      = ', '.join(['%(type)s %(name)s'           % p for p in ___f.gtu.params])
+    // :  set ___call_params     = ', '.join(['%(mapping)s'                 % p for p in ___f.gl.params])
+    // :  set ___log_params      = ', '.join([('%(name)s:" << ' + (p['type'] == 'gtu::constant const' and 'values' in p and '%(name)s_to_string()' or '%(name)s') + ' << "') % p for p in ___f.gtu.params])
+    // :  set ___gl_name         = lambda x: '%s(%s)' % (f['gl']['name'], x)
+    // :  set ___gtu_name        = lambda x: '%s(%s)' % (f['gtu']['name'], x)
+    // :  set ___gl_return       = ___f.gl.return
+    // :  set ___gtu_return      = ___f.gtu.return
+    // :  set ___out_variable    = ___gl_return != 'void' and '__r' or ''
+    // :  set ___out_assign      = ___gl_return != 'void' and '%s __r = ' % (___gl_return) or ''
+    // :  set ___assign_variable = lambda x: '%s %s' % (out_assign, x)
+    // :  set ___return_variable = 'return %s' % (___gl_return != 'void' and '%s(%s)' % (f['gtu'].get('return-cast', ''), ___out_variable) or '')
+    // :  set ___precall         = lambda: f['gtu'].get('precall', '')
+    // :  set ___postcall        = lambda: f['gtu'].get('postcall', return_variable)
+    // :  set ___check_error     = lambda: f['gl']['name'] != 'glGetError' and 'api::__check_error()' or ''
 
-    // @end for
+    extern "C" GTULU_API_IMPORT ___gl_return ___gl_name(___gl_params);
+    GTULU_API_EXPORT ___gtu_return ___gtu_name(___gtu_params) {
+
+      // :  for p in ___f.gtu.params:
+      // :    if ___p.type == 'gtu::constant const' and 'values' in ___p:
+      // :      set ___valid_values = gtuluref.resolve_values(___constants, ___p.values)
+      // :      set ___to_string_name = '%s_to_string' % ___p.name
+      auto const ___to_string_name = [ = ]() -> std::string const {
+                                       gtu::constant::value_type const value = static_cast< gtu::constant::value_type >(___p.name);
+                                       switch (value) {
+                                         // :for v in ___valid_values:
+                                         case gtu::cst::___v: return "___v"; // :slurp
+
+                                         // :end for
+                                         default: return "<invalid:" + std::to_string(value) + ">";
+                                       }
+                                     };
+
+      // :      set ___valid_values = ','.join(['gtu::cst::%s' % v for v in gtuluref.resolve_values(___constants, ___p.values)])
+      // :      set ___valid_names  = ','.join(['"%s"' % v for v in gtuluref.resolve_values(___constants, ___p.values)])
+      // :      set ___check_name = 'check_%s' % ___p.name
+
+      if (!detail::is_one_of< gtu::constant::value_type, ___valid_values >(___p.name)) {
+        static std::vector< char const* > const valid_values = { ___valid_names };
+        __warn() << "call ___f.gl.name: ___p.name is not one of the valid values: " << valid_values;
+      }
+
+      // :    end if
+      // :  end for
+
+      __trace() << "call ___gl_name(___log_params)";
+
+      ___precall();
+      ___assign_variable(___gl_name(___call_params));
+      ___check_error();
+      ___postcall();
+    } // :slurp
+
+    // :end for
 
   } // namespace api
 } // namespace gtulu

@@ -1,14 +1,14 @@
-// @cheetah --env --nobackup --iext=tcpp --oext=cpp --settings allowWhitespaceAfterDirectiveStartToken=True,cheetahVarStartToken='__tpl_',commentStartToken='// \#',directiveStartToken='// @',directiveEndToken=' @//',multiLineCommentStartToken='/*\#',multiLineCommentEndToken='\#*/'
+// :cheetah --env --nobackup --iext=tcpp --oext=cpp --settings allowWhitespaceAfterDirectiveStartToken=True,cheetahVarStartToken='___',commentStartToken='// \#',directiveStartToken='// :',directiveEndToken=': //',multiLineCommentStartToken='/*\#',multiLineCommentEndToken='\#*/'
 
-// @import os
-// @import yaml
-// @import gtuluref
+// :import os
+// :import yaml
+// :import gtuluref
 
-// @set __tpl_folder = gtuluref.ref(__tpl_GTULU_VERSION, __tpl_getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'function')
-// @set __tpl_functions = {}
-// @for f in os.listdir(__tpl_folder):
-// @  set __tpl_functions[f] = yaml.load(file(os.path.join(__tpl_folder, f), 'r'))
-// @end for
+// :set ___folder = gtuluref.ref(___GTULU_VERSION, ___getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'function')
+// :set ___functions = {}
+// :for f in os.listdir(___folder):
+// :  set ___functions[f] = yaml.load(file(os.path.join(___folder, f), 'r'))
+// :end for
 
 #define __IN_GTULU_OPENGL_API__
 #include <gtulu/types.hpp>
@@ -17,22 +17,21 @@
 
 extern "C" {
 
-// @for f in sorted(__tpl_functions.values(), key=lambda x: '%s(%s)' % (x['gtu']['name'], ', '.join(['%(type)s %(name)s' % p for p in x['gtu']['params']]))):
-// @  set __tpl_gl  = __tpl_f.gl
-// @  set __tpl_gtu = __tpl_f.gtu
-// @  set __tpl_gl_params_decl = ', '.join(['%(type)s %(name)s' % p for p in __tpl_gl.params])
-// @  set __tpl_gl_return      = __tpl_gl.return
-// @  set __tpl_gl_name        = lambda x: '%s(%s)' % (gl['name'], x)
-// @  set __tpl_gtu_ni_symb    = '__gtuluNI%s' % __tpl_gl.name[2:]
-// @  set __tpl_gtu_ni_name    = lambda x: '%s(%s)' % (gtu_ni_symb, x)
-// @  set __tpl_return_value   = __tpl_gl_return != 'void' and ('*' in __tpl_gl_return and 'nullptr' or '%s()' % __tpl_gl_return) or ''
-static __tpl_gl_return           __tpl_gtu_ni_name(__tpl_gl_params_decl);
-GTULU_API_EXPORT __tpl_gl_return __tpl_gl_name(__tpl_gl_params_decl) __attribute__((weak, alias("__tpl_gtu_ni_symb")));
-static __tpl_gl_return __tpl_gtu_ni_name(__tpl_gl_params_decl) {
-  gtulu::api::__not_implemented("__tpl_gl_name(__tpl_gl_params_decl)");
-  return __tpl_return_value;
-} // @slurp
+// :for f in sorted(___functions.values(), key=lambda x: '%s(%s)' % (x['gtu']['name'], ', '.join(['%(type)s %(name)s' % p for p in x['gtu']['params']]))):
+// :  set ___parameters     = ', '.join(['%(type)s %(name)s' % p for p in ___f.gl.params])
+// :  set ___return_type    = ___f.gl.return
+// :  set ___function       = lambda x: '%s(%s)' % (f['gl']['name'], x)
+// :  set ___ni_symbol_name = '__gtuluNI%s' % ___f.gl.name[2:]
+// :  set ___ni_function    = lambda x: '%s(%s)' % (ni_symbol_name, x)
+// :  set ___return_value   = ___return_type != 'void' and ('*' in ___return_type and 'nullptr' or '%s()' % ___return_type) or ''
+static ___return_type           ___ni_function(___parameters);
+GTULU_API_EXPORT ___return_type ___function(___parameters) __attribute__((weak, alias("___ni_symbol_name")));
+static ___return_type ___ni_function(___parameters) {
+  gtulu::api::__not_implemented("___function(___parameters)"); // :slurp
 
-// @end for
+  return ___return_value;
+} // :slurp
+
+// :end for
 
 }

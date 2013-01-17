@@ -50,6 +50,8 @@ else()
   endif()
 endif()
 
+add_definitions(-DGTULU_MAJOR_VERSION=${API_SOVERSION})
+
 cheetah_generate(${API_TARGET}-hpp src/gtulu/api.thpp OUTPUT_VARIABLE GTULU_API_HPP DEPENDS ${API_SOURCES}
   ENVIRONMENT ${CHEETAH_ENVIRONMENT}
 )

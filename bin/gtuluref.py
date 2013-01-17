@@ -75,18 +75,24 @@ def enumerate_values(constant):
 def categorize_constants(constants):
   categories = {'__all__': {}}
   for n,c in sorted(constants.items()):
-    if 'categories' not in c or all([ 'gl_' == cat[:3] for cat in c['categories']]):
-      for u in enumerate_values(c):
-        categories['__all__'][u['name']] = u
+    for u in enumerate_values(c):
+      categories['__all__'][u['name']] = u
 
-    else:
-      for cat in [cc.lower() for cc in c['categories'] if cc[:3] != 'gl_']:
-        if cat not in categories:
-          categories[cat] = {}
-        for u in enumerate_values(c):
-          categories[cat][u['name']] = u
+    for cat in [cc.lower() for cc in c['categories'] if cc[:3] != 'gl_']:
+      if cat not in categories:
+        categories[cat] = {}
+      for u in enumerate_values(c):
+        categories[cat][u['name']] = u
 
   return categories
+
+
+def resolve_values(constants, values):
+  output = []
+  for v in values:
+    output.extend([ u['name'] for u in enumerate_values(constants[v]) ])
+
+  return sorted(set(output))
 
 
 def man(v, file=None):

@@ -1,0 +1,47 @@
+#!/usr/bin/python
+
+import os, sys, re, yaml
+import gtuluref
+
+class literal_unicode(unicode): pass
+def literal_unicode_representer(dumper, data):
+    return dumper.represent_scalar(u'tag:yaml.org,2002:str', data, style='|')
+yaml.add_representer(literal_unicode, literal_unicode_representer)
+
+class hexadecimal(long): pass
+def hexadecimal_representer(dumper, data):
+    return dumper.represent_scalar(u'tag:yaml.org,2002:int', hex(data).strip('L'))
+yaml.add_representer(hexadecimal, hexadecimal_representer)
+
+
+args = gtuluref.arguments()
+
+functions = {}
+constants = {}
+
+constant_folder = gtuluref.ref(args.version, args.compat and 'comp' or 'core', 'constant')
+folder = gtuluref.ref(args.version, args.compat and 'comp' or 'core', 'function')
+for filename in os.listdir(folder):
+  with open(os.path.join(folder, filename), 'r') as f:
+    cst = yaml.load(f)
+
+  if 'params' in cst['gtu']:
+    for p in cst['gtu']['params']:
+      if 'values' in p:
+        p['values'] = sorted(set(p['values']))
+
+        values = []
+        for v in p['values']:
+          if os.path.exists(os.path.join(constant_folder, v)):
+            values.append(v)
+
+        p['values'] = sorted(set(values))
+
+  if 'precall' in cst['gtu']:
+    cst['gtu']['precall'] = literal_unicode(cst['gtu']['precall'])
+
+  if 'postcall' in cst['gtu']:
+    cst['gtu']['postcall'] = literal_unicode(cst['gtu']['postcall'])
+
+  with open(os.path.join(folder, filename), 'w') as f:
+    yaml.dump(cst, f, default_flow_style=False)

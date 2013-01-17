@@ -2,38 +2,38 @@
 #define __GTULU_TYPES_TAGGED_VALUE_HPP__
 
 #include <cstdint>
+#include "gtulu/logging.hpp"
 
 namespace gtulu {
   namespace gtu = ::gtulu;
 
-  template< typename Tag, typename ValueType = uint32_t >
+  template< typename Tag, typename T = uint32_t >
   struct tagged_value {
-    typedef Tag       tag;
-    typedef ValueType value_type;
+    typedef Tag tag;
+    typedef T   value_type;
 
-    tagged_value() = default;
-    tagged_value(ValueType const value) : value(value) {}
+    constexpr tagged_value() = default;
+    constexpr tagged_value(T const value) : value(value) {}
 
-    operator ValueType() const { return value; }
-    operator ValueType&() { return value; }
-    ValueType const* operator&() const { return &value; }
-    ValueType* operator&() { return &value; }
+    constexpr operator T() const { return value; }
+
+    // operator T&() { return value; }
+    T const* operator&() const { return &value; }
+    T* operator&() { return &value; }
 
     protected:
-      ValueType value;
+      T value;
   };
 
-  template< typename Tag, typename ValueType = uint32_t, typename... Tags >
-  struct tagged_value_convertible;
+  namespace detail {
 
-  template< typename Tag, typename ValueType >
-  struct tagged_value_convertible< Tag, ValueType > : gtu::tagged_value< Tag, ValueType > {};
+    template< typename T >
+    constexpr bool is_one_of(T const value) { return false; }
 
-  template< typename Tag, typename ValueType, typename T, typename... Tags >
-  struct tagged_value_convertible< Tag, ValueType, T, Tags... > : tagged_value_convertible< Tag, ValueType, Tags... > {
-    using target_type = gtu::tagged_value< T, ValueType >;
-    operator target_type() const { return target_type(this->value); }
-  };
+    template< typename T, T v, T... Vs >
+    constexpr bool is_one_of(T const value) { return value == v || is_one_of< T, Vs... >(value); }
+
+  }
 
 }
 

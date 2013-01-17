@@ -1,20 +1,20 @@
-// @cheetah --env --nobackup --iext=thpp --oext=hpp --settings allowWhitespaceAfterDirectiveStartToken=True,cheetahVarStartToken='__tpl_',commentStartToken='// \#',directiveStartToken='// @',directiveEndToken=' @//',multiLineCommentStartToken='/*\#',multiLineCommentEndToken='\#*/'
+// :cheetah --env --nobackup --iext=thpp --oext=hpp --settings allowWhitespaceAfterDirectiveStartToken=True,cheetahVarStartToken='___',commentStartToken='// \#',directiveStartToken='// :',directiveEndToken=': //',multiLineCommentStartToken='/*\#',multiLineCommentEndToken='\#*/'
 
-// @import os
-// @import yaml
-// @import gtuluref
+// :import os
+// :import yaml
+// :import gtuluref
 
-// @set __tpl_folder = gtuluref.ref(__tpl_GTULU_VERSION, __tpl_getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'function')
-// @set __tpl_functions = {}
-// @for f in os.listdir(__tpl_folder):
-// @  set __tpl_functions[f] = yaml.load(file(os.path.join(__tpl_folder, f), 'r'))
-// @end for
+// :set ___folder = gtuluref.ref(___GTULU_VERSION, ___getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'function')
+// :set ___functions = {}
+// :for f in os.listdir(___folder):
+// :  set ___functions[f] = yaml.load(file(os.path.join(___folder, f), 'r'))
+// :end for
 
-// @set __tpl_folder = gtuluref.ref(__tpl_GTULU_VERSION, __tpl_getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'constant')
-// @set __tpl_constants = {}
-// @for f in os.listdir(__tpl_folder):
-// @  set __tpl_constants[f] = yaml.load(file(os.path.join(__tpl_folder, f), 'r'))
-// @end for
+// :set ___folder = gtuluref.ref(___GTULU_VERSION, ___getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'constant')
+// :set ___constants = {}
+// :for f in os.listdir(___folder):
+// :  set ___constants[f] = yaml.load(file(os.path.join(___folder, f), 'r'))
+// :end for
 
 #ifndef __GTULU_OPENGL_API__
 #define __GTULU_OPENGL_API__
@@ -24,43 +24,30 @@
 namespace gtulu {
   namespace cst {
 
-    // @set __tpl_categories = gtuluref.categorize_constants(__tpl_constants)
-    // @for cat,csts in sorted(__tpl_categories.items()):
-    // @  if __tpl_cat == '__all__'
-    // @    for c in sorted(__tpl_csts.values(), key=lambda x: x['name']):
-    static constexpr size_t __tpl_c.name = __tpl_c.value; // @slurp
+    // :set ___categories = gtuluref.categorize_constants(___constants)
+    // :for cat,csts in sorted(___categories.items()):
+    // :  if ___cat == '__all__'
+    // :    for c in sorted(___csts.values(), key=lambda x: x['name']):
+    static constexpr gtu::constant ___c.name = ___c.value; // :slurp
 
-    // @    end for
-    // @  else
-
-    enum struct __tpl_cat : size_t {
-      // @  for c in sorted(__tpl_csts.values(), key=lambda x: x['name']):
-      __tpl_c.name = __tpl_c.value, // @slurp
-
-      // @  end for
-    }; // @slurp
-
-    std::ostream& operator<<(std::ostream& s, __tpl_cat const v); // @slurp
-
-    // @  end if
-    // @end for
+    // :    end for
+    // :  end if
+    // :end for
 
   } // namespace cst
 
   namespace api {
 
-    // @for f in sorted(__tpl_functions.values(), key=lambda x: '%s(%s)' % (x['gtu']['name'], ', '.join(['%(type)s %(name)s' % p for p in x['gtu']['params']]))):
-    // @  set __tpl_gl  = __tpl_f.gl
-    // @  set __tpl_gtu = __tpl_f.gtu
-    // @  if gtu.get('skip', False):
-    // @    continue
-    // @  end if
-    // @  set __tpl_gtulu_params    = ', '.join(['%(type)s %(name)s' % p for p in __tpl_gtu.params])
-    // @  set __tpl_gtulu_return    = __tpl_gtu.return
-    // @  set __tpl_gtulu_name      = lambda x: '%s(%s)' % (gtu['name'], x)
-    GTULU_API_EXPORT __tpl_gtulu_return __tpl_gtulu_name(__tpl_gtulu_params); // @slurp
+    // :for f in sorted(___functions.values(), key=lambda x: '%s(%s)' % (x['gtu']['name'], ', '.join(['%(type)s %(name)s' % p for p in x['gtu']['params']]))):
+    // :  if ___f.gtu.get('skip', False):
+    // :    continue
+    // :  end if
+    // :  set ___parameters  = ', '.join(['%(type)s %(name)s' % p for p in ___f.gtu.params])
+    // :  set ___return_type = ___f.gtu.return
+    // :  set ___function    = lambda x: '%s(%s)' % (f['gtu']['name'], x)
+    GTULU_API_EXPORT ___return_type ___function(___parameters); // :slurp
 
-    // @end for
+    // :end for
 
   } // namespace api
 } // namespace gtulu
