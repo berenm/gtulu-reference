@@ -7,12 +7,14 @@ gtu:
 usage:
 - glDisable.target
 - glEnable.target
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
 - glGetHistogram.target
 - glGetHistogramParameterfv.target
 - glGetHistogramParameteriv.target
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 - glHistogram.target
 - glResetHistogram.target

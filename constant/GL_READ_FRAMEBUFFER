@@ -1,0 +1,14 @@
+categories:
+- framebuffer_target
+gtu:
+  name: read_framebuffer
+usage:
+- glBindFramebuffer.target
+- glCheckFramebufferStatus.target
+- glFramebufferRenderbuffer.target
+- glFramebufferTexture1D.target
+- glFramebufferTexture2D.target
+- glFramebufferTexture3D.target
+- glFramebufferTextureLayer.target
+- glGetFramebufferAttachmentParameteriv.target
+value: 0x8ca8

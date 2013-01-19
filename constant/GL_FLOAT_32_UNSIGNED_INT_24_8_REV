@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_depth_buffer_float
+gtu:
+  name: float_32_unsigned_int_24_8_rev
+usage: []
+value: 0x8dad

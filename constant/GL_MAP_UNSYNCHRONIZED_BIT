@@ -1,0 +1,7 @@
+categories:
+- gl_VERSION_3_0
+- gl_ARB_map_buffer_range
+gtu:
+  name: map_unsynchronized_bit
+usage: []
+value: 0x20

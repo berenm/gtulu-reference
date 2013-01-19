@@ -1,0 +1,7 @@
+categories:
+- clamp_color_target
+gtu:
+  name: clamp_read_color
+usage:
+- glClampColor.target
+value: 0x891c

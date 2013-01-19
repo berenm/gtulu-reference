@@ -1,0 +1,7 @@
+categories:
+- gl_VERSION_3_0
+- gl_ARB_framebuffer_object
+gtu:
+  name: framebuffer_attachment_stencil_size
+usage: []
+value: 0x8217

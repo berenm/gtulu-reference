@@ -3,6 +3,8 @@ categories:
 gtu:
   name: vertex_attrib_array_type
 usage:
+- glGetVertexAttribIiv.property
+- glGetVertexAttribIuiv.property
 - glGetVertexAttribdv.property
 - glGetVertexAttribfv.property
 - glGetVertexAttribiv.property

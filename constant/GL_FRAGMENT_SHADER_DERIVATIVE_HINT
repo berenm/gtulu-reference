@@ -4,9 +4,11 @@ categories:
 gtu:
   name: fragment_shader_derivative_hint
 usage:
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 - glHint.target
 value: 0x8b8b

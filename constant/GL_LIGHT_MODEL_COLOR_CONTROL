@@ -4,9 +4,11 @@ categories:
 gtu:
   name: light_model_color_control
 usage:
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 - glLightModelf.property
 - glLightModelfv.property

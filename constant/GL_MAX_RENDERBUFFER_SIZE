@@ -1,0 +1,12 @@
+categories:
+- context_property
+gtu:
+  name: max_renderbuffer_size
+usage:
+- glGetBooleani_v.property
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetIntegeri_v.property
+- glGetIntegerv.property
+value: 0x84e8

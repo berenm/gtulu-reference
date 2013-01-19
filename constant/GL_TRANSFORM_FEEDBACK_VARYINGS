@@ -1,0 +1,7 @@
+categories:
+- program_property
+gtu:
+  name: transform_feedback_varyings
+usage:
+- glGetProgramiv.property
+value: 0x8c83

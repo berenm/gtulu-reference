@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_0
+gtu:
+  name: buffer_access_flags
+usage: []
+value: 0x911f

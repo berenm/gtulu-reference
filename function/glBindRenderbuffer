@@ -1,0 +1,18 @@
+gl:
+  name: glBindRenderbuffer
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: renderbuffer
+    name: renderbuffer
+    type: GLuint
+  return: void
+gtu:
+  name: bind_renderbuffer
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: renderbuffer
+    type: gtu::renderbuffer const
+  return: void

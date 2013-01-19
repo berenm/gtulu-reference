@@ -1,0 +1,6 @@
+categories:
+- gl_EXT_texture_integer
+gtu:
+  name: blue_integer
+usage: []
+value: 0x8d96

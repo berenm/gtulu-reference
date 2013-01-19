@@ -1,0 +1,23 @@
+gl:
+  name: glClearBufferiv
+  params:
+  - mapping: buffer
+    name: buffer
+    type: GLenum
+  - mapping: drawBuffer
+    name: drawBuffer
+    type: GLint
+  - mapping: '&values[0]'
+    name: value
+    type: GLint const*
+  return: void
+gtu:
+  name: clear_buffer
+  params:
+  - name: buffer
+    type: gtu::constant const
+  - name: drawBuffer
+    type: int32_t const
+  - name: values
+    type: gtu::vec4< int32_t > const&
+  return: void

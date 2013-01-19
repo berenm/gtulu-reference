@@ -1,0 +1,7 @@
+categories:
+- framebuffer_attachment_property
+gtu:
+  name: framebuffer_attachment_red_size
+usage:
+- glGetFramebufferAttachmentParameteriv.property
+value: 0x8212

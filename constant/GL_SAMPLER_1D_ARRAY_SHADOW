@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_0
+gtu:
+  name: sampler_1d_array_shadow
+usage: []
+value: 0x8dc3

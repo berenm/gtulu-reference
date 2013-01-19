@@ -1,0 +1,19 @@
+gl:
+  name: glGetStringi
+  params:
+  - mapping: property
+    name: name
+    type: GLenum
+  - mapping: index
+    name: index
+    type: GLuint
+  return: const GLubyte*
+gtu:
+  name: get_string
+  params:
+  - name: property
+    type: gtu::constant const
+  - name: index
+    type: uint32_t const
+  return: std::string
+  return-cast: reinterpret_cast< char const* >

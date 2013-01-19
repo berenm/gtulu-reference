@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_0
+gtu:
+  name: texture_shared_size
+usage: []
+value: 0x8c3f

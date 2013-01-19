@@ -1,0 +1,28 @@
+gl:
+  name: glClearBufferfi
+  params:
+  - mapping: buffer
+    name: buffer
+    type: GLenum
+  - mapping: drawBuffer
+    name: drawBuffer
+    type: GLint
+  - mapping: depth
+    name: depth
+    type: GLfloat
+  - mapping: stencil
+    name: stencil
+    type: GLint
+  return: void
+gtu:
+  name: clear_buffer_float
+  params:
+  - name: buffer
+    type: gtu::constant const
+  - name: drawBuffer
+    type: int32_t const
+  - name: depth
+    type: float32 const
+  - name: stencil
+    type: int32_t const
+  return: void

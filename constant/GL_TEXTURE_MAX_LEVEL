@@ -4,8 +4,12 @@ categories:
 gtu:
   name: texture_max_level
 usage:
+- glGetTexParameterIiv.property
+- glGetTexParameterIuiv.property
 - glGetTexParameterfv.property
 - glGetTexParameteriv.property
+- glTexParameterIiv.property
+- glTexParameterIuiv.property
 - glTexParameterf.property
 - glTexParameterfv.property
 - glTexParameteri.property

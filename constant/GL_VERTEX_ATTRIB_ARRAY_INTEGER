@@ -1,0 +1,11 @@
+categories:
+- vertex_attrib_property
+gtu:
+  name: vertex_attrib_array_integer
+usage:
+- glGetVertexAttribIiv.property
+- glGetVertexAttribIuiv.property
+- glGetVertexAttribdv.property
+- glGetVertexAttribfv.property
+- glGetVertexAttribiv.property
+value: 0x88fd

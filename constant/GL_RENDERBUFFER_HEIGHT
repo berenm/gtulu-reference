@@ -1,0 +1,7 @@
+categories:
+- renderbuffer_property
+gtu:
+  name: renderbuffer_height
+usage:
+- glGetRenderbufferParameteriv.property
+value: 0x8d43

@@ -5,4 +5,5 @@ gtu:
   name: shading_language_version
 usage:
 - glGetString.property
+- glGetStringi.property
 value: 0x8b8c

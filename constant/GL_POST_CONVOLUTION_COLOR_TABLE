@@ -13,11 +13,13 @@ usage:
 - glCopyColorTable.target
 - glDisable.target
 - glEnable.target
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetColorTable.target
 - glGetColorTableParameterfv.target
 - glGetColorTableParameteriv.target
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 value: 0x80d1

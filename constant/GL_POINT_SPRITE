@@ -6,9 +6,11 @@ gtu:
 usage:
 - glDisable.target
 - glEnable.target
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 - glGetTexEnvfv.target
 - glGetTexEnviv.target

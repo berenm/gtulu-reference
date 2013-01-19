@@ -1,0 +1,7 @@
+categories:
+- sized_internal_format
+- internal_format
+gtu:
+  name: rgb32f
+usage: []
+value: 0x8815

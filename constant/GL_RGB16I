@@ -1,0 +1,7 @@
+categories:
+- sized_internal_format
+- internal_format
+gtu:
+  name: rgb16i
+usage: []
+value: 0x8d89

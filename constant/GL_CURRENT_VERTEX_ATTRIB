@@ -3,6 +3,8 @@ categories:
 gtu:
   name: current_vertex_attrib
 usage:
+- glGetVertexAttribIiv.property
+- glGetVertexAttribIuiv.property
 - glGetVertexAttribdv.property
 - glGetVertexAttribfv.property
 - glGetVertexAttribiv.property

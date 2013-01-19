@@ -1,0 +1,19 @@
+categories:
+- buffer_target
+- indexed_buffer_target
+gtu:
+  name: transform_feedback_buffer
+usage:
+- glBindBuffer.target
+- glBindBufferBase.target
+- glBindBufferRange.target
+- glBufferData.target
+- glBufferSubData.target
+- glFlushMappedBufferRange.target
+- glGetBufferParameteriv.target
+- glGetBufferPointerv.target
+- glGetBufferSubData.target
+- glMapBuffer.target
+- glMapBufferRange.target
+- glUnmapBuffer.target
+value: 0x8c8e

@@ -1,0 +1,28 @@
+gl:
+  name: glGetFramebufferAttachmentParameteriv
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: attachment
+    name: attachment
+    type: GLenum
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: params
+    type: GLint*
+  return: void
+gtu:
+  name: get_framebuffer_attachment_parameter
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: attachment
+    type: gtu::constant const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: gtu::vec1< int32_t >&
+  return: void

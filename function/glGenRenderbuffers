@@ -1,0 +1,18 @@
+gl:
+  name: glGenRenderbuffers
+  params:
+  - mapping: 1
+    name: n
+    type: GLsizei
+  - mapping: '&renderbuffer'
+    name: renderbuffers
+    type: GLuint*
+  return: void
+gtu:
+  name: create_renderbuffer
+  params: []
+  postcall: |
+    return renderbuffer;
+  precall: |
+    uint32_t renderbuffer;
+  return: gtu::renderbuffer

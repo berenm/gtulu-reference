@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_0
+gtu:
+  name: clamp_fragment_color
+usage: []
+value: 0x891b

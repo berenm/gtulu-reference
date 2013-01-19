@@ -1,0 +1,7 @@
+categories:
+- gl_VERSION_3_0
+- gl_ARB_vertex_array_object
+gtu:
+  name: vertex_array_binding
+usage: []
+value: 0x85b5

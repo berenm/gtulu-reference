@@ -3,8 +3,10 @@ categories:
 gtu:
   name: pixel_map_b_to_b_size
 usage:
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 value: 0xcb8

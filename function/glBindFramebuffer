@@ -1,0 +1,18 @@
+gl:
+  name: glBindFramebuffer
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: framebuffer
+    name: framebuffer
+    type: GLuint
+  return: void
+gtu:
+  name: bind_framebuffer
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: framebuffer
+    type: gtu::framebuffer const
+  return: void

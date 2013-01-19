@@ -1,0 +1,6 @@
+categories:
+- gl_EXT_texture_integer
+gtu:
+  name: rgb_integer
+usage: []
+value: 0x8d98

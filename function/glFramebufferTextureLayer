@@ -1,0 +1,33 @@
+gl:
+  name: glFramebufferTextureLayer
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: attachment
+    name: attachment
+    type: GLenum
+  - mapping: texture
+    name: texture
+    type: GLuint
+  - mapping: level
+    name: level
+    type: GLint
+  - mapping: layer
+    name: layer
+    type: GLint
+  return: void
+gtu:
+  name: framebuffer_texture_layer
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: attachment
+    type: gtu::constant const
+  - name: texture
+    type: gtu::texture const
+  - name: level
+    type: int32_t const
+  - name: layer
+    type: int32_t const
+  return: void

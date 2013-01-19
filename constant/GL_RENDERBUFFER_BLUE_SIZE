@@ -1,0 +1,7 @@
+categories:
+- renderbuffer_property
+gtu:
+  name: renderbuffer_blue_size
+usage:
+- glGetRenderbufferParameteriv.property
+value: 0x8d52

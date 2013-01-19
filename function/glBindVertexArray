@@ -1,0 +1,13 @@
+gl:
+  name: glBindVertexArray
+  params:
+  - mapping: array
+    name: array
+    type: GLuint
+  return: void
+gtu:
+  name: bind_vertex_array
+  params:
+  - name: array
+    type: gtu::vertex_array const
+  return: void

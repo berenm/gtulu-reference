@@ -1,0 +1,28 @@
+gl:
+  name: glTransformFeedbackVaryings
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: count
+    name: count
+    type: GLsizei
+  - mapping: varyings
+    name: varyings
+    type: const char* const*
+  - mapping: bufferMode
+    name: bufferMode
+    type: GLenum
+  return: void
+gtu:
+  name: transform_feedback_varyings
+  params:
+  - name: program
+    type: gtu::program const
+  - name: count
+    type: gtu::size const
+  - name: varyings
+    type: const char* const*
+  - name: bufferMode
+    type: gtu::constant const
+  return: void

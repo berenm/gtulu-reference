@@ -1,0 +1,13 @@
+gl:
+  name: glGenerateMipmap
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  return: void
+gtu:
+  name: generate_mipmap
+  params:
+  - name: target
+    type: gtu::constant const
+  return: void

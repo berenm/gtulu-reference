@@ -1,0 +1,58 @@
+gl:
+  name: glBlitFramebuffer
+  params:
+  - mapping: srcX0
+    name: srcX0
+    type: GLint
+  - mapping: srcY0
+    name: srcY0
+    type: GLint
+  - mapping: srcX1
+    name: srcX1
+    type: GLint
+  - mapping: srcY1
+    name: srcY1
+    type: GLint
+  - mapping: dstX0
+    name: dstX0
+    type: GLint
+  - mapping: dstY0
+    name: dstY0
+    type: GLint
+  - mapping: dstX1
+    name: dstX1
+    type: GLint
+  - mapping: dstY1
+    name: dstY1
+    type: GLint
+  - mapping: mask.to_ulong()
+    name: mask
+    type: GLbitfield
+  - mapping: filter
+    name: filter
+    type: GLenum
+  return: void
+gtu:
+  name: blit_framebuffer
+  params:
+  - name: srcX0
+    type: int32_t const
+  - name: srcY0
+    type: int32_t const
+  - name: srcX1
+    type: int32_t const
+  - name: srcY1
+    type: int32_t const
+  - name: dstX0
+    type: int32_t const
+  - name: dstY0
+    type: int32_t const
+  - name: dstX1
+    type: int32_t const
+  - name: dstY1
+    type: int32_t const
+  - name: mask
+    type: gtu::bitmask const&
+  - name: filter
+    type: gtu::constant const
+  return: void

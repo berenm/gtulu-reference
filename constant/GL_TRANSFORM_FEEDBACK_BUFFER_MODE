@@ -1,0 +1,7 @@
+categories:
+- program_property
+gtu:
+  name: transform_feedback_buffer_mode
+usage:
+- glGetProgramiv.property
+value: 0x8c7f

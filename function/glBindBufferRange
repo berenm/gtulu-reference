@@ -1,0 +1,33 @@
+gl:
+  name: glBindBufferRange
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: index
+    name: index
+    type: GLuint
+  - mapping: buffer
+    name: buffer
+    type: GLuint
+  - mapping: offset
+    name: offset
+    type: GLintptr
+  - mapping: size
+    name: size
+    type: GLsizeiptr
+  return: void
+gtu:
+  name: bind_buffer_range
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: index
+    type: uint32_t const
+  - name: buffer
+    type: gtu::buffer const
+  - name: offset
+    type: std::ptrdiff_t const
+  - name: size
+    type: std::ptrdiff_t const
+  return: void

@@ -6,9 +6,11 @@ usage:
 - glBindBuffer.target
 - glBufferData.target
 - glBufferSubData.target
+- glFlushMappedBufferRange.target
 - glGetBufferParameteriv.target
 - glGetBufferPointerv.target
 - glGetBufferSubData.target
 - glMapBuffer.target
+- glMapBufferRange.target
 - glUnmapBuffer.target
 value: 0x88eb

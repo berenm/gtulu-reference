@@ -1,0 +1,7 @@
+categories:
+- sized_internal_format
+- internal_format
+gtu:
+  name: rgb9_e5
+usage: []
+value: 0x8c3d

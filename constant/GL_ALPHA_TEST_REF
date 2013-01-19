@@ -3,8 +3,10 @@ categories:
 gtu:
   name: alpha_test_ref
 usage:
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 value: 0xbc2

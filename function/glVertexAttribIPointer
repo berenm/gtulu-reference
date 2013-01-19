@@ -1,0 +1,33 @@
+gl:
+  name: glVertexAttribIPointer
+  params:
+  - mapping: vertex_attrib
+    name: index
+    type: GLuint
+  - mapping: size
+    name: size
+    type: GLint
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: stride
+    name: stride
+    type: GLsizei
+  - mapping: data
+    name: pointer
+    type: GLvoid const*
+  return: void
+gtu:
+  name: vertex_attrib_pointer_integer
+  params:
+  - name: vertex_attrib
+    type: gtu::vertex_attrib const
+  - name: size
+    type: int32_t const
+  - name: type
+    type: gtu::constant const
+  - name: stride
+    type: gtu::size const
+  - name: data
+    type: gtu::buffer_ref const&
+  return: void

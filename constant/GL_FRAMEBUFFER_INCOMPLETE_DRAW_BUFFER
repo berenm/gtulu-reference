@@ -1,0 +1,6 @@
+categories:
+- gl_EXT_framebuffer_object
+gtu:
+  name: framebuffer_incomplete_draw_buffer
+usage: []
+value: 0x8cdb

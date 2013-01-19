@@ -6,9 +6,13 @@ gtu:
   name: blend
 usage:
 - glDisable.target
+- glDisablei.target
 - glEnable.target
+- glEnablei.target
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 value: 0xbe2

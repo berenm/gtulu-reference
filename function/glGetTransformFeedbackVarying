@@ -1,0 +1,41 @@
+gl:
+  name: glGetTransformFeedbackVarying
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: index
+    name: index
+    type: GLuint
+  - mapping: name.capacity()
+    name: bufSize
+    type: GLsizei
+  - mapping: '&length'
+    name: length
+    type: GLsizei*
+  - mapping: '&size'
+    name: size
+    type: GLsizei*
+  - mapping: '&type'
+    name: type
+    type: GLenum*
+  - mapping: '&name[0]'
+    name: name
+    type: char*
+  return: void
+gtu:
+  name: get_transform_feedback_varying
+  params:
+  - name: program
+    type: gtu::program const
+  - name: index
+    type: uint32_t const
+  - name: length
+    type: gtu::size&
+  - name: size
+    type: int32_t&
+  - name: type
+    type: gtu::constant&
+  - name: name
+    type: std::string&
+  return: void

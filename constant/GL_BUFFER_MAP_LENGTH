@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_0
+gtu:
+  name: buffer_map_length
+usage: []
+value: 0x9120

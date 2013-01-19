@@ -1,0 +1,6 @@
+categories:
+- gl_NV_transform_feedback
+gtu:
+  name: separate_attribs
+usage: []
+value: 0x8c8d

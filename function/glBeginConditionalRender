@@ -1,0 +1,18 @@
+gl:
+  name: glBeginConditionalRender
+  params:
+  - mapping: query
+    name: id
+    type: GLuint
+  - mapping: mode
+    name: mode
+    type: GLenum
+  return: void
+gtu:
+  name: begin_conditional_render
+  params:
+  - name: query
+    type: gtu::query const
+  - name: mode
+    type: gtu::constant const
+  return: void

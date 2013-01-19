@@ -3,8 +3,10 @@ categories:
 gtu:
   name: secondary_color_array_stride
 usage:
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 value: 0x845c

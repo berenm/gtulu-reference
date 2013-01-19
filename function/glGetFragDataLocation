@@ -1,0 +1,18 @@
+gl:
+  name: glGetFragDataLocation
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: '&name[0]'
+    name: name
+    type: char const*
+  return: GLint
+gtu:
+  name: get_frag_data_location
+  params:
+  - name: program
+    type: gtu::program const
+  - name: name
+    type: std::string const&
+  return: gtu::frag_data

@@ -1,0 +1,7 @@
+categories:
+- framebuffer_attachment_property
+gtu:
+  name: framebuffer_attachment_color_encoding
+usage:
+- glGetFramebufferAttachmentParameteriv.property
+value: 0x8210

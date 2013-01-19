@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_0
+gtu:
+  name: context_flag_forward_compatible_bit
+usage: []
+value: 0x1

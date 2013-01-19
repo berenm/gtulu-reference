@@ -1,0 +1,8 @@
+gl:
+  name: glEndTransformFeedback
+  params: []
+  return: void
+gtu:
+  name: end_transform_feedback
+  params: []
+  return: void

@@ -1,0 +1,18 @@
+gl:
+  name: glGenFramebuffers
+  params:
+  - mapping: 1
+    name: n
+    type: GLsizei
+  - mapping: '&framebuffer'
+    name: framebuffers
+    type: GLuint*
+  return: void
+gtu:
+  name: create_framebuffer
+  params: []
+  postcall: |
+    return framebuffer;
+  precall: |
+    uint32_t framebuffer;
+  return: gtu::framebuffer

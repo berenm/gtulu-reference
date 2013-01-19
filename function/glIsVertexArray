@@ -1,0 +1,13 @@
+gl:
+  name: glIsVertexArray
+  params:
+  - mapping: array
+    name: array
+    type: GLuint
+  return: GLboolean
+gtu:
+  name: is_vertex_array
+  params:
+  - name: array
+    type: gtu::vertex_array const
+  return: bool

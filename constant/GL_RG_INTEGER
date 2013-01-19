@@ -1,0 +1,7 @@
+categories:
+- gl_VERSION_3_0
+- gl_ARB_texture_rg
+gtu:
+  name: rg_integer
+usage: []
+value: 0x8228

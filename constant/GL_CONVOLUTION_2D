@@ -14,11 +14,13 @@ usage:
 - glCopyConvolutionFilter2D.target
 - glDisable.target
 - glEnable.target
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetConvolutionFilter.target
 - glGetConvolutionParameterfv.target
 - glGetConvolutionParameteriv.target
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 value: 0x8011

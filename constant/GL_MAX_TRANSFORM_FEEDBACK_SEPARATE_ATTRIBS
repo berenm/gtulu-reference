@@ -1,0 +1,6 @@
+categories:
+- gl_NV_transform_feedback
+gtu:
+  name: max_transform_feedback_separate_attribs
+usage: []
+value: 0x8c8b

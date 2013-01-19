@@ -3,8 +3,10 @@ categories:
 gtu:
   name: stencil_back_value_mask
 usage:
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 value: 0x8ca4

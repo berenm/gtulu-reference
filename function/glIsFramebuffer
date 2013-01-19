@@ -1,0 +1,13 @@
+gl:
+  name: glIsFramebuffer
+  params:
+  - mapping: framebuffer
+    name: framebuffer
+    type: GLuint
+  return: GLboolean
+gtu:
+  name: is_framebuffer
+  params:
+  - name: framebuffer
+    type: gtu::framebuffer const
+  return: bool

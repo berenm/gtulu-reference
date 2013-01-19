@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_framebuffer_object
+gtu:
+  name: framebuffer_incomplete_multisample
+usage: []
+value: 0x8d56

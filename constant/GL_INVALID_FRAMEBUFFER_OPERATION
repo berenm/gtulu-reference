@@ -1,0 +1,6 @@
+categories:
+- error
+gtu:
+  name: invalid_framebuffer_operation
+usage: []
+value: 0x506

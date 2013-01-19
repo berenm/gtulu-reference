@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_half_float_vertex
+gtu:
+  name: half_float
+usage: []
+value: 0x140b

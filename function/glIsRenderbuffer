@@ -1,0 +1,13 @@
+gl:
+  name: glIsRenderbuffer
+  params:
+  - mapping: renderbuffer
+    name: renderbuffer
+    type: GLuint
+  return: GLboolean
+gtu:
+  name: is_renderbuffer
+  params:
+  - name: renderbuffer
+    type: gtu::renderbuffer const
+  return: bool

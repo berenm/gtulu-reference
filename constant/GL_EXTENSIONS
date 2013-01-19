@@ -5,4 +5,5 @@ gtu:
   name: extensions
 usage:
 - glGetString.property
+- glGetStringi.property
 value: 0x1f03

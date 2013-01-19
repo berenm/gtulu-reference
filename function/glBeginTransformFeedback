@@ -1,0 +1,13 @@
+gl:
+  name: glBeginTransformFeedback
+  params:
+  - mapping: primitiveMode
+    name: primitiveMode
+    type: GLenum
+  return: void
+gtu:
+  name: begin_transform_feedback
+  params:
+  - name: primitiveMode
+    type: gtu::constant const
+  return: void

@@ -3,8 +3,10 @@ categories:
 gtu:
   name: max_3d_texture_size
 usage:
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 value: 0x8073

@@ -1,0 +1,27 @@
+gl:
+  name: glColorMaski
+  params:
+  - mapping: buf
+    name: buf
+    type: GLuint
+  - mapping: color[0]
+    name: r
+    type: GLboolean
+  - mapping: color[1]
+    name: g
+    type: GLboolean
+  - mapping: color[2]
+    name: b
+    type: GLboolean
+  - mapping: color[3]
+    name: a
+    type: GLboolean
+  return: void
+gtu:
+  name: color_mask
+  params:
+  - name: buf
+    type: uint32_t const
+  - name: color
+    type: gtu::vec4< bool > const&
+  return: void

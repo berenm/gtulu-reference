@@ -1,0 +1,7 @@
+categories:
+- renderbuffer_property
+gtu:
+  name: renderbuffer_alpha_size
+usage:
+- glGetRenderbufferParameteriv.property
+value: 0x8d53

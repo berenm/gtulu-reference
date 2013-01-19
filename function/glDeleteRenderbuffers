@@ -1,0 +1,16 @@
+gl:
+  name: glDeleteRenderbuffers
+  params:
+  - mapping: 1
+    name: n
+    type: GLsizei
+  - mapping: '&renderbuffer'
+    name: renderbuffers
+    type: GLuint const*
+  return: void
+gtu:
+  name: delete_renderbuffer
+  params:
+  - name: renderbuffer
+    type: gtu::renderbuffer const
+  return: void

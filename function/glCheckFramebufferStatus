@@ -1,0 +1,13 @@
+gl:
+  name: glCheckFramebufferStatus
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  return: GLenum
+gtu:
+  name: check_framebuffer_status
+  params:
+  - name: target
+    type: gtu::constant const
+  return: gtu::constant

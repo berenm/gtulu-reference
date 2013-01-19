@@ -3,8 +3,10 @@ categories:
 gtu:
   name: accum_blue_bits
 usage:
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 value: 0xd5a

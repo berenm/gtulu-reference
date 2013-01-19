@@ -1,0 +1,32 @@
+categories:
+- tex_image_target
+- texture_target
+- texture_bind_target
+- texture_level_target
+- writable_texture_property_target
+- mipmapable_texture_target
+- texture_view_target
+- internal_format_target
+gtu:
+  name: texture_1d_array
+usage:
+- glBindTexture.target
+- glCompressedTexImage2D.target
+- glCopyTexSubImage2D.target
+- glGenerateMipmap.target
+- glGetTexImage.target
+- glGetTexLevelParameterfv.target
+- glGetTexLevelParameteriv.target
+- glGetTexParameterIiv.target
+- glGetTexParameterIuiv.target
+- glGetTexParameterfv.target
+- glGetTexParameteriv.target
+- glTexImage2D.target
+- glTexParameterIiv.target
+- glTexParameterIuiv.target
+- glTexParameterf.target
+- glTexParameterfv.target
+- glTexParameteri.target
+- glTexParameteriv.target
+- glTexSubImage2D.target
+value: 0x8c18

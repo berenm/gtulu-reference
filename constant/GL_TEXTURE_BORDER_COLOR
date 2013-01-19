@@ -6,8 +6,12 @@ categories:
 gtu:
   name: texture_border_color
 usage:
+- glGetTexParameterIiv.property
+- glGetTexParameterIuiv.property
 - glGetTexParameterfv.property
 - glGetTexParameteriv.property
+- glTexParameterIiv.property
+- glTexParameterIuiv.property
 - glTexParameterfv.property
 - glTexParameteriv.property
 value: 0x1004

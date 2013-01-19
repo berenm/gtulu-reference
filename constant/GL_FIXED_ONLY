@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_0
+gtu:
+  name: fixed_only
+usage: []
+value: 0x891d

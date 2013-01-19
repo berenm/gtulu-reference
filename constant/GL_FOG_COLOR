@@ -6,8 +6,10 @@ gtu:
 usage:
 - glFogfv.property
 - glFogiv.property
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 value: 0xb66

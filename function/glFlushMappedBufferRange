@@ -1,0 +1,23 @@
+gl:
+  name: glFlushMappedBufferRange
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: offset
+    name: offset
+    type: GLintptr
+  - mapping: length
+    name: length
+    type: GLsizeiptr
+  return: void
+gtu:
+  name: flush_mapped_buffer_range
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: offset
+    type: std::ptrdiff_t const
+  - name: length
+    type: std::ptrdiff_t const
+  return: void

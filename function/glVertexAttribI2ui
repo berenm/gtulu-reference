@@ -1,0 +1,22 @@
+gl:
+  name: glVertexAttribI2ui
+  params:
+  - mapping: vertex_attrib
+    name: index
+    type: GLuint
+  - mapping: values[0]
+    name: x
+    type: GLuint
+  - mapping: values[1]
+    name: y
+    type: GLuint
+  return: void
+gtu:
+  name: vertex_attrib_integer
+  params:
+  - name: vertex_attrib
+    type: gtu::vertex_attrib const
+  - name: values
+    type: gtu::vec2< uint32_t > const&
+  return: void
+  skip: true

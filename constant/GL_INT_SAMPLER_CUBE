@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_0
+gtu:
+  name: int_sampler_cube
+usage: []
+value: 0x8dcc

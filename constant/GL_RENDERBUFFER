@@ -1,0 +1,11 @@
+categories:
+- renderbuffer_target
+- internal_format_target
+gtu:
+  name: renderbuffer
+usage:
+- glBindRenderbuffer.target
+- glGetRenderbufferParameteriv.target
+- glRenderbufferStorage.target
+- glRenderbufferStorageMultisample.target
+value: 0x8d41

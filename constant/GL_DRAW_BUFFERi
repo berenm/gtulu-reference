@@ -3,9 +3,11 @@ categories:
 gtu:
   name: draw_bufferi
 usage:
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 values:
 - 0x8825

@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_0
+gtu:
+  name: unsigned_int_10f_11f_11f_rev
+usage: []
+value: 0x8c3b

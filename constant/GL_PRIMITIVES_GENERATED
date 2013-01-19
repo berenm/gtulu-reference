@@ -1,0 +1,11 @@
+categories:
+- query_target
+- indexed_query_target
+- read_query_target
+gtu:
+  name: primitives_generated
+usage:
+- glBeginQuery.target
+- glEndQuery.target
+- glGetQueryiv.target
+value: 0x8c87

@@ -1,0 +1,18 @@
+gl:
+  name: glGenVertexArrays
+  params:
+  - mapping: 1
+    name: n
+    type: GLsizei
+  - mapping: '&vertex_array'
+    name: arrays
+    type: GLuint*
+  return: void
+gtu:
+  name: create_vertex_array
+  params: []
+  postcall: |
+    return vertex_array;
+  precall: |
+    uint32_t vertex_array;
+  return: gtu::vertex_array

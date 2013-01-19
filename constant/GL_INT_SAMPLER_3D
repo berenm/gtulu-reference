@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_0
+gtu:
+  name: int_sampler_3d
+usage: []
+value: 0x8dcb

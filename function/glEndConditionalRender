@@ -1,0 +1,8 @@
+gl:
+  name: glEndConditionalRender
+  params: []
+  return: void
+gtu:
+  name: end_conditional_render
+  params: []
+  return: void

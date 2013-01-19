@@ -11,11 +11,13 @@ usage:
 - glConvolutionParameteriv.target
 - glDisable.target
 - glEnable.target
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetConvolutionParameterfv.target
 - glGetConvolutionParameteriv.target
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 - glGetSeparableFilter.target
 - glSeparableFilter2D.target

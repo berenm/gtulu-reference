@@ -4,9 +4,11 @@ categories:
 gtu:
   name: unpack_image_height
 usage:
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 - glPixelStoref.property
 - glPixelStorei.property

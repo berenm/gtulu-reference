@@ -1,0 +1,18 @@
+gl:
+  name: glClampColor
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: clamp
+    name: clamp
+    type: GLenum
+  return: void
+gtu:
+  name: clamp_color
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: clamp
+    type: gtu::constant const
+  return: void

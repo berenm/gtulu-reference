@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_framebuffer_object
+gtu:
+  name: max_samples
+usage: []
+value: 0x8d57

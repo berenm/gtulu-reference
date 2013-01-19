@@ -1,0 +1,6 @@
+categories:
+- conditional_render_mode
+gtu:
+  name: query_wait
+usage: []
+value: 0x8e13

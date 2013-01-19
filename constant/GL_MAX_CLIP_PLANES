@@ -3,8 +3,10 @@ categories:
 gtu:
   name: max_clip_planes
 usage:
+- glGetBooleani_v.property
 - glGetBooleanv.property
 - glGetDoublev.property
 - glGetFloatv.property
+- glGetIntegeri_v.property
 - glGetIntegerv.property
 value: 0xd32

@@ -1,0 +1,8 @@
+categories:
+- enableable_target
+gtu:
+  name: rasterizer_discard
+usage:
+- glDisable.target
+- glEnable.target
+value: 0x8c89

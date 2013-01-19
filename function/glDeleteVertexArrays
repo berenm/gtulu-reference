@@ -1,0 +1,16 @@
+gl:
+  name: glDeleteVertexArrays
+  params:
+  - mapping: 1
+    name: n
+    type: GLsizei
+  - mapping: '&vertex_array'
+    name: arrays
+    type: GLuint const*
+  return: void
+gtu:
+  name: delete_vertex_array
+  params:
+  - name: vertex_array
+    type: gtu::vertex_array const
+  return: void

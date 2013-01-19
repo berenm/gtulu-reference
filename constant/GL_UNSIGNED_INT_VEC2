@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_0
+gtu:
+  name: unsigned_int_vec2
+usage: []
+value: 0x8dc6
