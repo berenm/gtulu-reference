@@ -1,0 +1,23 @@
+gl:
+  name: glGetMultisamplefv
+  params:
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: index
+    name: index
+    type: GLuint
+  - mapping: '&values[0]'
+    name: val
+    type: GLfloat*
+  return: void
+gtu:
+  name: get_multisample
+  params:
+  - name: property
+    type: gtu::constant const
+  - name: index
+    type: uint32_t const
+  - name: values
+    type: gtu::vec2< float32 >&
+  return: void

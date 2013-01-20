@@ -1,0 +1,7 @@
+categories:
+- gl_VERSION_3_2
+- gl_ARB_sync
+gtu:
+  name: timeout_ignored
+usage: []
+value: 0xffffffffffffffff

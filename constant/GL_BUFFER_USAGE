@@ -3,5 +3,6 @@ categories:
 gtu:
   name: buffer_usage
 usage:
+- glGetBufferParameteri64v.property
 - glGetBufferParameteriv.property
 value: 0x8765

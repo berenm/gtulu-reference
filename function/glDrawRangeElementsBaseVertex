@@ -1,0 +1,43 @@
+gl:
+  name: glDrawRangeElementsBaseVertex
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  - mapping: start
+    name: start
+    type: GLuint
+  - mapping: end
+    name: end
+    type: GLuint
+  - mapping: count
+    name: count
+    type: GLsizei
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: indices
+    name: indices
+    type: GLvoid const*
+  - mapping: basevertex
+    name: basevertex
+    type: GLint
+  return: void
+gtu:
+  name: draw_range_elements_base_vertex
+  params:
+  - name: mode
+    type: gtu::constant const
+  - name: start
+    type: uint32_t const
+  - name: end
+    type: uint32_t const
+  - name: count
+    type: gtu::size const
+  - name: type
+    type: gtu::constant const
+  - name: indices
+    type: gtu::buffer_ref const&
+  - name: basevertex
+    type: int32_t const
+  return: void

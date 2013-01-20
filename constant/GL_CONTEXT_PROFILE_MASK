@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_2
+gtu:
+  name: context_profile_mask
+usage: []
+value: 0x9126

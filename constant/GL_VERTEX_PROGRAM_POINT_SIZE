@@ -1,6 +1,0 @@
-categories:
-- enableable_target
-gtu:
-  name: vertex_program_point_size
-usage: []
-value: 0x8642

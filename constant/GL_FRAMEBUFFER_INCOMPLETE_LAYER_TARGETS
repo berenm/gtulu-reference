@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_2
+gtu:
+  name: framebuffer_incomplete_layer_targets
+usage: []
+value: 0x8da8

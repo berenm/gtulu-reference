@@ -3,6 +3,8 @@ categories:
 gtu:
   name: query_result_available
 usage:
+- glGetQueryObjecti64v.property
 - glGetQueryObjectiv.property
+- glGetQueryObjectui64v.property
 - glGetQueryObjectuiv.property
 value: 0x8867

@@ -1,0 +1,7 @@
+categories:
+- sync_property
+gtu:
+  name: sync_status
+usage:
+- glGetSynciv.property
+value: 0x9114

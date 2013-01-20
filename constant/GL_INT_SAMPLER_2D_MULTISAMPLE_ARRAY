@@ -1,0 +1,7 @@
+categories:
+- gl_VERSION_3_2
+- gl_ARB_texture_multisample
+gtu:
+  name: int_sampler_2d_multisample_array
+usage: []
+value: 0x910c

@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_1
+gtu:
+  name: sampler_buffer
+usage: []
+value: 0x8dc2

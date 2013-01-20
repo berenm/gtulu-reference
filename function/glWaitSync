@@ -1,0 +1,23 @@
+gl:
+  name: glWaitSync
+  params:
+  - mapping: sync
+    name: sync
+    type: GLsync
+  - mapping: flags.to_ulong()
+    name: flags
+    type: GLbitfield
+  - mapping: timeout
+    name: timeout
+    type: GLuint64
+  return: void
+gtu:
+  name: wait_sync
+  params:
+  - name: sync
+    type: gtu::barrier const
+  - name: flags
+    type: gtu::bitmask const&
+  - name: timeout
+    type: uint64_t const
+  return: void

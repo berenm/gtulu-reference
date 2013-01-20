@@ -1,0 +1,8 @@
+categories:
+- gl_ARB_viewport_array
+- gl_VERSION_3_2
+- gl_ARB_provoking_vertex
+gtu:
+  name: last_vertex_convention
+usage: []
+value: 0x8e4e

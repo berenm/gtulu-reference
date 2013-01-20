@@ -1,0 +1,6 @@
+categories:
+- draw_mode
+gtu:
+  name: triangle_strip_adjacency
+usage: []
+value: 0xd

@@ -1,0 +1,13 @@
+gl:
+  name: glIsSync
+  params:
+  - mapping: sync
+    name: sync
+    type: GLsync
+  return: GLboolean
+gtu:
+  name: is_sync
+  params:
+  - name: sync
+    type: gtu::barrier const
+  return: bool

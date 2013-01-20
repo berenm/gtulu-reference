@@ -1,0 +1,18 @@
+gl:
+  name: glFenceSync
+  params:
+  - mapping: condition
+    name: condition
+    type: GLenum
+  - mapping: flags.to_ulong()
+    name: flags
+    type: GLbitfield
+  return: GLsync
+gtu:
+  name: fence_sync
+  params:
+  - name: condition
+    type: gtu::constant const
+  - name: flags
+    type: gtu::bitmask const&
+  return: gtu::barrier

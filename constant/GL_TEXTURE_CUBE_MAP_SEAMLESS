@@ -1,0 +1,8 @@
+categories:
+- enableable_target
+gtu:
+  name: texture_cube_map_seamless
+usage:
+- glDisable.target
+- glEnable.target
+value: 0x884f

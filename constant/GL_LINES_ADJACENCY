@@ -1,0 +1,6 @@
+categories:
+- draw_mode
+gtu:
+  name: lines_adjacency
+usage: []
+value: 0xa

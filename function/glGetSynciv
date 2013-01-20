@@ -1,0 +1,31 @@
+gl:
+  name: glGetSynciv
+  params:
+  - mapping: sync
+    name: sync
+    type: GLsync
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: values.capacity()
+    name: bufSize
+    type: GLsizei
+  - mapping: '&length'
+    name: length
+    type: GLsizei*
+  - mapping: '&values[0]'
+    name: values
+    type: GLint*
+  return: void
+gtu:
+  name: get_sync
+  params:
+  - name: sync
+    type: gtu::barrier const
+  - name: property
+    type: gtu::constant const
+  - name: length
+    type: gtu::size&
+  - name: values
+    type: std::vector< int32_t >&
+  return: void

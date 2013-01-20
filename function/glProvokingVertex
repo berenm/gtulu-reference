@@ -1,0 +1,13 @@
+gl:
+  name: glProvokingVertex
+  params:
+  - mapping: provokeMode
+    name: provokeMode
+    type: GLenum
+  return: void
+gtu:
+  name: provoking_vertex
+  params:
+  - name: provokeMode
+    type: gtu::constant const
+  return: void

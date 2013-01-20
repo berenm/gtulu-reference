@@ -1,0 +1,7 @@
+categories:
+- gl_VERSION_3_2
+- gl_ARB_texture_multisample
+gtu:
+  name: sample_mask_value
+usage: []
+value: 0x8e52
