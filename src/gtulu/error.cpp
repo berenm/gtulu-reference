@@ -33,6 +33,7 @@ namespace gtulu {
           __gl_error_string = "invalid_operator raised: The specified operation is not allowed in the current state.";
           break;
 
+#if GTULU_VERSION_COMPAT
         case gtu::cst::stack_underflow:
           __gl_error_string = "stack_underflow raised: An attempt has been made to perform an operation that would cause an internal stack to underflow.";
           break;
@@ -40,16 +41,17 @@ namespace gtulu {
         case gtu::cst::stack_overflow:
           __gl_error_string = "stack_overflow raised: An attempt has been made to perform an operation that would cause an internal stack to overflow.";
           break;
+#endif // if GTULU_VERSION_COMPAT
 
         case gtu::cst::out_of_memory:
           __gl_error_string = "out_of_memory raised: There is not enough memory left to execute the command.";
           break;
 
-#if GTULU_MAJOR_VERSION > 2
+#if GTULU_VERSION_MAJOR > 2
         case gtu::cst::invalid_framebuffer_operation:
           __gl_error_string = "invalid_framebuffer_operator raised: The framebuffer object is not complete.";
           break;
-#endif // if GTULU_VERSION > 2.1
+#endif // if GTULU_VERSION_MAJOR > 2
 
         default:
           __gl_error_string = "unknown error raised.";

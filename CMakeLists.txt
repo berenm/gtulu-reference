@@ -30,67 +30,78 @@ link_directories(${OPENGL_LIBRARY_DIRS})
 # libgtulu_api
 include_directories(src ${CMAKE_CURRENT_BINARY_DIR}/src)
 
-string(REGEX REPLACE "-.*$" "" API_VERSION ${libgtulu_api_VERSION})
-string(REGEX REPLACE "^[^-]+-?(.*)$" "\\1" API_COMPAT  ${libgtulu_api_VERSION})
-string(REGEX REPLACE "\\..*$" "" API_SOVERSION ${API_VERSION})
-set(API_TARGET gtulu-api-${API_VERSION})
-
-set(CHEETAH_ENVIRONMENT "PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/bin" "GTULU_VERSION=${API_VERSION}")
-if(API_VERSION STREQUAL "2.1")
-  set(API_SOURCE_DIR gl/${API_VERSION})
+string(REGEX REPLACE "-.*$" ""             GTULU_VERSION ${libgtulu_api_VERSION})
+string(REGEX REPLACE "^[^-]+-?(.*)$" "\\1" GTULU_VERSION_COMPAT  ${libgtulu_api_VERSION})
+string(REGEX REPLACE "\\..*$" ""           GTULU_VERSION_MAJOR ${GTULU_VERSION})
+string(REGEX REPLACE "^.*\\." ""           GTULU_VERSION_MINOR ${GTULU_VERSION})
+if(GTULU_VERSION_COMPAT)
+  set(GTULU_VERSION_COMPAT 1)
 else()
-  if(API_COMPAT)
+  set(GTULU_VERSION_COMPAT 0)
+endif()
+
+set(GTULU_TARGET_PREFIX gtulu-api-${GTULU_VERSION})
+
+set(CHEETAH_ENVIRONMENT "PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/bin" "GTULU_VERSION=${GTULU_VERSION}")
+if(GTULU_VERSION STREQUAL "2.1")
+  set(GTULU_API_SOURCE_DIR gl/${GTULU_VERSION})
+else()
+  if(GTULU_VERSION_COMPAT)
     list(APPEND CHEETAH_ENVIRONMENT "GTULU_COMPAT=1")
-    set(API_SOURCE_DIR gl/${API_VERSION}/comp)
+    set(GTULU_API_SOURCE_DIR gl/${GTULU_VERSION}/comp)
   else()
-    set(API_SOURCE_DIR gl/${API_VERSION}/core)
+    set(GTULU_API_SOURCE_DIR gl/${GTULU_VERSION}/core)
   endif()
 endif()
 
 
-add_submodule(${API_TARGET} ${API_SOURCE_DIR})
+add_submodule(${GTULU_TARGET_PREFIX} ${GTULU_API_SOURCE_DIR})
 
-file(GLOB_RECURSE API_SOURCES bin/* ${API_SOURCE_DIR}/function/* ${API_SOURCE_DIR}/constant/*)
-set(API_CHEETAH_PROPERTIES
+file(GLOB_RECURSE API_SOURCES bin/* ${GTULU_API_SOURCE_DIR}/function/* ${GTULU_API_SOURCE_DIR}/constant/*)
+set(GTULU_CHEETAH_PROPERTIES
   DEPENDS ${API_SOURCES}
   ENVIRONMENT ${CHEETAH_ENVIRONMENT}
 )
 
-cheetah_generate(${API_TARGET}-ni-cpp src/gtulu/api_ni.tcpp OUTPUT_VARIABLE GTULU_API_NI_CPP ${API_CHEETAH_PROPERTIES})
-cheetah_generate(${API_TARGET}-hpp    src/gtulu/api.thpp    OUTPUT_VARIABLE GTULU_API_HPP ${API_CHEETAH_PROPERTIES})
-cheetah_generate(${API_TARGET}-cpp    src/gtulu/api.tcpp    OUTPUT_VARIABLE GTULU_API_CPP ${API_CHEETAH_PROPERTIES})
-set_source_files_properties(${GTULU_API_CPP} PROPERTIES OBJECT_DEPENDS ${GTULU_API_HPP})
+cheetah_generate(${GTULU_TARGET_PREFIX}-ni-cpp src/gtulu/api_ni.tcpp OUTPUT_VARIABLE GTULU_API_NI_CPP ${GTULU_CHEETAH_PROPERTIES})
+cheetah_generate(${GTULU_TARGET_PREFIX}-hpp    src/gtulu/api.thpp    OUTPUT_VARIABLE GTULU_API_HPP    ${GTULU_CHEETAH_PROPERTIES})
+cheetah_generate(${GTULU_TARGET_PREFIX}-cpp    src/gtulu/api.tcpp    OUTPUT_VARIABLE GTULU_API_CPP    ${GTULU_CHEETAH_PROPERTIES})
+set_source_files_properties(${GTULU_API_CPP}    PROPERTIES OBJECT_DEPENDS ${GTULU_API_HPP})
 set_source_files_properties(src/gtulu/error.cpp PROPERTIES OBJECT_DEPENDS ${GTULU_API_HPP})
 
 
-add_definitions(-DGTULU_MAJOR_VERSION=${API_SOVERSION})
-set(API_LIBRARY_PROPERTIES
-  VERSION       ${API_VERSION}
-  SOVERSION     ${API_SOVERSION}
+add_definitions(
+  -DGTULU_VERSION_MAJOR=${GTULU_VERSION_MAJOR}
+  -DGTULU_VERSION_MINOR=${GTULU_VERSION_MINOR}
+  -DGTULU_VERSION_COMPAT=${GTULU_VERSION_COMPAT}
+)
+set(GTULU_LIBRARY_PROPERTIES
+  VERSION       ${GTULU_VERSION}
+  SOVERSION     ${GTULU_VERSION_MAJOR}
   COMPILE_FLAGS "-fvisibility=hidden"
   LINK_FLAGS    "-Wl,--as-needed -Wl,--no-undefined"
 )
 
-add_library(${API_TARGET}_ni SHARED ${GTULU_API_NI_CPP} src/gtulu/logging.cpp src/gtulu/notimp.cpp)
-set_target_properties(${API_TARGET}_ni PROPERTIES
-  SONAME        libgtulu-api-ni${API_SOVERSION}
+add_library(${GTULU_TARGET_PREFIX}_ni SHARED ${GTULU_API_NI_CPP} src/gtulu/logging.cpp src/gtulu/notimp.cpp)
+set_target_properties(${GTULU_TARGET_PREFIX}_ni PROPERTIES
+  SONAME        libgtulu-api-ni${GTULU_VERSION_MAJOR}
   OUTPUT_NAME   gtulu-api-ni
-  ${API_LIBRARY_PROPERTIES}
+  ${GTULU_LIBRARY_PROPERTIES}
 )
-target_link_libraries(${API_TARGET}_ni logging)
+target_link_libraries(${GTULU_TARGET_PREFIX}_ni logging)
 
 
-add_library(${API_TARGET} SHARED ${GTULU_API_HPP} ${GTULU_API_CPP} src/gtulu/logging.cpp src/gtulu/error.cpp)
-set_target_properties(${API_TARGET} PROPERTIES
-  SONAME        libgtulu-api${API_SOVERSION}
+add_library(${GTULU_TARGET_PREFIX} SHARED ${GTULU_API_HPP} ${GTULU_API_CPP} src/gtulu/logging.cpp src/gtulu/error.cpp)
+set_target_properties(${GTULU_TARGET_PREFIX} PROPERTIES
+  SONAME        libgtulu-api${GTULU_VERSION_MAJOR}
   OUTPUT_NAME   gtulu-api
   PUBLIC_HEADER ${GTULU_API_HPP}
   PUBLIC_HEADER src/gtulu/types.h
-  ${API_LIBRARY_PROPERTIES}
+  ${GTULU_LIBRARY_PROPERTIES}
 )
-target_link_libraries(${API_TARGET} ${API_TARGET}_ni logging)
+target_link_libraries(${GTULU_TARGET_PREFIX} ${GTULU_TARGET_PREFIX}_ni logging)
 
-install(TARGETS ${API_TARGET} ${API_TARGET}_ni
+install(TARGETS ${GTULU_TARGET_PREFIX} ${GTULU_TARGET_PREFIX}_ni
   LIBRARY       DESTINATION ${CMAKE_INSTALL_LIBDIR}
   PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
@@ -98,15 +109,15 @@ install(TARGETS ${API_TARGET} ${API_TARGET}_ni
 
 enable_testing()
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR}/gl/${API_VERSION}/core)
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/gl/${GTULU_VERSION}/core)
 add_executable(test-link-gl-no test/test1.cpp)
-target_link_libraries(test-link-gl-no ${API_TARGET})
+target_link_libraries(test-link-gl-no ${GTULU_TARGET_PREFIX})
 add_test(test-link-gl-no test-link-gl-no)
 
 add_executable(test-link-gl-after test/test1.cpp)
-target_link_libraries(test-link-gl-after ${API_TARGET} GL)
+target_link_libraries(test-link-gl-after ${GTULU_TARGET_PREFIX} GL)
 add_test(test-link-gl-after test-link-gl-after)
 
 add_executable(test-link-gl-before test/test1.cpp)
-target_link_libraries(test-link-gl-before GL ${API_TARGET})
+target_link_libraries(test-link-gl-before GL ${GTULU_TARGET_PREFIX})
 add_test(test-link-gl-before test-link-gl-before)
