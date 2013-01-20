@@ -1,0 +1,23 @@
+gl:
+  name: glDrawTransformFeedbackInstanced
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  - mapping: transform_feedback
+    name: id
+    type: GLuint
+  - mapping: primcount
+    name: primcount
+    type: GLsizei
+  return: void
+gtu:
+  name: draw_transform_feedback_instanced
+  params:
+  - name: mode
+    type: gtu::constant const
+  - name: transform_feedback
+    type: gtu::transform_feedback const
+  - name: primcount
+    type: gtu::size const
+  return: void

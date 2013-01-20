@@ -1,0 +1,43 @@
+gl:
+  name: glBindImageTexture
+  params:
+  - mapping: unit
+    name: unit
+    type: GLuint
+  - mapping: texture
+    name: texture
+    type: GLuint
+  - mapping: level
+    name: level
+    type: GLint
+  - mapping: layered
+    name: layered
+    type: GLboolean
+  - mapping: layer
+    name: layer
+    type: GLint
+  - mapping: access
+    name: access
+    type: GLenum
+  - mapping: format
+    name: format
+    type: GLenum
+  return: void
+gtu:
+  name: bind_image_texture
+  params:
+  - name: unit
+    type: uint32_t const
+  - name: texture
+    type: gtu::texture const
+  - name: level
+    type: int32_t const
+  - name: layered
+    type: bool const
+  - name: layer
+    type: int32_t const
+  - name: access
+    type: gtu::constant const
+  - name: format
+    type: gtu::constant const
+  return: void

@@ -1,0 +1,7 @@
+categories:
+- gl_ARB_shader_storage_buffer_object
+- gl_ARB_shader_image_load_store
+gtu:
+  name: max_combined_image_units_and_fragment_outputs
+usage: []
+value: 0x8f39

@@ -1,0 +1,7 @@
+categories:
+- internal_format_property
+gtu:
+  name: image_format_compatibility_type
+usage:
+- glGetInternalformativ.property
+value: 0x90c7

@@ -1,0 +1,33 @@
+gl:
+  name: glDrawArraysInstancedBaseInstance
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  - mapping: first
+    name: first
+    type: GLint
+  - mapping: count
+    name: count
+    type: GLsizei
+  - mapping: primcount
+    name: primcount
+    type: GLsizei
+  - mapping: baseinstance
+    name: baseinstance
+    type: GLuint
+  return: void
+gtu:
+  name: draw_arrays_instanced_base_instance
+  params:
+  - name: mode
+    type: gtu::constant const
+  - name: first
+    type: int32_t const
+  - name: count
+    type: gtu::size const
+  - name: primcount
+    type: gtu::size const
+  - name: baseinstance
+    type: uint32_t const
+  return: void

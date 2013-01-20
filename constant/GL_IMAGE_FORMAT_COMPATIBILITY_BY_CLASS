@@ -1,0 +1,6 @@
+categories:
+- gl_NV_path_rendering
+gtu:
+  name: image_format_compatibility_by_class
+usage: []
+value: 0x90c9

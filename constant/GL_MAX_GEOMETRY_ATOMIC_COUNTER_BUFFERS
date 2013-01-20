@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_shader_atomic_counters
+gtu:
+  name: max_geometry_atomic_counter_buffers
+usage: []
+value: 0x92cf

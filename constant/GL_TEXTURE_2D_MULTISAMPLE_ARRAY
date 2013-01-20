@@ -8,6 +8,7 @@ gtu:
   name: texture_2d_multisample_array
 usage:
 - glBindTexture.target
+- glGetInternalformativ.target
 - glGetTexLevelParameterfv.target
 - glGetTexLevelParameteriv.target
 - glTexImage3DMultisample.target

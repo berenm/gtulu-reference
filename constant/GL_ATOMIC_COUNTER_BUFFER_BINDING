@@ -1,0 +1,7 @@
+categories:
+- atomic_counter_buffer_property
+gtu:
+  name: atomic_counter_buffer_binding
+usage:
+- glGetActiveAtomicCounterBufferiv.property
+value: 0x92c1

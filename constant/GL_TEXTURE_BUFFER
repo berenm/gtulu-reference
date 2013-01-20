@@ -16,6 +16,7 @@ usage:
 - glGetBufferParameteriv.target
 - glGetBufferPointerv.target
 - glGetBufferSubData.target
+- glGetInternalformativ.target
 - glGetTexLevelParameterfv.target
 - glGetTexLevelParameteriv.target
 - glMapBuffer.target

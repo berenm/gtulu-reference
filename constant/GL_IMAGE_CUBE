@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_shader_image_load_store
+gtu:
+  name: image_cube
+usage: []
+value: 0x9050

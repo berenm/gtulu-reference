@@ -1,0 +1,7 @@
+categories:
+- atomic_counter_buffer_property
+gtu:
+  name: atomic_counter_buffer_referenced_by_fragment_shader
+usage:
+- glGetActiveAtomicCounterBufferiv.property
+value: 0x92cb

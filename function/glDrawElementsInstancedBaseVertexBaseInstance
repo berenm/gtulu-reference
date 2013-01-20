@@ -1,0 +1,43 @@
+gl:
+  name: glDrawElementsInstancedBaseVertexBaseInstance
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  - mapping: count
+    name: count
+    type: GLsizei
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: indices
+    name: indices
+    type: GLvoid const*
+  - mapping: primcount
+    name: primcount
+    type: GLsizei
+  - mapping: basevertex
+    name: basevertex
+    type: GLint
+  - mapping: baseinstance
+    name: baseinstance
+    type: GLuint
+  return: void
+gtu:
+  name: draw_elements_instanced_base_vertex_base_instance
+  params:
+  - name: mode
+    type: gtu::constant const
+  - name: count
+    type: gtu::size const
+  - name: type
+    type: gtu::constant const
+  - name: indices
+    type: gtu::buffer_ref const&
+  - name: primcount
+    type: gtu::size const
+  - name: basevertex
+    type: int32_t const
+  - name: baseinstance
+    type: uint32_t const
+  return: void

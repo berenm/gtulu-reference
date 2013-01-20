@@ -1,0 +1,28 @@
+gl:
+  name: glGetActiveAtomicCounterBufferiv
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: bufferIndex
+    name: bufferIndex
+    type: GLuint
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: params
+    type: GLint*
+  return: void
+gtu:
+  name: get_active_atomic_counter_buffer
+  params:
+  - name: program
+    type: gtu::program const
+  - name: bufferIndex
+    type: uint32_t const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: std::vector< int32_t >&
+  return: void

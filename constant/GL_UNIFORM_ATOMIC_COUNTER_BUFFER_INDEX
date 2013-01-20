@@ -1,0 +1,7 @@
+categories:
+- uniforms_property
+gtu:
+  name: uniform_atomic_counter_buffer_index
+usage:
+- glGetActiveUniformsiv.property
+value: 0x92da

@@ -8,4 +8,5 @@ usage:
 - glGetTexLevelParameterfv.target
 - glGetTexLevelParameteriv.target
 - glTexImage2D.target
+- glTexStorage2D.target
 value: 0x851b

@@ -5,6 +5,7 @@ gtu:
   name: renderbuffer
 usage:
 - glBindRenderbuffer.target
+- glGetInternalformativ.target
 - glGetRenderbufferParameteriv.target
 - glRenderbufferStorage.target
 - glRenderbufferStorageMultisample.target
