@@ -1,0 +1,23 @@
+gl:
+  name: glGetSamplerParameterIiv
+  params:
+  - mapping: sampler
+    name: sampler
+    type: GLuint
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: params
+    type: GLint*
+  return: void
+gtu:
+  name: get_sampler_parameter_integer
+  params:
+  - name: sampler
+    type: gtu::sampler const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: gtu::vec4< int32_t >&
+  return: void

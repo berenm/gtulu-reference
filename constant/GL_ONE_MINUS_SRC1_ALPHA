@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_blend_func_extended
+gtu:
+  name: one_minus_src1_alpha
+usage: []
+value: 0x88fb

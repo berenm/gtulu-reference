@@ -1,0 +1,10 @@
+categories:
+- query_target
+- indexed_query_target
+- read_query_target
+gtu:
+  name: any_samples_passed
+usage:
+- glEndQuery.target
+- glGetQueryiv.target
+value: 0x8c2f

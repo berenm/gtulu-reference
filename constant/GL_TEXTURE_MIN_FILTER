@@ -6,10 +6,20 @@ categories:
 gtu:
   name: texture_min_filter
 usage:
+- glGetSamplerParameterIiv.property
+- glGetSamplerParameterIuiv.property
+- glGetSamplerParameterfv.property
+- glGetSamplerParameteriv.property
 - glGetTexParameterIiv.property
 - glGetTexParameterIuiv.property
 - glGetTexParameterfv.property
 - glGetTexParameteriv.property
+- glSamplerParameterIiv.property
+- glSamplerParameterIuiv.property
+- glSamplerParameterf.property
+- glSamplerParameterfv.property
+- glSamplerParameteri.property
+- glSamplerParameteriv.property
 - glTexParameterIiv.property
 - glTexParameterIuiv.property
 - glTexParameterf.property

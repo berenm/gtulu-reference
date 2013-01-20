@@ -1,0 +1,18 @@
+categories:
+- context_property
+- counter_target
+- read_query_target
+gtu:
+  name: timestamp
+usage:
+- glGetBooleani_v.property
+- glGetBooleanv.property
+- glGetDoublev.property
+- glGetFloatv.property
+- glGetInteger64i_v.property
+- glGetInteger64v.property
+- glGetIntegeri_v.property
+- glGetIntegerv.property
+- glGetQueryiv.target
+- glQueryCounter.target
+value: 0x8e28

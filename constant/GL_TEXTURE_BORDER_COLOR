@@ -6,10 +6,18 @@ categories:
 gtu:
   name: texture_border_color
 usage:
+- glGetSamplerParameterIiv.property
+- glGetSamplerParameterIuiv.property
+- glGetSamplerParameterfv.property
+- glGetSamplerParameteriv.property
 - glGetTexParameterIiv.property
 - glGetTexParameterIuiv.property
 - glGetTexParameterfv.property
 - glGetTexParameteriv.property
+- glSamplerParameterIiv.property
+- glSamplerParameterIuiv.property
+- glSamplerParameterfv.property
+- glSamplerParameteriv.property
 - glTexParameterIiv.property
 - glTexParameterIuiv.property
 - glTexParameterfv.property

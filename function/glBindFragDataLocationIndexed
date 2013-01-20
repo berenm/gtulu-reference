@@ -1,0 +1,28 @@
+gl:
+  name: glBindFragDataLocationIndexed
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: frag_data
+    name: colorNumber
+    type: GLuint
+  - mapping: frag_data_index
+    name: index
+    type: GLuint
+  - mapping: '&name[0]'
+    name: name
+    type: char const*
+  return: void
+gtu:
+  name: bind_frag_data_location_indexed
+  params:
+  - name: program
+    type: gtu::program const
+  - name: frag_data
+    type: gtu::frag_data const
+  - name: frag_data_index
+    type: gtu::frag_data_index const
+  - name: name
+    type: std::string const&
+  return: void

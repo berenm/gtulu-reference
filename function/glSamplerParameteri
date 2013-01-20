@@ -1,0 +1,23 @@
+gl:
+  name: glSamplerParameteri
+  params:
+  - mapping: sampler
+    name: sampler
+    type: GLuint
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: param
+    name: param
+    type: GLint
+  return: void
+gtu:
+  name: sampler_parameter
+  params:
+  - name: sampler
+    type: gtu::sampler const
+  - name: property
+    type: gtu::constant const
+  - name: param
+    type: int32_t const
+  return: void
