@@ -1,7 +1,7 @@
 categories:
 - context_property
 gtu:
-  name: smooth_point_size_granularity
+  name: max_uniform_block_size
 usage:
 - glGetBooleani_v.property
 - glGetBooleanv.property
@@ -9,4 +9,4 @@ usage:
 - glGetFloatv.property
 - glGetIntegeri_v.property
 - glGetIntegerv.property
-value: 0xb13
+value: 0x8a30

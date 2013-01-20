@@ -1,0 +1,8 @@
+categories:
+- uniforms_property
+- subroutine_uniform_property
+gtu:
+  name: uniform_size
+usage:
+- glGetActiveUniformsiv.property
+value: 0x8a38

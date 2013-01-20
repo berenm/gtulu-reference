@@ -1,0 +1,7 @@
+categories:
+- uniforms_property
+gtu:
+  name: uniform_matrix_stride
+usage:
+- glGetActiveUniformsiv.property
+value: 0x8a3d

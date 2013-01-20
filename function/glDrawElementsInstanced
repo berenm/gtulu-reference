@@ -1,0 +1,33 @@
+gl:
+  name: glDrawElementsInstanced
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  - mapping: count
+    name: count
+    type: GLsizei
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: indices
+    name: indices
+    type: void const*
+  - mapping: instancecount
+    name: instancecount
+    type: GLsizei
+  return: void
+gtu:
+  name: draw_elements_instanced
+  params:
+  - name: mode
+    type: gtu::constant const
+  - name: count
+    type: gtu::size const
+  - name: type
+    type: gtu::constant const
+  - name: indices
+    type: gtu::buffer_ref const&
+  - name: instancecount
+    type: gtu::size const
+  return: void

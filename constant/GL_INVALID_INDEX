@@ -1,0 +1,7 @@
+categories:
+- gl_VERSION_3_1
+- gl_ARB_uniform_buffer_object
+gtu:
+  name: invalid_index
+usage: []
+value: 0xffffffff

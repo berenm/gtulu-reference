@@ -1,0 +1,7 @@
+categories:
+- sized_internal_format
+- internal_format
+gtu:
+  name: rgba8_snorm
+usage: []
+value: 0x8f97

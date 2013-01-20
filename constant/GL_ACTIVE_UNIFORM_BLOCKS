@@ -1,0 +1,8 @@
+categories:
+- gl_VERSION_3_1
+- gl_ARB_uniform_buffer_object
+gtu:
+  name: active_uniform_blocks
+usage:
+- glGetProgramiv.property
+value: 0x8a36

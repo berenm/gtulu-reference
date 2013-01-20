@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_3_1
+gtu:
+  name: rgba16_snorm
+usage: []
+value: 0x8f9b

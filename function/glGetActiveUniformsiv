@@ -1,0 +1,31 @@
+gl:
+  name: glGetActiveUniformsiv
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: uniforms.size()
+    name: uniformCount
+    type: GLsizei
+  - mapping: '&uniforms[0]'
+    name: uniformIndices
+    type: GLuint const*
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: params
+    type: GLint*
+  return: void
+gtu:
+  name: get_active_uniforms
+  params:
+  - name: program
+    type: gtu::program const
+  - name: uniforms
+    type: std::vector< gtu::uniform > const&
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: std::vector< int32_t >&
+  return: void

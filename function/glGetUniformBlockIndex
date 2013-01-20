@@ -1,0 +1,18 @@
+gl:
+  name: glGetUniformBlockIndex
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: '&name[0]'
+    name: uniformBlockName
+    type: GLchar const*
+  return: GLuint
+gtu:
+  name: get_uniform_block_index
+  params:
+  - name: program
+    type: gtu::program const
+  - name: name
+    type: std::string const&
+  return: gtu::uniform_block

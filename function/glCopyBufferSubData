@@ -1,0 +1,33 @@
+gl:
+  name: glCopyBufferSubData
+  params:
+  - mapping: readtarget
+    name: readtarget
+    type: GLenum
+  - mapping: writetarget
+    name: writetarget
+    type: GLenum
+  - mapping: readoffset
+    name: readoffset
+    type: GLintptr
+  - mapping: writeoffset
+    name: writeoffset
+    type: GLintptr
+  - mapping: size
+    name: size
+    type: GLsizeiptr
+  return: void
+gtu:
+  name: copy_buffer_sub_data
+  params:
+  - name: readtarget
+    type: gtu::constant const
+  - name: writetarget
+    type: gtu::constant const
+  - name: readoffset
+    type: std::ptrdiff_t const
+  - name: writeoffset
+    type: std::ptrdiff_t const
+  - name: size
+    type: std::ptrdiff_t const
+  return: void

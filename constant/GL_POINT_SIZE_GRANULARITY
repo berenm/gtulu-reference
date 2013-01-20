@@ -1,7 +1,7 @@
 categories:
 - context_property
 gtu:
-  name: smooth_point_size_range
+  name: point_size_granularity
 usage:
 - glGetBooleani_v.property
 - glGetBooleanv.property
@@ -9,4 +9,4 @@ usage:
 - glGetFloatv.property
 - glGetIntegeri_v.property
 - glGetIntegerv.property
-value: 0xb12
+value: 0xb13
