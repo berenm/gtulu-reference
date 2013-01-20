@@ -3,5 +3,6 @@ categories:
 gtu:
   name: current_query
 usage:
+- glGetQueryIndexediv.property
 - glGetQueryiv.property
 value: 0x8865

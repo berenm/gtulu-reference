@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_texture_gather
+gtu:
+  name: min_program_texture_gather_offset
+usage: []
+value: 0x8e5e

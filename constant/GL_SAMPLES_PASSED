@@ -6,6 +6,9 @@ gtu:
   name: samples_passed
 usage:
 - glBeginQuery.target
+- glBeginQueryIndexed.target
 - glEndQuery.target
+- glEndQueryIndexed.target
+- glGetQueryIndexediv.target
 - glGetQueryiv.target
 value: 0x8914

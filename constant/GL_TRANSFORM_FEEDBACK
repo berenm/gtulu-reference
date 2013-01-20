@@ -1,0 +1,7 @@
+categories:
+- transform_feedback_target
+gtu:
+  name: transform_feedback
+usage:
+- glBindTransformFeedback.target
+value: 0x8e22

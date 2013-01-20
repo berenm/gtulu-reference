@@ -1,0 +1,33 @@
+gl:
+  name: glGetActiveSubroutineUniformiv
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: shadertype
+    name: shadertype
+    type: GLenum
+  - mapping: subroutine_uniform
+    name: index
+    type: GLuint
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: values
+    type: GLint*
+  return: void
+gtu:
+  name: get_active_subroutine_uniform
+  params:
+  - name: program
+    type: gtu::program const
+  - name: shadertype
+    type: gtu::constant const
+  - name: subroutine_uniform
+    type: gtu::uniform const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: std::vector< int32_t >&
+  return: void

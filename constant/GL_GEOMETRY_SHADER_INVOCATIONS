@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_gpu_shader5
+gtu:
+  name: geometry_shader_invocations
+usage: []
+value: 0x887f

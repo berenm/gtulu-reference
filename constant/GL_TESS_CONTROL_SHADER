@@ -1,0 +1,6 @@
+categories:
+- pipeline_property
+gtu:
+  name: tess_control_shader
+usage: []
+value: 0x8e88

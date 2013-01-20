@@ -1,0 +1,18 @@
+gl:
+  name: glDrawTransformFeedback
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  - mapping: transform_feedback
+    name: id
+    type: GLuint
+  return: void
+gtu:
+  name: draw_transform_feedback
+  params:
+  - name: mode
+    type: gtu::constant const
+  - name: transform_feedback
+    type: gtu::transform_feedback const
+  return: void

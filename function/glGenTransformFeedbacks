@@ -1,0 +1,18 @@
+gl:
+  name: glGenTransformFeedbacks
+  params:
+  - mapping: 1
+    name: n
+    type: GLsizei
+  - mapping: '&transform_feedback'
+    name: ids
+    type: GLuint*
+  return: void
+gtu:
+  name: create_transform_feedback
+  params: []
+  postcall: |
+    return transform_feedback;
+  precall: |
+    uint32_t transform_feedback;
+  return: gtu::transform_feedback

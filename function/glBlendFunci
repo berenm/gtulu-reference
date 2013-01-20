@@ -1,0 +1,23 @@
+gl:
+  name: glBlendFunci
+  params:
+  - mapping: buf
+    name: buf
+    type: GLuint
+  - mapping: sfactor
+    name: sfactor
+    type: GLenum
+  - mapping: dfactor
+    name: dfactor
+    type: GLenum
+  return: void
+gtu:
+  name: blend_func
+  params:
+  - name: buf
+    type: uint32_t const
+  - name: sfactor
+    type: gtu::constant const
+  - name: dfactor
+    type: gtu::constant const
+  return: void

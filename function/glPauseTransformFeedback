@@ -1,0 +1,8 @@
+gl:
+  name: glPauseTransformFeedback
+  params: []
+  return: void
+gtu:
+  name: pause_transform_feedback
+  params: []
+  return: void

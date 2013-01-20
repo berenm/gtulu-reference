@@ -1,0 +1,15 @@
+categories:
+- texture_target
+- texture_bind_target
+- mipmapable_texture_target
+- texture_view_target
+- internal_format_target
+gtu:
+  name: texture_cube_map_array
+usage:
+- glBindTexture.target
+- glGetTexParameterIiv.target
+- glGetTexParameterIuiv.target
+- glGetTexParameterfv.target
+- glGetTexParameteriv.target
+value: 0x9009

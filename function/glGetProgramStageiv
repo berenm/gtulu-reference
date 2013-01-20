@@ -1,0 +1,28 @@
+gl:
+  name: glGetProgramStageiv
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: shadertype
+    name: shadertype
+    type: GLenum
+  - mapping: property
+    name: pname
+    type: GLenum
+  - mapping: '&values[0]'
+    name: values
+    type: GLint*
+  return: void
+gtu:
+  name: get_program_stage
+  params:
+  - name: program
+    type: gtu::program const
+  - name: shadertype
+    type: gtu::constant const
+  - name: property
+    type: gtu::constant const
+  - name: values
+    type: gtu::vec1< int32_t >&
+  return: void

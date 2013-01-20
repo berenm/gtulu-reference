@@ -3,5 +3,6 @@ categories:
 gtu:
   name: query_counter_bits
 usage:
+- glGetQueryIndexediv.property
 - glGetQueryiv.property
 value: 0x8864

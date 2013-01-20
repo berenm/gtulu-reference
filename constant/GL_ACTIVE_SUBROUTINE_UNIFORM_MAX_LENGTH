@@ -1,0 +1,7 @@
+categories:
+- program_stage_property
+gtu:
+  name: active_subroutine_uniform_max_length
+usage:
+- glGetProgramStageiv.property
+value: 0x8e49

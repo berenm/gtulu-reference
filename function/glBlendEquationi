@@ -1,0 +1,18 @@
+gl:
+  name: glBlendEquationi
+  params:
+  - mapping: buf
+    name: buf
+    type: GLuint
+  - mapping: mode
+    name: mode
+    type: GLenum
+  return: void
+gtu:
+  name: blend_equation
+  params:
+  - name: buf
+    type: uint32_t const
+  - name: mode
+    type: gtu::constant const
+  return: void

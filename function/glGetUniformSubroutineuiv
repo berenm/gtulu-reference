@@ -1,0 +1,23 @@
+gl:
+  name: glGetUniformSubroutineuiv
+  params:
+  - mapping: shadertype
+    name: shadertype
+    type: GLenum
+  - mapping: subroutine_uniform
+    name: location
+    type: GLint
+  - mapping: '&subroutine'
+    name: values
+    type: GLuint*
+  return: void
+gtu:
+  name: get_uniform_subroutine
+  params:
+  - name: shadertype
+    type: gtu::constant const
+  - name: subroutine_uniform
+    type: gtu::uniform const
+  - name: subroutine
+    type: gtu::subroutine&
+  return: void

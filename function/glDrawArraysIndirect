@@ -1,0 +1,18 @@
+gl:
+  name: glDrawArraysIndirect
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  - mapping: indirect
+    name: indirect
+    type: void const*
+  return: void
+gtu:
+  name: draw_arrays_indirect
+  params:
+  - name: mode
+    type: gtu::constant const
+  - name: indirect
+    type: gtu::bytearray const&
+  return: void

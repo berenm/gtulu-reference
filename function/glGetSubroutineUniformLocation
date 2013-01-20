@@ -1,0 +1,23 @@
+gl:
+  name: glGetSubroutineUniformLocation
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: shadertype
+    name: shadertype
+    type: GLenum
+  - mapping: '&name[0]'
+    name: name
+    type: GLchar const*
+  return: GLint
+gtu:
+  name: get_subroutine_uniform_location
+  params:
+  - name: program
+    type: gtu::program const
+  - name: shadertype
+    type: gtu::constant const
+  - name: name
+    type: std::string const&
+  return: gtu::uniform

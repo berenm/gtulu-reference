@@ -1,0 +1,7 @@
+categories:
+- subroutine_uniform_property
+gtu:
+  name: num_compatible_subroutines
+usage:
+- glGetActiveSubroutineUniformiv.property
+value: 0x8e4a

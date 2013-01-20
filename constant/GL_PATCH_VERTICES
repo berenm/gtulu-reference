@@ -1,0 +1,8 @@
+categories:
+- patch_property
+gtu:
+  name: patch_vertices
+usage:
+- glPatchParameterfv.property
+- glPatchParameteri.property
+value: 0x8e72

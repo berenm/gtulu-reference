@@ -5,6 +5,9 @@ categories:
 gtu:
   name: time_elapsed
 usage:
+- glBeginQueryIndexed.target
 - glEndQuery.target
+- glEndQueryIndexed.target
+- glGetQueryIndexediv.target
 - glGetQueryiv.target
 value: 0x88bf

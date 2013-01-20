@@ -1,0 +1,8 @@
+categories:
+- patch_property
+gtu:
+  name: patch_default_inner_level
+usage:
+- glPatchParameterfv.property
+- glPatchParameteri.property
+value: 0x8e73

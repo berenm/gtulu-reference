@@ -13,6 +13,7 @@ usage:
 - glGetInteger64v.property
 - glGetIntegeri_v.property
 - glGetIntegerv.property
+- glGetQueryIndexediv.target
 - glGetQueryiv.target
 - glQueryCounter.target
 value: 0x8e28

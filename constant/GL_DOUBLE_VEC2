@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_gpu_shader_fp64
+gtu:
+  name: double_vec2
+usage: []
+value: 0x8ffc
