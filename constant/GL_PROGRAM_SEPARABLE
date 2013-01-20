@@ -1,0 +1,7 @@
+categories:
+- program_property
+gtu:
+  name: program_separable
+usage:
+- glProgramParameteri.property
+value: 0x8258

@@ -1,0 +1,21 @@
+gl:
+  name: glDepthRangeArrayv
+  params:
+  - mapping: first
+    name: first
+    type: GLuint
+  - mapping: values.size()
+    name: count
+    type: GLsizei
+  - mapping: '&values[0][0]'
+    name: v
+    type: GLdouble const*
+  return: void
+gtu:
+  name: depth_range_array
+  params:
+  - name: first
+    type: uint32_t const
+  - name: values
+    type: std::vector< gtu::vec2< float64 > > const&
+  return: void

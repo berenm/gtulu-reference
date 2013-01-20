@@ -1,0 +1,13 @@
+gl:
+  name: glBindProgramPipeline
+  params:
+  - mapping: pipeline
+    name: pipeline
+    type: GLuint
+  return: void
+gtu:
+  name: bind_program_pipeline
+  params:
+  - name: pipeline
+    type: gtu::pipeline const
+  return: void

@@ -1,0 +1,29 @@
+gl:
+  name: glViewportIndexedf
+  params:
+  - mapping: index
+    name: index
+    type: GLuint
+  - mapping: position[0]
+    name: x
+    type: GLfloat
+  - mapping: position[1]
+    name: y
+    type: GLfloat
+  - mapping: dimension[0]
+    name: w
+    type: GLfloat
+  - mapping: dimension[1]
+    name: h
+    type: GLfloat
+  return: void
+gtu:
+  name: viewport_indexed
+  params:
+  - name: index
+    type: uint32_t const
+  - name: position
+    type: gtu::vec2< float32 > const&
+  - name: dimension
+    type: gtu::vec2< float32 > const&
+  return: void

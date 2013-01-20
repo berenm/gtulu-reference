@@ -1,0 +1,16 @@
+gl:
+  name: glDeleteProgramPipelines
+  params:
+  - mapping: 1
+    name: n
+    type: GLsizei
+  - mapping: '&pipeline'
+    name: pipelines
+    type: GLuint const*
+  return: void
+gtu:
+  name: delete_program_pipeline
+  params:
+  - name: pipeline
+    type: gtu::pipeline const
+  return: void

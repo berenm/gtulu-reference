@@ -1,0 +1,26 @@
+gl:
+  name: glUniformMatrix2x3dv
+  params:
+  - mapping: uniform
+    name: location
+    type: GLint
+  - mapping: values.size()
+    name: count
+    type: GLsizei
+  - mapping: transpose
+    name: transpose
+    type: GLboolean
+  - mapping: '&values[0][0][0]'
+    name: value
+    type: GLdouble const*
+  return: void
+gtu:
+  name: uniform
+  params:
+  - name: uniform
+    type: gtu::uniform const
+  - name: transpose
+    type: bool const
+  - name: values
+    type: std::vector< gtu::mat2x3< float64 > > const&
+  return: void

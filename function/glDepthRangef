@@ -1,0 +1,18 @@
+gl:
+  name: glDepthRangef
+  params:
+  - mapping: nearVal
+    name: nearVal
+    type: GLfloat
+  - mapping: farVal
+    name: farVal
+    type: GLfloat
+  return: void
+gtu:
+  name: depth_range
+  params:
+  - name: nearVal
+    type: float32 const
+  - name: farVal
+    type: float32 const
+  return: void

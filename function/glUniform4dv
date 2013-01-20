@@ -1,0 +1,21 @@
+gl:
+  name: glUniform4dv
+  params:
+  - mapping: uniform
+    name: location
+    type: GLint
+  - mapping: values.size()
+    name: count
+    type: GLsizei
+  - mapping: '&values[0][0]'
+    name: value
+    type: GLdouble const*
+  return: void
+gtu:
+  name: uniform
+  params:
+  - name: uniform
+    type: gtu::uniform const
+  - name: values
+    type: std::vector< gtu::vec4< float64 > > const&
+  return: void

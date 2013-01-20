@@ -1,0 +1,7 @@
+categories:
+- pipeline_property
+gtu:
+  name: active_program
+usage:
+- glGetProgramPipelineiv.property
+value: 0x8259

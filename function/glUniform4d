@@ -1,0 +1,27 @@
+gl:
+  name: glUniform4d
+  params:
+  - mapping: uniform
+    name: location
+    type: GLint
+  - mapping: values[0]
+    name: v0
+    type: GLdouble
+  - mapping: values[1]
+    name: v1
+    type: GLdouble
+  - mapping: values[2]
+    name: v2
+    type: GLdouble
+  - mapping: values[3]
+    name: v3
+    type: GLdouble
+  return: void
+gtu:
+  name: uniform
+  params:
+  - name: uniform
+    type: gtu::uniform const
+  - name: values
+    type: gtu::vec4< float64 > const&
+  return: void

@@ -1,0 +1,7 @@
+categories:
+- program_property
+gtu:
+  name: program_binary_retrievable_hint
+usage:
+- glProgramParameteri.property
+value: 0x8257

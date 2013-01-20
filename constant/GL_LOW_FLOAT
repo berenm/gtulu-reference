@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_ES2_compatibility
+gtu:
+  name: low_float
+usage: []
+value: 0x8df0

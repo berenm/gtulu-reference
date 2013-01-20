@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_separate_shader_objects
+gtu:
+  name: all_shader_bits
+usage: []
+value: 0xffffffff

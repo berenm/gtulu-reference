@@ -1,0 +1,26 @@
+gl:
+  name: glProgramBinary
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: binaryFormat
+    name: binaryFormat
+    type: GLenum
+  - mapping: '&binary[0]'
+    name: binary
+    type: void const*
+  - mapping: binary.size()
+    name: length
+    type: GLsizei
+  return: void
+gtu:
+  name: program_binary
+  params:
+  - name: program
+    type: gtu::program const
+  - name: binaryFormat
+    type: gtu::constant const
+  - name: binary
+    type: std::string const&
+  return: void

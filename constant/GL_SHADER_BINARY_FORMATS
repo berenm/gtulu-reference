@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_ES2_compatibility
+gtu:
+  name: shader_binary_formats
+usage: []
+value: 0x8df8

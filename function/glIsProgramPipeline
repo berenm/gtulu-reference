@@ -1,0 +1,13 @@
+gl:
+  name: glIsProgramPipeline
+  params:
+  - mapping: pipeline
+    name: pipeline
+    type: GLuint
+  return: GLboolean
+gtu:
+  name: is_program_pipeline
+  params:
+  - name: pipeline
+    type: gtu::pipeline const
+  return: bool

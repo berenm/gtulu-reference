@@ -1,0 +1,28 @@
+gl:
+  name: glGetShaderPrecisionFormat
+  params:
+  - mapping: shaderType
+    name: shaderType
+    type: GLenum
+  - mapping: precisionType
+    name: precisionType
+    type: GLenum
+  - mapping: '&range[0]'
+    name: range
+    type: GLint*
+  - mapping: '&precision'
+    name: precision
+    type: GLint*
+  return: void
+gtu:
+  name: get_shader_precision_format
+  params:
+  - name: shaderType
+    type: gtu::constant const
+  - name: precisionType
+    type: gtu::constant const
+  - name: range
+    type: gtu::vec2< int32_t >&
+  - name: precision
+    type: int32_t&
+  return: void

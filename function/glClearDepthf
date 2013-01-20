@@ -1,0 +1,13 @@
+gl:
+  name: glClearDepthf
+  params:
+  - mapping: depth
+    name: depth
+    type: GLfloat
+  return: void
+gtu:
+  name: clear_depth
+  params:
+  - name: depth
+    type: float32 const
+  return: void
