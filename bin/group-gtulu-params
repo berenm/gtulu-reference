@@ -16,32 +16,59 @@ yaml.add_representer(hexadecimal, hexadecimal_representer)
 
 args = gtuluref.arguments()
 
-functions = {}
-constants = {}
+usages = {}
+fct_usages = {}
 
-constant_folder = gtuluref.ref(args.version, args.compat and 'comp' or 'core', 'constant')
 folder = gtuluref.ref(args.version, args.compat and 'comp' or 'core', 'function')
+ffolder = folder
+for filename in os.listdir(folder):
+  with open(os.path.join(folder, filename), 'r') as f:
+    fct = yaml.load(f)
+
+  if 'params' in fct['gtu']:
+    for p in fct['gtu']['params']:
+      if 'values' in p:
+        p['values'] = sorted(set(p['values']))
+
+        usage_key = '%s.%s' % (fct['gl']['name'], p['name'])
+        for v in p['values']:
+          if not v in usages:
+            usages[v] = []
+          usages[v].append(usage_key)
+
+        del p['values']
+
+  if 'precall' in fct['gtu']:
+    fct['gtu']['precall'] = literal_unicode(fct['gtu']['precall'])
+
+  if 'postcall' in fct['gtu']:
+    fct['gtu']['postcall'] = literal_unicode(fct['gtu']['postcall'])
+
+  with open(os.path.join(folder, filename), 'w') as f:
+    yaml.dump(fct, f, default_flow_style=False)
+
+
+folder = gtuluref.ref(args.version, args.compat and 'comp' or 'core', 'constant')
 for filename in os.listdir(folder):
   with open(os.path.join(folder, filename), 'r') as f:
     cst = yaml.load(f)
 
-  if 'params' in cst['gtu']:
-    for p in cst['gtu']['params']:
-      if 'values' in p:
-        p['values'] = sorted(set(p['values']))
+  if not 'usage' in cst:
+    cst['usage'] = []
 
-        values = []
-        for v in p['values']:
-          if os.path.exists(os.path.join(constant_folder, v)):
-            values.append(v)
+  if filename in usages:
+    cst['usage'] = sorted(set(cst['usage']) | set(usages[filename]))
 
-        p['values'] = sorted(set(values))
+  usage = []
+  for fp in cst['usage']:
+    if os.path.exists(os.path.join(ffolder, fp.split('.')[0])):
+      usage.append(fp)
+  cst['usage'] = sorted(usage)
 
-  if 'precall' in cst['gtu']:
-    cst['gtu']['precall'] = literal_unicode(cst['gtu']['precall'])
-
-  if 'postcall' in cst['gtu']:
-    cst['gtu']['postcall'] = literal_unicode(cst['gtu']['postcall'])
+  if 'values' in cst:
+    cst['values'] = [hexadecimal(v) for v in cst['values']]
+  elif 'value' in cst:
+    cst['value'] = hexadecimal(cst['value'])
 
   with open(os.path.join(folder, filename), 'w') as f:
     yaml.dump(cst, f, default_flow_style=False)

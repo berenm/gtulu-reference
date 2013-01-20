@@ -87,10 +87,12 @@ def categorize_constants(constants):
   return categories
 
 
-def resolve_values(constants, values):
+def resolve_values(function, parameter, constants):
   output = []
-  for v in values:
-    output.extend([ u['name'] for u in enumerate_values(constants[v]) ])
+  key = '%s.%s' % (function['gl']['name'], parameter['name'])
+  for k,c in constants.items():
+    if key in c['usage']:
+      output.extend([ u['name'] for u in enumerate_values(c) ])
 
   return sorted(set(output))
 

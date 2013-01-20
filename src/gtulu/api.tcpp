@@ -52,7 +52,7 @@ namespace gtulu {
 
       // :  for p in ___f.gtu.params:
       // :    if ___p.type == 'gtu::constant const' and 'values' in ___p:
-      // :      set ___valid_values = gtuluref.resolve_values(___constants, ___p.values)
+      // :      set ___valid_values = gtuluref.resolve_values(___f, ___p, ___constants)
       // :      set ___to_string_name = '%s_to_string' % ___p.name
       auto const ___to_string_name = [ = ]() -> std::string const {
                                        gtu::constant::value_type const value = static_cast< gtu::constant::value_type >(___p.name);
@@ -65,11 +65,11 @@ namespace gtulu {
                                        }
                                      };
 
-      // :      set ___valid_values = ','.join(['gtu::cst::%s' % v for v in gtuluref.resolve_values(___constants, ___p.values)])
-      // :      set ___valid_names  = ','.join(['"%s"' % v for v in gtuluref.resolve_values(___constants, ___p.values)])
+      // :      set ___valid_csts = ','.join(['gtu::cst::%s' % v for v in ___valid_values])
+      // :      set ___valid_names  = ','.join(['"%s"' % v for v in ___valid_values])
       // :      set ___check_name = 'check_%s' % ___p.name
 
-      if (!detail::is_one_of< gtu::constant::value_type, ___valid_values >(___p.name)) {
+      if (!detail::is_one_of< gtu::constant::value_type, ___valid_csts >(___p.name)) {
         static std::vector< char const* > const valid_values = { ___valid_names };
         __warn() << "call ___f.gl.name: ___p.name is not one of the valid values: " << valid_values;
       }
