@@ -1,0 +1,33 @@
+gl:
+  name: glTexBufferRange
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: internal_format
+    name: internalFormat
+    type: GLenum
+  - mapping: buffer
+    name: buffer
+    type: GLuint
+  - mapping: offset
+    name: offset
+    type: GLintptr
+  - mapping: size
+    name: size
+    type: GLsizeiptr
+  return: void
+gtu:
+  name: tex_buffer_range
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: internal_format
+    type: gtu::constant const
+  - name: buffer
+    type: gtu::buffer const
+  - name: offset
+    type: std::ptrdiff_t const
+  - name: size
+    type: std::ptrdiff_t const
+  return: void

@@ -1,0 +1,6 @@
+categories:
+- gl_KHR_debug
+gtu:
+  name: debug_severity_medium
+usage: []
+value: 0x9147

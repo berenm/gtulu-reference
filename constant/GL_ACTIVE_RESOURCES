@@ -1,0 +1,7 @@
+categories:
+- program_interface_property
+gtu:
+  name: active_resources
+usage:
+- glGetProgramInterfaceiv.property
+value: 0x92f5

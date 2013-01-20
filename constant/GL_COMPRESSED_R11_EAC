@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_ES3_compatibility
+gtu:
+  name: compressed_r11_eac
+usage: []
+value: 0x9270

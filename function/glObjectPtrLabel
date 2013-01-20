@@ -1,0 +1,21 @@
+gl:
+  name: glObjectPtrLabel
+  params:
+  - mapping: pointer
+    name: ptr
+    type: void*
+  - mapping: label.size()
+    name: length
+    type: GLsizei
+  - mapping: '&label[0]'
+    name: label
+    type: char const*
+  return: void
+gtu:
+  name: object_ptr_label
+  params:
+  - name: pointer
+    type: void*
+  - name: label
+    type: std::string const&
+  return: void

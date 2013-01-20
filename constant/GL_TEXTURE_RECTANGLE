@@ -10,6 +10,7 @@ gtu:
   name: texture_rectangle
 usage:
 - glBindTexture.target
+- glGetInternalformati64v.target
 - glGetInternalformativ.target
 - glGetTexImage.target
 - glGetTexLevelParameterfv.target
@@ -26,4 +27,5 @@ usage:
 - glTexParameteri.target
 - glTexParameteriv.target
 - glTexStorage2D.target
+- glTextureView.target
 value: 0x84f5

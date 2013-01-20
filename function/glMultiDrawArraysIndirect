@@ -1,0 +1,28 @@
+gl:
+  name: glMultiDrawArraysIndirect
+  params:
+  - mapping: mode
+    name: mode
+    type: GLenum
+  - mapping: indirect
+    name: indirect
+    type: void const*
+  - mapping: drawcount
+    name: drawcount
+    type: GLsizei
+  - mapping: stride
+    name: stride
+    type: GLsizei
+  return: void
+gtu:
+  name: multi_draw_arrays_indirect
+  params:
+  - name: mode
+    type: gtu::constant const
+  - name: indirect
+    type: gtu::bytearray const&
+  - name: drawcount
+    type: gtu::size const
+  - name: stride
+    type: gtu::size const
+  return: void

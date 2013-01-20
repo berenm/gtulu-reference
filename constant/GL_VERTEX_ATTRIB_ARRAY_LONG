@@ -1,0 +1,6 @@
+categories:
+- gl_VERSION_4_3
+gtu:
+  name: vertex_attrib_array_long
+usage: []
+value: 0x874e

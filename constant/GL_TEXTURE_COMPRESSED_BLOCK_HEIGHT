@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: texture_compressed_block_height
+usage: []
+value: 0x82b2

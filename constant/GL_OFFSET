@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_program_interface_query
+gtu:
+  name: offset
+usage: []
+value: 0x92fc

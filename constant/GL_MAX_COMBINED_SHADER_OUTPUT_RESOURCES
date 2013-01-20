@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_shader_storage_buffer_object
+gtu:
+  name: max_combined_shader_output_resources
+usage: []
+value: 0x8f39

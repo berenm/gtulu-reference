@@ -1,0 +1,83 @@
+gl:
+  name: glCopyImageSubData
+  params:
+  - mapping: srcName
+    name: srcName
+    type: GLuint
+  - mapping: srcTarget
+    name: srcTarget
+    type: GLenum
+  - mapping: srcLevel
+    name: srcLevel
+    type: GLint
+  - mapping: srcX
+    name: srcX
+    type: GLint
+  - mapping: srcY
+    name: srcY
+    type: GLint
+  - mapping: srcZ
+    name: srcZ
+    type: GLint
+  - mapping: dstName
+    name: dstName
+    type: GLuint
+  - mapping: dstTarget
+    name: dstTarget
+    type: GLenum
+  - mapping: dstLevel
+    name: dstLevel
+    type: GLint
+  - mapping: dstX
+    name: dstX
+    type: GLint
+  - mapping: dstY
+    name: dstY
+    type: GLint
+  - mapping: dstZ
+    name: dstZ
+    type: GLint
+  - mapping: srcWidth
+    name: srcWidth
+    type: GLsizei
+  - mapping: srcHeight
+    name: srcHeight
+    type: GLsizei
+  - mapping: srcDepth
+    name: srcDepth
+    type: GLsizei
+  return: void
+gtu:
+  name: copy_image_sub_data
+  params:
+  - name: srcName
+    type: uint32_t const
+  - name: srcTarget
+    type: gtu::constant const
+  - name: srcLevel
+    type: int32_t const
+  - name: srcX
+    type: int32_t const
+  - name: srcY
+    type: int32_t const
+  - name: srcZ
+    type: int32_t const
+  - name: dstName
+    type: uint32_t const
+  - name: dstTarget
+    type: gtu::constant const
+  - name: dstLevel
+    type: int32_t const
+  - name: dstX
+    type: int32_t const
+  - name: dstY
+    type: int32_t const
+  - name: dstZ
+    type: int32_t const
+  - name: srcWidth
+    type: gtu::size const
+  - name: srcHeight
+    type: gtu::size const
+  - name: srcDepth
+    type: gtu::size const
+  return: void

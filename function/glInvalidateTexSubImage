@@ -1,0 +1,40 @@
+gl:
+  name: glInvalidateTexSubImage
+  params:
+  - mapping: texture
+    name: texture
+    type: GLuint
+  - mapping: level
+    name: level
+    type: GLint
+  - mapping: offset[0]
+    name: xoffset
+    type: GLint
+  - mapping: offset[1]
+    name: yoffset
+    type: GLint
+  - mapping: offset[2]
+    name: zoffset
+    type: GLint
+  - mapping: dimension[0]
+    name: width
+    type: GLsizei
+  - mapping: dimension[1]
+    name: height
+    type: GLsizei
+  - mapping: dimension[2]
+    name: depth
+    type: GLsizei
+  return: void
+gtu:
+  name: invalidate_tex_sub_image
+  params:
+  - name: texture
+    type: gtu::texture const
+  - name: level
+    type: int32_t const
+  - name: offset
+    type: gtu::vec3< int32_t > const&
+  - name: dimension
+    type: gtu::vec3< gtu::size > const&
+  return: void

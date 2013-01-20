@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: internalformat_stencil_size
+usage: []
+value: 0x8276

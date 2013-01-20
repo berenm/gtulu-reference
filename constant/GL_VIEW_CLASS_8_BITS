@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_internalformat_query2
+gtu:
+  name: view_class_8_bits
+usage: []
+value: 0x82cb

@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: get_texture_image_type
+usage: []
+value: 0x8292

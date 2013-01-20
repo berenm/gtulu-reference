@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: simultaneous_texture_and_stencil_test
+usage: []
+value: 0x82ad

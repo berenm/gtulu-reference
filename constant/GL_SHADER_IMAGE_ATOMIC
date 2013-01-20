@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: shader_image_atomic
+usage: []
+value: 0x82a6

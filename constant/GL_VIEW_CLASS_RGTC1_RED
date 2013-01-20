@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_internalformat_query2
+gtu:
+  name: view_class_rgtc1_red
+usage: []
+value: 0x82d0

@@ -1,0 +1,26 @@
+gl:
+  name: glPushDebugGroup
+  params:
+  - mapping: source
+    name: source
+    type: GLenum
+  - mapping: debug_message
+    name: id
+    type: GLuint
+  - mapping: message.size()
+    name: length
+    type: GLsizei
+  - mapping: '&message[0]'
+    name: message
+    type: char const*
+  return: void
+gtu:
+  name: push_debug_group
+  params:
+  - name: source
+    type: gtu::constant const
+  - name: debug_message
+    type: gtu::debug_message const
+  - name: message
+    type: std::string const&
+  return: void

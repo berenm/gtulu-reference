@@ -1,0 +1,13 @@
+gl:
+  name: glDispatchComputeIndirect
+  params:
+  - mapping: indirect
+    name: indirect
+    type: GLintptr
+  return: void
+gtu:
+  name: dispatch_compute_indirect
+  params:
+  - name: indirect
+    type: std::ptrdiff_t const
+  return: void

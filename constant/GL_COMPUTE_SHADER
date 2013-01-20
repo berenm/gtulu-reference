@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_compute_shader
+gtu:
+  name: compute_shader
+usage: []
+value: 0x91b9

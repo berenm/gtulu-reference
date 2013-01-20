@@ -1,0 +1,7 @@
+categories:
+- program_interface_property
+gtu:
+  name: max_num_active_variables
+usage:
+- glGetProgramInterfaceiv.property
+value: 0x92f7

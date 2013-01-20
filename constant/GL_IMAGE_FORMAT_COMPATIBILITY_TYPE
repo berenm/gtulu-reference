@@ -3,5 +3,6 @@ categories:
 gtu:
   name: image_format_compatibility_type
 usage:
+- glGetInternalformati64v.property
 - glGetInternalformativ.property
 value: 0x90c7

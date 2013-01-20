@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: stencil_components
+usage: []
+value: 0x8285

@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: fragment_texture
+usage: []
+value: 0x829f

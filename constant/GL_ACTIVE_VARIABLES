@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_program_interface_query
+gtu:
+  name: active_variables
+usage: []
+value: 0x9305

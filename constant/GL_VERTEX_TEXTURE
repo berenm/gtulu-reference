@@ -1,0 +1,7 @@
+categories:
+- internal_format_property
+gtu:
+  name: vertex_texture
+usage:
+- glGetInternalformati64v.property
+value: 0x829b

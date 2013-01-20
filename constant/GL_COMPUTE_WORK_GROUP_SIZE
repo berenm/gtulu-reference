@@ -1,0 +1,7 @@
+categories:
+- context_property
+gtu:
+  name: compute_work_group_size
+usage:
+- glGetProgramiv.property
+value: 0x8267

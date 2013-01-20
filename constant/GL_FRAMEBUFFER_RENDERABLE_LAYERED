@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: framebuffer_renderable_layered
+usage: []
+value: 0x828a

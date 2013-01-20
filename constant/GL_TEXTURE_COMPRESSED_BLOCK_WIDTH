@@ -1,0 +1,7 @@
+categories:
+- internal_format_property
+gtu:
+  name: texture_compressed_block_width
+usage:
+- glGetInternalformati64v.property
+value: 0x82b1

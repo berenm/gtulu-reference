@@ -1,0 +1,23 @@
+gl:
+  name: glInvalidateBufferSubData
+  params:
+  - mapping: buffer
+    name: buffer
+    type: GLuint
+  - mapping: offset
+    name: offset
+    type: GLintptr
+  - mapping: length
+    name: length
+    type: GLsizeiptr
+  return: void
+gtu:
+  name: invalidate_buffer_sub_data
+  params:
+  - name: buffer
+    type: gtu::buffer const
+  - name: offset
+    type: std::ptrdiff_t const
+  - name: length
+    type: std::ptrdiff_t const
+  return: void

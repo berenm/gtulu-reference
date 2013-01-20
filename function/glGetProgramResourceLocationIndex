@@ -1,0 +1,23 @@
+gl:
+  name: glGetProgramResourceLocationIndex
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: programInterface
+    name: programInterface
+    type: GLenum
+  - mapping: '&name[0]'
+    name: name
+    type: char const*
+  return: GLint
+gtu:
+  name: get_program_resource_location_index
+  params:
+  - name: program
+    type: gtu::program const
+  - name: programInterface
+    type: gtu::constant const
+  - name: name
+    type: std::string const&
+  return: int32_t

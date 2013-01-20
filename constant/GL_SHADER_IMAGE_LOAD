@@ -1,0 +1,8 @@
+categories:
+- internal_format_property
+gtu:
+  name: shader_image_load
+usage:
+- glGetInternalformati64v.property
+- glGetInternalformativ.property
+value: 0x82a4

@@ -1,0 +1,8 @@
+categories:
+- framebuffer_property
+gtu:
+  name: framebuffer_default_width
+usage:
+- glFramebufferParameteri.property
+- glGetFramebufferParameteriv.property
+value: 0x9310

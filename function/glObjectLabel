@@ -1,0 +1,26 @@
+gl:
+  name: glObjectLabel
+  params:
+  - mapping: identifier
+    name: identifier
+    type: GLenum
+  - mapping: name
+    name: name
+    type: GLuint
+  - mapping: label.size()
+    name: length
+    type: GLsizei
+  - mapping: '&label[0]'
+    name: label
+    type: char const*
+  return: void
+gtu:
+  name: object_label
+  params:
+  - name: identifier
+    type: gtu::constant const
+  - name: name
+    type: uint32_t const
+  - name: label
+    type: std::string const&
+  return: void

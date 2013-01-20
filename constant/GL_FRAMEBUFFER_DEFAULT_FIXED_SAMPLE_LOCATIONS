@@ -1,0 +1,8 @@
+categories:
+- framebuffer_property
+gtu:
+  name: framebuffer_default_fixed_sample_locations
+usage:
+- glFramebufferParameteri.property
+- glGetFramebufferParameteriv.property
+value: 0x9314

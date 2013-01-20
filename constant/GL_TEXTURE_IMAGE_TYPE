@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: texture_image_type
+usage: []
+value: 0x8290

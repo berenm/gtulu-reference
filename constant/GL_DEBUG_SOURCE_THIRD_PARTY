@@ -1,0 +1,6 @@
+categories:
+- gl_KHR_debug
+gtu:
+  name: debug_source_third_party
+usage: []
+value: 0x8249

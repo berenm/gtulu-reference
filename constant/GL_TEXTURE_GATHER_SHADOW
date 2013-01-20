@@ -1,0 +1,6 @@
+categories:
+- internal_format_property
+gtu:
+  name: texture_gather_shadow
+usage: []
+value: 0x82a3

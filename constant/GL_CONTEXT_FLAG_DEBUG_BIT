@@ -1,0 +1,7 @@
+categories:
+- gl_VERSION_4_3
+- gl_KHR_debug
+gtu:
+  name: context_flag_debug_bit
+usage: []
+value: 0x2

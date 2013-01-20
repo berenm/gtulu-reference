@@ -1,0 +1,10 @@
+categories:
+- texture_property
+gtu:
+  name: texture_view_num_layers
+usage:
+- glGetTexParameterIiv.property
+- glGetTexParameterIuiv.property
+- glGetTexParameterfv.property
+- glGetTexParameteriv.property
+value: 0x82de

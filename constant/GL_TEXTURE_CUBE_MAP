@@ -23,6 +23,7 @@ usage:
 - glGetInteger64v.property
 - glGetIntegeri_v.property
 - glGetIntegerv.property
+- glGetInternalformati64v.target
 - glGetInternalformativ.target
 - glGetTexParameterIiv.target
 - glGetTexParameterIuiv.target
@@ -34,4 +35,5 @@ usage:
 - glTexParameterfv.target
 - glTexParameteri.target
 - glTexParameteriv.target
+- glTextureView.target
 value: 0x8513

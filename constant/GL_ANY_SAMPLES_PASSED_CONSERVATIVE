@@ -1,0 +1,11 @@
+categories:
+- query_target
+- read_query_target
+gtu:
+  name: any_samples_passed_conservative
+usage:
+- glBeginQuery.target
+- glEndQuery.target
+- glGetQueryIndexediv.target
+- glGetQueryiv.target
+value: 0x8d6a

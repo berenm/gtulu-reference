@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_program_interface_query
+gtu:
+  name: top_level_array_stride
+usage: []
+value: 0x930d

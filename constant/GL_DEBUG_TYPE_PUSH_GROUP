@@ -1,0 +1,6 @@
+categories:
+- gl_KHR_debug
+gtu:
+  name: debug_type_push_group
+usage: []
+value: 0x8269

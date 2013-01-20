@@ -1,0 +1,18 @@
+gl:
+  name: glInvalidateTexImage
+  params:
+  - mapping: texture
+    name: texture
+    type: GLuint
+  - mapping: level
+    name: level
+    type: GLint
+  return: void
+gtu:
+  name: invalidate_tex_image
+  params:
+  - name: texture
+    type: gtu::texture const
+  - name: level
+    type: int32_t const
+  return: void

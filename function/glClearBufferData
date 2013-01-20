@@ -1,0 +1,33 @@
+gl:
+  name: glClearBufferData
+  params:
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: internalformat
+    name: internalformat
+    type: GLenum
+  - mapping: format
+    name: format
+    type: GLenum
+  - mapping: type
+    name: type
+    type: GLenum
+  - mapping: data
+    name: data
+    type: void const*
+  return: void
+gtu:
+  name: clear_buffer_data
+  params:
+  - name: target
+    type: gtu::constant const
+  - name: internalformat
+    type: gtu::constant const
+  - name: format
+    type: gtu::constant const
+  - name: type
+    type: gtu::constant const
+  - name: data
+    type: gtu::bytearray const&
+  return: void

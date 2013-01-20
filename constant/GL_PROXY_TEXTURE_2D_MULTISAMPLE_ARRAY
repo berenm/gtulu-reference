@@ -7,4 +7,5 @@ usage:
 - glGetTexLevelParameterfv.target
 - glGetTexLevelParameteriv.target
 - glTexImage3DMultisample.target
+- glTexStorage3DMultisample.target
 value: 0x9103

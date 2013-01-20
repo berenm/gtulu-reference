@@ -1,0 +1,18 @@
+gl:
+  name: glVertexBindingDivisor
+  params:
+  - mapping: bindingindex
+    name: bindingindex
+    type: GLuint
+  - mapping: divisor
+    name: divisor
+    type: GLuint
+  return: void
+gtu:
+  name: vertex_binding_divisor
+  params:
+  - name: bindingindex
+    type: uint32_t const
+  - name: divisor
+    type: uint32_t const
+  return: void

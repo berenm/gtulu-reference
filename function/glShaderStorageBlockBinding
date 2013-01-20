@@ -1,0 +1,23 @@
+gl:
+  name: glShaderStorageBlockBinding
+  params:
+  - mapping: program
+    name: program
+    type: GLuint
+  - mapping: uniform_block
+    name: storageBlockIndex
+    type: GLuint
+  - mapping: storageBlockBinding
+    name: storageBlockBinding
+    type: GLuint
+  return: void
+gtu:
+  name: shader_storage_block_binding
+  params:
+  - name: program
+    type: gtu::program const
+  - name: uniform_block
+    type: gtu::uniform_block const
+  - name: storageBlockBinding
+    type: uint32_t const
+  return: void

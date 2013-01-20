@@ -1,0 +1,6 @@
+categories:
+- gl_ARB_internalformat_query2
+gtu:
+  name: caveat_support
+usage: []
+value: 0x82b8

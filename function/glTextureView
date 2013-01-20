@@ -1,0 +1,48 @@
+gl:
+  name: glTextureView
+  params:
+  - mapping: texture
+    name: texture
+    type: GLuint
+  - mapping: target
+    name: target
+    type: GLenum
+  - mapping: origtexture
+    name: origtexture
+    type: GLuint
+  - mapping: internalformat
+    name: internalformat
+    type: GLenum
+  - mapping: minlevel
+    name: minlevel
+    type: GLuint
+  - mapping: numlevels
+    name: numlevels
+    type: GLuint
+  - mapping: minlayer
+    name: minlayer
+    type: GLuint
+  - mapping: numlayers
+    name: numlayers
+    type: GLuint
+  return: void
+gtu:
+  name: texture_view
+  params:
+  - name: texture
+    type: gtu::texture const
+  - name: target
+    type: gtu::constant const
+  - name: origtexture
+    type: uint32_t const
+  - name: internalformat
+    type: gtu::constant const
+  - name: minlevel
+    type: uint32_t const
+  - name: numlevels
+    type: uint32_t const
+  - name: minlayer
+    type: uint32_t const
+  - name: numlayers
+    type: uint32_t const
+  return: void

@@ -1,0 +1,8 @@
+categories:
+- internal_format_property
+gtu:
+  name: clear_buffer
+usage:
+- glGetInternalformati64v.property
+- glGetInternalformativ.property
+value: 0x82b4
