@@ -6,7 +6,7 @@ gl:
     type: GLuint
   return: void
 gtu:
-  name: invalidate_buffer_data
+  name: invalidate
   params:
   - name: buffer
     type: gtu::buffer const

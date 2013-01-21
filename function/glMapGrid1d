@@ -12,7 +12,7 @@ gl:
     type: GLdouble
   return: void
 gtu:
-  name: mapGrid_1
+  name: map_grid
   params:
   - name: un
     type: int32_t const

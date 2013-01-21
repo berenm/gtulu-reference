@@ -6,7 +6,7 @@ gl:
     type: GLsync
   return: void
 gtu:
-  name: delete_sync
+  name: destroy
   params:
   - name: sync
     type: gtu::barrier const

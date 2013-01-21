@@ -13,26 +13,26 @@ gl:
   - mapping: indices
     name: indices
     type: void const*
-  - mapping: primcount
+  - mapping: primitive_count
     name: primcount
     type: GLsizei
-  - mapping: baseinstance
+  - mapping: base_instance
     name: baseinstance
     type: GLuint
   return: void
 gtu:
-  name: draw_elements_instanced_base_instance
+  name: draw_elements
   params:
   - name: mode
     type: gtu::constant const
-  - name: count
-    type: gtu::size const
   - name: type
     type: gtu::constant const
+  - name: count
+    type: gtu::size const
+  - name: primitive_count
+    type: gtu::size const
   - name: indices
     type: gtu::buffer_ref const&
-  - name: primcount
-    type: gtu::size const
-  - name: baseinstance
+  - name: base_instance
     type: uint32_t const
   return: void

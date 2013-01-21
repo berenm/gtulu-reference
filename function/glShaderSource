@@ -9,8 +9,8 @@ gl:
     type: GLsizei
   - mapping: '&strings[0]'
     name: string
-    type: const GLchar* const*
-  - mapping: '&lengths[0]'
+    type: GLchar const* const*
+  - mapping: nullptr
     name: length
     type: GLint const*
   return: void
@@ -23,7 +23,5 @@ gtu:
     type: std::vector< std::string > const&
   precall: |
     std::vector< char const* >  strings;
-    std::vector< int32_t >      lengths;
     std::transform(lines.begin(), lines.end(), std::back_inserter(strings), [](std::string const& e) { return e.data(); });
-    std::transform(lines.begin(), lines.end(), std::back_inserter(lengths), [](std::string const& e) { return e.size(); });
   return: void

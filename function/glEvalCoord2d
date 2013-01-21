@@ -9,7 +9,7 @@ gl:
     type: GLdouble
   return: void
 gtu:
-  name: eval_coord_2
+  name: eval_coord
   params:
   - name: u
     type: float64 const

@@ -9,7 +9,7 @@ gl:
     type: GLuint const*
   return: void
 gtu:
-  name: delete_program_pipeline
+  name: destroy
   params:
   - name: pipeline
     type: gtu::pipeline const

@@ -12,7 +12,7 @@ gl:
     type: GLuint
   return: void
 gtu:
-  name: bind_buffer_base
+  name: bind
   params:
   - name: target
     type: gtu::constant const

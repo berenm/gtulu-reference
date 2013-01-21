@@ -9,10 +9,10 @@ gl:
     type: GLushort const*
   return: void
 gtu:
-  name: vertex_attrib_normalized
+  name: vertex_attrib
   params:
   - name: vertex_attrib
     type: gtu::vertex_attrib const
   - name: values
-    type: gtu::vec4< uint16_t > const&
+    type: gtu::vec4< ufixed16 > const&
   return: void

@@ -12,7 +12,7 @@ gl:
     type: GLenum
   - mapping: '&indices[0]'
     name: indices
-    type: const GLvoid* const*
+    type: GLvoid const* const*
   - mapping: elements.size()
     name: drawcount
     type: GLsizei
@@ -21,20 +21,20 @@ gl:
     type: GLint const*
   return: void
 gtu:
-  name: multi_draw_elements_base_vertex
+  name: draw_elements
   params:
   - name: mode
     type: gtu::constant const
   - name: type
     type: gtu::constant const
   - name: elements
-    type: std::vector< std::tuple< gtu::buffer_ref, gtu::size, int32_t > > const&
+    type: std::vector< std::tuple< gtu::size, gtu::buffer_ref, int32_t > > const&
   precall: |
-    std::vector< void const* > indices;
     std::vector< gtu::size >   counts;
+    std::vector< void const* > indices;
     std::vector< int32_t >     bases;
-    typedef std::tuple< gtu::buffer_ref, gtu::size, uint32_t > vtype;
-    std::transform(elements.begin(), elements.end(), std::back_inserter(indices), [](vtype const& e) { return std::get< 0 >(e); });
-    std::transform(elements.begin(), elements.end(), std::back_inserter(counts),  [](vtype const& e) { return std::get< 1 >(e); });
+    typedef std::tuple< gtu::size, gtu::buffer_ref, int32_t > vtype;
+    std::transform(elements.begin(), elements.end(), std::back_inserter(counts),  [](vtype const& e) { return std::get< 0 >(e); });
+    std::transform(elements.begin(), elements.end(), std::back_inserter(indices), [](vtype const& e) { return std::get< 1 >(e); });
     std::transform(elements.begin(), elements.end(), std::back_inserter(bases),   [](vtype const& e) { return std::get< 2 >(e); });
   return: void

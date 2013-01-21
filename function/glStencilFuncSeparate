@@ -15,7 +15,7 @@ gl:
     type: GLuint
   return: void
 gtu:
-  name: stencil_func_separate
+  name: stencil_func
   params:
   - name: face
     type: gtu::constant const

@@ -7,7 +7,7 @@ gl:
   - mapping: property
     name: pname
     type: GLenum
-  - mapping: pointer
+  - mapping: '&pointer'
     name: pointer
     type: GLvoid**
   return: void
@@ -19,5 +19,5 @@ gtu:
   - name: property
     type: gtu::constant const
   - name: pointer
-    type: void**
+    type: void*&
   return: void

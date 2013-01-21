@@ -15,14 +15,14 @@ gl:
     type: GLbitfield
   return: void*
 gtu:
-  name: map_buffer_range
+  name: map_buffer
   params:
   - name: target
     type: gtu::constant const
+  - name: access
+    type: gtu::bitmask const&
   - name: offset
     type: std::ptrdiff_t const
   - name: length
     type: std::ptrdiff_t const
-  - name: access
-    type: gtu::bitmask const&
   return: void*

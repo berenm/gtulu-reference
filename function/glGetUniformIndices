@@ -9,7 +9,7 @@ gl:
     type: GLsizei
   - mapping: '&strings[0]'
     name: uniformNames
-    type: const GLchar**
+    type: GLchar const**
   - mapping: '&indices[0]'
     name: uniformIndices
     type: GLuint*

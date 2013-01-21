@@ -18,7 +18,7 @@ gl:
     type: GLsizei
   return: void
 gtu:
-  name: scissor_indexed
+  name: scissor
   params:
   - name: index
     type: uint32_t const

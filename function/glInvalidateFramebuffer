@@ -12,7 +12,7 @@ gl:
     type: GLenum const*
   return: void
 gtu:
-  name: invalidate_framebuffer
+  name: invalidate
   params:
   - name: target
     type: gtu::constant const

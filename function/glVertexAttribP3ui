@@ -15,7 +15,7 @@ gl:
     type: GLuint
   return: void
 gtu:
-  name: vertex_attrib_3_packed
+  name: vertex_attrib_packed_3
   params:
   - name: vertex_attrib
     type: gtu::vertex_attrib const

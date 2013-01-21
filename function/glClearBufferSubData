@@ -24,7 +24,7 @@ gl:
     type: void const*
   return: void
 gtu:
-  name: clear_buffer_sub_data
+  name: clear_buffer_data
   params:
   - name: target
     type: gtu::constant const

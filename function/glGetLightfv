@@ -7,7 +7,7 @@ gl:
   - mapping: property
     name: pname
     type: GLenum
-  - mapping: params
+  - mapping: '&params[0]'
     name: params
     type: GLfloat*
   return: void
@@ -19,5 +19,5 @@ gtu:
   - name: property
     type: gtu::constant const
   - name: params
-    type: float32*
+    type: gtu::vec4< float32 >&
   return: void

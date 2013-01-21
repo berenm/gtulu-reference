@@ -16,8 +16,8 @@ gtu:
   params:
   - name: mode
     type: gtu::constant const
-  - name: first
-    type: int32_t const
   - name: count
     type: gtu::size const
+  - name: first
+    type: int32_t const
   return: void

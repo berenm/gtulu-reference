@@ -6,7 +6,7 @@ gl:
     type: GLuint
   return: void
 gtu:
-  name: bind_vertex_array
+  name: bind
   params:
   - name: array
     type: gtu::vertex_array const

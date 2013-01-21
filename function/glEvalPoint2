@@ -9,7 +9,7 @@ gl:
     type: GLint
   return: void
 gtu:
-  name: eval_point_2
+  name: eval_point
   params:
   - name: i
     type: int32_t const

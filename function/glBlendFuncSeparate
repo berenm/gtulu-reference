@@ -15,7 +15,7 @@ gl:
     type: GLenum
   return: void
 gtu:
-  name: blend_func_separate
+  name: blend_func
   params:
   - name: srcRGB
     type: gtu::constant const

@@ -9,7 +9,7 @@ gl:
     type: GLuint
   return: void
 gtu:
-  name: end_query_indexed
+  name: end_query
   params:
   - name: target
     type: gtu::constant const

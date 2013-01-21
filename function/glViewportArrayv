@@ -12,7 +12,7 @@ gl:
     type: GLfloat const*
   return: void
 gtu:
-  name: viewport_array
+  name: viewport
   params:
   - name: first
     type: uint32_t const

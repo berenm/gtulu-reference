@@ -33,7 +33,7 @@ gl:
     type: GLfloat const*
   return: void
 gtu:
-  name: map_2
+  name: map
   params:
   - name: target
     type: gtu::constant const

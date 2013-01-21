@@ -12,7 +12,7 @@ gl:
     type: GLint const*
   return: void
 gtu:
-  name: scissor_array
+  name: scissor
   params:
   - name: first
     type: uint32_t const

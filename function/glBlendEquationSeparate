@@ -9,7 +9,7 @@ gl:
     type: GLenum
   return: void
 gtu:
-  name: blend_equation_separate
+  name: blend_equation
   params:
   - name: modeRGB
     type: gtu::constant const

@@ -12,7 +12,7 @@ gl:
     type: GLint
   return: void
 gtu:
-  name: eval_mesh_1
+  name: eval_mesh
   params:
   - name: mode
     type: gtu::constant const

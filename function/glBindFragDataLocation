@@ -12,7 +12,7 @@ gl:
     type: char const*
   return: void
 gtu:
-  name: bind_frag_data_location
+  name: bind
   params:
   - name: program
     type: gtu::program const

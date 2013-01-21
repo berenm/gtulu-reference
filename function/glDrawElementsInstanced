@@ -13,21 +13,21 @@ gl:
   - mapping: indices
     name: indices
     type: void const*
-  - mapping: instancecount
+  - mapping: primitive_count
     name: instancecount
     type: GLsizei
   return: void
 gtu:
-  name: draw_elements_instanced
+  name: draw_elements
   params:
   - name: mode
     type: gtu::constant const
-  - name: count
-    type: gtu::size const
   - name: type
     type: gtu::constant const
+  - name: count
+    type: gtu::size const
+  - name: primitive_count
+    type: gtu::size const
   - name: indices
     type: gtu::buffer_ref const&
-  - name: instancecount
-    type: gtu::size const
   return: void

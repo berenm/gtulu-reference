@@ -9,7 +9,7 @@ gl:
     type: GLuint const*
   return: void
 gtu:
-  name: delete_framebuffer
+  name: destroy
   params:
   - name: framebuffer
     type: gtu::framebuffer const

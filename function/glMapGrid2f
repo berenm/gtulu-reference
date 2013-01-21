@@ -21,7 +21,7 @@ gl:
     type: GLfloat
   return: void
 gtu:
-  name: mapGrid_2
+  name: map_grid
   params:
   - name: un
     type: int32_t const

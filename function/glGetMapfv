@@ -7,7 +7,7 @@ gl:
   - mapping: query
     name: query
     type: GLenum
-  - mapping: v
+  - mapping: '&v[0]'
     name: v
     type: GLfloat*
   return: void
@@ -19,5 +19,5 @@ gtu:
   - name: query
     type: gtu::constant const
   - name: v
-    type: float32*
+    type: std::vector< float32 >&
   return: void

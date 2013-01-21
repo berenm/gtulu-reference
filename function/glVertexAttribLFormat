@@ -15,7 +15,7 @@ gl:
     type: GLuint
   return: void
 gtu:
-  name: vertex_attrib_format_large_integer
+  name: vertex_attrib_large_format
   params:
   - name: vertex_attrib
     type: gtu::vertex_attrib const

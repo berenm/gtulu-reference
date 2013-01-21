@@ -12,7 +12,7 @@ gl:
     type: GLdouble
   return: void
 gtu:
-  name: depth_range_indexed
+  name: depth_range
   params:
   - name: index
     type: uint32_t const

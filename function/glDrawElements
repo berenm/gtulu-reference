@@ -19,10 +19,10 @@ gtu:
   params:
   - name: mode
     type: gtu::constant const
-  - name: count
-    type: gtu::size const
   - name: type
     type: gtu::constant const
+  - name: count
+    type: gtu::size const
   - name: indices
     type: gtu::buffer_ref const&
   return: void

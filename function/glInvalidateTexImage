@@ -9,7 +9,7 @@ gl:
     type: GLint
   return: void
 gtu:
-  name: invalidate_tex_image
+  name: invalidate
   params:
   - name: texture
     type: gtu::texture const

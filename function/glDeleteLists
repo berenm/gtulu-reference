@@ -9,7 +9,7 @@ gl:
     type: GLsizei
   return: void
 gtu:
-  name: delete_list
+  name: destroy
   params:
   - name: list
     type: gtu::list const

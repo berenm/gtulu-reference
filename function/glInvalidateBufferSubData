@@ -12,7 +12,7 @@ gl:
     type: GLsizeiptr
   return: void
 gtu:
-  name: invalidate_buffer_sub_data
+  name: invalidate
   params:
   - name: buffer
     type: gtu::buffer const

@@ -9,10 +9,10 @@ gl:
     type: GLbyte const*
   return: void
 gtu:
-  name: vertex_attrib_normalized
+  name: vertex_attrib
   params:
   - name: vertex_attrib
     type: gtu::vertex_attrib const
   - name: values
-    type: gtu::vec4< int8_t > const&
+    type: gtu::vec4< fixed8 > const&
   return: void

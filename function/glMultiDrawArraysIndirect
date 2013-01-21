@@ -4,10 +4,10 @@ gl:
   - mapping: mode
     name: mode
     type: GLenum
-  - mapping: indirect
+  - mapping: arrays
     name: indirect
     type: void const*
-  - mapping: drawcount
+  - mapping: count
     name: drawcount
     type: GLsizei
   - mapping: stride
@@ -15,13 +15,13 @@ gl:
     type: GLsizei
   return: void
 gtu:
-  name: multi_draw_arrays_indirect
+  name: draw_arrays
   params:
   - name: mode
     type: gtu::constant const
-  - name: indirect
-    type: gtu::bytearray const&
-  - name: drawcount
+  - name: arrays
+    type: gtu::buffer_ref const&
+  - name: count
     type: gtu::size const
   - name: stride
     type: gtu::size const

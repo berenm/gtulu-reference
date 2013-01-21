@@ -9,7 +9,7 @@ gl:
     type: GLsizei
   - mapping: '&strings[0]'
     name: strings
-    type: const char* const*
+    type: char const* const*
   return: GLuint
 gtu:
   name: create_shader_program
