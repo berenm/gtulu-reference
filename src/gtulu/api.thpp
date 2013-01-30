@@ -4,17 +4,7 @@
 // :import yaml
 // :import gtuluref
 
-// :set ___folder = gtuluref.ref(___GTULU_VERSION, ___getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'function')
-// :set ___functions = {}
-// :for f in os.listdir(___folder):
-// :  set ___functions[f] = yaml.load(file(os.path.join(___folder, f), 'r'))
-// :end for
-
-// :set ___folder = gtuluref.ref(___GTULU_VERSION, ___getVar('GTULU_COMPAT', False) and 'comp' or 'core', 'constant')
-// :set ___constants = {}
-// :for f in os.listdir(___folder):
-// :  set ___constants[f] = yaml.load(file(os.path.join(___folder, f), 'r'))
-// :end for
+// :set (___functions,___constants,___categories) = gtuluref.load(___GTULU_VERSION, ___getVar('GTULU_COMPAT', False))
 
 #ifndef __GTULU_OPENGL_API__
 #define __GTULU_OPENGL_API__
@@ -24,27 +14,22 @@
 namespace gtulu {
   namespace cst {
 
-    // :set ___categories = gtuluref.categorize_constants(___constants)
-    // :for cat,csts in sorted(___categories.items()):
-    // :  if ___cat == '__all__'
-    // :    for c in sorted(___csts.values(), key=lambda x: x['name']):
+    // :for c in ___constants:
     static constexpr gtu::constant ___c.name = ___c.value; // :slurp
 
-    // :    end for
-    // :  end if
     // :end for
 
   } // namespace cst
 
   namespace api {
 
-    // :for f in sorted(___functions.values(), key=lambda x: '%s(%s)' % (x['gtu']['name'], ', '.join(['%(type)s %(name)s' % p for p in x['gtu']['params']]))):
+    // :for f in ___functions:
     // :  if ___f.gtu.get('skip', False):
     // :    continue
     // :  end if
     // :  set ___parameters  = ', '.join(['%(type)s %(name)s' % p for p in ___f.gtu.params])
     // :  set ___return_type = ___f.gtu.return
-    // :  set ___function    = lambda x: '%s(%s)' % (f['gtu']['name'], x)
+    // :  set ___function       = lambda x: '%s(%s)' % (f['gtu']['name'], x)
     GTULU_API_EXPORT ___return_type ___function(___parameters); // :slurp
 
     // :end for

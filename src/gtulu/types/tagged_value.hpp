@@ -27,13 +27,26 @@ namespace gtulu {
 
   namespace detail {
 
-    template< typename T >
-    constexpr bool is_one_of(T const value) { return false; }
+    template< typename T, typename ... Ts >
+    struct is_one_of;
 
-    template< typename T, T v, T... Vs >
-    constexpr bool is_one_of(T const value) { return value == v || is_one_of< T, Vs... >(value); }
+    template< typename T >
+    struct is_one_of< T > {
+      static constexpr bool value = false;
+    };
+
+    template< typename T, typename T0, typename ... Ts >
+    struct is_one_of< T, T0, Ts ... > {
+      static constexpr bool value = std::is_same< T, T0 >::value || is_one_of< T, Ts ... >::value;
+    };
 
   }
+
+  template< typename T, typename ... Ts >
+  struct is_one_of {
+    static constexpr bool value = detail::is_one_of< T, Ts ... >::value;
+    static_assert(value, "T is not one of the allowed constants.");
+  };
 
 }
 

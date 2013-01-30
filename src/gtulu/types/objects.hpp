@@ -9,6 +9,8 @@ namespace gtulu {
   namespace tag {
     struct constant;
 
+    struct fixed_point;
+
     struct buffer;
     struct framebuffer;
     struct list;
@@ -31,10 +33,20 @@ namespace gtulu {
     struct debug_message;
 
     struct texture_unit;
+    struct vertex_binding;
   }
 
   typedef gtu::tagged_value< gtu::tag::constant, uint32_t > constant;
   typedef gtu::constant                                     checked_constant;
+
+  typedef gtu::tagged_value< gtu::tag::fixed_point, int8_t >   fixed8;
+  typedef gtu::tagged_value< gtu::tag::fixed_point, uint8_t >  ufixed8;
+  typedef gtu::tagged_value< gtu::tag::fixed_point, int16_t >  fixed16;
+  typedef gtu::tagged_value< gtu::tag::fixed_point, uint16_t > ufixed16;
+  typedef gtu::tagged_value< gtu::tag::fixed_point, int32_t >  fixed32;
+  typedef gtu::tagged_value< gtu::tag::fixed_point, uint32_t > ufixed32;
+  typedef gtu::tagged_value< gtu::tag::fixed_point, int64_t >  fixed64;
+  typedef gtu::tagged_value< gtu::tag::fixed_point, uint64_t > ufixed64;
 
   typedef gtu::tagged_value< gtu::tag::buffer >             buffer;
   typedef gtu::tagged_value< gtu::tag::framebuffer >        framebuffer;
@@ -57,7 +69,8 @@ namespace gtulu {
   typedef gtu::tagged_value< gtu::tag::program_resource >   program_resource;
   typedef gtu::tagged_value< gtu::tag::debug_message >      debug_message;
 
-  typedef gtu::tagged_value< gtu::tag::texture_unit > texture_unit;
+  typedef gtu::tagged_value< gtu::tag::texture_unit >   texture_unit;
+  typedef gtu::tagged_value< gtu::tag::vertex_binding > vertex_binding;
 
 }
 

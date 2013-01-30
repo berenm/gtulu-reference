@@ -1,5 +1,6 @@
 import os
 import argparse
+import yaml
 
 binary_dir = os.getcwd()
 source_dir = os.path.join(os.path.dirname(__file__), '..')
@@ -73,10 +74,12 @@ def enumerate_values(constant):
 
 
 def categorize_constants(constants):
-  categories = {'__all__': {}}
+  categories = {}
   for n,c in sorted(constants.items()):
+    del constants[n]
+
     for u in enumerate_values(c):
-      categories['__all__'][u['name']] = u
+      constants[u['name']] = u
 
     for cat in [cc.lower() for cc in c['categories'] if cc[:3] != 'gl_']:
       if cat not in categories:
@@ -84,7 +87,7 @@ def categorize_constants(constants):
       for u in enumerate_values(c):
         categories[cat][u['name']] = u
 
-  return categories
+  return (constants, categories)
 
 
 def resolve_values(function, parameter, constants):
@@ -95,6 +98,28 @@ def resolve_values(function, parameter, constants):
       output.extend([ u['name'] for u in enumerate_values(c) ])
 
   return sorted(set(output))
+
+
+def load(version, compat=False):
+  folder = ref(version, compat and 'comp' or 'core', 'constant')
+  constants = {}
+  for f in os.listdir(folder):
+    constants[f] = yaml.load(file(os.path.join(folder, f), 'r'))
+
+  folder = ref(version, compat and 'comp' or 'core', 'function')
+  functions = {}
+  for f in os.listdir(folder):
+    functions[f] = yaml.load(file(os.path.join(folder, f), 'r'))
+    for p in functions[f]['gtu']['params']:
+      p['values'] = resolve_values(functions[f], p, constants)
+
+  (constants, categories) = categorize_constants(constants)
+
+  functions = sorted(functions.values(), key=lambda x: '%s(%s)' % (x['gtu']['name'], ', '.join(['%(type)s %(name)s' % p for p in x['gtu']['params']])))
+  constants = sorted(constants.values(), key=lambda x: x['name'])
+
+  return (functions, constants, categories)
+
 
 
 def man(v, file=None):
