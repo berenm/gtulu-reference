@@ -7,6 +7,8 @@ include(FindOpenGL)
 include(AddSubmodule)
 include(FindCXX11)
 include(CheetahGenerate)
+include(FixCCache)
+include(FixStaticLink)
 
 project(libgtulu_api CXX)
 # parse_version(libgtulu_api DEBIAN)
@@ -109,15 +111,17 @@ install(TARGETS ${GTULU_TARGET_PREFIX} ${GTULU_TARGET_PREFIX}_ni
 
 enable_testing()
 
+pkg_check_modules(EGL REQUIRED x11 egl)
+
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/gl/${GTULU_VERSION}/core)
 add_executable(test-link-gl-no test/test1.cpp)
-target_link_libraries(test-link-gl-no ${GTULU_TARGET_PREFIX} EGL X11)
+target_link_libraries(test-link-gl-no ${GTULU_TARGET_PREFIX} ${EGL_LIBRARIES})
 add_test(test-link-gl-no test-link-gl-no)
 
 add_executable(test-link-gl-after test/test1.cpp)
-target_link_libraries(test-link-gl-after ${GTULU_TARGET_PREFIX} EGL X11 GL)
+target_link_libraries(test-link-gl-after ${GTULU_TARGET_PREFIX} ${OPENGL_LIBRARIES})
 add_test(test-link-gl-after test-link-gl-after)
 
 add_executable(test-link-gl-before test/test1.cpp)
-target_link_libraries(test-link-gl-before GL ${GTULU_TARGET_PREFIX} EGL X11)
+target_link_libraries(test-link-gl-before ${OPENGL_LIBRARIES} ${GTULU_TARGET_PREFIX})
 add_test(test-link-gl-before test-link-gl-before)

@@ -61,11 +61,15 @@ typedef egl_context         context_info;
 typedef egl_current_context current_context_info;
 
 static int _x_error(Display* display, XErrorEvent* error) {
+  char error_string[1024];
+
+  XGetErrorText(error->display, error->error_code, error_string, 1024);
+  __error() << error_string;
   return 0;
 }
 
 static void create_context() {
-  setenv("EGL_DRIVER", "egl_glx", 0);
+  // setenv("EGL_DRIVER", "egl_glx", 0);
   XSetErrorHandler(_x_error);
 
   EGLNativeDisplayType const native_display = XOpenDisplay(nullptr);
