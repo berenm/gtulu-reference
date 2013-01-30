@@ -24,8 +24,12 @@ gtu:
     type: gtu::constant const
   - name: name
     type: uint32_t const
-  - name: length
-    type: gtu::size&
-  - name: label
-    type: std::string&
-  return: void
+  precall: |
+    gtu::size              length = 0;
+    std::vector< int32_t > max_length;
+    api::get(cst::max_label_length, max_length);
+    std::string label(max_length[0] - 1, '\0');
+  postcall: |
+    label.resize(length);
+    return label;
+  return: std::string

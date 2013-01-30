@@ -15,5 +15,6 @@ gtu:
     type: gtu::constant const
   - name: index
     type: uint32_t const
+  postcall: |
+    return __r == nullptr ? std::string() : std::string(static_cast< char const* >(static_cast< void const* >(__r)));
   return: std::string
-  return-cast: reinterpret_cast< char const* >

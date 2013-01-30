@@ -4,13 +4,13 @@ gl:
   - mapping: shader
     name: shader
     type: GLuint
-  - mapping: source.capacity()
+  - mapping: shader_source.capacity()
     name: bufSize
     type: GLsizei
-  - mapping: '&length'
+  - mapping: nullptr
     name: length
     type: GLsizei*
-  - mapping: '&source[0]'
+  - mapping: '&shader_source[0]'
     name: source
     type: GLchar*
   return: void
@@ -19,8 +19,10 @@ gtu:
   params:
   - name: shader
     type: gtu::shader const
-  - name: length
-    type: gtu::size&
-  - name: source
-    type: std::string&
-  return: void
+  precall: |
+    gtu::vec1< int32_t > length;
+    api::get_shader(shader, cst::shader_source_length, length);
+    std::string shader_source(length[0] - 1, '\0');
+  postcall: |
+    return shader_source;
+  return: std::string

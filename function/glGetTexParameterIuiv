@@ -19,5 +19,16 @@ gtu:
   - name: property
     type: gtu::constant const
   - name: params
-    type: gtu::vec4< uint32_t >&
+    type: std::vector< uint32_t >&
+  precall: |
+    switch (property) {
+      case cst::texture_swizzle_rgba:
+      case cst::texture_border_color:
+        params.resize(4);
+        break;
+
+      default:
+        params.resize(1);
+        break;
+    }
   return: void

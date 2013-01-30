@@ -19,5 +19,10 @@ gtu:
   - name: property
     type: gtu::constant const
   - name: values
-    type: gtu::vec4< uint32_t >&
+    type: std::vector< uint32_t >&
+  precall: |
+    switch (property) {
+      case cst::current_vertex_attrib: values.resize(4); break;
+      default:                         values.resize(1); break;
+    }
   return: void

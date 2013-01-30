@@ -19,7 +19,7 @@ gl:
   - mapping: ymove
     name: ymove
     type: GLfloat
-  - mapping: bitmap
+  - mapping: static_cast< GLubyte const* >(bitmap)
     name: bitmap
     type: GLubyte const*
   return: void
@@ -37,5 +37,5 @@ gtu:
   - name: ymove
     type: float32 const
   - name: bitmap
-    type: uint8_t const*
+    type: gtu::bytearray const&
   return: void

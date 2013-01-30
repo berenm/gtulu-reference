@@ -5,7 +5,7 @@ gl:
       severities.capacity())), lengths.capacity())
     name: count
     type: GLuint
-  - mapping: messageLog.capacity()
+  - mapping: message_data.capacity()
     name: bufSize
     type: GLsizei
   - mapping: '&sources[0]'
@@ -23,23 +23,35 @@ gl:
   - mapping: '&lengths[0]'
     name: lengths
     type: GLsizei*
-  - mapping: '&messageLog[0]'
+  - mapping: '&message_data[0]'
     name: messageLog
     type: GLchar*
   return: GLuint
 gtu:
   name: get_debug_message_log
-  params:
-  - name: sources
-    type: std::vector< gtu::constant >
-  - name: types
-    type: std::vector< gtu::constant >
-  - name: debug_messages
-    type: std::vector< gtu::debug_message >
-  - name: severities
-    type: std::vector< gtu::constant >
-  - name: lengths
-    type: std::vector< gtu::size >
-  - name: messageLog
-    type: std::string&
-  return: uint32_t
+  params: []
+  precall: |
+    std::vector< int32_t > count;
+    api::get(cst::debug_logged_messages, count);
+
+    std::vector< int32_t > max_length;
+    api::get(cst::max_debug_message_length, max_length);
+
+    std::string                       message_data(max_length[0] * count[0], '\0');
+    std::vector< gtu::constant >      sources(count[0]);
+    std::vector< gtu::constant >      types(count[0]);
+    std::vector< gtu::debug_message > debug_messages(count[0]);
+    std::vector< gtu::constant >      severities(count[0]);
+    std::vector< gtu::size >          lengths(count[0]);
+
+    sources.resize(count[0]);
+    types.resize(count[0]);
+    debug_messages.resize(count[0]);
+    severities.resize(count[0]);
+    lengths.resize(count[0]);
+  postcall: |
+    std::vector< std::tuple< gtu::constant, gtu::constant, gtu::debug_message, gtu::constant, std::string > > messages;
+    for (size_t i = 0, offset = 0; i < count[0]; offset += lengths[i++])
+      messages.push_back(std::make_tuple(sources[i], types[i], debug_messages[i], severities[i], std::string(&message_data[0] + offset, lengths[i])));
+    return messages;
+  return: std::vector< std::tuple< gtu::constant, gtu::constant, gtu::debug_message, gtu::constant, std::string > >

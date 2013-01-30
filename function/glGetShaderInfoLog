@@ -7,7 +7,7 @@ gl:
   - mapping: info_log.capacity()
     name: bufSize
     type: GLsizei
-  - mapping: '&length'
+  - mapping: nullptr
     name: length
     type: GLsizei*
   - mapping: '&info_log[0]'
@@ -19,8 +19,10 @@ gtu:
   params:
   - name: shader
     type: gtu::shader const
-  - name: length
-    type: gtu::size&
-  - name: info_log
-    type: std::string&
-  return: void
+  precall: |
+    gtu::vec1< int32_t > length;
+    api::get_shader(shader, cst::info_log_length, length);
+    std::string info_log(length[0] - 1, '\0');
+  postcall: |
+    return info_log;
+  return: std::string

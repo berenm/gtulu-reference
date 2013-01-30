@@ -19,5 +19,5 @@ gtu:
   - name: location
     type: int32_t const
   - name: values
-    type: std::vector< float32 >&
+    type: gtu::vec4< float32 >&
   return: void

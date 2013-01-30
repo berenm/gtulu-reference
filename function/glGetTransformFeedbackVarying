@@ -7,19 +7,19 @@ gl:
   - mapping: index
     name: index
     type: GLuint
-  - mapping: name.capacity()
+  - mapping: std::get< 0 >(varying_info).capacity()
     name: bufSize
     type: GLsizei
   - mapping: '&length'
     name: length
     type: GLsizei*
-  - mapping: '&size'
+  - mapping: '&std::get< 2 >(varying_info)'
     name: size
     type: GLsizei*
-  - mapping: '&type'
+  - mapping: '&std::get< 1 >(varying_info)'
     name: type
     type: GLenum*
-  - mapping: '&name[0]'
+  - mapping: '&std::get< 0 >(varying_info)[0]'
     name: name
     type: char*
   return: void
@@ -30,12 +30,13 @@ gtu:
     type: gtu::program const
   - name: index
     type: uint32_t const
-  - name: length
-    type: gtu::size&
-  - name: size
-    type: int32_t&
-  - name: type
-    type: gtu::constant&
-  - name: name
-    type: std::string&
   return: void
+  precall: |
+    gtu::size              length = 0;
+    std::vector< int32_t > max_length;
+    api::get_program(program, cst::transform_feedback_varying_max_length, max_length);
+    std::tuple< std::string, gtu::constant, int32_t > varying_info = std::make_tuple(std::string(max_length[0] - 1, '\0'), 0, 0);
+  postcall: |
+    std::get< 0 >(varying_info).resize(length);
+    return varying_info;
+  return: std::tuple< std::string, gtu::constant, int32_t >

@@ -24,8 +24,12 @@ gtu:
     type: gtu::program const
   - name: uniform_block
     type: gtu::uniform_block const
-  - name: length
-    type: gtu::size&
-  - name: name
-    type: std::string&
-  return: void
+  precall: |
+    gtu::size              length = 0;
+    std::vector< int32_t > max_length;
+    api::get_program(program, cst::active_uniform_block_max_name_length, max_length);
+    std::string name(max_length[0] - 1, '\0');
+  postcall: |
+    name.resize(length);
+    return name;
+  return: std::string

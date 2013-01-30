@@ -7,7 +7,7 @@ gl:
   - mapping: binary.capacity()
     name: bufsize
     type: GLsizei
-  - mapping: '&length'
+  - mapping: nullptr
     name: length
     type: GLsizei*
   - mapping: '&binaryFormat'
@@ -22,10 +22,12 @@ gtu:
   params:
   - name: program
     type: gtu::program const
-  - name: length
-    type: gtu::size&
   - name: binaryFormat
     type: gtu::constant&
   - name: binary
-    type: std::string&
+    type: std::vector< uint8_t >&
+  precall: |
+    std::vector< int32_t > length;
+    api::get_program(program, cst::program_binary_length, length);
+    binary.resize(length[0]);
   return: void

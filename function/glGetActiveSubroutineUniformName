@@ -29,8 +29,12 @@ gtu:
     type: gtu::constant const
   - name: subroutine_uniform
     type: gtu::uniform const
-  - name: length
-    type: gtu::size&
-  - name: name
-    type: std::string&
-  return: void
+  precall: |
+    gtu::size            length = 0;
+    gtu::vec1< int32_t > max_length;
+    api::get_program_stage(program, shadertype, cst::active_subroutine_uniform_max_length, max_length);
+    std::string name(max_length[0] - 1, '\0');
+  postcall: |
+    name.resize(length);
+    return name;
+  return: std::string

@@ -7,19 +7,19 @@ gl:
   - mapping: uniform
     name: index
     type: GLuint
-  - mapping: name.capacity()
+  - mapping: std::get< 0 >(uniform_info).capacity()
     name: bufSize
     type: GLsizei
   - mapping: '&length'
     name: length
     type: GLsizei*
-  - mapping: '&size'
+  - mapping: '&std::get< 2 >(uniform_info)'
     name: size
     type: GLint*
-  - mapping: '&type'
+  - mapping: '&std::get< 1 >(uniform_info)'
     name: type
     type: GLenum*
-  - mapping: '&name[0]'
+  - mapping: '&std::get< 0 >(uniform_info)[0]'
     name: name
     type: GLchar*
   return: void
@@ -30,12 +30,12 @@ gtu:
     type: gtu::program const
   - name: uniform
     type: gtu::uniform const
-  - name: length
-    type: gtu::size&
-  - name: size
-    type: int32_t&
-  - name: type
-    type: gtu::constant&
-  - name: name
-    type: std::string&
-  return: void
+  precall: |
+    gtu::size              length = 0;
+    std::vector< int32_t > max_length;
+    api::get_program(program, cst::active_uniform_max_length, max_length);
+    std::tuple< std::string, gtu::constant, int32_t > uniform_info = std::make_tuple(std::string(max_length[0] - 1, '\0'), 0, 0);
+  postcall: |
+    std::get< 0 >(uniform_info).resize(length);
+    return uniform_info;
+  return: std::tuple< std::string, gtu::constant, int32_t >

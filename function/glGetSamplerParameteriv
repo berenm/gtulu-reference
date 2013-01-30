@@ -19,5 +19,10 @@ gtu:
   - name: property
     type: gtu::constant const
   - name: values
-    type: gtu::vec4< int32_t >&
+    type: std::vector< int32_t >&
+  precall: |
+    switch (property) {
+      case cst::texture_border_color: values.resize(4); break;
+      default:                        values.resize(1); break;
+    }
   return: void

@@ -24,8 +24,11 @@ gtu:
     type: gtu::barrier const
   - name: property
     type: gtu::constant const
-  - name: length
-    type: gtu::size&
   - name: values
     type: std::vector< int32_t >&
+  precall: |
+    gtu::size length;
+    values.resize(1);
+  postcall: |
+    values.resize(length);
   return: void

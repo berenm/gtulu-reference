@@ -7,7 +7,7 @@ gl:
   - mapping: index
     name: index
     type: GLuint
-  - mapping: '&data[0]'
+  - mapping: '&values[0]'
     name: data
     type: GLboolean*
   return: void
@@ -18,6 +18,55 @@ gtu:
     type: gtu::constant const
   - name: index
     type: uint32_t const
-  - name: data
+  - name: values
     type: std::vector< uint8_t >&
+  precall: |
+    std::vector< int32_t > count;
+    switch (property) {
+      case cst::program_binary_formats:
+        api::get(cst::num_program_binary_formats, count);
+        values.resize(count[0]);
+        break;
+      case cst::compressed_texture_formats:
+        api::get(cst::num_compressed_texture_formats, count);
+        values.resize(count[0]);
+        break;
+      case cst::accum_clear_value:
+      case cst::blend_color:
+      case cst::color_clear_value:
+      case cst::color_writemask:
+      case cst::current_color:
+      case cst::current_raster_color:
+      case cst::current_raster_position:
+      case cst::current_raster_secondary_color:
+      case cst::current_raster_texture_coords:
+      case cst::current_secondary_color:
+      case cst::current_texture_coords:
+      case cst::fog_color:
+      case cst::light_model_ambient:
+      case cst::map2_grid_domain:
+      case cst::scissor_box:
+      case cst::viewport:
+        values.resize(4);
+        break;
+      case cst::current_normal:
+      case cst::point_distance_attenuation:
+        values.resize(3);
+        break;
+      case cst::aliased_point_size_range:
+      case cst::aliased_line_width_range:
+      case cst::depth_range:
+      case cst::map1_grid_domain:
+      case cst::map2_grid_segments:
+      case cst::max_viewport_dims:
+      case cst::point_size_range:
+      case cst::polygon_mode:
+      case cst::smooth_line_width_range:
+      case cst::viewport_bounds_range:
+        values.resize(2);
+        break;
+      default:
+        values.resize(1);
+        break;
+    }
   return: void
