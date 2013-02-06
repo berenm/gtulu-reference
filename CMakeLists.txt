@@ -17,11 +17,8 @@ if(NOT libgtulu_api_VERSION)
   set(libgtulu_api_VERSION 4.3-comp)
 endif()
 
-add_submodule(api-registry lib/registry INCLUDE_DIRS include)
-add_submodule(api-man-gl2 man/gl/2)
-add_submodule(api-man-gl3 man/gl/3)
-add_submodule(api-man-gl4 man/gl/4)
-add_submodule(logging lib/logging INCLUDE_DIRS include lib/boost-log)
+add_submodule(logging git://github.com/berenm/liblogging.git lib/logging BRANCH master INCLUDE_DIRS include lib/boost-log)
+include_directories(${boost-log_INCLUDE_DIRS})
 
 find_package(PkgConfig REQUIRED)
 
@@ -57,7 +54,7 @@ else()
 endif()
 
 
-add_submodule(${GTULU_TARGET_PREFIX} ${GTULU_API_SOURCE_DIR})
+add_submodule(${GTULU_TARGET_PREFIX} git://github.com/berenm/gtulu-reference.git ${GTULU_API_SOURCE_DIR})
 
 file(GLOB_RECURSE API_SOURCES bin/* ${GTULU_API_SOURCE_DIR}/function/* ${GTULU_API_SOURCE_DIR}/constant/*)
 set(GTULU_CHEETAH_PROPERTIES
@@ -84,7 +81,7 @@ set(GTULU_LIBRARY_PROPERTIES
   LINK_FLAGS    "-Wl,--as-needed -Wl,--no-undefined"
 )
 
-add_library(${GTULU_TARGET_PREFIX}_ni SHARED ${GTULU_API_NI_CPP} src/gtulu/logging.cpp src/gtulu/notimp.cpp)
+add_library(${GTULU_TARGET_PREFIX}_ni ${GTULU_API_NI_CPP} src/gtulu/notimp.cpp)
 set_target_properties(${GTULU_TARGET_PREFIX}_ni PROPERTIES
   SONAME        libgtulu-api-ni${GTULU_VERSION_MAJOR}
   OUTPUT_NAME   gtulu-api-ni
@@ -93,7 +90,7 @@ set_target_properties(${GTULU_TARGET_PREFIX}_ni PROPERTIES
 target_link_libraries(${GTULU_TARGET_PREFIX}_ni logging)
 
 
-add_library(${GTULU_TARGET_PREFIX} SHARED ${GTULU_API_HPP} ${GTULU_API_CPP} src/gtulu/logging.cpp src/gtulu/error.cpp)
+add_library(${GTULU_TARGET_PREFIX} ${GTULU_API_HPP} ${GTULU_API_CPP} src/gtulu/error.cpp)
 set_target_properties(${GTULU_TARGET_PREFIX} PROPERTIES
   SONAME        libgtulu-api${GTULU_VERSION_MAJOR}
   OUTPUT_NAME   gtulu-api
@@ -105,6 +102,7 @@ target_link_libraries(${GTULU_TARGET_PREFIX} ${GTULU_TARGET_PREFIX}_ni logging)
 
 install(TARGETS ${GTULU_TARGET_PREFIX} ${GTULU_TARGET_PREFIX}_ni
   LIBRARY       DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  ARCHIVE       DESTINATION ${CMAKE_INSTALL_LIBDIR}
   PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
