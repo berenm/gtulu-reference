@@ -5,6 +5,10 @@ gtulu-reference — opengl reference C++ wrapper library
     :alt: Build Status
     :target: https://travis-ci.org/berenm/gtulu-reference
 
+.. image:: http://stillmaintained.com/berenm/gtulu-reference.png
+    :alt: Still Maintained?
+    :target: http://stillmaintained.com/berenm/gtulu-reference
+
 GOAL OF GTULU
 ```````````````
 
