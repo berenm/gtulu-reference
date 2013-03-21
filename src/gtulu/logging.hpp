@@ -2,7 +2,6 @@
 #define __GTULU_API_LOGGING_HPP__
 
 #include <logging/logging.hpp>
-#include <gtulu/ostream.hpp>
 
 namespace gtulu {
   namespace api {
