@@ -123,3 +123,8 @@ add_test(test-gtulu-api-link-gl-after test-gtulu-api-link-gl-after)
 add_executable(test-gtulu-api-link-gl-before test/test1.cpp)
 target_link_libraries(test-gtulu-api-link-gl-before ${OPENGL_LIBRARIES} ${GTULU_TARGET_PREFIX})
 add_test(test-gtulu-api-link-gl-before test-gtulu-api-link-gl-before)
+
+if(ENABLE_GCOVERALLS)
+  include(GCoveralls)
+  enable_gcoveralls()
+endif()
