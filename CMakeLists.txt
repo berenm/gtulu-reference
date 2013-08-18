@@ -17,8 +17,11 @@ if(NOT libgtulu_api_VERSION)
   set(libgtulu_api_VERSION 4.3-comp)
 endif()
 
-add_submodule(logging git://github.com/berenm/liblogging.git lib/logging BRANCH master INCLUDE_DIRS include lib/boost-log)
-include_directories(${boost-log_INCLUDE_DIRS})
+add_submodule(libcorefungi git://github.com/berenm/libcorefungi.git lib/corefungi BRANCH master INCLUDE_DIRS include)
+include_directories(${libcorefungi_INCLUDE_DIRS})
+
+add_submodule(liblogging git://github.com/berenm/liblogging.git lib/logging BRANCH master INCLUDE_DIRS include lib/boost-log)
+include_directories(${liblogging_INCLUDE_DIRS})
 
 find_package(PkgConfig REQUIRED)
 
@@ -87,7 +90,7 @@ set_target_properties(${GTULU_TARGET_PREFIX}_ni PROPERTIES
   OUTPUT_NAME   gtulu-api-ni
   ${GTULU_LIBRARY_PROPERTIES}
 )
-target_link_libraries(${GTULU_TARGET_PREFIX}_ni logging)
+target_link_libraries(${GTULU_TARGET_PREFIX}_ni corefungi logging)
 
 
 add_library(${GTULU_TARGET_PREFIX} ${GTULU_API_HPP} ${GTULU_API_CPP} src/gtulu/error.cpp)
@@ -98,7 +101,7 @@ set_target_properties(${GTULU_TARGET_PREFIX} PROPERTIES
   PUBLIC_HEADER src/gtulu/types.h
   ${GTULU_LIBRARY_PROPERTIES}
 )
-target_link_libraries(${GTULU_TARGET_PREFIX} ${GTULU_TARGET_PREFIX}_ni logging)
+target_link_libraries(${GTULU_TARGET_PREFIX} ${GTULU_TARGET_PREFIX}_ni corefungi logging)
 
 install(TARGETS ${GTULU_TARGET_PREFIX} ${GTULU_TARGET_PREFIX}_ni
   LIBRARY       DESTINATION ${CMAKE_INSTALL_LIBDIR}

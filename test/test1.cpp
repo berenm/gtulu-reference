@@ -3,6 +3,9 @@
 #include <EGL/egl.h>
 #include <EGL/eglext.h>
 
+#include <boost/thread.hpp>
+#include <corefungi.hpp>
+
 template< typename ContextImpl >
 struct context_info_base : ContextImpl {
   template< typename ... Ts > context_info_base(Ts ... vs) : ContextImpl(vs ...) {}
@@ -147,6 +150,7 @@ static void destroy_context() {
 }
 
 int main(int argc, char const* argv[]) {
+  corefungi::init(argc, argv);
   create_context();
 
   __info() << "vendor: " << gtulu::api::get_string(gtulu::cst::vendor);

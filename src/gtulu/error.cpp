@@ -6,19 +6,31 @@
 #include <cstdlib>
 #include <stdexcept>
 
+#include <corefungi.hpp>
+
 namespace gtulu {
   namespace api {
 
-    void __check_error() {
-      static char const* const __gtulu_error_nocheck = std::getenv("GTULU_ERROR_NOCHECK");
+    static corefungi::sprout const o = {
+      "Gtulu API options", {
+        { "gtulu.no-error-check","disable the error checking after each GL call", corefungi::bool_switch },
+        { "gtulu.no-error-throw","disable the exception throw in case of error", corefungi::bool_switch },
+        { "gtulu.notimp-throw","enable the exception throw in case of not-implemented function call", corefungi::bool_switch }
+      }
+    };
 
-      if (__gtulu_error_nocheck != nullptr)
+    void __check_error() {
+      static bool const __gtulu_error_nocheck = corefungi::get("gtulu.no-error-check");
+      static bool const __gtulu_error_nothrow = corefungi::get("gtulu.no-error-throw");
+
+      if (__gtulu_error_nocheck)
         return;
 
       gtu::constant const __gl_error        = gtulu::api::get_error();
       char const*         __gl_error_string = nullptr;
       switch (__gl_error) {
         case gtu::cst::no_error:
+
           return;
 
         case gtu::cst::invalid_enum:
@@ -60,8 +72,7 @@ namespace gtulu {
 
       __error() << __gl_error_string;
 
-      static char const* const __gtulu_error_nothrow = std::getenv("GTULU_ERROR_NOTHROW");
-      if (__gtulu_error_nothrow == nullptr)
+      if (!__gtulu_error_nothrow)
         throw std::runtime_error(__gl_error_string);
     } // __check_error
 

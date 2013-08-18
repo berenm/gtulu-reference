@@ -76,3 +76,6 @@
 [submodule "lib/logging"]
 	path = lib/logging
 	url = git://github.com/berenm/liblogging.git
+[submodule "lib/corefungi"]
+	path = lib/corefungi
+	url = git://github.com/berenm/libcorefungi.git
