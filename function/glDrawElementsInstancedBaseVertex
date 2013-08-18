@@ -13,26 +13,26 @@ gl:
   - mapping: indices
     name: indices
     type: GLvoid const*
-  - mapping: instancecount
+  - mapping: primitive_count
     name: instancecount
     type: GLsizei
-  - mapping: basevertex
+  - mapping: base_vertex
     name: basevertex
     type: GLint
   return: void
 gtu:
-  name: draw_elements_instanced_base_vertex
+  name: draw_elements
   params:
   - name: mode
     type: gtu::constant const
-  - name: count
-    type: gtu::size const
   - name: type
     type: gtu::constant const
+  - name: count
+    type: gtu::size const
+  - name: primitive_count
+    type: gtu::size const
   - name: indices
     type: gtu::buffer_ref const&
-  - name: instancecount
-    type: gtu::size const
-  - name: basevertex
+  - name: base_vertex
     type: int32_t const
   return: void

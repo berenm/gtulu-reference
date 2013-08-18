@@ -18,7 +18,7 @@ gl:
     type: GLsizeiptr
   return: void
 gtu:
-  name: bind_buffer_range
+  name: bind
   params:
   - name: target
     type: gtu::constant const

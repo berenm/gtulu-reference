@@ -15,7 +15,7 @@ gl:
     type: GLenum
   return: void
 gtu:
-  name: stencil_op_separate
+  name: stencil_op
   params:
   - name: face
     type: gtu::constant const

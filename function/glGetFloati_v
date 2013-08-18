@@ -7,7 +7,7 @@ gl:
   - mapping: index
     name: index
     type: GLuint
-  - mapping: data
+  - mapping: '&data[0]'
     name: data
     type: GLfloat*
   return: void
@@ -19,5 +19,5 @@ gtu:
   - name: index
     type: uint32_t const
   - name: data
-    type: float32*
+    type: std::vector< float32 >&
   return: void

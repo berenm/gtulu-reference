@@ -15,7 +15,7 @@ gl:
     type: GLint
   return: void
 gtu:
-  name: clear_buffer_float
+  name: clear_buffer
   params:
   - name: buffer
     type: gtu::constant const

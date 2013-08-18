@@ -7,10 +7,10 @@ gl:
   - mapping: type
     name: type
     type: GLenum
-  - mapping: indirect
+  - mapping: elements
     name: indirect
     type: void const*
-  - mapping: drawcount
+  - mapping: count
     name: drawcount
     type: GLsizei
   - mapping: stride
@@ -18,15 +18,15 @@ gl:
     type: GLsizei
   return: void
 gtu:
-  name: multi_draw_elements_indirect
+  name: draw_elements
   params:
   - name: mode
     type: gtu::constant const
   - name: type
     type: gtu::constant const
-  - name: indirect
-    type: gtu::bytearray const&
-  - name: drawcount
+  - name: elements
+    type: gtu::buffer_ref const&
+  - name: count
     type: gtu::size const
   - name: stride
     type: gtu::size const

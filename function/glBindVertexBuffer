@@ -1,7 +1,7 @@
 gl:
   name: glBindVertexBuffer
   params:
-  - mapping: bindingindex
+  - mapping: vertex_binding
     name: bindingindex
     type: GLuint
   - mapping: buffer
@@ -15,10 +15,10 @@ gl:
     type: GLsizei
   return: void
 gtu:
-  name: bind_vertex_buffer
+  name: bind
   params:
-  - name: bindingindex
-    type: uint32_t const
+  - name: vertex_binding
+    type: gtu::vertex_binding const
   - name: buffer
     type: gtu::buffer const
   - name: offset

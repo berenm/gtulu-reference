@@ -9,7 +9,7 @@ gl:
     type: GLuint
   return: void
 gtu:
-  name: bind_renderbuffer
+  name: bind
   params:
   - name: target
     type: gtu::constant const

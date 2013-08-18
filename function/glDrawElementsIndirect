@@ -7,17 +7,17 @@ gl:
   - mapping: type
     name: type
     type: GLenum
-  - mapping: indirect
+  - mapping: elements
     name: indirect
     type: void const*
   return: void
 gtu:
-  name: draw_elements_indirect
+  name: draw_elements
   params:
   - name: mode
     type: gtu::constant const
   - name: type
     type: gtu::constant const
-  - name: indirect
-    type: gtu::bytearray const&
+  - name: elements
+    type: gtu::buffer_ref const&
   return: void

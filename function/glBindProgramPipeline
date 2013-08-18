@@ -6,7 +6,7 @@ gl:
     type: GLuint
   return: void
 gtu:
-  name: bind_program_pipeline
+  name: bind
   params:
   - name: pipeline
     type: gtu::pipeline const

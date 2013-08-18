@@ -9,7 +9,7 @@ gl:
     type: GLfloat const*
   return: void
 gtu:
-  name: viewport_indexed
+  name: viewport
   params:
   - name: index
     type: uint32_t const

@@ -24,7 +24,7 @@ gl:
     type: GLint
   return: void
 gtu:
-  name: invalidate_sub_framebuffer
+  name: invalidate
   params:
   - name: target
     type: gtu::constant const

@@ -4,15 +4,15 @@ gl:
   - mapping: mode
     name: mode
     type: GLenum
-  - mapping: indirect
+  - mapping: arrays
     name: indirect
     type: void const*
   return: void
 gtu:
-  name: draw_arrays_indirect
+  name: draw_arrays
   params:
   - name: mode
     type: gtu::constant const
-  - name: indirect
-    type: gtu::bytearray const&
+  - name: arrays
+    type: gtu::buffer_ref const&
   return: void

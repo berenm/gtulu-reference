@@ -4,7 +4,7 @@ gl:
   - mapping: vertex_attrib
     name: attribindex
     type: GLuint
-  - mapping: bindingindex
+  - mapping: vertex_binding
     name: bindingindex
     type: GLuint
   return: void
@@ -13,6 +13,6 @@ gtu:
   params:
   - name: vertex_attrib
     type: gtu::vertex_attrib const
-  - name: bindingindex
-    type: uint32_t const
+  - name: vertex_binding
+    type: gtu::vertex_binding const
   return: void

@@ -6,7 +6,7 @@ gl:
     type: GLuint
   return: void
 gtu:
-  name: delete_shader
+  name: destroy
   params:
   - name: shader
     type: gtu::shader const

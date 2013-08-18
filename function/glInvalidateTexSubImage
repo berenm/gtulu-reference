@@ -27,7 +27,7 @@ gl:
     type: GLsizei
   return: void
 gtu:
-  name: invalidate_tex_sub_image
+  name: invalidate
   params:
   - name: texture
     type: gtu::texture const

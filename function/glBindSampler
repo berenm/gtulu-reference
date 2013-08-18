@@ -1,7 +1,7 @@
 gl:
   name: glBindSampler
   params:
-  - mapping: unit
+  - mapping: texture_unit
     name: unit
     type: GLuint
   - mapping: sampler
@@ -9,10 +9,10 @@ gl:
     type: GLuint
   return: void
 gtu:
-  name: bind_sampler
+  name: bind
   params:
-  - name: unit
-    type: uint32_t const
+  - name: texture_unit
+    type: gtu::texture_unit const
   - name: sampler
     type: gtu::sampler const
   return: void

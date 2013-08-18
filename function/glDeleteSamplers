@@ -9,7 +9,7 @@ gl:
     type: GLuint const*
   return: void
 gtu:
-  name: delete_sampler
+  name: destroy
   params:
   - name: sampler
     type: gtu::sampler const

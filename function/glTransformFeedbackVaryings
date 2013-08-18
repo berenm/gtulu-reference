@@ -4,12 +4,12 @@ gl:
   - mapping: program
     name: program
     type: GLuint
-  - mapping: count
+  - mapping: varyings.size()
     name: count
     type: GLsizei
-  - mapping: varyings
+  - mapping: '&strings[0]'
     name: varyings
-    type: const char* const*
+    type: char const* const*
   - mapping: bufferMode
     name: bufferMode
     type: GLenum
@@ -19,10 +19,11 @@ gtu:
   params:
   - name: program
     type: gtu::program const
-  - name: count
-    type: gtu::size const
   - name: varyings
-    type: const char* const*
+    type: std::vector< std::string > const&
   - name: bufferMode
     type: gtu::constant const
+  precall: |
+    std::vector< char const* >  strings;
+    std::transform(varyings.begin(), varyings.end(), std::back_inserter(strings), [](std::string const& e) { return e.data(); });
   return: void

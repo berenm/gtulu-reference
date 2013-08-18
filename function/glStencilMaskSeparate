@@ -9,7 +9,7 @@ gl:
     type: GLuint
   return: void
 gtu:
-  name: stencil_mask_separate
+  name: stencil_mask
   params:
   - name: face
     type: gtu::constant const

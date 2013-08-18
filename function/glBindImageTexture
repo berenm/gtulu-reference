@@ -1,7 +1,7 @@
 gl:
   name: glBindImageTexture
   params:
-  - mapping: unit
+  - mapping: texture_unit
     name: unit
     type: GLuint
   - mapping: texture
@@ -24,10 +24,10 @@ gl:
     type: GLenum
   return: void
 gtu:
-  name: bind_image_texture
+  name: bind
   params:
-  - name: unit
-    type: uint32_t const
+  - name: texture_unit
+    type: gtu::texture_unit const
   - name: texture
     type: gtu::texture const
   - name: level

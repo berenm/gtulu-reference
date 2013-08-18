@@ -9,7 +9,7 @@ gl:
     type: GLuint const*
   return: void
 gtu:
-  name: delete_vertex_array
+  name: destroy
   params:
   - name: vertex_array
     type: gtu::vertex_array const

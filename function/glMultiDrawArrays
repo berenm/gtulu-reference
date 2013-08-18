@@ -15,16 +15,16 @@ gl:
     type: GLsizei
   return: void
 gtu:
-  name: multi_draw_arrays
+  name: draw_arrays
   params:
   - name: mode
     type: gtu::constant const
   - name: arrays
-    type: std::vector< std::tuple< int32_t, gtu::size > > const&
+    type: std::vector< std::tuple< gtu::size, int32_t > > const&
   precall: |
-    std::vector< int32_t >   firsts;
     std::vector< gtu::size > counts;
-    typedef std::tuple< int32_t, gtu::size > vtype;
-    std::transform(arrays.begin(), arrays.end(), std::back_inserter(firsts), [](vtype const& e) { return std::get< 0 >(e); });
-    std::transform(arrays.begin(), arrays.end(), std::back_inserter(counts), [](vtype const& e) { return std::get< 1 >(e); });
+    std::vector< int32_t >   firsts;
+    typedef std::tuple< gtu::size, int32_t > vtype;
+    std::transform(arrays.begin(), arrays.end(), std::back_inserter(counts), [](vtype const& e) { return std::get< 0 >(e); });
+    std::transform(arrays.begin(), arrays.end(), std::back_inserter(firsts), [](vtype const& e) { return std::get< 1 >(e); });
   return: void

@@ -9,7 +9,7 @@ gl:
     type: GLuint
   return: void
 gtu:
-  name: bind_framebuffer
+  name: bind
   params:
   - name: target
     type: gtu::constant const

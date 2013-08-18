@@ -21,9 +21,11 @@ gl:
     type: GLvoid const*
   return: void
 gtu:
-  name: draw_range_elements
+  name: draw_elements
   params:
   - name: mode
+    type: gtu::constant const
+  - name: type
     type: gtu::constant const
   - name: start
     type: uint32_t const
@@ -31,8 +33,6 @@ gtu:
     type: uint32_t const
   - name: count
     type: gtu::size const
-  - name: type
-    type: gtu::constant const
   - name: indices
     type: gtu::buffer_ref const&
   return: void

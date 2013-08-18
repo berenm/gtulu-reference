@@ -15,7 +15,7 @@ gl:
     type: GLint*
   return: void
 gtu:
-  name: get_query_indexed
+  name: get_query
   params:
   - name: target
     type: gtu::constant const

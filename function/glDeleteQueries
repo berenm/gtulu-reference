@@ -9,7 +9,7 @@ gl:
     type: GLuint const*
   return: void
 gtu:
-  name: delete_query
+  name: destroy
   params:
   - name: query
     type: gtu::query const

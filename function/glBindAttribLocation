@@ -12,7 +12,7 @@ gl:
     type: GLchar const*
   return: void
 gtu:
-  name: bind_attrib_location
+  name: bind
   params:
   - name: program
     type: gtu::program const

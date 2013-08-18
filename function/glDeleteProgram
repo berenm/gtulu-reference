@@ -6,7 +6,7 @@ gl:
     type: GLuint
   return: void
 gtu:
-  name: delete_program
+  name: destroy
   params:
   - name: program
     type: gtu::program const

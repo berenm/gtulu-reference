@@ -18,7 +18,7 @@ gl:
     type: GLsizeiptr
   return: void
 gtu:
-  name: tex_buffer_range
+  name: tex_buffer
   params:
   - name: target
     type: gtu::constant const

@@ -4,7 +4,7 @@ gl:
   - mapping: property
     name: pname
     type: GLenum
-  - mapping: params
+  - mapping: '&params[0]'
     name: params
     type: GLboolean*
   return: void
@@ -14,5 +14,5 @@ gtu:
   - name: property
     type: gtu::constant const
   - name: params
-    type: uint8_t*
+    type: std::vector< uint8_t >&
   return: void
