@@ -18,7 +18,7 @@ gtu:
   name: vertex_attrib_packed_1
   params:
   - name: vertex_attrib
-    type: gtu::vertex_attrib const
+    type: gtu::vertex_float const
   - name: type
     type: gtu::constant const
   - name: normalized

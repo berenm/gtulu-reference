@@ -15,10 +15,10 @@ gl:
     type: GLuint
   return: void
 gtu:
-  name: vertex_attrib_large_format
+  name: vertex_attrib_format
   params:
   - name: vertex_attrib
-    type: gtu::vertex_attrib const
+    type: gtu::vertex_double const
   - name: size
     type: int32_t const
   - name: type

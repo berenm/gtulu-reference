@@ -12,10 +12,10 @@ gl:
     type: GLdouble
   return: void
 gtu:
-  name: vertex_attrib_large
+  name: vertex_attrib
   params:
   - name: vertex_attrib
-    type: gtu::vertex_attrib const
+    type: gtu::vertex_double const
   - name: values
     type: gtu::vec2< float64 > const&
   return: void

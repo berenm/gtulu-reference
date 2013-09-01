@@ -12,7 +12,7 @@ gtu:
   name: vertex_attrib
   params:
   - name: vertex_attrib
-    type: gtu::vertex_attrib const
+    type: gtu::vertex_float const
   - name: values
     type: gtu::vec4< ufixed8 > const&
   return: void

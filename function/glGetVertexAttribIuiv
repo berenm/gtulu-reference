@@ -12,10 +12,10 @@ gl:
     type: GLuint*
   return: void
 gtu:
-  name: get_vertex_attrib_integer
+  name: get_vertex_attrib
   params:
   - name: vertex_attrib
-    type: gtu::vertex_attrib const
+    type: gtu::vertex_integer const
   - name: property
     type: gtu::constant const
   - name: values

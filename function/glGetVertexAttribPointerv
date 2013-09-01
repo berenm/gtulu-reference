@@ -12,7 +12,7 @@ gl:
     type: GLvoid**
   return: void
 gtu:
-  name: get_vertex_attrib_pointer
+  name: get_vertex_attrib
   params:
   - name: vertex_attrib
     type: gtu::vertex_attrib const

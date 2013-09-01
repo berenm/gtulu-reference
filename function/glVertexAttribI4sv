@@ -9,10 +9,10 @@ gl:
     type: GLshort const*
   return: void
 gtu:
-  name: vertex_attrib_integer
+  name: vertex_attrib
   params:
   - name: vertex_attrib
-    type: gtu::vertex_attrib const
+    type: gtu::vertex_integer const
   - name: values
     type: gtu::vec4< int16_t > const&
   return: void

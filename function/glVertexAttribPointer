@@ -21,10 +21,10 @@ gl:
     type: GLvoid const*
   return: void
 gtu:
-  name: vertex_attrib_pointer
+  name: vertex_attrib
   params:
   - name: vertex_attrib
-    type: gtu::vertex_attrib const
+    type: gtu::vertex_float const
   - name: size
     type: int32_t const
   - name: type
