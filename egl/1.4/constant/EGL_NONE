@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: none
+usage: []
+value: 0x3038

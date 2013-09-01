@@ -1,0 +1,13 @@
+gl:
+  name: eglWaitNative
+  params:
+  - mapping: engine
+    name: engine
+    type: EGLint
+  return: EGLBoolean
+gtu:
+  name: wait_native
+  params:
+  - name: engine
+    type: int32_t const
+  return: bool

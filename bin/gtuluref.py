@@ -67,10 +67,16 @@ def convert_type(t, is_return=False):
 
 
 def enumerate_values(constant):
+  def try_hex(v):
+    try:
+      return hex(v)
+    except:
+      return v
+
   if 'value' in constant:
-    return [{'name': constant['gtu']['name'], 'value': hex(constant['value'])}]
+    return [dict(constant.items() + [('name', constant['gtu']['name']), ('value', try_hex(constant['value']))])]
   else:
-    return [{'name': constant['gtu']['name'][:-1] + str(i), 'value': hex(v)} for i,v in enumerate(constant['values'])]
+    return [dict(constant.items() + [('name', constant['gtu']['name'][:-1] + str(i)), ('value',try_hex(v))]) for i,v in enumerate(constant['values'])]
 
 
 def categorize_constants(constants):
@@ -100,13 +106,15 @@ def resolve_values(function, parameter, constants):
   return sorted(set(output))
 
 
-def load(version, compat=False):
-  folder = ref(version, compat and 'comp' or 'core', 'constant')
+def load(source_dir):
+  api = yaml.load(file(os.path.join(source_dir, 'api'), 'r'))
+
+  folder = os.path.join(source_dir, 'constant')
   constants = {}
   for f in os.listdir(folder):
     constants[f] = yaml.load(file(os.path.join(folder, f), 'r'))
 
-  folder = ref(version, compat and 'comp' or 'core', 'function')
+  folder = os.path.join(source_dir, 'function')
   functions = {}
   for f in os.listdir(folder):
     functions[f] = yaml.load(file(os.path.join(folder, f), 'r'))
@@ -118,7 +126,7 @@ def load(version, compat=False):
   functions = sorted(functions.values(), key=lambda x: '%s(%s)' % (x['gtu']['name'], ', '.join(['%(type)s %(name)s' % p for p in x['gtu']['params']])))
   constants = sorted(constants.values(), key=lambda x: x['name'])
 
-  return (functions, constants, categories)
+  return (api, functions, constants, categories)
 
 
 
@@ -137,7 +145,9 @@ def man(v, file=None):
 
 
 def ref(v, c=None, file=None):
-  if v == '2.1':
+  if v == '1.4':
+    p = os.path.join(source_dir, 'egl', v)
+  elif v == '2.1':
     p = os.path.join(source_dir, 'gl', v)
   else:
     p = os.path.join(source_dir, 'gl', v, c)

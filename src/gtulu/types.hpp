@@ -10,13 +10,13 @@
 
 #include <boost/config.hpp>
 
-#ifdef __IN_GTULU_OPENGL_API__
+#ifdef __IN_GTULU_API__
 # define GTULU_API_EXPORT __attribute__((visibility("default")))
 # define GTULU_API_IMPORT BOOST_SYMBOL_IMPORT
-#else /* ifdef __IN_GTULU_OPENGL_API__ */
+#else /* ifdef __IN_GTULU_API__ */
 # define GTULU_API_EXPORT BOOST_SYMBOL_IMPORT
 # define GTULU_API_IMPORT __attribute__((visibility("default")))
-#endif /* ifdef __IN_GTULU_OPENGL_API__ */
+#endif /* ifdef __IN_GTULU_API__ */
 
 #include <gtulu/types/objects.hpp>
 #include <gtulu/types/buffer_ref.hpp>
@@ -28,14 +28,15 @@ struct __GLsync;
 namespace gtulu {
   namespace gtu = ::gtulu;
 
-  typedef std::bitset< 32 > bitmask;
-  typedef struct __GLsync*  barrier;
-  typedef void*             bytearray;
+  namespace gl {
+    typedef std::bitset< 32 > bitmask;
+    typedef struct __GLsync*  barrier;
+    typedef void*             bytearray;
 
-  typedef std::function< void (gtu::constant const source, gtu::constant const type, uint32_t const id,
-                               gtu::constant const severity, gtu::size const length, char const* message, void* userParam)
-                         > debug_callback;
-
+    typedef std::function< void (gtu::gl::constant const source, gtu::gl::constant const type, uint32_t const id,
+                                 gtu::gl::constant const severity, gtu::size const length, char const* message, void* userParam)
+                           > debug_callback;
+  }
 } // namespace gtulu
 
 #endif // ifndef __GTULU_TYPES_HPP__

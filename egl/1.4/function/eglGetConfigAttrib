@@ -1,0 +1,30 @@
+gl:
+  name: eglGetConfigAttrib
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: config
+    name: config
+    type: EGLConfig
+  - mapping: attribute
+    name: attribute
+    type: EGLint
+  - mapping: '&value'
+    name: value
+    type: EGLint*
+  return: EGLBoolean
+gtu:
+  name: get_config_attrib
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  - name: config
+    type: gtu::egl::config const&
+  - name: attribute
+    type: gtu::egl::constant const
+  precall: |
+    int32_t value = 0;
+  postcall: |
+    return value;
+  return: int32_t

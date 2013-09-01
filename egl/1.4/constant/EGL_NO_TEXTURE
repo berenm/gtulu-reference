@@ -1,0 +1,6 @@
+categories:
+- egl_configattribvalue
+gtu:
+  name: no_texture
+usage: []
+value: 0x305c

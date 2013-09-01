@@ -1,0 +1,51 @@
+// -*- C++ -*-
+
+// :cheetah --parallel=4 --env --nobackup --iext=thpp --oext=hpp --settings allowWhitespaceAfterDirectiveStartToken=True,cheetahVarStartToken='___',commentStartToken='// \#',directiveStartToken='// :',directiveEndToken=': //',multiLineCommentStartToken='/*\#',multiLineCommentEndToken='\#*/'
+
+// :import os
+// :import yaml
+// :import gtuluref
+
+// :set (___api,___functions,___constants,___categories) = gtuluref.load(___GTULU_API_SOURCE_DIR)
+// :set ___api_name    = ___api.name
+// :set ___api_version = ('__%s' % ___api.version).replace('.', '_').replace('/', '_')
+// :set ___api_logname = ('%s::%s' % (___api.name, ___api.version)).replace('/', '::')
+// :set ___api_guard   = ('__GTULU_%s_%s_API__' % (___api.name, ___api.version)).replace('.', '_').replace('/', '_').upper()
+
+#ifndef ___api_guard
+#define ___api_guard
+
+#include <gtulu/types.hpp>
+
+namespace gtulu {
+  namespace ___api_name {
+    inline namespace ___api_version {
+
+      namespace cst {
+        // :for c in ___constants:
+        // :  set ___type = ___c.gtu.get('type', 'constant')
+        static constexpr gtu::___api_name::___type ___c.name = ___c.value; // :slurp
+
+        // :end for
+      }
+
+      namespace api {
+
+        // :for f in ___functions:
+        // :  if ___f.gtu.get('skip', False):
+        // :    continue
+        // :  end if
+        // :  set ___parameters  = ', '.join(['%(type)s %(name)s' % p for p in ___f.gtu.params])
+        // :  set ___return_type = ___f.gtu.return
+        // :  set ___function       = lambda x: '%s(%s)' % (f['gtu']['name'], x)
+        GTULU_API_EXPORT ___return_type ___function(___parameters); // :slurp
+
+        // :end for
+
+      } // namespace api
+
+    } // inline namespace ___api_version
+  } // namespace ___api_name
+} // namespace gtulu
+
+#endif /* ___api_guard */

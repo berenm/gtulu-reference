@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: max_pbuffer_pixels
+usage: []
+value: 0x302b

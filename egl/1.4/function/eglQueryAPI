@@ -1,0 +1,8 @@
+gl:
+  name: eglQueryAPI
+  params: []
+  return: EGLenum
+gtu:
+  name: query_api
+  params: []
+  return: gtu::egl::constant

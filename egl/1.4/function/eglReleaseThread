@@ -1,0 +1,8 @@
+gl:
+  name: eglReleaseThread
+  params: []
+  return: EGLBoolean
+gtu:
+  name: release_thread
+  params: []
+  return: bool

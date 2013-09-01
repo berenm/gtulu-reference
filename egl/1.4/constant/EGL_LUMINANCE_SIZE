@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: luminance_size
+usage: []
+value: 0x303d

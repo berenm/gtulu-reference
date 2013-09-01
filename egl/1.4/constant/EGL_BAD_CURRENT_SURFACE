@@ -1,0 +1,7 @@
+categories:
+- error
+gtu:
+  name: bad_current_surface
+  message: 
+usage: []
+value: 0x3007

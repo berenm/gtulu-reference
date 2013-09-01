@@ -1,0 +1,6 @@
+categories:
+- egl_surfaceattrib
+gtu:
+  name: multisample_resolve
+usage: []
+value: 0x3099

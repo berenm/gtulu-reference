@@ -1,0 +1,6 @@
+categories:
+- egl_bindbuffertarget
+gtu:
+  name: single_buffer
+usage: []
+value: 0x3085

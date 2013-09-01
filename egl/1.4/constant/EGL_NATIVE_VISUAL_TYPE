@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: native_visual_type
+usage: []
+value: 0x302f

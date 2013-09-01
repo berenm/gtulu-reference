@@ -1,0 +1,23 @@
+gl:
+  name: eglInitialize
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: '&version.major'
+    name: major
+    type: EGLint*
+  - mapping: '&version.minor'
+    name: minor
+    type: EGLint*
+  return: EGLBoolean
+gtu:
+  name: initialize
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  precall: |
+    gtu::egl::version_info version;
+  postcall: |
+    return version;
+  return: gtu::egl::version_info

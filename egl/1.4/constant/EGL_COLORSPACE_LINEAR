@@ -1,0 +1,6 @@
+categories:
+- egl_colorspace
+gtu:
+  name: colorspace_linear
+usage: []
+value: 0x308a

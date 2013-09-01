@@ -1,0 +1,6 @@
+categories:
+- egl_multisampleresolve
+gtu:
+  name: multisample_resolve_box
+usage: []
+value: 0x309b

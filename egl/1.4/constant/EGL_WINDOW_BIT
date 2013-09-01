@@ -1,0 +1,6 @@
+categories:
+- egl_surfacetypemask
+gtu:
+  name: window_bit
+usage: []
+value: 0x4

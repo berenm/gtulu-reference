@@ -1,0 +1,8 @@
+gl:
+  name: eglGetError
+  params: []
+  return: EGLint
+gtu:
+  name: get_error
+  params: []
+  return: gtu::egl::constant

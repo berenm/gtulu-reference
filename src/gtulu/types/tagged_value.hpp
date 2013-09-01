@@ -4,8 +4,6 @@
 #include <cstdint>
 #include <type_traits>
 
-#include "gtulu/logging.hpp"
-
 namespace gtulu {
   namespace gtu = ::gtulu;
 
@@ -51,6 +49,11 @@ namespace gtulu {
     static constexpr bool value = detail::is_one_of<T, Ts...>::value;
     static_assert(value, "T is not one of the allowed constants.");
   };
+}
+
+namespace std {
+  template< typename Tag, typename T >
+  struct hash< gtulu::tagged_value< Tag, T > > : hash< T > {};
 }
 
 #endif // ifndef __GTULU_TYPES_TAGGED_VALUE_HPP__

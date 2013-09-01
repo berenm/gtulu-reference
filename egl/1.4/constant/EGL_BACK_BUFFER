@@ -1,0 +1,6 @@
+categories:
+- egl_bindbuffertarget
+gtu:
+  name: back_buffer
+usage: []
+value: 0x3084

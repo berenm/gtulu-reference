@@ -1,0 +1,23 @@
+gl:
+  name: eglBindTexImage
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: surface
+    name: surface
+    type: EGLSurface
+  - mapping: buffer
+    name: buffer
+    type: EGLint
+  return: EGLBoolean
+gtu:
+  name: bind_tex_image
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  - name: surface
+    type: gtu::egl::surface const&
+  - name: buffer
+    type: int32_t
+  return: bool

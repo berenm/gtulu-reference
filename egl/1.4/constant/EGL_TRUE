@@ -1,0 +1,6 @@
+categories:
+- egl_boolean
+gtu:
+  name: true_
+usage: []
+value: 0x1

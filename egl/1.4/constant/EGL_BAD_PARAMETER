@@ -1,0 +1,7 @@
+categories:
+- error
+gtu:
+  name: bad_parameter
+  message: 
+usage: []
+value: 0x300c

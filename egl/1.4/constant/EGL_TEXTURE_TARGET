@@ -1,0 +1,6 @@
+categories:
+- egl_surfaceattrib
+gtu:
+  name: texture_target
+usage: []
+value: 0x3081

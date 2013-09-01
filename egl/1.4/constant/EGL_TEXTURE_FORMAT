@@ -1,0 +1,6 @@
+categories:
+- egl_surfaceattrib
+gtu:
+  name: texture_format
+usage: []
+value: 0x3080

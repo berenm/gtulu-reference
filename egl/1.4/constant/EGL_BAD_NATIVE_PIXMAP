@@ -1,0 +1,7 @@
+categories:
+- error
+gtu:
+  name: bad_native_pixmap
+  message: 
+usage: []
+value: 0x300a

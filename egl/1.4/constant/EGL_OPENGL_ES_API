@@ -1,0 +1,6 @@
+categories:
+- egl_bindapitarget
+gtu:
+  name: opengl_es_api
+usage: []
+value: 0x30a0

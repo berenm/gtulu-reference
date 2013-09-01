@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: alpha_mask_size
+usage: []
+value: 0x303e

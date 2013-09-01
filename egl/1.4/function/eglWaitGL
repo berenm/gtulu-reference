@@ -1,0 +1,8 @@
+gl:
+  name: eglWaitGL
+  params: []
+  return: EGLBoolean
+gtu:
+  name: wait_gl
+  params: []
+  return: bool

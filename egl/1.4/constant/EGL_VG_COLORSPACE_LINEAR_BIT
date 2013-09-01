@@ -1,0 +1,6 @@
+categories:
+- egl_surfacetypemask
+gtu:
+  name: vg_colorspace_linear_bit
+usage: []
+value: 0x20

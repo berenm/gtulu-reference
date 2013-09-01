@@ -1,0 +1,6 @@
+categories:
+- egl_clientbuffertype
+gtu:
+  name: openvg_image
+usage: []
+value: 0x3096

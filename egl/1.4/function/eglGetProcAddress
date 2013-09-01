@@ -1,0 +1,14 @@
+gl:
+  name: eglGetProcAddress
+  params:
+  - mapping: name.c_str()
+    name: procname
+    type: char const*
+  return: EGLProc
+gtu:
+  name: get_proc_address
+  params:
+  - name: name
+    type: std::string const&
+  return: EGLProc
+  skip: true

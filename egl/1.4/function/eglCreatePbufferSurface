@@ -1,0 +1,23 @@
+gl:
+  name: eglCreatePbufferSurface
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: config
+    name: config
+    type: EGLConfig
+  - mapping: '&attributes[0].first'
+    name: attrib_list
+    type: EGLint const*
+  return: EGLSurface
+gtu:
+  name: create_pbuffer_surface
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  - name: config
+    type: gtu::egl::config const&
+  - name: attributes
+    type: gtu::egl::attributes const&
+  return: gtu::egl::surface

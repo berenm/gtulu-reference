@@ -1,0 +1,6 @@
+categories:
+- egl_surfacetypemask
+gtu:
+  name: vg_alpha_format_pre_bit
+usage: []
+value: 0x40

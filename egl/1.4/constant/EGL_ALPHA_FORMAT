@@ -1,0 +1,6 @@
+categories:
+- egl_surfaceattrib
+gtu:
+  name: alpha_format
+usage: []
+value: 0x3088

@@ -1,0 +1,33 @@
+gl:
+  name: eglCreatePbufferFromClientBuffer
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: buftype
+    name: buftype
+    type: EGLenum
+  - mapping: buffer
+    name: buffer
+    type: EGLClientBuffer
+  - mapping: config
+    name: config
+    type: EGLConfig
+  - mapping: '&attributes[0].first'
+    name: attrib_list
+    type: EGLint const*
+  return: EGLSurface
+gtu:
+  name: create_pbuffer_from_client_buffer
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  - name: buftype
+    type: gtu::egl::constant const
+  - name: buffer
+    type: void* /*EGLClientBuffer*/
+  - name: config
+    type: gtu::egl::config const&
+  - name: attributes
+    type: gtu::egl::attributes const&
+  return: gtu::egl::surface

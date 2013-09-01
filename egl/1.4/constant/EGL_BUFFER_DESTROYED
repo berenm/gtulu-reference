@@ -1,0 +1,6 @@
+categories:
+- egl_swapbehavior
+gtu:
+  name: buffer_destroyed
+usage: []
+value: 0x3095

@@ -1,0 +1,18 @@
+gl:
+  name: eglSwapInterval
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: interval
+    name: interval
+    type: EGLint
+  return: EGLBoolean
+gtu:
+  name: swap_interval
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  - name: interval
+    type: int32_t const
+  return: bool

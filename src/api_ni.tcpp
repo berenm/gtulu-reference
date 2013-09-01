@@ -1,0 +1,74 @@
+// -*- C++ -*-
+
+// :cheetah --parallel=4 --env --nobackup --iext=tcpp --oext=cpp --settings allowWhitespaceAfterDirectiveStartToken=True,cheetahVarStartToken='___',commentStartToken='// \#',directiveStartToken='// :',directiveEndToken=': //',multiLineCommentStartToken='/*\#',multiLineCommentEndToken='\#*/'
+
+// :import os
+// :import yaml
+// :import gtuluref
+
+// :set (___api,___functions,___constants,___categories) = gtuluref.load(___GTULU_API_SOURCE_DIR)
+// :set ___api_name    = ___api.name
+// :set ___api_version = ('__%s' % ___api.version).replace('.', '_').replace('/', '_')
+// :set ___api_logname = ('%s::%s' % (___api.name, ___api.version)).replace('/', '::')
+
+#define __IN_GTULU_API__
+#include <gtulu/types.hpp>
+#include <gtulu/types.h>
+
+#include <cstdlib>
+#include <stdexcept>
+
+#include <logging/logging.hpp>
+#include <corefungi.hpp>
+
+namespace gtulu {
+  namespace ___api_name {
+    inline namespace ___api_version {
+
+      // :set ___api_uname = ___api_name.upper()
+      // :set ___api_no_error_check = '%s.no-error-check' % ___api_name
+      // :set ___api_no_error_throw = '%s.no-error-throw' % ___api_name
+      // :set ___api_not_impl_throw = '%s.not-impl-throw' % ___api_name
+
+      namespace api {
+
+        static inline void not_implemented(char const* const name);
+
+        extern "C" {
+
+        // :for f in ___functions:
+        // :  set ___parameters     = ', '.join(['%(type)s %(name)s' % p for p in ___f.gl.params])
+        // :  set ___return_type    = ___f.gl.return
+        // :  set ___function       = lambda x: '%s(%s)' % (f['gl']['name'], x)
+        // :  set ___ni_symbol_name = '__gtuluNI%s' % ___f.gl.name[2:]
+        // :  set ___ni_function    = lambda x: '%s(%s)' % (ni_symbol_name, x)
+        // :  set ___return_value   = ___return_type != 'void' and ('*' in ___return_type and 'nullptr' or '%s()' % ___return_type) or ''
+        static ___return_type           ___ni_function(___parameters);
+        GTULU_API_EXPORT ___return_type ___function(___parameters) __attribute__((weak, alias("___ni_symbol_name")));
+        static ___return_type ___ni_function(___parameters) {
+          gtulu::___api_name::api::not_implemented("___function(___parameters)"); // :slurp
+
+          return ___return_value;
+        } // :slurp
+
+        // :end for
+
+        }
+
+        namespace logging {
+          static constexpr char module_name[] = "gtulu::___api_logname";
+        }
+
+        static inline void not_implemented(char const* const name) {
+          __warn() << "not implemented: " << name;
+
+          static bool const notimp_throw = corefungi::get("___api_not_impl_throw");
+          if (notimp_throw)
+            throw std::runtime_error(std::string("not implemented: ") + name);
+        }
+
+      } // namespace api
+
+    } // inline namespace ___api_version
+  } // namespace ___api_name
+} // namespace gtulu

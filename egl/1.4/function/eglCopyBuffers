@@ -1,0 +1,23 @@
+gl:
+  name: eglCopyBuffers
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: surface
+    name: surface
+    type: EGLSurface
+  - mapping: target
+    name: target
+    type: EGLNativePixmapType
+  return: EGLBoolean
+gtu:
+  name: copy_buffers
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  - name: surface
+    type: gtu::egl::surface const&
+  - name: target
+    type: void* /*EGLNativePixmapType*/
+  return: bool

@@ -1,0 +1,30 @@
+gl:
+  name: eglQuerySurface
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: surface
+    name: surface
+    type: EGLSurface
+  - mapping: attribute
+    name: attribute
+    type: EGLint
+  - mapping: '&value'
+    name: value
+    type: EGLint*
+  return: EGLBoolean
+gtu:
+  name: query_surface
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  - name: surface
+    type: gtu::egl::surface const&
+  - name: attribute
+    type: gtu::egl::constant const
+  precall: |
+    int32_t value = 0;
+  postcall: |
+    return value;
+  return: int32_t

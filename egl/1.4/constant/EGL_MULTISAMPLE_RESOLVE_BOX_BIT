@@ -1,0 +1,6 @@
+categories:
+- egl_surfacetypemask
+gtu:
+  name: multisample_resolve_box_bit
+usage: []
+value: 0x200

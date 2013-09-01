@@ -1,0 +1,28 @@
+gl:
+  name: eglCreatePixmapSurface
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: config
+    name: config
+    type: EGLConfig
+  - mapping: pixmap
+    name: pixmap
+    type: EGLNativePixmapType
+  - mapping: '&attributes[0].first'
+    name: attrib_list
+    type: EGLint const*
+  return: EGLSurface
+gtu:
+  name: create_pixmap_surface
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  - name: config
+    type: gtu::egl::config const&
+  - name: pixmap
+    type: void* /*EGLNativePixmapType*/
+  - name: attributes
+    type: gtu::egl::attributes const&
+  return: gtu::egl::surface

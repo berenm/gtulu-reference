@@ -1,0 +1,18 @@
+gl:
+  name: eglQueryString
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: property
+    name: name
+    type: EGLint
+  return: char const*
+gtu:
+  name: query_string
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  - name: property
+    type: gtu::egl::constant const
+  return: std::string

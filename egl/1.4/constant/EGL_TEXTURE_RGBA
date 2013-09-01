@@ -1,0 +1,6 @@
+categories:
+- egl_configattribvalue
+gtu:
+  name: texture_rgba
+usage: []
+value: 0x305e

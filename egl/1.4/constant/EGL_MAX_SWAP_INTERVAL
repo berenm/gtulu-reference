@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: max_swap_interval
+usage: []
+value: 0x303c

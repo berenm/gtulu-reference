@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: red_size
+usage: []
+value: 0x3024

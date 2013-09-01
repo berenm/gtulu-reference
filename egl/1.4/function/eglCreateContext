@@ -1,0 +1,28 @@
+gl:
+  name: eglCreateContext
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: config
+    name: config
+    type: EGLConfig
+  - mapping: shared_context
+    name: share_context
+    type: EGLContext
+  - mapping: '&attributes[0].first'
+    name: attrib_list
+    type: EGLint const*
+  return: EGLContext
+gtu:
+  name: create_context
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  - name: config
+    type: gtu::egl::config const&
+  - name: shared_context
+    type: gtu::egl::context const&
+  - name: attributes
+    type: gtu::egl::attributes const&
+  return: gtu::egl::context

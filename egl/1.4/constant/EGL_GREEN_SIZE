@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: green_size
+usage: []
+value: 0x3023

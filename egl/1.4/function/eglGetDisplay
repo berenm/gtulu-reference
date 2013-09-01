@@ -1,0 +1,13 @@
+gl:
+  name: eglGetDisplay
+  params:
+  - mapping: display_id
+    name: display_id
+    type: EGLNativeDisplayType
+  return: EGLDisplay
+gtu:
+  name: get_display
+  params:
+  - name: display_id
+    type: void* /*EGLNativeDisplayType*/
+  return: gtu::egl::display

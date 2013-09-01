@@ -1,0 +1,6 @@
+categories:
+- egl_surfaceattrib
+gtu:
+  name: mipmap_texture
+usage: []
+value: 0x3082

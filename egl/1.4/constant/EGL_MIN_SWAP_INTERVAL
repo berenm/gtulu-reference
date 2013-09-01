@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: min_swap_interval
+usage: []
+value: 0x303b

@@ -1,0 +1,113 @@
+// -*- C++ -*-
+
+// :cheetah --parallel=4 --env --nobackup --iext=tcpp --oext=cpp --settings allowWhitespaceAfterDirectiveStartToken=True,cheetahVarStartToken='___',commentStartToken='// \#',directiveStartToken='// :',directiveEndToken=': //',multiLineCommentStartToken='/*\#',multiLineCommentEndToken='\#*/'
+
+// :import os
+// :import yaml
+// :import gtuluref
+
+// :set (___api,___functions,___constants,___categories) = gtuluref.load(___GTULU_API_SOURCE_DIR)
+// :set ___api_name    = ___api.name
+// :set ___api_version = ('__%s' % ___api.version).replace('.', '_').replace('/', '_')
+// :set ___api_logname = ('%s::%s' % (___api.name, ___api.version)).replace('/', '::')
+
+#define __IN_GTULU_API__
+#include <gtulu/___api.name/___api.version/api.hpp>
+#include <gtulu/types.h>
+
+#include <stdexcept>
+
+#include <logging/logging.hpp>
+#include <corefungi.hpp>
+
+namespace gtulu {
+  namespace ___api_name {
+    inline namespace ___api_version {
+      namespace logging {
+        static constexpr char module_name[] = "gtulu::___api_logname";
+      }
+
+      // :set ___api_uname = ___api_name.upper()
+      // :set ___api_no_error_check = '%s.no-error-check' % ___api_name
+      // :set ___api_no_error_throw = '%s.no-error-throw' % ___api_name
+      // :set ___api_not_impl_throw = '%s.not-impl-throw' % ___api_name
+
+      static corefungi::sprout const o = {
+        "___api_uname API options", {
+          { "___api_no_error_check","disable the error checking after each GL call", corefungi::bool_switch },
+          { "___api_no_error_throw","disable the exception throw in case of error", corefungi::bool_switch },
+          { "___api_not_impl_throw","enable the exception throw in case of not-implemented function call", corefungi::bool_switch }
+        }
+      };
+
+      namespace api {
+
+        static inline void check_error();
+
+        // :set ___parameter_groups = {}
+        // :for f in ___functions:
+        // :  if ___f.gtu.get('skip', False):
+        // :    continue
+        // :  end if
+        // :  set ___gl_params       = ', '.join(['%(type)s %(name)s'           % p for p in ___f.gl.params])
+        // :  set ___gtu_params      = ', '.join(['%(type)s %(name)s'           % p for p in ___f.gtu.params])
+        // :  set ___call_params     = ', '.join(['%(mapping)s'                 % p for p in ___f.gl.params])
+        // :  set ___log_params      = ', '.join(['%(name)s:" << %(name)s << "' % p for p in ___f.gtu.params])
+        // :  set ___gl_name         = lambda x: '%s(%s)' % (f['gl']['name'], x)
+        // :  set ___gtu_name        = lambda x: '%s(%s)' % (f['gtu']['name'], x)
+        // :  set ___gl_return       = ___f.gl.return
+        // :  set ___gtu_return      = ___f.gtu.return
+        // :  set ___out_variable    = ___gl_return != 'void' and '__r' or ''
+        // :  set ___out_assign      = ___gl_return != 'void' and '%s __r = ' % (___gl_return) or ''
+        // :  set ___assign_variable = lambda x: '%s %s' % (out_assign, x)
+        // :  set ___return_variable = 'return %s' % (___gl_return != 'void' and '%s(%s)' % (f['gtu'].get('return-cast', ''), ___out_variable) or '')
+        // :  set ___precall         = lambda: f['gtu'].get('precall', '')
+        // :  set ___postcall        = lambda: f['gtu'].get('postcall', return_variable)
+        // :  set ___check_error     = lambda: ('gtulu::%s::api::check_error()' % api_name) if f['gl']['name'][-len('GetError'):] != 'GetError' else ''
+
+        extern "C" GTULU_API_IMPORT ___gl_return ___gl_name(___gl_params);
+        GTULU_API_EXPORT ___gtu_return ___gtu_name(___gtu_params) {
+          __trace() << "call ___gl_name(___log_params)";
+          ___precall();
+          ___assign_variable(___gl_name(___call_params));
+          ___check_error();
+          ___postcall();
+        } // :slurp
+
+        // :end for
+
+        static std::unordered_map< gtu::___api_name::constant, char const* > const error_messages = {
+          // :for c in ___categories['error'].values():
+          // :  set ___message = ___c.gtu.get('message', '?')
+          // :  set ___message = '"%s raised: %s"' % (___c.name, ___message) if ___message != 'nullptr' else ___message
+          { cst::___c.name, ___message }, // :slurp
+
+          // :end for
+        };
+
+        inline void check_error() {
+          static bool const no_error_check = corefungi::get("___api_no_error_check");
+          static bool const no_error_throw = corefungi::get("___api_no_error_throw");
+
+          if (no_error_check)
+            return;
+
+          auto const  error_code   = gtulu::___api_name::api::get_error();
+          auto const& error_it     = error_messages.find(error_code);
+          auto const& error_string = error_it == error_messages.end()
+                                     ? "unknown error raised."
+                                     : error_it->second;
+          if (!error_string)
+            return;
+
+          __error() << error_string;
+
+          if (!no_error_throw)
+            throw std::runtime_error(error_string);
+        }
+
+      } // namespace api
+
+    } // inline namespace ___api_version
+  } // namespace ___api_name
+} // namespace gtulu

@@ -1,0 +1,8 @@
+gl:
+  name: eglGetCurrentDisplay
+  params: []
+  return: EGLDisplay
+gtu:
+  name: get_current_display
+  params: []
+  return: gtu::egl::display

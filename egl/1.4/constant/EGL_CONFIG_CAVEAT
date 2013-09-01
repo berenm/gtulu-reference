@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: config_caveat
+usage: []
+value: 0x3027

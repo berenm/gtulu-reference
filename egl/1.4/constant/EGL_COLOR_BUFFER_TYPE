@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: color_buffer_type
+usage: []
+value: 0x303f

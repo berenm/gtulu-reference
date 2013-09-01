@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: stencil_size
+usage: []
+value: 0x3026

@@ -1,0 +1,6 @@
+categories:
+- egl_surfaceattrib
+gtu:
+  name: colorspace
+usage: []
+value: 0x3087

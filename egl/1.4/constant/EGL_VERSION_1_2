@@ -1,0 +1,6 @@
+categories:
+- egl_extensions
+gtu:
+  name: version_1_2
+usage: []
+value: 0x1

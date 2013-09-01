@@ -1,0 +1,7 @@
+categories:
+- error
+gtu:
+  name: bad_attribute
+  message: 
+usage: []
+value: 0x3004

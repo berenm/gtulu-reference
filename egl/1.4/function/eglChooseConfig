@@ -1,0 +1,33 @@
+gl:
+  name: eglChooseConfig
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: '&attributes[0].first'
+    name: attrib_list
+    type: EGLint const*
+  - mapping: '&configs[0]'
+    name: configs
+    type: EGLConfig*
+  - mapping: configs.size()
+    name: config_size
+    type: EGLint
+  - mapping: '&config_count'
+    name: num_config
+    type: EGLint*
+  return: EGLBoolean
+gtu:
+  name: choose_config
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  - name: attributes
+    type: gtu::egl::attributes const&
+  precall: |
+    int32_t config_count = 0;
+    eglChooseConfig(display, &attributes[0].first, nullptr, 0, &config_count);
+    std::vector< gtu::egl::config > configs(config_count);
+  postcall: |
+    return configs;
+  return: gtu::egl::configs

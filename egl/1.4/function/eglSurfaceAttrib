@@ -1,0 +1,28 @@
+gl:
+  name: eglSurfaceAttrib
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: surface
+    name: surface
+    type: EGLSurface
+  - mapping: attribute
+    name: attribute
+    type: EGLint
+  - mapping: value
+    name: value
+    type: EGLint
+  return: EGLBoolean
+gtu:
+  name: surface_attrib
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  - name: surface
+    type: gtu::egl::surface const&
+  - name: attribute
+    type: gtu::egl::constant const
+  - name: value
+    type: int32_t const
+  return: bool

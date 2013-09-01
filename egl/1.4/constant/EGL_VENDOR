@@ -1,0 +1,6 @@
+categories:
+- egl_querystring
+gtu:
+  name: vendor
+usage: []
+value: 0x3053

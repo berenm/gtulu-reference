@@ -1,0 +1,7 @@
+categories:
+- error
+gtu:
+  name: not_initialized
+  message: 
+usage: []
+value: 0x3001

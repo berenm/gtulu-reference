@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: bind_to_texture_rgba
+usage: []
+value: 0x303a

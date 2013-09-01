@@ -1,0 +1,6 @@
+categories:
+- egl_configattribvalue
+gtu:
+  name: rgb_buffer
+usage: []
+value: 0x308e

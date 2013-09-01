@@ -1,0 +1,6 @@
+categories:
+- egl_surfaceattrib
+gtu:
+  name: swap_behavior
+usage: []
+value: 0x3093

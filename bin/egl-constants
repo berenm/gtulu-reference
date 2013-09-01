@@ -1,0 +1,49 @@
+#!/usr/bin/python
+
+from lxml import etree
+import os
+import sys
+import re
+import gtuluref as gtu
+import yaml
+import logging
+
+from gtulu.parser.tm import TMParser
+from gtulu.parser.spec import SpecParser
+from gtulu import logger
+from renamable import Renamable
+
+class literal_unicode(unicode): pass
+def literal_unicode_representer(dumper, data):
+    return dumper.represent_scalar(u'tag:yaml.org,2002:str', data, style='|')
+yaml.add_representer(literal_unicode, literal_unicode_representer)
+
+class hexadecimal(long): pass
+def hexadecimal_representer(dumper, data):
+    return dumper.represent_scalar(u'tag:yaml.org,2002:int', hex(data).strip('L'))
+yaml.add_representer(hexadecimal, hexadecimal_representer)
+
+class Function(Renamable):
+  def __init__(self, name):
+    self.name = name
+    super(Function, self).__init__(['egl'])
+
+log = logging.getLogger(__name__)
+
+folder = os.path.join(os.path.dirname(__file__), '..', 'egl', '1.4', 'function')
+fct = {}
+for filename in os.listdir(folder):
+  with open(os.path.join(folder, filename), 'r') as f:
+    fct = yaml.load(f)
+
+  for p in fct['gl']['params']:
+    p['mapping'] = p['name']
+
+  if 'precall' in fct['gtu']:
+    fct['gtu']['precall'] = literal_unicode(fct['gtu']['precall'])
+
+  if 'postcall' in fct['gtu']:
+    fct['gtu']['postcall'] = literal_unicode(fct['gtu']['postcall'])
+
+  with open(os.path.join(folder, filename), 'w') as f:
+    yaml.dump(fct, f, default_flow_style=False)

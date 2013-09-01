@@ -1,0 +1,7 @@
+categories:
+- egl__angle_d3d_share_handle_client_buffer
+- egl__angle_surface_d3d_texture_2d_share_handle
+gtu:
+  name: d3d_texture_2d_share_handle_angle
+usage: []
+value: 0x3200

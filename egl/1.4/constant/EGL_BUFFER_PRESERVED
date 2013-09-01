@@ -1,0 +1,6 @@
+categories:
+- egl_swapbehavior
+gtu:
+  name: buffer_preserved
+usage: []
+value: 0x3094

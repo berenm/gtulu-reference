@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: transparent_blue_value
+usage: []
+value: 0x3035

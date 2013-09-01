@@ -1,0 +1,6 @@
+categories:
+- egl_surfacetypemask
+gtu:
+  name: pbuffer_bit
+usage: []
+value: 0x1

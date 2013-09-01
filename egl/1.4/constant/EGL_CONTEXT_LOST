@@ -1,0 +1,7 @@
+categories:
+- error
+gtu:
+  name: context_lost
+  message: 
+usage: []
+value: 0x300e

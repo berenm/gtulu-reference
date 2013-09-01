@@ -1,0 +1,6 @@
+categories:
+- egl_configattribvalue
+gtu:
+  name: texture_2d
+usage: []
+value: 0x305f

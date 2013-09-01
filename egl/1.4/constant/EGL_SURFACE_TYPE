@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: surface_type
+usage: []
+value: 0x3033

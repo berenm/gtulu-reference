@@ -1,0 +1,28 @@
+gl:
+  name: eglCreateWindowSurface
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: config
+    name: config
+    type: EGLConfig
+  - mapping: win
+    name: win
+    type: EGLNativeWindowType
+  - mapping: '&attributes[0].first'
+    name: attrib_list
+    type: EGLint const*
+  return: EGLSurface
+gtu:
+  name: create_window_surface
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  - name: config
+    type: gtu::egl::config const&
+  - name: win
+    type: void* /*EGLNativeWindowType*/
+  - name: attributes
+    type: gtu::egl::attributes const&
+  return: gtu::egl::surface

@@ -27,4 +27,18 @@ typedef std::uint64_t    GLuint64;
 typedef struct __GLsync* GLsync;
 typedef void             (*GLDEBUGPROC)(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, GLvoid* userParam);
 
+typedef void(*EGLProc)(void);
+typedef int EGLint;
+typedef unsigned int EGLBoolean;
+typedef unsigned int EGLenum;
+typedef void *EGLConfig;
+typedef void *EGLContext;
+typedef void *EGLDisplay;
+typedef void *EGLSurface;
+typedef void *EGLClientBuffer;
+
+typedef void *EGLNativePixmapType;
+typedef void *EGLNativeDisplayType;
+typedef void *EGLNativeWindowType;
+
 #endif // ifndef __GTULU_TYPES_H__

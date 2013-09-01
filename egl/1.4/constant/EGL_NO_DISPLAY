@@ -1,0 +1,7 @@
+categories:
+- egl_outofband
+gtu:
+  name: no_display
+  type: display
+usage: []
+value: nullptr

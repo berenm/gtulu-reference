@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: max_pbuffer_width
+usage: []
+value: 0x302c

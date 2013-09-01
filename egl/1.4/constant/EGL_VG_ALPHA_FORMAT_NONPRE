@@ -1,0 +1,6 @@
+categories:
+- egl_alphaformat
+gtu:
+  name: vg_alpha_format_nonpre
+usage: []
+value: 0x308b

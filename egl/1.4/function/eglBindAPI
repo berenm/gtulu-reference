@@ -1,0 +1,13 @@
+gl:
+  name: eglBindAPI
+  params:
+  - mapping: api
+    name: api
+    type: EGLenum
+  return: EGLBoolean
+gtu:
+  name: bind_api
+  params:
+  - name: api
+    type: gtu::egl::constant const
+  return: bool

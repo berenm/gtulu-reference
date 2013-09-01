@@ -1,0 +1,6 @@
+categories:
+- egl_alphaformat
+gtu:
+  name: alpha_format_pre
+usage: []
+value: 0x308c

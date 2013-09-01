@@ -1,0 +1,6 @@
+categories:
+- egl_renderabletypemask
+gtu:
+  name: opengl_es_bit
+usage: []
+value: 0x1

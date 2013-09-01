@@ -1,10 +1,15 @@
-#include <gtulu/api.hpp>
+#include <gtulu/egl/1.4/api.hpp>
+#include <gtulu/gl/4.3/comp/api.hpp>
 
-#include <EGL/egl.h>
-#include <EGL/eglext.h>
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
 
 #include <boost/thread.hpp>
+#include <logging/logging.hpp>
 #include <corefungi.hpp>
+
+namespace egl = gtulu::egl;
+namespace gl  = gtulu::gl;
 
 template< typename ContextImpl >
 struct context_info_base : ContextImpl {
@@ -28,36 +33,36 @@ struct context_info_base : ContextImpl {
 };
 
 struct egl_context_impl {
-  EGLDisplay display;
-  EGLContext context;
-  EGLSurface drawable;
-  EGLSurface readable;
-  bool       status;
+  egl::display display;
+  egl::context context;
+  egl::surface drawable;
+  egl::surface readable;
+  bool         status;
 
-  egl_context_impl(EGLDisplay const display, EGLContext const context, EGLSurface const drawable, EGLSurface const readable) :
+  egl_context_impl(egl::display const display, egl::context const context, egl::surface const drawable, egl::surface const readable) :
     display(display),
     context(context),
     drawable(drawable),
     readable(readable) {}
 
   bool acquire() {
-    return eglMakeCurrent(display, drawable, readable, context);
+    return egl::api::make_current(display, drawable, readable, context);
   }
 
   void release() {
-    eglMakeCurrent(display, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
+    egl::api::make_current(display, egl::cst::no_surface, egl::cst::no_surface, egl::cst::no_context);
   }
 
 };
 
 struct egl_context : context_info_base< egl_context_impl > {
-  egl_context(EGLDisplay const display=nullptr, EGLContext const context=EGL_NO_CONTEXT, EGLSurface const drawable=EGL_NO_SURFACE, EGLSurface const readable=EGL_NO_SURFACE) :
+  egl_context(egl::display const display=nullptr, egl::context const context=egl::cst::no_context, egl::surface const drawable=egl::cst::no_surface, egl::surface const readable=egl::cst::no_surface) :
     context_info_base< egl_context_impl >(display, context, drawable, readable) {}
 };
 
 struct egl_current_context : public egl_context {
   egl_current_context() :
-    egl_context(eglGetCurrentDisplay(), eglGetCurrentContext(), eglGetCurrentSurface(EGL_DRAW), eglGetCurrentSurface(EGL_READ)) {}
+    egl_context(egl::api::get_current_display(), egl::api::get_current_context(), egl::api::get_current_surface(egl::cst::draw), egl::api::get_current_surface(egl::cst::read)) {}
 };
 
 typedef egl_context         context_info;
@@ -75,64 +80,51 @@ static void create_context() {
   // setenv("EGL_DRIVER", "egl_glx", 0);
   XSetErrorHandler(_x_error);
 
-  EGLNativeDisplayType const native_display = XOpenDisplay(nullptr);
-  EGLDisplay const           display        = eglGetDisplay(native_display);
+  void* const        native_display = XOpenDisplay(nullptr);
+  egl::display const display        = egl::api::get_display(native_display);
 
   if (display == nullptr) {
     __fatal() << "Unable to open X display.";
     throw std::runtime_error("Unable to open X display.");
   }
 
-  eglInitialize(display, nullptr, nullptr);
+  auto const version = egl::api::initialize(display);
 
-  __info() << "EGL client-apis: " << eglQueryString(display, EGL_CLIENT_APIS);
-  __info() << "EGL extensions: " << eglQueryString(display, EGL_EXTENSIONS);
-  __info() << "EGL vendor: " << eglQueryString(display, EGL_VENDOR);
-  __info() << "EGL version: " << eglQueryString(display, EGL_VERSION);
+  __info() << "EGL version: " << version.major << "." << version.minor;
+  __info() << "EGL client-apis: " << egl::api::query_string(display, egl::cst::client_apis);
+  __info() << "EGL extensions: " << egl::api::query_string(display, egl::cst::extensions);
+  __info() << "EGL vendor: " << egl::api::query_string(display, egl::cst::vendor);
+  __info() << "EGL version: " << egl::api::query_string(display, egl::cst::version);
 
-  EGLint       config_count;
-  EGLint const attributes[] = {
-    EGL_CONFIG_CAVEAT,   EGL_NONE,
-    EGL_RENDERABLE_TYPE, EGL_OPENGL_BIT,
-    EGL_CONFORMANT,      EGL_OPENGL_BIT,
-    EGL_SURFACE_TYPE,    EGL_WINDOW_BIT | EGL_PBUFFER_BIT | EGL_PIXMAP_BIT,
-    EGL_NONE
+  egl::attributes const attributes = {
+    egl::attribute { egl::cst::config_caveat,   egl::cst::none                                                      },
+    egl::attribute { egl::cst::renderable_type, egl::cst::opengl_bit                                                },
+    egl::attribute { egl::cst::conformant,      egl::cst::opengl_bit                                                },
+    egl::attribute { egl::cst::surface_type,    egl::cst::window_bit | egl::cst::pbuffer_bit | egl::cst::pixmap_bit },
+    egl::attribute { egl::cst::none,            egl::cst::none                                                      }
   };
 
-  if (eglChooseConfig(display, attributes, nullptr, 0, &config_count) != EGL_TRUE) {
-    __fatal() << "Unable to retrieve framebuffer configurations count.";
-    throw std::runtime_error("Unable to retrieve framebuffer configurations count.");
-  }
+  auto const& configs = egl::api::choose_config(display, attributes);
 
-  EGLConfig* const configs = new EGLConfig[config_count];
-  if (eglChooseConfig(display, attributes, configs, config_count, &config_count) != EGL_TRUE) {
-    __fatal() << "Unable to choose framebuffer configuration.";
-    throw std::runtime_error("Unable to choose framebuffer configuration.");
-  }
-
-  eglBindAPI(EGL_OPENGL_API);
-  EGLint const     context_attributes[] = {
-    // EGL_CONTEXT_FLAGS_KHR, EGL_CONTEXT_OPENGL_FORWARD_COMPATIBLE_BIT_KHR | EGL_CONTEXT_OPENGL_DEBUG_BIT_KHR,
-    // EGL_CONTEXT_CLIENT_VERSION ,       3,
-    // EGL_CONTEXT_MINOR_VERSION_KHR,       3,
-    // EGL_CONTEXT_OPENGL_PROFILE_MASK_KHR, EGL_CONTEXT_OPENGL_CORE_PROFILE_BIT_KHR,
-    EGL_NONE
+  egl::api::bind_api(egl::cst::opengl_api);
+  egl::attributes const context_attributes = {
+    // egl::cst::context_flags_khr,               egl::cst::context_opengl_forward_compatible_bit_khr | egl::cst::context_opengl_debug_bit_khr,
+    // egl::cst::context_client_version,          3,
+    // egl::cst::context_minor_version_khr,       3,
+    // egl::cst::context_opengl_profile_mask_khr, egl::cst::context_opengl_core_profile_bit_khr,
+    egl::attribute { egl::cst::none, egl::cst::none }
   };
-  EGLContext const context = eglCreateContext(display, configs[0], EGL_NO_CONTEXT, context_attributes);
-  if (context == EGL_NO_CONTEXT) {
-    __fatal() << "Unable to create OpenGL context.";
-    throw std::runtime_error("Unable to create OpenGL context.");
-  }
+
+  egl::context const context = egl::api::create_context(display, configs[0], egl::cst::no_context, context_attributes);
 
   // XSync(native_display, false);
 
-  context_info context_info(display, context, eglCreatePbufferSurface(display, configs[0], nullptr), eglCreatePbufferSurface(display, configs[0], nullptr));
+  context_info context_info(display, context, egl::api::create_pbuffer_surface(display, configs[0], { egl::attribute { egl::cst::none, egl::cst::none } }), egl::api::create_pbuffer_surface(display, configs[0], { egl::attribute { egl::cst::none, egl::cst::none } }));
   if (!context_info.try_acquire()) {
     __fatal() << "Unable to attach context to default drawable.";
     throw std::runtime_error("Unable to attach context to default drawable.");
   }
 
-  delete[] configs;
 } // _create
 
 static void destroy_context() {
@@ -141,10 +133,10 @@ static void destroy_context() {
   context_info.acquire();
   context_info.release();
 
-  eglDestroyContext(context_info.display, context_info.context);
-  eglDestroySurface(context_info.display, context_info.drawable);
-  eglDestroySurface(context_info.display, context_info.readable);
-  eglTerminate(context_info.display);
+  egl::api::destroy_context(context_info.display, context_info.context);
+  egl::api::destroy_surface(context_info.display, context_info.drawable);
+  egl::api::destroy_surface(context_info.display, context_info.readable);
+  egl::api::terminate(context_info.display);
 
   // XCloseDisplay(context_info.display);
 }
@@ -170,40 +162,44 @@ int main(int argc, char const* argv[]) {
   gtulu::api::active_texture(0);
   gtulu::api::attach_shader(1, 2);
 
-  std::vector< gtulu::vec3< float > > const uniform_data = { {{ 1, 2, 3 }}, {{ 2, 3, 4 }}, {{ 3, 4, 5 }} };
+  std::vector< gtulu::vec3< float > > const uniform_data = { { { 1, 2, 3 } }, { { 2, 3, 4 } }, { { 3, 4, 5 } } };
   gtulu::api::uniform(0, uniform_data);
 
-  gtulu::api::compressed_tex_image(gtulu::cst::texture_1d, 0, gtulu::cst::rgb8, gtulu::vec1< gtulu::size > {{ 16 }}, 0, 128, gtulu::buffer_ref(0));
+  gtulu::api::compressed_tex_image(gtulu::cst::texture_1d, 0, gtulu::cst::rgb8, gtulu::vec1< gtulu::size > { { 16 } }, 0, 128, gtulu::buffer_ref(0));
 
   gtulu::vertex_double vdouble1 = 1;
   gtulu::vertex_double vdouble2 = 1.0f;
   gtulu::vertex_double vdouble3 = 1.0;
-  gtulu::vertex_attrib attrib1 = 1;
-  gtulu::vertex_attrib attrib2 = 1.0f;
-  gtulu::vertex_attrib attrib3 = 1.0;
-  gtulu::vertex_attrib attrib4 = vdouble2;
-  gtulu::vertex_float float1 = 1;
-  gtulu::vertex_float float2 = 1.0f;
-  gtulu::vertex_float float3 = 1.0;
+  gtulu::vertex_attrib attrib1  = 1;
+  gtulu::vertex_attrib attrib2  = 1.0f;
+  gtulu::vertex_attrib attrib3  = 1.0;
+  gtulu::vertex_attrib attrib4  = vdouble2;
+  gtulu::vertex_float  float1   = 1;
+  gtulu::vertex_float  float2   = 1.0f;
+  gtulu::vertex_float  float3   = 1.0;
+
   // gtulu::vertex_float float4 = vdouble1; // compile error as expected
-  gtulu::vertex_float float5 = attrib1;
+  gtulu::vertex_float   float5   = attrib1;
   gtulu::vertex_integer integer1 = 1;
   gtulu::vertex_integer integer2 = 1.0f;
   gtulu::vertex_integer integer3 = 1.0;
+
   // gtulu::vertex_integer integer4 = vdouble1; // compile error as expected
   gtulu::vertex_integer integer5 = attrib1;
 
   // gtulu::api::vertex_attrib(vdouble1, gtulu::vec3< int >{1,2,3}); // compile error as expected
   // gtulu::api::vertex_attrib(vdouble2, gtulu::vec3< float >{1.0f,2.0f,3.0f}); // compile error as expected
-  gtulu::api::vertex_attrib(vdouble3, gtulu::vec3< double >{1.0,2.0,3.0});
+  gtulu::api::vertex_attrib(vdouble3, gtulu::vec3< double > { 1.0, 2.0, 3.0 });
+
   // gtulu::api::vertex_attrib(attrib1,  gtulu::vec4< int32_t >{1,2,3,4}); // ambiguous
-  gtulu::api::vertex_attrib(float1,   gtulu::vec3< int16_t >{1,2,3});
-  gtulu::api::vertex_attrib(float2,   gtulu::vec3< float >{1.0f,2.0f,3.0f});
-  gtulu::api::vertex_attrib(float3,   gtulu::vec3< double >{1.0,2.0,3.0});
-  gtulu::api::vertex_attrib(integer1, gtulu::vec3< int32_t >{1,2,3});
+  gtulu::api::vertex_attrib(float1, gtulu::vec3< int16_t > { 1, 2, 3 });
+  gtulu::api::vertex_attrib(float2, gtulu::vec3< float > { 1.0f, 2.0f, 3.0f });
+  gtulu::api::vertex_attrib(float3, gtulu::vec3< double > { 1.0, 2.0, 3.0 });
+  gtulu::api::vertex_attrib(integer1, gtulu::vec3< int32_t > { 1, 2, 3 });
+
   // gtulu::api::vertex_attrib(integer2, gtulu::vec3< float >{1.0f,2.0f,3.0f}); // compile error as expected
   // gtulu::api::vertex_attrib(integer3, gtulu::vec3< double >{1.0,2.0,3.0}); // compile error as expected
 
   destroy_context();
   return 0;
-}
+} // main

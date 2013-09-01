@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: sample_buffers
+usage: []
+value: 0x3032

@@ -1,0 +1,7 @@
+categories:
+- error
+gtu:
+  name: bad_alloc
+  message: 
+usage: []
+value: 0x3003

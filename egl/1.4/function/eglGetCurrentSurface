@@ -1,0 +1,13 @@
+gl:
+  name: eglGetCurrentSurface
+  params:
+  - mapping: read_draw
+    name: readdraw
+    type: EGLint
+  return: EGLSurface
+gtu:
+  name: get_current_surface
+  params:
+  - name: read_draw
+    type: int32_t
+  return: gtu::egl::surface

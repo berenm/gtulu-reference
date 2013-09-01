@@ -1,0 +1,6 @@
+categories:
+- egl_outofband
+gtu:
+  name: dont_care
+usage: []
+value: 0xFFFFFFFF

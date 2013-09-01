@@ -1,0 +1,28 @@
+gl:
+  name: eglGetConfigs
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: '&configs[0]'
+    name: configs
+    type: EGLConfig*
+  - mapping: configs.size()
+    name: config_size
+    type: EGLint
+  - mapping: '&config_count'
+    name: num_config
+    type: EGLint*
+  return: EGLBoolean
+gtu:
+  name: get_config
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  precall: |
+    int32_t config_count = 0;
+    eglGetConfigs(display, nullptr, 0, &config_count);
+    std::vector< gtu::egl::config > configs(config_count);
+  postcall: |
+    return configs;
+  return: gtu::egl::configs

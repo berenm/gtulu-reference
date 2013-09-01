@@ -1,0 +1,18 @@
+gl:
+  name: eglDestroySurface
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: surface
+    name: surface
+    type: EGLSurface
+  return: EGLBoolean
+gtu:
+  name: destroy_surface
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  - name: surface
+    type: gtu::egl::surface const&
+  return: bool

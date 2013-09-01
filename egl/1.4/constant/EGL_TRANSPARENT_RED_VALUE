@@ -1,0 +1,6 @@
+categories:
+- egl_configattrib
+gtu:
+  name: transparent_red_value
+usage: []
+value: 0x3037

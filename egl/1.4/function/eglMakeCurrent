@@ -1,0 +1,28 @@
+gl:
+  name: eglMakeCurrent
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: draw_surface
+    name: draw
+    type: EGLSurface
+  - mapping: read_surface
+    name: read
+    type: EGLSurface
+  - mapping: context
+    name: ctx
+    type: EGLContext
+  return: EGLBoolean
+gtu:
+  name: make_current
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  - name: draw_surface
+    type: gtu::egl::surface const&
+  - name: read_surface
+    type: gtu::egl::surface const&
+  - name: context
+    type: gtu::egl::context const&
+  return: bool

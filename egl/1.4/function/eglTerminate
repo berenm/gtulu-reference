@@ -1,0 +1,13 @@
+gl:
+  name: eglTerminate
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  return: EGLBoolean
+gtu:
+  name: terminate
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  return: bool

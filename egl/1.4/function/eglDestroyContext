@@ -1,0 +1,18 @@
+gl:
+  name: eglDestroyContext
+  params:
+  - mapping: display
+    name: dpy
+    type: EGLDisplay
+  - mapping: context
+    name: ctx
+    type: EGLContext
+  return: EGLBoolean
+gtu:
+  name: destroy_context
+  params:
+  - name: display
+    type: gtu::egl::display const&
+  - name: context
+    type: gtu::egl::context const&
+  return: bool

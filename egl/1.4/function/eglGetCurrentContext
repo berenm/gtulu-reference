@@ -1,0 +1,8 @@
+gl:
+  name: eglGetCurrentContext
+  params: []
+  return: EGLContext
+gtu:
+  name: get_current_context
+  params: []
+  return: gtu::egl::context
