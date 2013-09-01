@@ -2,5 +2,6 @@ categories:
 - error
 gtu:
   name: invalid_operation
+  message: The specified operation is not allowed in the current state.
 usage: []
 value: 0x502

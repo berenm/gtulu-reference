@@ -2,5 +2,6 @@ categories:
 - error
 gtu:
   name: stack_overflow
+  message: An attempt has been made to perform an operation that would cause an internal stack to overflow.
 usage: []
 value: 0x503

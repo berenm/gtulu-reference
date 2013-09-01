@@ -2,5 +2,6 @@ categories:
 - error
 gtu:
   name: invalid_enum
+  message: An unacceptable value is specified for an enumerated argument.
 usage: []
 value: 0x500

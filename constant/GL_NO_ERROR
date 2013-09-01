@@ -2,5 +2,6 @@ categories:
 - error
 gtu:
   name: no_error
+  message: nullptr
 usage: []
 value: 0x0
