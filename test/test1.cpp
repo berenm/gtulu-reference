@@ -175,6 +175,35 @@ int main(int argc, char const* argv[]) {
 
   gtulu::api::compressed_tex_image(gtulu::cst::texture_1d, 0, gtulu::cst::rgb8, gtulu::vec1< gtulu::size > {{ 16 }}, 0, 128, gtulu::buffer_ref(0));
 
+  gtulu::vertex_double vdouble1 = 1;
+  gtulu::vertex_double vdouble2 = 1.0f;
+  gtulu::vertex_double vdouble3 = 1.0;
+  gtulu::vertex_attrib attrib1 = 1;
+  gtulu::vertex_attrib attrib2 = 1.0f;
+  gtulu::vertex_attrib attrib3 = 1.0;
+  gtulu::vertex_attrib attrib4 = vdouble2;
+  gtulu::vertex_float float1 = 1;
+  gtulu::vertex_float float2 = 1.0f;
+  gtulu::vertex_float float3 = 1.0;
+  // gtulu::vertex_float float4 = vdouble1; // compile error as expected
+  gtulu::vertex_float float5 = attrib1;
+  gtulu::vertex_integer integer1 = 1;
+  gtulu::vertex_integer integer2 = 1.0f;
+  gtulu::vertex_integer integer3 = 1.0;
+  // gtulu::vertex_integer integer4 = vdouble1; // compile error as expected
+  gtulu::vertex_integer integer5 = attrib1;
+
+  // gtulu::api::vertex_attrib(vdouble1, gtulu::vec3< int >{1,2,3}); // compile error as expected
+  // gtulu::api::vertex_attrib(vdouble2, gtulu::vec3< float >{1.0f,2.0f,3.0f}); // compile error as expected
+  gtulu::api::vertex_attrib(vdouble3, gtulu::vec3< double >{1.0,2.0,3.0});
+  // gtulu::api::vertex_attrib(attrib1,  gtulu::vec4< int32_t >{1,2,3,4}); // ambiguous
+  gtulu::api::vertex_attrib(float1,   gtulu::vec3< int16_t >{1,2,3});
+  gtulu::api::vertex_attrib(float2,   gtulu::vec3< float >{1.0f,2.0f,3.0f});
+  gtulu::api::vertex_attrib(float3,   gtulu::vec3< double >{1.0,2.0,3.0});
+  gtulu::api::vertex_attrib(integer1, gtulu::vec3< int32_t >{1,2,3});
+  // gtulu::api::vertex_attrib(integer2, gtulu::vec3< float >{1.0f,2.0f,3.0f}); // compile error as expected
+  // gtulu::api::vertex_attrib(integer3, gtulu::vec3< double >{1.0,2.0,3.0}); // compile error as expected
+
   destroy_context();
   return 0;
 }

@@ -7,33 +7,37 @@ namespace gtulu {
   namespace gtu = ::gtulu;
 
   namespace tag {
-    struct constant;
+    struct constant {};
 
-    struct fixed_point;
+    struct fixed_point {};
 
-    struct buffer;
-    struct framebuffer;
-    struct list;
-    struct program;
-    struct pipeline;
-    struct query;
-    struct renderbuffer;
-    struct sampler;
-    struct shader;
-    struct texture;
-    struct transform_feedback;
-    struct vertex_array;
-    struct vertex_attrib;
-    struct uniform;
-    struct uniform_block;
-    struct subroutine;
-    struct frag_data;
-    struct frag_data_index;
-    struct program_resource;
-    struct debug_message;
+    struct buffer {};
+    struct framebuffer {};
+    struct list {};
+    struct program {};
+    struct pipeline {};
+    struct query {};
+    struct renderbuffer {};
+    struct sampler {};
+    struct shader {};
+    struct texture {};
+    struct transform_feedback {};
+    struct vertex_array {};
+    struct uniform {};
+    struct uniform_block {};
+    struct subroutine {};
+    struct frag_data {};
+    struct frag_data_index {};
+    struct program_resource {};
+    struct debug_message {};
 
-    struct texture_unit;
-    struct vertex_binding;
+    struct vertex_attrib {};
+    struct vertex_float : vertex_attrib {};
+    struct vertex_double : vertex_attrib {};
+    struct vertex_integer : vertex_attrib {};
+
+    struct texture_unit {};
+    struct vertex_binding {};
   }
 
   typedef gtu::tagged_value< gtu::tag::constant, uint32_t > constant;
@@ -60,7 +64,6 @@ namespace gtulu {
   typedef gtu::tagged_value< gtu::tag::texture >            texture;
   typedef gtu::tagged_value< gtu::tag::transform_feedback > transform_feedback;
   typedef gtu::tagged_value< gtu::tag::vertex_array >       vertex_array;
-  typedef gtu::tagged_value< gtu::tag::vertex_attrib >      vertex_attrib;
   typedef gtu::tagged_value< gtu::tag::uniform >            uniform;
   typedef gtu::tagged_value< gtu::tag::uniform_block >      uniform_block;
   typedef gtu::tagged_value< gtu::tag::subroutine >         subroutine;
@@ -68,6 +71,11 @@ namespace gtulu {
   typedef gtu::tagged_value< gtu::tag::frag_data_index >    frag_data_index;
   typedef gtu::tagged_value< gtu::tag::program_resource >   program_resource;
   typedef gtu::tagged_value< gtu::tag::debug_message >      debug_message;
+
+  typedef gtu::tagged_value< gtu::tag::vertex_attrib > vertex_attrib;
+  typedef gtu::tagged_value< gtu::tag::vertex_float > vertex_float;
+  typedef gtu::tagged_value< gtu::tag::vertex_double > vertex_double;
+  typedef gtu::tagged_value< gtu::tag::vertex_integer > vertex_integer;
 
   typedef gtu::tagged_value< gtu::tag::texture_unit >   texture_unit;
   typedef gtu::tagged_value< gtu::tag::vertex_binding > vertex_binding;
