@@ -20,6 +20,7 @@ before_install:
       ninja-build
       libgl1-mesa-dev libegl1-mesa-dev libglu1-mesa-dev
       python-cheetah
+      python-yaml
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 branches:
